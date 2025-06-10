@@ -40,17 +40,7 @@ target 'WHHProject' do
   #  pod 'CPFWaterfallFlowLayout'
   #  pod 'Tiercel'
   pod 'SwiftyStoreKit'
-  #  pod 'GSPlayer'
-  #  pod 'QGVAPlayer'
-  #  pod 'ShimmerSwift'
-  #  pod 'mob_secverify'
-  
-  
-  pod 'UMCommon'
-  pod 'UMDevice'
-  pod 'UMCCommonLog'
-  pod 'UMAPM'
-  
+ 
   pod 'HXPhotoPicker-Lite'
   pod 'HXPhotoPicker-Lite/Picker'
   pod 'HXPhotoPicker-Lite/Editor'

@@ -20,6 +20,15 @@
 		2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF9D2DF7D4F800CA36E8 /* WHHFontSize.swift */; };
 		2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */; };
 		2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */; };
+		2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFA32DF8092500CA36E8 /* WHHTabBarController.swift */; };
+		2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFA52DF8093D00CA36E8 /* WHHNavigationController.swift */; };
+		2F17BFAB2DF809C400CA36E8 /* WHHBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFAA2DF809C400CA36E8 /* WHHBaseRequest.m */; };
+		2F17BFAD2DF809DF00CA36E8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BFAC2DF809DF00CA36E8 /* PrivacyInfo.xcprivacy */; };
+		2F17BFB02DF80A6300CA36E8 /* WHHRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFAF2DF80A6300CA36E8 /* WHHRequestModel.m */; };
+		2F17BFB22DF80BF100CA36E8 /* WHHHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB12DF80BF100CA36E8 /* WHHHUD.swift */; };
+		2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */; };
+		2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */; };
+		2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */; };
 		D8941A236FE83546919C640D /* Pods_WHHProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830BC058F297CBCD84B1DBD /* Pods_WHHProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +52,18 @@
 		2F17BF9D2DF7D4F800CA36E8 /* WHHFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHFontSize.swift; sourceTree = "<group>"; };
 		2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHKeyWindowOrCurrentVC.swift; sourceTree = "<group>"; };
 		2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHEnvironmentConf.swift; sourceTree = "<group>"; };
+		2F17BFA32DF8092500CA36E8 /* WHHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHTabBarController.swift; sourceTree = "<group>"; };
+		2F17BFA52DF8093D00CA36E8 /* WHHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHNavigationController.swift; sourceTree = "<group>"; };
+		2F17BFA92DF809C400CA36E8 /* WHHBaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHBaseRequest.h; sourceTree = "<group>"; };
+		2F17BFAA2DF809C400CA36E8 /* WHHBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHBaseRequest.m; sourceTree = "<group>"; };
+		2F17BFAC2DF809DF00CA36E8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2F17BFAE2DF80A6300CA36E8 /* WHHRequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHRequestModel.h; sourceTree = "<group>"; };
+		2F17BFAF2DF80A6300CA36E8 /* WHHRequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHRequestModel.m; sourceTree = "<group>"; };
+		2F17BFB12DF80BF100CA36E8 /* WHHHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHUD.swift; sourceTree = "<group>"; };
+		2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+initLibs.swift"; sourceTree = "<group>"; };
+		2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHUserInfoManager.swift; sourceTree = "<group>"; };
+		2F17BFB92DF80E2C00CA36E8 /* WHHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHUserModel.h; sourceTree = "<group>"; };
+		2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHUserModel.m; sourceTree = "<group>"; };
 		A90D1D17128E738D41941E21 /* Pods-WHHProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHHProject.debug.xcconfig"; path = "Target Support Files/Pods-WHHProject/Pods-WHHProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +109,7 @@
 				2F17BF7A2DF7C96200CA36E8 /* Info.plist */,
 				2F17BF7C2DF7C96200CA36E8 /* LaunchScreen.storyboard */,
 				2F17BF7E2DF7C96200CA36E8 /* Main.storyboard */,
+				2F17BFAC2DF809DF00CA36E8 /* PrivacyInfo.xcprivacy */,
 			);
 			path = WHHProject;
 			sourceTree = "<group>";
@@ -104,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */,
+				2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -111,6 +134,9 @@
 		2F17BF872DF7CAA300CA36E8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2F17BFB62DF80CE300CA36E8 /* UserManager */,
+				2F17BFB32DF80C3900CA36E8 /* HUD */,
+				2F17BFA82DF8099200CA36E8 /* Network */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -129,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				2F17BF8C2DF7CB4200CA36E8 /* WHHBaseViewController.swift */,
+				2F17BFA32DF8092500CA36E8 /* WHHTabBarController.swift */,
+				2F17BFA52DF8093D00CA36E8 /* WHHNavigationController.swift */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -147,6 +175,8 @@
 				2F17BF952DF7D09F00CA36E8 /* WHHBaseModel.h */,
 				2F17BF962DF7D09F00CA36E8 /* WHHBaseModel.m */,
 				2F17BF942DF7D09E00CA36E8 /* WHHProject-Bridging-Header.h */,
+				2F17BFB92DF80E2C00CA36E8 /* WHHUserModel.h */,
+				2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -169,6 +199,33 @@
 				2F17BF992DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		2F17BFA82DF8099200CA36E8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BFA92DF809C400CA36E8 /* WHHBaseRequest.h */,
+				2F17BFAA2DF809C400CA36E8 /* WHHBaseRequest.m */,
+				2F17BFAE2DF80A6300CA36E8 /* WHHRequestModel.h */,
+				2F17BFAF2DF80A6300CA36E8 /* WHHRequestModel.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2F17BFB32DF80C3900CA36E8 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BFB12DF80BF100CA36E8 /* WHHHUD.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		2F17BFB62DF80CE300CA36E8 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */,
+			);
+			path = UserManager;
 			sourceTree = "<group>";
 		};
 		5B38E7069678EE15AC9FB7FB /* Pods */ = {
@@ -200,7 +257,6 @@
 				2F17BF5D2DF7C81900CA36E8 /* Frameworks */,
 				2F17BF5E2DF7C81900CA36E8 /* Resources */,
 				BABC0D7FACAF221AAAE208E2 /* [CP] Embed Pods Frameworks */,
-				7805626619BCD058D0A718C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +309,7 @@
 			files = (
 				2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */,
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
+				2F17BFAD2DF809DF00CA36E8 /* PrivacyInfo.xcprivacy in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,23 +317,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7805626619BCD058D0A718C2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BABC0D7FACAF221AAAE208E2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,16 +363,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F17BFB22DF80BF100CA36E8 /* WHHHUD.swift in Sources */,
 				2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */,
 				2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */,
 				2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */,
+				2F17BFB02DF80A6300CA36E8 /* WHHRequestModel.m in Sources */,
 				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
 				2F17BF9C2DF7D44900CA36E8 /* WHHColors.swift in Sources */,
+				2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */,
+				2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */,
+				2F17BFAB2DF809C400CA36E8 /* WHHBaseRequest.m in Sources */,
 				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
 				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
+				2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */,
+				2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */,
 				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
+				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

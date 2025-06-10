@@ -9,6 +9,7 @@ import UIKit
 
 private let isDevelop = false
 
+@objcMembers
 class WHHEnvironmentConf: NSObject {
     class var baseUrl: String {
         return isDevelop ? "" : ""
