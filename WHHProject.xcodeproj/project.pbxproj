@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */; };
+		2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BF792DF7C96200CA36E8 /* Assets.xcassets */; };
+		2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BF7C2DF7C96200CA36E8 /* LaunchScreen.storyboard */; };
+		2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BF7E2DF7C96200CA36E8 /* Main.storyboard */; };
+		2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF8C2DF7CB4200CA36E8 /* WHHBaseViewController.swift */; };
+		2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF8E2DF7CC1700CA36E8 /* WHHBaseImageView.swift */; };
+		2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF922DF7D03700CA36E8 /* WHHConf.swift */; };
+		2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF962DF7D09F00CA36E8 /* WHHBaseModel.m */; };
+		2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF992DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift */; };
+		2F17BF9C2DF7D44900CA36E8 /* WHHColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF9B2DF7D44900CA36E8 /* WHHColors.swift */; };
+		2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF9D2DF7D4F800CA36E8 /* WHHFontSize.swift */; };
+		2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */; };
+		2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */; };
+		D8941A236FE83546919C640D /* Pods_WHHProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830BC058F297CBCD84B1DBD /* Pods_WHHProject.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		079F05BBAA5DB4C4D141AAB1 /* Pods-WHHProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHHProject.release.xcconfig"; path = "Target Support Files/Pods-WHHProject/Pods-WHHProject.release.xcconfig"; sourceTree = "<group>"; };
+		0830BC058F297CBCD84B1DBD /* Pods_WHHProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHHProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F17BF602DF7C81900CA36E8 /* WHHProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHHProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2F17BF792DF7C96200CA36E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F17BF7A2DF7C96200CA36E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F17BF7B2DF7C96200CA36E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2F17BF7D2DF7C96200CA36E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F17BF8C2DF7CB4200CA36E8 /* WHHBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBaseViewController.swift; sourceTree = "<group>"; };
+		2F17BF8E2DF7CC1700CA36E8 /* WHHBaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBaseImageView.swift; sourceTree = "<group>"; };
+		2F17BF922DF7D03700CA36E8 /* WHHConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHConf.swift; sourceTree = "<group>"; };
+		2F17BF942DF7D09E00CA36E8 /* WHHProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WHHProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		2F17BF952DF7D09F00CA36E8 /* WHHBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHBaseModel.h; sourceTree = "<group>"; };
+		2F17BF962DF7D09F00CA36E8 /* WHHBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHBaseModel.m; sourceTree = "<group>"; };
+		2F17BF992DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+WHHRefResh.swift"; sourceTree = "<group>"; };
+		2F17BF9B2DF7D44900CA36E8 /* WHHColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHColors.swift; sourceTree = "<group>"; };
+		2F17BF9D2DF7D4F800CA36E8 /* WHHFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHFontSize.swift; sourceTree = "<group>"; };
+		2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHKeyWindowOrCurrentVC.swift; sourceTree = "<group>"; };
+		2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHEnvironmentConf.swift; sourceTree = "<group>"; };
+		A90D1D17128E738D41941E21 /* Pods-WHHProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHHProject.debug.xcconfig"; path = "Target Support Files/Pods-WHHProject/Pods-WHHProject.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F17BF5D2DF7C81900CA36E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8941A236FE83546919C640D /* Pods_WHHProject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F17BF572DF7C81900CA36E8 = {
+			isa = PBXGroup;
+			children = (
+				2F17BF7F2DF7C96200CA36E8 /* WHHProject */,
+				2F17BF612DF7C81900CA36E8 /* Products */,
+				5B38E7069678EE15AC9FB7FB /* Pods */,
+				85A06B402187BC14F83B4677 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2F17BF612DF7C81900CA36E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF602DF7C81900CA36E8 /* WHHProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F17BF7F2DF7C96200CA36E8 /* WHHProject */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF982DF7D32000CA36E8 /* Category */,
+				2F17BF902DF7D02600CA36E8 /* Conf */,
+				2F17BF862DF7CA9400CA36E8 /* AppDelegate */,
+				2F17BF872DF7CAA300CA36E8 /* Tools */,
+				2F17BF852DF7CA9000CA36E8 /* Class */,
+				2F17BF792DF7C96200CA36E8 /* Assets.xcassets */,
+				2F17BF7A2DF7C96200CA36E8 /* Info.plist */,
+				2F17BF7C2DF7C96200CA36E8 /* LaunchScreen.storyboard */,
+				2F17BF7E2DF7C96200CA36E8 /* Main.storyboard */,
+			);
+			path = WHHProject;
+			sourceTree = "<group>";
+		};
+		2F17BF852DF7CA9000CA36E8 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF882DF7CAA700CA36E8 /* Base */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		2F17BF862DF7CA9400CA36E8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2F17BF872DF7CAA300CA36E8 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		2F17BF882DF7CAA700CA36E8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF8B2DF7CAD700CA36E8 /* BaseModel */,
+				2F17BF8A2DF7CAD300CA36E8 /* BaseView */,
+				2F17BF892DF7CACA00CA36E8 /* BaseViewController */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2F17BF892DF7CACA00CA36E8 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF8C2DF7CB4200CA36E8 /* WHHBaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		2F17BF8A2DF7CAD300CA36E8 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF8E2DF7CC1700CA36E8 /* WHHBaseImageView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		2F17BF8B2DF7CAD700CA36E8 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF952DF7D09F00CA36E8 /* WHHBaseModel.h */,
+				2F17BF962DF7D09F00CA36E8 /* WHHBaseModel.m */,
+				2F17BF942DF7D09E00CA36E8 /* WHHProject-Bridging-Header.h */,
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		2F17BF902DF7D02600CA36E8 /* Conf */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF922DF7D03700CA36E8 /* WHHConf.swift */,
+				2F17BF9B2DF7D44900CA36E8 /* WHHColors.swift */,
+				2F17BF9D2DF7D4F800CA36E8 /* WHHFontSize.swift */,
+				2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */,
+				2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */,
+			);
+			path = Conf;
+			sourceTree = "<group>";
+		};
+		2F17BF982DF7D32000CA36E8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2F17BF992DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5B38E7069678EE15AC9FB7FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A90D1D17128E738D41941E21 /* Pods-WHHProject.debug.xcconfig */,
+				079F05BBAA5DB4C4D141AAB1 /* Pods-WHHProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		85A06B402187BC14F83B4677 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0830BC058F297CBCD84B1DBD /* Pods_WHHProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F17BF5F2DF7C81900CA36E8 /* WHHProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F17BF732DF7C81A00CA36E8 /* Build configuration list for PBXNativeTarget "WHHProject" */;
+			buildPhases = (
+				F4B592D1F0B6747588C0562A /* [CP] Check Pods Manifest.lock */,
+				2F17BF5C2DF7C81900CA36E8 /* Sources */,
+				2F17BF5D2DF7C81900CA36E8 /* Frameworks */,
+				2F17BF5E2DF7C81900CA36E8 /* Resources */,
+				BABC0D7FACAF221AAAE208E2 /* [CP] Embed Pods Frameworks */,
+				7805626619BCD058D0A718C2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WHHProject;
+			productName = WHHProject;
+			productReference = 2F17BF602DF7C81900CA36E8 /* WHHProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F17BF582DF7C81900CA36E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					2F17BF5F2DF7C81900CA36E8 = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+					};
+				};
+			};
+			buildConfigurationList = 2F17BF5B2DF7C81900CA36E8 /* Build configuration list for PBXProject "WHHProject" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F17BF572DF7C81900CA36E8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2F17BF612DF7C81900CA36E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F17BF5F2DF7C81900CA36E8 /* WHHProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F17BF5E2DF7C81900CA36E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */,
+				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
+				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7805626619BCD058D0A718C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BABC0D7FACAF221AAAE208E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WHHProject/Pods-WHHProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4B592D1F0B6747588C0562A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WHHProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F17BF5C2DF7C81900CA36E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */,
+				2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */,
+				2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */,
+				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
+				2F17BF9C2DF7D44900CA36E8 /* WHHColors.swift in Sources */,
+				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
+				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
+				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
+				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
+				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2F17BF7C2DF7C96200CA36E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F17BF7B2DF7C96200CA36E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2F17BF7E2DF7C96200CA36E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F17BF7D2DF7C96200CA36E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F17BF742DF7C81A00CA36E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90D1D17128E738D41941E21 /* Pods-WHHProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WHHProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayl.whh.WHHProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WHHProject/Class/Base/BaseModel/WHHProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F17BF752DF7C81A00CA36E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 079F05BBAA5DB4C4D141AAB1 /* Pods-WHHProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WHHProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayl.whh.WHHProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WHHProject/Class/Base/BaseModel/WHHProject-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2F17BF762DF7C81A00CA36E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2F17BF772DF7C81A00CA36E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F17BF5B2DF7C81900CA36E8 /* Build configuration list for PBXProject "WHHProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F17BF762DF7C81A00CA36E8 /* Debug */,
+				2F17BF772DF7C81A00CA36E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F17BF732DF7C81A00CA36E8 /* Build configuration list for PBXNativeTarget "WHHProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F17BF742DF7C81A00CA36E8 /* Debug */,
+				2F17BF752DF7C81A00CA36E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F17BF582DF7C81900CA36E8 /* Project object */;
+}

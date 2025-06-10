@@ -1,0 +1,6 @@
+framework module Pods_WHHProject {
+  umbrella header "Pods-WHHProject-umbrella.h"
+
+  export *
+  module * { export * }
+}

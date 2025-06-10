@@ -1,0 +1,6 @@
+framework module HXPhotoPicker_Lite {
+  umbrella header "HXPhotoPicker-Lite-umbrella.h"
+
+  export *
+  module * { export * }
+}
