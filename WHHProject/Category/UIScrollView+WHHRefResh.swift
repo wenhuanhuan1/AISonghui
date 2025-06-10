@@ -7,7 +7,6 @@
 
 import Foundation
 import MJRefresh
-
 typealias WHHRefreshComponent = (() -> Void)?
 
 class WHHRefreshNormalHeader: MJRefreshNormalHeader {
@@ -48,3 +47,5 @@ extension UIScrollView {
         mj_footer = footer
     }
 }
+
+
