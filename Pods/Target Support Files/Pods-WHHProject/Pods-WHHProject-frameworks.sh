@@ -176,7 +176,6 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GKNavigationBarSwift/GKNavigationBarSwift.framework"
@@ -203,11 +202,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GKNavigationBarSwift/GKNavigationBarSwift.framework"
@@ -233,7 +230,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

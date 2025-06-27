@@ -19,7 +19,6 @@ target 'WHHProject' do
   inhibit_all_warnings!
   ## UI和接口查看
   pod 'LookinServer', :configurations => ['Debug']
-  #  pod 'Gifu'
   pod 'Kingfisher'
   pod 'SnapKit'
   pod 'MJExtension'
@@ -33,20 +32,15 @@ target 'WHHProject' do
   pod 'JXPagingView/Paging'
   pod 'MMKV'
   pod 'GKNavigationBarSwift'
-  #  pod 'FWPopupView'
   pod 'SwiftMessages'
   pod 'lottie-ios'
   pod 'FSPagerView'
-  #  pod 'CPFWaterfallFlowLayout'
-  #  pod 'Tiercel'
   pod 'SwiftyStoreKit'
  
   pod 'HXPhotoPicker-Lite'
   pod 'HXPhotoPicker-Lite/Picker'
   pod 'HXPhotoPicker-Lite/Editor'
   pod 'HXPhotoPicker-Lite/Camera'
-  pod 'AFNetworking'
-  pod 'YTKNetwork'
   pod 'MJExtension'
   
   

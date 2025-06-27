@@ -25,9 +25,11 @@
 #import "YTKNetworkPrivate.h"
 
 #if __has_include(<AFNetworking/AFURLRequestSerialization.h>)
-#import <AFNetworking/AFURLRequestSerialization.h>
+//#import <AFNetworking/AFURLRequestSerialization.h>
+#import "AFURLRequestSerialization.h"
 #else
-#import <AFNetworking/AFURLRequestSerialization.h>
+//#import <AFNetworking/AFURLRequestSerialization.h>
+#import "AFURLRequestSerialization.h"
 #endif
 
 void YTKLog(NSString *format, ...) {
