@@ -54,6 +54,12 @@
 		2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */; };
 		2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */; };
 		2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */; };
+		2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */; };
+		2FE448A22E29E6D00054083E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE448A02E29E6D00054083E /* Localizable.strings */; };
+		2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */; };
+		2FE448B12E29F54D0054083E /* WHHLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448B02E29F54D0054083E /* WHHLabel.swift */; };
+		2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448B22E29F6400054083E /* WHHBaseView.swift */; };
+		2FE448B52E29F6790054083E /* WHHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448B42E29F6790054083E /* WHHAlertView.swift */; };
 		D8941A236FE83546919C640D /* Pods_WHHProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830BC058F297CBCD84B1DBD /* Pods_WHHProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +149,18 @@
 		2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHUserInfoManager.swift; sourceTree = "<group>"; };
 		2F17BFB92DF80E2C00CA36E8 /* WHHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHUserModel.h; sourceTree = "<group>"; };
 		2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHUserModel.m; sourceTree = "<group>"; };
+		2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLanguageManager.swift; sourceTree = "<group>"; };
+		2FE448A12E29E6D00054083E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2FE448A32E29E6F20054083E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2FE448A42E29E6F30054083E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		2FE448A52E29E6F30054083E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2FE448A62E29E71B0054083E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2FE448A72E29E71B0054083E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		2FE448A82E29E71B0054083E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHomeViewController.swift; sourceTree = "<group>"; };
+		2FE448B02E29F54D0054083E /* WHHLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLabel.swift; sourceTree = "<group>"; };
+		2FE448B22E29F6400054083E /* WHHBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBaseView.swift; sourceTree = "<group>"; };
+		2FE448B42E29F6790054083E /* WHHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAlertView.swift; sourceTree = "<group>"; };
 		A90D1D17128E738D41941E21 /* Pods-WHHProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHHProject.debug.xcconfig"; path = "Target Support Files/Pods-WHHProject/Pods-WHHProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +272,7 @@
 		2F17BF572DF7C81900CA36E8 = {
 			isa = PBXGroup;
 			children = (
+				2FE448A02E29E6D00054083E /* Localizable.strings */,
 				2F17BF7F2DF7C96200CA36E8 /* WHHProject */,
 				2F17BF612DF7C81900CA36E8 /* Products */,
 				5B38E7069678EE15AC9FB7FB /* Pods */,
@@ -288,6 +307,7 @@
 		2F17BF852DF7CA9000CA36E8 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2FE448A92E29E7890054083E /* WHHHome */,
 				2F17BF882DF7CAA700CA36E8 /* Base */,
 			);
 			path = Class;
@@ -305,6 +325,7 @@
 		2F17BF872DF7CAA300CA36E8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2FE4489D2E29E5B10054083E /* WHHLanguageManager */,
 				2F004DF12E0E35100016DA6B /* AFNetworking */,
 				2F004E0A2E0E35100016DA6B /* YTKNetwork */,
 				2F17BFB62DF80CE300CA36E8 /* UserManager */,
@@ -338,6 +359,9 @@
 			isa = PBXGroup;
 			children = (
 				2F17BF8E2DF7CC1700CA36E8 /* WHHBaseImageView.swift */,
+				2FE448B02E29F54D0054083E /* WHHLabel.swift */,
+				2FE448B22E29F6400054083E /* WHHBaseView.swift */,
+				2FE448B42E29F6790054083E /* WHHAlertView.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -401,6 +425,54 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		2FE4489D2E29E5B10054083E /* WHHLanguageManager */ = {
+			isa = PBXGroup;
+			children = (
+				2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */,
+			);
+			path = WHHLanguageManager;
+			sourceTree = "<group>";
+		};
+		2FE448A92E29E7890054083E /* WHHHome */ = {
+			isa = PBXGroup;
+			children = (
+				2FE448AD2E29E7AA0054083E /* Controller */,
+				2FE448AC2E29E7A60054083E /* ViewModel */,
+				2FE448AB2E29E7A20054083E /* Model */,
+				2FE448AA2E29E79D0054083E /* View */,
+			);
+			path = WHHHome;
+			sourceTree = "<group>";
+		};
+		2FE448AA2E29E79D0054083E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FE448AB2E29E7A20054083E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2FE448AC2E29E7A60054083E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2FE448AD2E29E7AA0054083E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5B38E7069678EE15AC9FB7FB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,11 +529,13 @@
 				};
 			};
 			buildConfigurationList = 2F17BF5B2DF7C81900CA36E8 /* Build configuration list for PBXProject "WHHProject" */;
-			developmentRegion = en;
+			developmentRegion = "zh-Hant";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = 2F17BF572DF7C81900CA36E8;
 			minimizedProjectReferenceProxies = 1;
@@ -480,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE448A22E29E6D00054083E /* Localizable.strings in Resources */,
 				2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */,
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
@@ -545,6 +620,7 @@
 				2F17BF9C2DF7D44900CA36E8 /* WHHColors.swift in Sources */,
 				2F004E0E2E0E35100016DA6B /* UIButton+AFNetworking.m in Sources */,
 				2F004E0F2E0E35100016DA6B /* YTKRequestEventAccessory.m in Sources */,
+				2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */,
 				2F004E102E0E35100016DA6B /* YTKNetworkConfig.m in Sources */,
 				2F004E112E0E35100016DA6B /* UIImageView+AFNetworking.m in Sources */,
 				2F004E122E0E35100016DA6B /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -558,6 +634,7 @@
 				2F004E1A2E0E35100016DA6B /* YTKChainRequestAgent.m in Sources */,
 				2F004E1B2E0E35100016DA6B /* YTKBaseRequest.m in Sources */,
 				2F004E1C2E0E35100016DA6B /* AFURLSessionManager.m in Sources */,
+				2FE448B52E29F6790054083E /* WHHAlertView.swift in Sources */,
 				2F004E1D2E0E35100016DA6B /* YTKChainRequest.m in Sources */,
 				2F004E1E2E0E35100016DA6B /* AFURLRequestSerialization.m in Sources */,
 				2F004E1F2E0E35100016DA6B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -565,7 +642,10 @@
 				2F004E212E0E35100016DA6B /* YTKBatchRequestAgent.m in Sources */,
 				2F004E222E0E35100016DA6B /* AFAutoPurgingImageCache.m in Sources */,
 				2F004E232E0E35100016DA6B /* YTKRequest.m in Sources */,
+				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
+				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
 				2F004E242E0E35100016DA6B /* AFHTTPSessionManager.m in Sources */,
+				2FE448B12E29F54D0054083E /* WHHLabel.swift in Sources */,
 				2F004E252E0E35100016DA6B /* AFNetworkReachabilityManager.m in Sources */,
 				2F004E262E0E35100016DA6B /* WKWebView+AFNetworking.m in Sources */,
 				2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */,
@@ -589,6 +669,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				2F17BF7B2DF7C96200CA36E8 /* Base */,
+				2FE448A32E29E6F20054083E /* zh-Hant */,
+				2FE448A62E29E71B0054083E /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -597,8 +679,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				2F17BF7D2DF7C96200CA36E8 /* Base */,
+				2FE448A42E29E6F30054083E /* zh-Hant */,
+				2FE448A72E29E71B0054083E /* zh-Hans */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2FE448A02E29E6D00054083E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FE448A12E29E6D00054083E /* en */,
+				2FE448A52E29E6F30054083E /* zh-Hant */,
+				2FE448A82E29E71B0054083E /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -613,6 +707,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM7WN74R82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -645,6 +740,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM7WN74R82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -672,6 +768,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -735,6 +832,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

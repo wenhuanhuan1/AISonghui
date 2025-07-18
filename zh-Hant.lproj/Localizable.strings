@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WHHProject
+
+  Created by wenhuan on 2025/7/18.
+  
+*/
+
+"whhHomeKey" = "探索";
+"whhNetAlertBigTitle" = "無法連接";
+"whhNetAlertContentTitle" = "網絡正常才能與神奇的女巫·阿貝貝溝通請檢測網絡設置是否正確";
+"whhNetAlertContentRetryTitle" = "重試";
+"whhNetAlertContentSettingTitle" = "設置";

@@ -11,6 +11,7 @@ import GKNavigationBarSwift
 extension AppDelegate {
     /// 初始化三方库
     func initLibs() {
+        WHHLanguageManager.shared.initNeedLanguage()
         initMMKV()
         initGkNav()
         initWHHNetworking()

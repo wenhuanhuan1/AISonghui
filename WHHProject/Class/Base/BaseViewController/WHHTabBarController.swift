@@ -24,8 +24,8 @@ class WHHTabBarController: UITabBarController {
             $0.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
 
-//        let homeVC = YCHomeViewController()
-//        addChildViewController(vc: homeVC, navTitle: "写真", normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
+        let homeVC = WHHHomeViewController()
+        addChildViewController(vc: homeVC, navTitle: "whhHomeKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
 //
 //        let playVC = YCPlayViewController()
 //        addChildViewController(vc: playVC, navTitle: "玩法", normalImage: "ycPlayNormalIcon", seletImage: "ycPlaySelectIcon")

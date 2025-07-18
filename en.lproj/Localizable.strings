@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WHHProject
+
+  Created by wenhuan on 2025/7/18.
+  
+*/
+
+"whhHomeKey" = "Explore";
+"whhNetAlertBigTitle" = "NoServer";
+"whhNetAlertContentTitle" = "Only when the network is normal can you communicate with the magical witch Abebe. Please check if the network settings are correct";
+"whhNetAlertContentRetryTitle" = "Retry";
+"whhNetAlertContentSettingTitle" = "Set";
