@@ -15,6 +15,7 @@ extension AppDelegate {
         initMMKV()
         initGkNav()
         initWHHNetworking()
+
     }
 
     private func initMMKV() {
@@ -45,4 +46,6 @@ extension AppDelegate {
         let conf = YTKNetworkConfig.shared()
         conf.baseUrl = WHHEnvironmentConf.baseUrl
     }
+
+   
 }

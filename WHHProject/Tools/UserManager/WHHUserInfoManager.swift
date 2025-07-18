@@ -14,6 +14,11 @@ private let WHHUserInfoManagerSaveUserInfoKey = "WHHUserInfoManagerSaveUserInfoK
 class WHHUserInfoManager: NSObject {
     static let shared = WHHUserInfoManager()
 
+    var isLogin:Bool{
+        
+        return false
+    }
+    
     /// 用户登录信息
     var userModel: WHHUserModel? {
         let userString = MMKV.default()?.string(forKey: WHHUserInfoManagerSaveUserInfoKey)
