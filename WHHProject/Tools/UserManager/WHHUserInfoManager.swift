@@ -16,7 +16,7 @@ class WHHUserInfoManager: NSObject {
 
     var isLogin:Bool{
         
-        return false
+        return true
     }
     
     /// 用户登录信息

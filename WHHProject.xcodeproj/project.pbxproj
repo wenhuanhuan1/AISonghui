@@ -54,6 +54,8 @@
 		2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */; };
 		2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */; };
 		2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */; };
+		2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */; };
+		2FDC68DD2E2E27B400A523B0 /* WHHABBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC68DC2E2E27B400A523B0 /* WHHABBViewController.swift */; };
 		2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */; };
 		2FE448A22E29E6D00054083E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE448A02E29E6D00054083E /* Localizable.strings */; };
 		2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */; };
@@ -152,6 +154,8 @@
 		2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHUserInfoManager.swift; sourceTree = "<group>"; };
 		2F17BFB92DF80E2C00CA36E8 /* WHHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHUserModel.h; sourceTree = "<group>"; };
 		2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHUserModel.m; sourceTree = "<group>"; };
+		2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineViewController.swift; sourceTree = "<group>"; };
+		2FDC68DC2E2E27B400A523B0 /* WHHABBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBViewController.swift; sourceTree = "<group>"; };
 		2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLanguageManager.swift; sourceTree = "<group>"; };
 		2FE448A12E29E6D00054083E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2FE448A32E29E6F20054083E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 		2F17BF852DF7CA9000CA36E8 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2FDC68D22E2E274A00A523B0 /* WHHABB */,
+				2FDC68D12E2E272A00A523B0 /* WHHMine */,
 				2FE448A92E29E7890054083E /* WHHHome */,
 				2F17BF882DF7CAA700CA36E8 /* Base */,
 			);
@@ -432,6 +438,78 @@
 				2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */,
 			);
 			path = UserManager;
+			sourceTree = "<group>";
+		};
+		2FDC68D12E2E272A00A523B0 /* WHHMine */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC68D62E2E276300A523B0 /* Controller */,
+				2FDC68D52E2E275F00A523B0 /* View */,
+				2FDC68D42E2E275A00A523B0 /* Model */,
+				2FDC68D32E2E275300A523B0 /* ViewModel */,
+			);
+			path = WHHMine;
+			sourceTree = "<group>";
+		};
+		2FDC68D22E2E274A00A523B0 /* WHHABB */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC68D92E2E277400A523B0 /* View */,
+				2FDC68D82E2E277000A523B0 /* Model */,
+				2FDC68D72E2E276800A523B0 /* Controller */,
+			);
+			path = WHHABB;
+			sourceTree = "<group>";
+		};
+		2FDC68D32E2E275300A523B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2FDC68D42E2E275A00A523B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2FDC68D52E2E275F00A523B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FDC68D62E2E276300A523B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2FDC68D72E2E276800A523B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC68DC2E2E27B400A523B0 /* WHHABBViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2FDC68D82E2E277000A523B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2FDC68D92E2E277400A523B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2FE4489D2E29E5B10054083E /* WHHLanguageManager */ = {
@@ -665,8 +743,10 @@
 				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
 				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
 				2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */,
+				2FDC68DD2E2E27B400A523B0 /* WHHABBViewController.swift in Sources */,
 				2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */,
 				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
+				2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */,
 				2FE448BB2E2A25760054083E /* WHHNoNetAlertView.swift in Sources */,
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
@@ -725,8 +805,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,11 +815,15 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayl.whh.WHHProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "WHHProject/Class/Base/BaseModel/WHHProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -758,8 +842,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -768,10 +852,14 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayl.whh.WHHProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "WHHProject/Class/Base/BaseModel/WHHProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

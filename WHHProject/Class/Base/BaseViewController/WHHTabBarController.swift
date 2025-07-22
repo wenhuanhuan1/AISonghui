@@ -15,10 +15,8 @@ class WHHTabBarController: UITabBarController {
 
         tabBar.isTranslucent = false
         tabBar.backgroundColor = .white
-//        tabBar.backgroundImage = UIImage(named: "YCAITabbarBgIcon")
         tabBar.unselectedItemTintColor = .black
         tabBar.tintColor = ColorFF4746
-
         viewControllers?.forEach {
             $0.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 2)
             $0.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -26,12 +24,13 @@ class WHHTabBarController: UITabBarController {
 
         let homeVC = WHHHomeViewController()
         addChildViewController(vc: homeVC, navTitle: "whhHomeKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
-//
-//        let playVC = YCPlayViewController()
-//        addChildViewController(vc: playVC, navTitle: "玩法", normalImage: "ycPlayNormalIcon", seletImage: "ycPlaySelectIcon")
-//
-//        let mineVC = YCMineViewController()
-//        addChildViewController(vc: mineVC, navTitle: "我的", normalImage: "ycMineNormalIcon", seletImage: "ycMineSelectIcon")
+        
+        let abbVC = WHHABBViewController()
+        addChildViewController(vc: abbVC, navTitle: "whhTabbarAbbKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
+        
+        let mineVC = WHHMineViewController()
+        addChildViewController(vc: mineVC, navTitle: "whhTabbarMineKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
+        
     }
 
     private func addChildViewController(vc: UIViewController, navTitle: String, normalImage: String, seletImage: String) {

@@ -24,10 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        initLibs()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.overrideUserInterfaceStyle = .light
         window?.backgroundColor = .white
+        initLibs()
+        
         window?.rootViewController = WHHRootViewController()
         switchRootViewController()
         window?.makeKeyAndVisible()

@@ -11,3 +11,5 @@
 "whhNetAlertContentTitle" = "網絡正常才能與神奇的女巫·阿貝貝溝通請檢測網絡設置是否正確";
 "whhNetAlertContentRetryTitle" = "重試";
 "whhNetAlertContentSettingTitle" = "設置";
+"whhTabbarAbbKey" = "阿貝貝";
+"whhTabbarMineKey" = "我的";
