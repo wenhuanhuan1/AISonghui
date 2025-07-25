@@ -13,3 +13,9 @@
 "whhNetAlertContentSettingTitle" = "Set";
 "whhTabbarAbbKey" = "Abebe";
 "whhTabbarMineKey" = "Mine";
+"whhHomeDivinationKey" = "Divination";
+"whhHomeContentKey" = "Some basic information needs to be provided\nThis ability will enable Abebe to more accurately capture the ripples of your fate today~\nYou should know that there is no endless smoothness in the world";
+"whhHomeBigKey" = "Dear soulmate~";
+"whhHomeTodayKey" = "Dear soulmate~";
+"whhHomeBottomTitleKey" = "阿贝贝的月光茶馆";
+"whhHomeBottomContentTitleKey" = "命运三岔路  女巫的邀约";

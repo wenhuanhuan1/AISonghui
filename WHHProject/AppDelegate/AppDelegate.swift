@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func switchRootViewController() {
         if WHHUserInfoManager.shared.isLogin {
-            window?.rootViewController = WHHTabBarController()
+            window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
         } else {
             window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
         }

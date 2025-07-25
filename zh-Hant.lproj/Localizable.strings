@@ -13,3 +13,9 @@
 "whhNetAlertContentSettingTitle" = "設置";
 "whhTabbarAbbKey" = "阿貝貝";
 "whhTabbarMineKey" = "我的";
+"whhHomeDivinationKey" = "占卜";
+"whhHomeContentKey" = "需要提供一些基礎信息\n才能讓阿貝貝能更精準捕捉你今天的命運波紋~\n要知道，世界上沒有不起風的瀲灩";
+"whhHomeBigKey" = "亲爱的有缘人~";
+"whhHomeTodayKey" = "今天";
+"whhHomeBottomTitleKey" = "阿贝贝的月光茶馆";
+"whhHomeBottomContentTitleKey" = "命运三岔路  女巫的邀约";

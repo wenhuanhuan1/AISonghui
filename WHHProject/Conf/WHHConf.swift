@@ -11,9 +11,6 @@ import GKNavigationBarSwift
 import SnapKit
 import UIKit
 
-
-
-
 let whhPlaceholderIamge = UIImage(named: "")
 
 let WHHScreenW = UIScreen.main.bounds.size.width
@@ -111,5 +108,36 @@ func WHHAITransToHourMinSec(time: String) -> String {
         return "\(hoursText):\(minutesText):\(secondsText)"
     } else {
         return "\(minutesText):\(secondsText)"
+    }
+}
+
+extension UIView {
+    /// 设置渐变
+    func applyGradient(colours: [UIColor], startPoint: CGPoint = CGPointMake(0, 0), endPoint: CGPoint = CGPointMake(1, 1)) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colours.map { $0.cgColor }
+        gradientLayer.locations = [0.0, 0.5, 1.0]
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+
+    func whhAddShadow(
+        ofColor color: UIColor = UIColor(red: 0.07, green: 0.47, blue: 0.57, alpha: 1.0),
+        radius: CGFloat = 3,
+        offset: CGSize = .zero,
+        opacity: Float = 0.5) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+        layer.masksToBounds = false
+    }
+}
+
+extension UIColor {
+    func whhAlpha(alpha: CGFloat) -> UIColor {
+        withAlphaComponent(alpha)
     }
 }

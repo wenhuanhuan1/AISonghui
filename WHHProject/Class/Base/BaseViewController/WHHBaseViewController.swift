@@ -7,6 +7,9 @@
 
 import UIKit
 import EmptyDataSet_Swift
+import GKNavigationBarSwift
+
+
 class WHHBaseViewController: UIViewController {
     var page = 0
 
