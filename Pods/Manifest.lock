@@ -1,4 +1,30 @@
 PODS:
+  - BRPickerView (2.9.7):
+    - BRPickerView/All (= 2.9.7)
+  - BRPickerView/All (2.9.7):
+    - BRPickerView/Default
+    - BRPickerView/Deprecated
+  - BRPickerView/Core (2.9.7)
+  - BRPickerView/DatePicker (2.9.7):
+    - BRPickerView/Core
+  - BRPickerView/Default (2.9.7):
+    - BRPickerView/DatePicker
+    - BRPickerView/TextPicker
+  - BRPickerView/Deprecated (2.9.7):
+    - BRPickerView/Core
+    - BRPickerView/Deprecated/AddressPickerView (= 2.9.7)
+    - BRPickerView/Deprecated/Base (= 2.9.7)
+    - BRPickerView/Deprecated/StringPickerView (= 2.9.7)
+  - BRPickerView/Deprecated/AddressPickerView (2.9.7):
+    - BRPickerView/Core
+    - BRPickerView/Deprecated/Base
+  - BRPickerView/Deprecated/Base (2.9.7):
+    - BRPickerView/Core
+  - BRPickerView/Deprecated/StringPickerView (2.9.7):
+    - BRPickerView/Core
+    - BRPickerView/Deprecated/Base
+  - BRPickerView/TextPicker (2.9.7):
+    - BRPickerView/Core
   - EmptyDataSet-Swift (5.0.0)
   - FSPagerView (0.8.3)
   - GKNavigationBarSwift (1.6.8)
@@ -102,6 +128,7 @@ PODS:
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
+  - BRPickerView
   - EmptyDataSet-Swift
   - FSPagerView
   - GKNavigationBarSwift
@@ -127,6 +154,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - BRPickerView
     - EmptyDataSet-Swift
     - FSPagerView
     - GKNavigationBarSwift
@@ -156,6 +184,7 @@ SPEC REPOS:
     - SwiftyStoreKit
 
 SPEC CHECKSUMS:
+  BRPickerView: 6548c8fbe21c0f29e72ab2fae177d196edc83f09
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GKNavigationBarSwift: dd492c09547dcaeca53be23f94af992dbca97c48
@@ -184,6 +213,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 759b4a0bf5c3a116a0d7e8a34b098ba83c458625
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: f373efb28a4e16c2d9873cbdec10265845dd218f
+PODFILE CHECKSUM: e01fd00211e0e50a23f89f7a545e09c3f3865344
 
 COCOAPODS: 1.16.2

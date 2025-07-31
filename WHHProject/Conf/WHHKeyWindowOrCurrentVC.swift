@@ -36,3 +36,19 @@ extension UIWindow {
         }
     }
 }
+extension UIScrollView {
+    func whhSetDefault() {
+        contentInsetAdjustmentBehavior = .never
+        automaticallyAdjustsScrollIndicatorInsets = false
+    }
+}
+
+extension UITableView {
+    func whhSetTableViewDefault() {
+        contentInsetAdjustmentBehavior = .never
+        automaticallyAdjustsScrollIndicatorInsets = false
+        estimatedRowHeight = 0
+        estimatedSectionHeaderHeight = 0
+        estimatedSectionFooterHeight = 0
+    }
+}

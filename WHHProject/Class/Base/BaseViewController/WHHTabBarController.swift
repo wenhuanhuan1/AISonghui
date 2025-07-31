@@ -25,8 +25,8 @@ class WHHTabBarController: UITabBarController {
         let homeVC = WHHHomeViewController()
         addChildViewController(vc: homeVC, navTitle: "whhHomeKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
         
-        let abbVC = WHHABBViewController()
-        addChildViewController(vc: abbVC, navTitle: "whhTabbarAbbKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
+//        let abbVC = WHHABBViewController()
+//        addChildViewController(vc: abbVC, navTitle: "whhTabbarAbbKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")
         
         let mineVC = WHHMineViewController()
         addChildViewController(vc: mineVC, navTitle: "whhTabbarMineKey".localized, normalImage: "homeTabbarNormal", seletImage: "homeTabbarSelect")

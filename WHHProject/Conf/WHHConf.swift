@@ -134,6 +134,14 @@ extension UIView {
         layer.shadowOpacity = opacity
         layer.masksToBounds = false
     }
+    
+    func whhAddSetRectConrner(corner: UIRectCorner, radile: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corner, cornerRadii: CGSizeMake(radile, radile))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.cgPath
+        layer.mask = maskLayer
+    }
 }
 
 extension UIColor {

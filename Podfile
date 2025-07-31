@@ -42,6 +42,6 @@ target 'WHHProject' do
   pod 'HXPhotoPicker-Lite/Editor'
   pod 'HXPhotoPicker-Lite/Camera'
   pod 'MJExtension'
-  
+  pod 'BRPickerView'
   
 end

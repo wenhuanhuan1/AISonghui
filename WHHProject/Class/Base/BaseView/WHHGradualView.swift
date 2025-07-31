@@ -10,6 +10,9 @@ import UIKit
 class WHHGradualView: WHHBaseView {
     var didActionButtonClick: (() -> Void)?
 
+    
+ 
+    
     lazy var rightIcon: WHHBaseImageView = {
         let rightIcon = WHHBaseImageView()
         rightIcon.image = UIImage(named: "whhHomeDivinationIcon")
@@ -60,4 +63,6 @@ class WHHGradualView: WHHBaseView {
     @objc func actionButtonClick() {
         didActionButtonClick?()
     }
+    
+   
 }

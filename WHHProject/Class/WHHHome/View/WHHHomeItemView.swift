@@ -12,6 +12,12 @@ class WHHHomeItemView: WHHBaseView {
     
     var didWHHHomeItemViewSubmitButton:(()->Void)?
     
+    lazy var button: UIButton = {
+        let button = UIButton(type: .custom)
+        button.addTarget(self, action: #selector(submitButtonClick), for: .touchUpInside)
+        return button
+    }()
+    
     lazy var submitButton: UIButton = {
         let submitButton = UIButton(type: .custom)
         submitButton.addTarget(self, action: #selector(submitButtonClick), for: .touchUpInside)
@@ -228,6 +234,10 @@ class WHHHomeItemView: WHHBaseView {
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().offset(-15)
             make.top.equalTo(subscriptionLabel.snp.bottom).offset(1)
+        }
+        addSubview(button)
+        button.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 
