@@ -32,6 +32,31 @@ class WHHMediaManager: NSObject {
         }
         viewController.present(controller, animated: false)
     }
+    
+    /// 相册获取单张图片
+    static func whhGetAlbumOnlyOnePhoto(viewController: UIViewController = UIViewController.currentViewController()!, comHandel: ((_ image: UIImage) -> Void)?) {
+        var config = PickerConfiguration.default
+        config.setThemeColor(ColorFF4746)
+        config.modalPresentationStyle = .fullScreen
+        config.editor.modalPresentationStyle = .overFullScreen
+        config.maximumSelectedPhotoCount = 1
+        config.allowSelectedTogether = false
+        config.selectOptions = [.photo]
+        config.editor.finishButtonTitleNormalColor = .orange
+        config.allowSyncICloudWhenSelectPhoto = false
+        Photo.picker(config, sender: viewController, delegate: nil) { PickerResult, _ in
+            PickerResult.getImage { image, _, _ in
+
+                if let tempImage = image {
+                    comHandel?(tempImage)
+                }
+
+            } completionHandler: { _ in
+            }
+
+        } cancel: { _ in
+        }
+    }
 }
 
 extension WHHMediaManager: CameraControllerDelegate {

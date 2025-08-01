@@ -67,7 +67,6 @@ class WHHHomeViewController: WHHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
         gk_navigationBar.isHidden = true
 
 //        dispatchAfter(delay: 1) {
@@ -102,8 +101,11 @@ class WHHHomeViewController: WHHBaseViewController {
 
     @objc func rightButtonClick() {
         debugPrint("点击了右边的按钮")
-        let setView = WHHSetView()
-        view.addSubview(setView)
+      
+
+        let personVC = WHHPersonageViewController()
+
+        navigationController?.pushViewController(personVC, animated: true)
     }
 }
 
@@ -146,11 +148,11 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
             return .zero
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             if isSubscribed {
-               let detailVC = WHHHomeSubscribedDetailViewController()
+                let detailVC = WHHHomeSubscribedDetailViewController()
                 navigationController?.pushViewController(detailVC, animated: true)
             }
         }

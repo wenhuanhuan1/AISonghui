@@ -5,12 +5,20 @@
 //  Created by wenhuan on 2025/6/10.
 //
 
-import UIKit
 import EmptyDataSet_Swift
 import GKNavigationBarSwift
-
+import IQKeyboardManagerSwift
+import IQKeyboardToolbarManager
+import UIKit
 
 class WHHBaseViewController: UIViewController {
+    var isIQKeyboardManagerIsEnabled: Bool = false {
+        didSet {
+            IQKeyboardManager.shared.isEnabled = isIQKeyboardManagerIsEnabled
+            IQKeyboardToolbarManager.shared.isEnabled = isIQKeyboardManagerIsEnabled
+        }
+    }
+
     var page = 0
 
     override func viewDidLoad() {
@@ -25,16 +33,17 @@ class WHHBaseViewController: UIViewController {
     func whhRefreshFooter() {
         debugPrint("上拉加载要求子类实现")
     }
-    
-    func addEmptyDataSet(tableView:UITableView) {
-        
+
+    func addEmptyDataSet(tableView: UITableView) {
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
     }
+
+    func iQKeyboardManagerIsEnabled() {
+    }
 }
-extension WHHBaseViewController:EmptyDataSetSource,EmptyDataSetDelegate {
-    
-    
+
+extension WHHBaseViewController: EmptyDataSetSource, EmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let text = "暂无内容"
         let attributes = [NSAttributedString.Key.font: pingfangRegular(size: 16), NSAttributedString.Key.foregroundColor: ColorFF4746]
@@ -56,6 +65,4 @@ extension WHHBaseViewController:EmptyDataSetSource,EmptyDataSetDelegate {
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
         return true
     }
-    
-    
 }

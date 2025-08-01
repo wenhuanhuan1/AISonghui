@@ -37,6 +37,8 @@ class WHHABBHomeViewController: WHHBaseViewController {
     }
 
     @objc func rightButtonClick() {
+        let alertView = WHHABBSubscriptionAlertView()
         
+        view.addSubview(alertView)
     }
 }
