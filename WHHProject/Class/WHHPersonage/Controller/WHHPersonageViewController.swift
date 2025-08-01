@@ -16,7 +16,7 @@ class WHHPersonageViewController: WHHBaseViewController {
 
     lazy var oneSectionArray: [[String: Any]] = {
         let oneSectionArray = [["isHiddenLine": false, "leftIconString": "whhContactUsIcon", "leftTitleString": "联系我们"],
-                               ["isHiddenLine": false, "leftIconString": "whhRecoverBuyIcon", "leftTitleString": "恢复购买"], ["isHiddenLine": false, "leftIconString": "whhChangeLuangeIcon", "leftTitleString": "语言切换"], ["isHiddenLine": true, "leftIconString": "whhAboutABBIcon", "leftTitleString": "关于阿贝贝"]]
+                               ["isHiddenLine": false, "leftIconString": "whhRecoverBuyIcon", "leftTitleString": "恢复购买"], ["isHiddenLine": true, "leftIconString": "whhAboutABBIcon", "leftTitleString": "关于阿贝贝"]]
         return oneSectionArray
     }()
 

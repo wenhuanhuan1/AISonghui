@@ -23,7 +23,7 @@ class WHHBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = ColorF2F4FE
     }
 
     func whhRefreshHeader() {

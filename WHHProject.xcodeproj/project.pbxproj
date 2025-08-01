@@ -95,6 +95,14 @@
 		2FDC697D2E3B7AF800A523B0 /* WHHContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC697A2E3B7AF800A523B0 /* WHHContactUsViewController.swift */; };
 		2FDC697F2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC697E2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift */; };
 		2FDC69812E3C60B400A523B0 /* WHHAgainAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69802E3C60B400A523B0 /* WHHAgainAlertView.swift */; };
+		2FDC69902E3CDFF300A523B0 /* WHHAboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC698F2E3CDFF300A523B0 /* WHHAboutUsViewController.xib */; };
+		2FDC69912E3CDFF300A523B0 /* WHHAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC698E2E3CDFF300A523B0 /* WHHAboutUsViewController.swift */; };
+		2FDC69952E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69942E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib */; };
+		2FDC69962E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69932E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift */; };
+		2FDC69992E3CE51600A523B0 /* WHHDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69982E3CE51600A523B0 /* WHHDeviceManager.swift */; };
+		2FDC699B2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC699A2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift */; };
+		2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC699D2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib */; };
+		2FDC699F2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC699C2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift */; };
 		2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */; };
 		2FE448A22E29E6D00054083E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE448A02E29E6D00054083E /* Localizable.strings */; };
 		2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */; };
@@ -235,6 +243,14 @@
 		2FDC697B2E3B7AF800A523B0 /* WHHContactUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHContactUsViewController.xib; sourceTree = "<group>"; };
 		2FDC697E2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLookPhotoViewController.swift; sourceTree = "<group>"; };
 		2FDC69802E3C60B400A523B0 /* WHHAgainAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAgainAlertView.swift; sourceTree = "<group>"; };
+		2FDC698E2E3CDFF300A523B0 /* WHHAboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAboutUsViewController.swift; sourceTree = "<group>"; };
+		2FDC698F2E3CDFF300A523B0 /* WHHAboutUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAboutUsViewController.xib; sourceTree = "<group>"; };
+		2FDC69932E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAboutUsTableViewCell.swift; sourceTree = "<group>"; };
+		2FDC69942E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAboutUsTableViewCell.xib; sourceTree = "<group>"; };
+		2FDC69982E3CE51600A523B0 /* WHHDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHDeviceManager.swift; sourceTree = "<group>"; };
+		2FDC699A2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHWKWebViewViewController.swift; sourceTree = "<group>"; };
+		2FDC699C2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHlogoutAccoutViewController.swift; sourceTree = "<group>"; };
+		2FDC699D2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHlogoutAccoutViewController.xib; sourceTree = "<group>"; };
 		2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLanguageManager.swift; sourceTree = "<group>"; };
 		2FE448A12E29E6D00054083E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2FE448A32E29E6F20054083E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -396,6 +412,7 @@
 		2F17BF852DF7CA9000CA36E8 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2FDC698C2E3CDFCA00A523B0 /* WHHAboutUs */,
 				2FDC69692E3B5FAA00A523B0 /* WHHPersonage */,
 				2FDC68D22E2E274A00A523B0 /* WHHABB */,
 				2FDC68D12E2E272A00A523B0 /* WHHMine */,
@@ -417,6 +434,7 @@
 		2F17BF872DF7CAA300CA36E8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2FDC69972E3CE50400A523B0 /* WHHDeviceManager */,
 				2FDC69332E3881FB00A523B0 /* WHHMediaManager */,
 				2FE4489D2E29E5B10054083E /* WHHLanguageManager */,
 				2F004DF12E0E35100016DA6B /* AFNetworking */,
@@ -643,6 +661,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2FDC698C2E3CDFCA00A523B0 /* WHHAboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC69922E3CE1F600A523B0 /* View */,
+				2FDC698D2E3CDFD200A523B0 /* Controller */,
+			);
+			path = WHHAboutUs;
+			sourceTree = "<group>";
+		};
+		2FDC698D2E3CDFD200A523B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC698E2E3CDFF300A523B0 /* WHHAboutUsViewController.swift */,
+				2FDC698F2E3CDFF300A523B0 /* WHHAboutUsViewController.xib */,
+				2FDC699A2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift */,
+				2FDC699C2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift */,
+				2FDC699D2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2FDC69922E3CE1F600A523B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC69932E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift */,
+				2FDC69942E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FDC69972E3CE50400A523B0 /* WHHDeviceManager */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC69982E3CE51600A523B0 /* WHHDeviceManager.swift */,
+			);
+			path = WHHDeviceManager;
+			sourceTree = "<group>";
+		};
 		2FE4489D2E29E5B10054083E /* WHHLanguageManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,7 +849,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FDC69702E3B6D0E00A523B0 /* WHHPersonageTableViewCell.xib in Resources */,
+				2FDC69902E3CDFF300A523B0 /* WHHAboutUsViewController.xib in Resources */,
 				2FE448A22E29E6D00054083E /* Localizable.strings in Resources */,
+				2FDC69952E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib in Resources */,
 				2FDC69782E3B72B100A523B0 /* WHHControllTableViewCell.xib in Resources */,
 				2FDC695E2E3B0B5600A523B0 /* WHHABBHomeViewController.xib in Resources */,
 				2FDC694E2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.xib in Resources */,
@@ -807,6 +865,7 @@
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
+				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,10 +926,12 @@
 				2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */,
 				2F17BFB02DF80A6300CA36E8 /* WHHRequestModel.m in Sources */,
 				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
+				2FDC699B2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift in Sources */,
 				2FDC69322E38781D00A523B0 /* WHHDatePicker.m in Sources */,
 				2F17BF9C2DF7D44900CA36E8 /* WHHColors.swift in Sources */,
 				2F004E0E2E0E35100016DA6B /* UIButton+AFNetworking.m in Sources */,
 				2F004E0F2E0E35100016DA6B /* YTKRequestEventAccessory.m in Sources */,
+				2FDC69992E3CE51600A523B0 /* WHHDeviceManager.swift in Sources */,
 				2FDC69512E39BE0600A523B0 /* WHHHomeSubscribedDetailViewController.swift in Sources */,
 				2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */,
 				2F004E102E0E35100016DA6B /* YTKNetworkConfig.m in Sources */,
@@ -895,6 +956,7 @@
 				2F004E1A2E0E35100016DA6B /* YTKChainRequestAgent.m in Sources */,
 				2FDC694B2E38F1EF00A523B0 /* WHHBaseTableViewCell.swift in Sources */,
 				2F004E1B2E0E35100016DA6B /* YTKBaseRequest.m in Sources */,
+				2FDC699F2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift in Sources */,
 				2F004E1C2E0E35100016DA6B /* AFURLSessionManager.m in Sources */,
 				2FDC69552E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.swift in Sources */,
 				2FE448B52E29F6790054083E /* WHHAlertView.swift in Sources */,
@@ -926,6 +988,7 @@
 				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
 				2FDC693D2E38C76800A523B0 /* WHHDivinationAlertView.swift in Sources */,
 				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
+				2FDC69962E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift in Sources */,
 				2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */,
 				2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */,
 				2FDC69792E3B72B100A523B0 /* WHHControllTableViewCell.swift in Sources */,
@@ -936,6 +999,7 @@
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
 				2FDC69492E38D8CF00A523B0 /* WHHHomeWitchTableViewCell.swift in Sources */,
+				2FDC69912E3CDFF300A523B0 /* WHHAboutUsViewController.swift in Sources */,
 				2FDC692D2E3867A700A523B0 /* WHHSexItemView.swift in Sources */,
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,
 				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,
