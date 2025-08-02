@@ -19,5 +19,8 @@ class WHHlogoutAccoutViewController: WHHBaseViewController {
 
     @IBAction func submitButtonClick(_ sender: UIButton) {
         debugPrint("点击了提交")
+        let alertView = WHHlogoutAccoutAlertView()
+        alertView.type = .logouting
+        view.addSubview(alertView)
     }
 }

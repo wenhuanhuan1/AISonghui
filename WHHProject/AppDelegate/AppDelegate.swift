@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.overrideUserInterfaceStyle = .light
         window?.backgroundColor = .white
         initLibs()
-        
+
         window?.rootViewController = WHHRootViewController()
         switchRootViewController()
         window?.makeKeyAndVisible()
@@ -38,10 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func switchRootViewController() {
-        if WHHUserInfoManager.shared.isLogin {
-            window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
-        } else {
-            window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
+        if WHHUserInfoManager.shared.isShowpPrivacyAlert {
+            if WHHUserInfoManager.shared.isLogin {
+                window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+            } else {
+                window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
+            }
         }
     }
 }

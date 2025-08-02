@@ -14,11 +14,17 @@ private let WHHUserInfoManagerSaveUserInfoKey = "WHHUserInfoManagerSaveUserInfoK
 class WHHUserInfoManager: NSObject {
     static let shared = WHHUserInfoManager()
 
-    var isLogin:Bool{
-        
+    var isShowpPrivacyAlert: Bool {
+        if let show = MMKV.default()?.bool(forKey: "whhSaveShowPrivacyAlertView") {
+            return show
+        }
+        return false
+    }
+
+    var isLogin: Bool {
         return true
     }
-    
+
     /// 用户登录信息
     var userModel: WHHUserModel? {
         let userString = MMKV.default()?.string(forKey: WHHUserInfoManagerSaveUserInfoKey)
@@ -41,6 +47,11 @@ extension WHHUserInfoManager {
     /// - Parameter jsonString: 用户的json内容
     static func whhSaveUserInfoJsonString(jsonString: String) {
         MMKV.default()?.set(jsonString, forKey: WHHUserInfoManagerSaveUserInfoKey)
+        MMKV.default()?.sync()
+    }
+
+    static func whhSaveShowPrivacyAlertView() {
+        MMKV.default()?.set(true, forKey: "whhSaveShowPrivacyAlertView")
         MMKV.default()?.sync()
     }
 }

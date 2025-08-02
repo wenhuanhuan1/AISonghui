@@ -12,6 +12,11 @@ class WHHRootViewController: WHHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if WHHUserInfoManager.shared.isShowpPrivacyAlert == false {
+            let agenmetView = WHHAgreementView()
+            view.addSubview(agenmetView)
+        }
+      
         // Do any additional setup after loading the view.
     }
     
