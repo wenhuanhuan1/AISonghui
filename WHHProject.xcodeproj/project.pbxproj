@@ -106,6 +106,18 @@
 		2FDC69A12E3E048200A523B0 /* WHHlogoutAccoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A02E3E048100A523B0 /* WHHlogoutAccoutAlertView.swift */; };
 		2FDC69A32E3E0EEF00A523B0 /* WHHAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A22E3E0EEF00A523B0 /* WHHAgreementView.swift */; };
 		2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A42E3E182F00A523B0 /* WHHRouter.swift */; };
+		2FDC69AA2E3EF24700A523B0 /* WHHAppleAccountExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A92E3EF24700A523B0 /* WHHAppleAccountExplainView.swift */; };
+		2FDC69AC2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69AB2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift */; };
+		2FDC69AE2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69AD2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift */; };
+		2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69B12E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift */; };
+		2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69B42E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib */; };
+		2FDC69B62E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69B32E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift */; };
+		2FDC69BA2E3F082A00A523B0 /* WHHVIPCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69B92E3F082A00A523B0 /* WHHVIPCenterModel.m */; };
+		2FDC69BD2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69BC2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib */; };
+		2FDC69BE2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69BB2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift */; };
+		2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69BF2E3F4DFC00A523B0 /* WHHApplePayManager.swift */; };
+		2FDC69C32E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */; };
+		2FDC69C42E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */; };
 		2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */; };
 		2FE448A22E29E6D00054083E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE448A02E29E6D00054083E /* Localizable.strings */; };
 		2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */; };
@@ -257,6 +269,19 @@
 		2FDC69A02E3E048100A523B0 /* WHHlogoutAccoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHlogoutAccoutAlertView.swift; sourceTree = "<group>"; };
 		2FDC69A22E3E0EEF00A523B0 /* WHHAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAgreementView.swift; sourceTree = "<group>"; };
 		2FDC69A42E3E182F00A523B0 /* WHHRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHRouter.swift; sourceTree = "<group>"; };
+		2FDC69A92E3EF24700A523B0 /* WHHAppleAccountExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAppleAccountExplainView.swift; sourceTree = "<group>"; };
+		2FDC69AB2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBindingAppleAccountExplainView.swift; sourceTree = "<group>"; };
+		2FDC69AD2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAppleAccountRegisterView.swift; sourceTree = "<group>"; };
+		2FDC69B12E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPCenterBgView.swift; sourceTree = "<group>"; };
+		2FDC69B32E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPCenterViewController.swift; sourceTree = "<group>"; };
+		2FDC69B42E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHVIPCenterViewController.xib; sourceTree = "<group>"; };
+		2FDC69B82E3F082A00A523B0 /* WHHVIPCenterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHVIPCenterModel.h; sourceTree = "<group>"; };
+		2FDC69B92E3F082A00A523B0 /* WHHVIPCenterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHVIPCenterModel.m; sourceTree = "<group>"; };
+		2FDC69BB2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPCenterCollectionViewCell.swift; sourceTree = "<group>"; };
+		2FDC69BC2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHVIPCenterCollectionViewCell.xib; sourceTree = "<group>"; };
+		2FDC69BF2E3F4DFC00A523B0 /* WHHApplePayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHApplePayManager.swift; sourceTree = "<group>"; };
+		2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBuyFinishTableViewCell.swift; sourceTree = "<group>"; };
+		2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHBuyFinishTableViewCell.xib; sourceTree = "<group>"; };
 		2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLanguageManager.swift; sourceTree = "<group>"; };
 		2FE448A12E29E6D00054083E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2FE448A32E29E6F20054083E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -418,6 +443,7 @@
 		2F17BF852DF7CA9000CA36E8 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2FDC69A62E3E191E00A523B0 /* WHHVIP */,
 				2FDC698C2E3CDFCA00A523B0 /* WHHAboutUs */,
 				2FDC69692E3B5FAA00A523B0 /* WHHPersonage */,
 				2FDC68D22E2E274A00A523B0 /* WHHABB */,
@@ -665,6 +691,8 @@
 				2FDC69762E3B72B100A523B0 /* WHHControllTableViewCell.swift */,
 				2FDC69772E3B72B100A523B0 /* WHHControllTableViewCell.xib */,
 				2FDC69802E3C60B400A523B0 /* WHHAgainAlertView.swift */,
+				2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */,
+				2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -696,6 +724,9 @@
 				2FDC69932E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift */,
 				2FDC69942E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib */,
 				2FDC69A02E3E048100A523B0 /* WHHlogoutAccoutAlertView.swift */,
+				2FDC69A92E3EF24700A523B0 /* WHHAppleAccountExplainView.swift */,
+				2FDC69AB2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift */,
+				2FDC69AD2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,6 +737,45 @@
 				2FDC69982E3CE51600A523B0 /* WHHDeviceManager.swift */,
 			);
 			path = WHHDeviceManager;
+			sourceTree = "<group>";
+		};
+		2FDC69A62E3E191E00A523B0 /* WHHVIP */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC69B72E3F081700A523B0 /* Model */,
+				2FDC69A82E3E192C00A523B0 /* View */,
+				2FDC69A72E3E192400A523B0 /* Controller */,
+			);
+			path = WHHVIP;
+			sourceTree = "<group>";
+		};
+		2FDC69A72E3E192400A523B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC69B32E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift */,
+				2FDC69B42E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib */,
+				2FDC69BF2E3F4DFC00A523B0 /* WHHApplePayManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2FDC69A82E3E192C00A523B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC69B12E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift */,
+				2FDC69BB2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift */,
+				2FDC69BC2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FDC69B72E3F081700A523B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC69B82E3F082A00A523B0 /* WHHVIPCenterModel.h */,
+				2FDC69B92E3F082A00A523B0 /* WHHVIPCenterModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2FE4489D2E29E5B10054083E /* WHHLanguageManager */ = {
@@ -870,12 +940,15 @@
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
 				2FDC697C2E3B7AF800A523B0 /* WHHContactUsViewController.xib in Resources */,
 				2FDC69542E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.xib in Resources */,
+				2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */,
+				2FDC69BD2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib in Resources */,
 				2FDC69742E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.xib in Resources */,
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
+				2FDC69C32E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +1003,7 @@
 			files = (
 				2FDC697F2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift in Sources */,
 				2F17BFB22DF80BF100CA36E8 /* WHHHUD.swift in Sources */,
+				2FDC69AC2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift in Sources */,
 				2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */,
 				2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */,
 				2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */,
@@ -937,6 +1011,7 @@
 				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
 				2FDC699B2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift in Sources */,
 				2FDC69322E38781D00A523B0 /* WHHDatePicker.m in Sources */,
+				2FDC69AE2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift in Sources */,
 				2F17BF9C2DF7D44900CA36E8 /* WHHColors.swift in Sources */,
 				2F004E0E2E0E35100016DA6B /* UIButton+AFNetworking.m in Sources */,
 				2F004E0F2E0E35100016DA6B /* YTKRequestEventAccessory.m in Sources */,
@@ -972,8 +1047,10 @@
 				2FE448B52E29F6790054083E /* WHHAlertView.swift in Sources */,
 				2FE448B92E2A21940054083E /* WHHRootViewController.swift in Sources */,
 				2FDC693F2E38D54900A523B0 /* WHHSubscriptionDivinationView.swift in Sources */,
+				2FDC69B62E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift in Sources */,
 				2F004E1D2E0E35100016DA6B /* YTKChainRequest.m in Sources */,
 				2FDC696C2E3B5FFC00A523B0 /* WHHPersonageViewController.swift in Sources */,
+				2FDC69C42E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift in Sources */,
 				2F004E1E2E0E35100016DA6B /* AFURLRequestSerialization.m in Sources */,
 				2F004E1F2E0E35100016DA6B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2FDC69272E37959600A523B0 /* WHHSetView.swift in Sources */,
@@ -982,6 +1059,7 @@
 				2F004E222E0E35100016DA6B /* AFAutoPurgingImageCache.m in Sources */,
 				2FDC695F2E3B0B5600A523B0 /* WHHABBHomeViewController.swift in Sources */,
 				2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */,
+				2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */,
 				2F004E232E0E35100016DA6B /* YTKRequest.m in Sources */,
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
 				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
@@ -1001,6 +1079,8 @@
 				2FDC69A12E3E048200A523B0 /* WHHlogoutAccoutAlertView.swift in Sources */,
 				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
 				2FDC69962E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift in Sources */,
+				2FDC69BE2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift in Sources */,
+				2FDC69BA2E3F082A00A523B0 /* WHHVIPCenterModel.m in Sources */,
 				2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */,
 				2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */,
 				2FDC69792E3B72B100A523B0 /* WHHControllTableViewCell.swift in Sources */,
@@ -1008,12 +1088,14 @@
 				2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */,
 				2FE448BB2E2A25760054083E /* WHHNoNetAlertView.swift in Sources */,
 				2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */,
+				2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */,
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
 				2FDC69492E38D8CF00A523B0 /* WHHHomeWitchTableViewCell.swift in Sources */,
 				2FDC69912E3CDFF300A523B0 /* WHHAboutUsViewController.swift in Sources */,
 				2FDC692D2E3867A700A523B0 /* WHHSexItemView.swift in Sources */,
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,
+				2FDC69AA2E3EF24700A523B0 /* WHHAppleAccountExplainView.swift in Sources */,
 				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,
 				2FDC69612E3B124A00A523B0 /* WHHABBInputBarView.swift in Sources */,
 				2FDC69812E3C60B400A523B0 /* WHHAgainAlertView.swift in Sources */,

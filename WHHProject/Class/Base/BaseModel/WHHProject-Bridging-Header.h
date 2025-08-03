@@ -8,6 +8,8 @@
 #import "YTKNetwork.h"
 #import "AFNetworking.h"
 #import "WHHDatePicker.h"
+#import "WHHVIPCenterModel.h"
+
 
 
 

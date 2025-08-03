@@ -73,6 +73,7 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
+            
             break
         case 1:
             let webView = WHHWKWebViewViewController(url: "https://www.baidu.com")
@@ -84,6 +85,8 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
             break
         case 3:
             debugPrint("苹果登录")
+            let alert = WHHAppleAccountExplainView()
+            view.addSubview(alert)
             break
         case 4:
             debugPrint("注销账号")
@@ -92,6 +95,8 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
             break
         default:
             debugPrint("退出登陆")
+            let alert = WHHAppleAccountRegisterView(type: .logOut)
+            view.addSubview(alert)
         }
     }
 

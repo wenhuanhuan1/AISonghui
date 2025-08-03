@@ -41,6 +41,10 @@ class WHHBaseViewController: UIViewController {
 
     func iQKeyboardManagerIsEnabled() {
     }
+    
+    override func backItemClick(_ sender: Any) {
+        
+    }
 }
 
 extension WHHBaseViewController: EmptyDataSetSource, EmptyDataSetDelegate {

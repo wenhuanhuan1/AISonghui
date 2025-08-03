@@ -40,17 +40,21 @@ class WHHPersonageViewController: WHHBaseViewController {
     lazy var homeTableView: UITableView = {
         let homeTableView = UITableView(frame: .zero, style: .grouped)
         homeTableView.backgroundColor = .white
+        homeTableView.whhSetTableViewDefault()
         homeTableView.delegate = self
         homeTableView.dataSource = self
         homeTableView.separatorStyle = .none
         homeTableView.layer.cornerRadius = 22
         homeTableView.isScrollEnabled = false
-        homeTableView.whhSetTableViewDefault()
+        
         homeTableView.register(UINib(nibName: "WHHPersonageTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageTableViewCell")
         homeTableView.register(UINib(nibName: "WHHPersonageControllTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageControllTableViewCell")
+        homeTableView.register(UINib(nibName: "WHHBuyFinishTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHBuyFinishTableViewCell")
 
         return homeTableView
     }()
+
+    private(set) var isBuyVip: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,8 +100,14 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WHHPersonageTableViewCell", for: indexPath) as! WHHPersonageTableViewCell
-            return cell
+            if isBuyVip {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHBuyFinishTableViewCell", for: indexPath) as! WHHBuyFinishTableViewCell
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHPersonageTableViewCell", for: indexPath) as! WHHPersonageTableViewCell
+                return cell
+            }
+
         } else {
             let cell: WHHPersonageControllTableViewCell = tableView.dequeueReusableCell(withIdentifier: "WHHPersonageControllTableViewCell") as! WHHPersonageControllTableViewCell
 
@@ -115,7 +125,14 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 14
+        if section == 0 {
+            if isBuyVip {
+                return 0
+            }
+            return 0
+        } else {
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -123,12 +140,17 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return .zero
+        return 0
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return (WHHScreenW - 40) * 152 / 355
+            if isBuyVip {
+                return (WHHScreenW - 40) * 54 / 355
+            } else {
+                return (WHHScreenW - 40) * 152 / 355
+            }
+
         } else if indexPath.section == 1 {
             return CGFloat(oneSectionArray.count * 52)
         } else {
@@ -137,5 +159,10 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            jumpVIPController {
+                debugPrint("支付了")
+            }
+        }
     }
 }
