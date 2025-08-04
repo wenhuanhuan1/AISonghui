@@ -40,7 +40,7 @@ class WHHPersonageViewController: WHHBaseViewController {
     lazy var homeTableView: UITableView = {
         let homeTableView = UITableView(frame: .zero, style: .grouped)
         homeTableView.backgroundColor = .white
-        homeTableView.whhSetTableViewDefault()
+//        homeTableView.whhSetTableViewDefault()
         homeTableView.delegate = self
         homeTableView.dataSource = self
         homeTableView.separatorStyle = .none
@@ -54,7 +54,7 @@ class WHHPersonageViewController: WHHBaseViewController {
         return homeTableView
     }()
 
-    private(set) var isBuyVip: Bool = true
+    private(set) var isBuyVip: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,11 +127,11 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             if isBuyVip {
-                return 0
+                return 20
             }
-            return 0
+            return 15
         } else {
-            return 0
+            return 15
         }
     }
 
