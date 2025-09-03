@@ -108,7 +108,7 @@ class WHHHomeItemView: WHHBaseView {
         spellbookContentLabel.text = "奇门八字，可算你三生因果..."
         spellbookContentLabel.font = pingfangRegular(size: 10)
         spellbookContentLabel.textColor = Color2C2B2D
-        spellbookContentLabel.numberOfLines = 0
+        spellbookContentLabel.numberOfLines = 2
         return spellbookContentLabel
     }()
     

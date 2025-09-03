@@ -34,15 +34,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.addSubview(noNetAlertView)
         checkNetJurisdiction()
+
         return true
     }
 
     func switchRootViewController() {
-        if WHHUserInfoManager.shared.isShowpPrivacyAlert {
-            if WHHUserInfoManager.shared.isLogin {
-                window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
-            } else {
-                window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
+        if WHHUserInfoManager.shared.isLogin {
+            window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+        } else {
+            WHHHUD.whhShowLoadView()
+            WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish in
+                WHHHUD.whhHidenLoadView()
+                if finish {
+                    if WHHUserInfoManager.shared.isShowpPrivacyAlert {
+                        if WHHUserInfoManager.shared.isLogin {
+                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+                        } else {
+                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
+                        }
+                    }
+                }
             }
         }
     }

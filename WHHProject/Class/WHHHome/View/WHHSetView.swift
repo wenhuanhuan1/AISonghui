@@ -81,6 +81,12 @@ class WHHCustomButtonView: WHHBaseView {
 }
 
 class WHHSetView: WHHBaseView {
+    var logoFileId = ""
+
+    var gender = 1
+
+    var birthday = ""
+
     lazy var centrView: UIView = {
         let centrView = UIView()
         centrView.backgroundColor = .clear
@@ -380,8 +386,14 @@ class WHHSetView: WHHBaseView {
 
     @objc func changeSexButtonClick() {
         let chooseView = WHHChooseSexView()
+        if gender == 1 {
+            chooseView.maleItemView.isSelect = true
+        } else if gender == 2 {
+            chooseView.femaleItemView.isSelect = true
+        }
         chooseView.didWHHChooseSexView = { [weak self] sexType in
 
+            self?.gender = sexType
             if sexType == 1 {
                 self?.sexButton.isSelected = false
             } else if sexType == 2 {
@@ -403,6 +415,7 @@ class WHHSetView: WHHBaseView {
             self?.yearView.leftTitle.text = year
             self?.monthView.leftTitle.text = month
             self?.dayView.leftTitle.text = day
+            self?.birthday = dateString
         }
         pickerView.show()
     }
@@ -412,6 +425,16 @@ class WHHSetView: WHHBaseView {
     }
 
     @objc func saveButtonClick() {
+        let dict = ["api-v": "1.0", "userId": WHHUserInfoManager.shared.userId, "logoFileId": logoFileId, "gender": gender, "birthday": birthday, "starSign": ""] as [String: Any]
+        WHHHUD.whhShowLoadView()
+        WHHHomeRequestViewModel.whhModificationPersonInfo(dict: dict) { [weak self] success in
+            if success == 1 {
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: "修改成功")
+                    self?.removeFromSuperview()
+                }
+            }
+        }
     }
 
     private func getCurrentDate() -> String {
@@ -432,7 +455,20 @@ class WHHSetView: WHHBaseView {
     @objc func changeAvatarButtonClick() {
         WHHMediaManager.shared.whhGetOnePhoto { [weak self] image in
 
-            self?.avatarIcon.icon.image = image
+            if let imageData = image.pngData() {
+                WHHHUD.whhShowLoadView()
+                WHHHomeRequestViewModel.whhUploadSourceWithType(type: 1, data: imageData) { file in
+                    WHHHUD.whhHidenLoadView()
+                    if file.isEmpty == false {
+                        self?.logoFileId = file
+                        self?.avatarIcon.icon.whhSetKFWithImage(imageString: file)
+                    } else {
+                        dispatchAfter(delay: 0.5) {
+                            WHHHUD.whhShowInfoText(text: "上传错误")
+                        }
+                    }
+                }
+            }
         }
     }
 }

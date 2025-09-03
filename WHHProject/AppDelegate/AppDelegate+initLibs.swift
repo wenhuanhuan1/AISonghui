@@ -14,7 +14,8 @@ extension AppDelegate {
         WHHLanguageManager.shared.initNeedLanguage()
         initMMKV()
         initGkNav()
-        initWHHNetworking()
+        ///设备安装和启动
+        WHHHomeRequestViewModel.whhDeviceInstallRequest()
 
     }
 
@@ -42,10 +43,5 @@ extension AppDelegate {
         }
     }
 
-    private func initWHHNetworking() {
-        let conf = YTKNetworkConfig.shared()
-        conf.baseUrl = WHHEnvironmentConf.baseUrl
-    }
 
-   
 }

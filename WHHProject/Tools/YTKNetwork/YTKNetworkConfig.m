@@ -25,8 +25,7 @@
 #import "YTKBaseRequest.h"
 
 #if __has_include(<AFNetworking/AFSecurityPolicy.h>)
-//#import <AFNetworking/AFSecurityPolicy.h>
-#import "AFSecurityPolicy.h"
+#import <AFNetworking/AFSecurityPolicy.h>
 #else
 //#import <AFNetworking/AFSecurityPolicy.h>
 #import "AFSecurityPolicy.h"

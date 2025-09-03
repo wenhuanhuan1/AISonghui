@@ -27,11 +27,10 @@
 #import <pthread/pthread.h>
 
 #if __has_include(<AFNetworking/AFHTTPSessionManager.h>)
-//#import <AFNetworking/AFHTTPSessionManager.h>
-#import "AFHTTPSessionManager.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 #else
-//#import <AFNetworking/AFHTTPSessionManager.h>
 #import "AFHTTPSessionManager.h"
+//#import <AFNetworking/AFHTTPSessionManager.h>
 #endif
 
 #define Lock() pthread_mutex_lock(&_lock)
@@ -135,8 +134,10 @@
     if (baseUrl.length > 0 && ![baseUrl hasSuffix:@"/"]) {
         url = [url URLByAppendingPathComponent:@""];
     }
+     
+    NSString *xxx = [NSURL URLWithString:detailUrl relativeToURL:url].relativeString;
 
-    return [NSURL URLWithString:detailUrl relativeToURL:url].absoluteString;
+    return [NSString stringWithFormat:@"%@%@",url,detailUrl];
 }
 
 - (AFHTTPRequestSerializer *)requestSerializerForRequest:(YTKBaseRequest *)request {

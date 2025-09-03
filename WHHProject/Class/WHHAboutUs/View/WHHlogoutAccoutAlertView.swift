@@ -14,8 +14,10 @@ enum WHHlogoutAccoutAlertViewType {
 
 class WHHlogoutAccoutAlertView: WHHBaseView {
     
+    var didSubmitButtonBlock:((WHHlogoutAccoutAlertViewType)->Void)?
+    
     private var timer: DispatchSourceTimer?
-    private var remainingTime: Int = 4000
+    var remainingTime = 0
     
     lazy var centerView: UIView = {
         let centerView = UIView()
@@ -182,13 +184,15 @@ class WHHlogoutAccoutAlertView: WHHBaseView {
     }
 
     @objc func submitButtonClick() {
+        didSubmitButtonBlock?(type ?? .beginLogout)
+        backButtonClick()
     }
     
     /// 秒转时间
     func whhFormatSecondsAsTime(_ seconds: Int) -> String? {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.minute, .second]
+        formatter.allowedUnits = [.day,.hour,.minute, .second]
         formatter.zeroFormattingBehavior = .pad
 
         return formatter.string(from: TimeInterval(seconds))

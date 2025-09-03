@@ -43,7 +43,7 @@ class WHHBaseViewController: UIViewController {
     }
     
     override func backItemClick(_ sender: Any) {
-        
+        super.backItemClick(sender)
     }
 }
 

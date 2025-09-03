@@ -11,13 +11,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WHHDivinationViewController" customModule="WHHProject" customModuleProvider="target">
             <connections>
+                <outlet property="anaLabel" destination="WNE-Zg-6KF" id="N7D-SD-WDg"/>
                 <outlet property="backButton" destination="wMW-qO-dK4" id="uoG-k1-f6V"/>
                 <outlet property="bottomView" destination="qoY-UZ-cyl" id="TSf-yp-VS3"/>
+                <outlet property="divinationLabel" destination="a6n-dd-a9P" id="opz-7Z-ti7"/>
                 <outlet property="ednvButton" destination="LmO-YM-NKn" id="xWJ-Kp-XAF"/>
+                <outlet property="icon" destination="x2k-nl-db0" id="en3-FM-nyM"/>
+                <outlet property="image1" destination="Kkh-Sz-X2m" id="zlz-MV-UgK"/>
+                <outlet property="image2" destination="HMy-Dd-OyG" id="cWW-ZN-U4V"/>
+                <outlet property="label1" destination="RlA-rt-MCP" id="tGB-9E-AGc"/>
+                <outlet property="label2" destination="I1S-t6-fsb" id="Lc5-hB-iwz"/>
+                <outlet property="meetingWordsLabel" destination="rqd-Go-iuo" id="579-bO-9SF"/>
                 <outlet property="nvBgIocn" destination="8A1-nA-Sfb" id="Xkd-8f-FI8"/>
+                <outlet property="nwName" destination="FyE-Zk-9Rf" id="iZv-Qo-awK"/>
                 <outlet property="shenqiNvButton" destination="JK9-Js-6E2" id="c2m-vY-YwN"/>
                 <outlet property="subscriptionButton" destination="RKf-bm-d83" id="mnl-GQ-WwO"/>
+                <outlet property="subscriptionLabel" destination="rIp-tc-KZL" id="Kse-28-GEf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welfaresLabel" destination="w7Q-BO-HCn" id="tx2-9w-JyN"/>
                 <outlet property="xuanjinvButton" destination="cJ1-71-xa5" id="rXv-H3-8IP"/>
             </connections>
         </placeholder>
@@ -26,7 +37,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhDivinationTopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-f7-1Gl">
+                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhDivinationTopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-f7-1Gl">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="225"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="225" id="AHa-RI-ee3"/>

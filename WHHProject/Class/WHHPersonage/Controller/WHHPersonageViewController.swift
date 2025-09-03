@@ -53,9 +53,10 @@ class WHHPersonageViewController: WHHBaseViewController {
 
         return homeTableView
     }()
-
-    private(set) var isBuyVip: Bool = false
-
+    
+    
+    var netModel = FCMineModel()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = "资料卡"
@@ -81,11 +82,36 @@ class WHHPersonageViewController: WHHBaseViewController {
             make.height.equalTo(36)
             make.right.equalToSuperview().offset(-13)
         }
+        getUserInfo()
     }
 
     @objc func editButtonClick() {
-        let setView = WHHSetView()
-        view.addSubview(setView)
+        
+        WHHHUD.whhShowLoadView()
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest {[weak self] code, model in
+            WHHHUD.whhHidenLoadView()
+            if code == 1 {
+                
+                let setView = WHHSetView()
+                setView.logoFileId = model.logo
+                setView.birthday = model.birthday
+                setView.gender = model.gender
+                self?.view.addSubview(setView)
+            }
+        }
+        
+        
+    }
+    
+    private func getUserInfo() {
+        WHHHUD.whhShowLoadView()
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest {[weak self] code, model in
+            WHHHUD.whhHidenLoadView()
+            if code == 1 {
+                self?.netModel = model
+                self?.abbIcon.whhSetImageView(url: model.logo)
+            }
+        }
     }
 }
 
@@ -100,7 +126,7 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if isBuyVip {
+            if netModel.vip == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WHHBuyFinishTableViewCell", for: indexPath) as! WHHBuyFinishTableViewCell
                 return cell
             } else {
@@ -126,7 +152,7 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            if isBuyVip {
+            if netModel.vip == 1 {
                 return 20
             }
             return 15
@@ -145,7 +171,7 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            if isBuyVip {
+            if netModel.vip == 1 {
                 return (WHHScreenW - 40) * 54 / 355
             } else {
                 return (WHHScreenW - 40) * 152 / 355

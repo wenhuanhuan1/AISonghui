@@ -11,8 +11,17 @@ import MMKV
 import UIKit
 private let WHHUserInfoManagerSaveUserInfoKey = "WHHUserInfoManagerSaveUserInfoKey"
 
+@objcMembers
 class WHHUserInfoManager: NSObject {
     static let shared = WHHUserInfoManager()
+
+    var token: String {
+        return userModel.token
+    }
+
+    var userId: String {
+        return userModel.userId
+    }
 
     var isShowpPrivacyAlert: Bool {
         if let show = MMKV.default()?.bool(forKey: "whhSaveShowPrivacyAlertView") {
@@ -22,14 +31,16 @@ class WHHUserInfoManager: NSObject {
     }
 
     var isLogin: Bool {
-        return true
+        return !token.isEmpty
     }
 
     /// 用户登录信息
-    var userModel: WHHUserModel? {
-        let userString = MMKV.default()?.string(forKey: WHHUserInfoManagerSaveUserInfoKey)
-        let dict = userString?.mj_JSONObject
-        let model = WHHUserModel.mj_object(withKeyValues: dict)
+    var userModel: WHHUserModel {
+        var model = WHHUserModel()
+        if let userString = MMKV.default()?.string(forKey: WHHUserInfoManagerSaveUserInfoKey) {
+            let dict = userString.mj_JSONObject()
+            model = WHHUserModel.mj_object(withKeyValues: dict)
+        }
         return model
     }
 }

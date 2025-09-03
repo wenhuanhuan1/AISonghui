@@ -10,6 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WHHBaseModel : NSObject
+@property(nonatomic,copy) NSString *msg;
+@property(nonatomic,assign) NSInteger code;
+@property(nonatomic,strong) id data;
+@property(nonatomic,assign) NSInteger success;
 
 @end
 

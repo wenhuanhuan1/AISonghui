@@ -21,7 +21,7 @@ class WHHHomeViewController: WHHBaseViewController {
         return homeTableView
     }()
 
-    private(set) var isSubscribed = true
+    private(set) var isSubscribed = false
 
     lazy var gradualView: WHHGradualView = {
         let gradualView = WHHGradualView()
@@ -38,6 +38,11 @@ class WHHHomeViewController: WHHBaseViewController {
         rightButton.setImage(UIImage(named: "whhHomeNavRightIcon"), for: .normal)
         rightButton.addTarget(self, action: #selector(rightButtonClick), for: .touchUpInside)
         return rightButton
+    }()
+
+    lazy var dataArray: [WHHHomeWitchModel] = {
+        let dataArray = [WHHHomeWitchModel]()
+        return dataArray
     }()
 
     lazy var todayTitle: UILabel = {
@@ -97,11 +102,31 @@ class WHHHomeViewController: WHHBaseViewController {
             make.left.equalTo(todayTitle.snp.right).offset(5)
             make.centerY.equalTo(todayTitle)
         }
+        whhHomeGetWitchList()
+        get()
+    }
+    
+    func get() {
+        
+        WHHHomeRequestViewModel.whhHomeGetPredictionRequest {
+            
+            
+        }
+    }
+
+    private func whhHomeGetWitchList() {
+        WHHHUD.whhShowLoadView()
+        WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
+            WHHHUD.whhHidenLoadView()
+            if witchDataArray.isEmpty == false {
+                self?.dataArray = witchDataArray
+                self?.homeTableView.reloadData()
+            }
+        }
     }
 
     @objc func rightButtonClick() {
         debugPrint("点击了右边的按钮")
-      
 
         let personVC = WHHPersonageViewController()
 
@@ -128,7 +153,7 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeWitchTableViewCell", for: indexPath) as! WHHHomeWitchTableViewCell
-
+            cell.dataArray = dataArray
             return cell
         }
     }

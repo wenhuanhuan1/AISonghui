@@ -21,6 +21,8 @@ class WHHDivinationAlertView: WHHBaseView {
         centerView.layer.masksToBounds = true
         return centerView
     }()
+    
+    var didCancleSubscriptionBlock:(()->Void)?
 
     lazy var privilegeButton: UIButton = {
         let privilegeButton = UIButton(type: .custom)
@@ -84,7 +86,7 @@ class WHHDivinationAlertView: WHHBaseView {
                 titleLabel.text = "whhDivinationTitleKey".localized
                 submitButton.setTitle("whhDivinationTitleKey".localized, for: .normal)
                 centerView.snp.updateConstraints { make in
-                    make.height.equalTo(201)
+                    make.height.equalTo(220)
                 }
             } else if tempType == .cancleSubscription {
                 titleLabel.text = "whhCancleDivinationTitleKey".localized
@@ -149,8 +151,11 @@ class WHHDivinationAlertView: WHHBaseView {
     }
 
     @objc func submitButtonClick() {
+        didCancleSubscriptionBlock?()
+        backButtonClick()
     }
 
     @objc func privilegeButtonClick() {
+        
     }
 }
