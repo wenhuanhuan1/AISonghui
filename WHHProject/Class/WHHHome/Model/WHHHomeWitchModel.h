@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 注销剩余时间
 @property(nonatomic,assign) NSInteger leftDestroyTimeSeconds;
 
+@property(nonatomic,assign) NSInteger exists;
+
 @end
 
 NS_ASSUME_NONNULL_END

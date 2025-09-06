@@ -74,7 +74,7 @@ static inline NSString *MD5Lower32(NSString *input) {
         if (model == nil) {
             model = [[WHHBaseModel alloc] init];
             model.msg = @"请检查网络";
-            model.code = -10000;
+            model.success = -10000;
         }
 
         if (handle) {

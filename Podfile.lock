@@ -26,7 +26,6 @@ PODS:
   - BRPickerView/TextPicker (2.9.7):
     - BRPickerView/Core
   - EmptyDataSet-Swift (5.0.0)
-  - FSPagerView (0.8.3)
   - GKNavigationBarSwift (1.6.8)
   - HXPhotoPicker-Lite (4.2.5):
     - HXPhotoPicker-Lite/Full (= 4.2.5)
@@ -106,14 +105,11 @@ PODS:
     - IQKeyboardCore
   - IQTextView (1.0.5):
     - IQKeyboardToolbar/Placeholderable
-  - JXPagingView/Paging (2.1.3)
   - JXPhotoBrowser (3.1.5)
-  - JXSegmentedView (1.4.1)
   - Kingfisher (8.3.2)
   - LookinServer (1.2.8):
     - LookinServer/Core (= 1.2.8)
   - LookinServer/Core (1.2.8)
-  - lottie-ios (4.5.2)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.4.2)
   - MJRefresh (3.7.9)
@@ -121,42 +117,31 @@ PODS:
     - MMKVCore (~> 2.2.2)
   - MMKVCore (2.2.2)
   - SnapKit (5.7.1)
-  - SwiftKeychainWrapper (4.0.1)
-  - SwiftMessages (10.0.1):
-    - SwiftMessages/App (= 10.0.1)
-  - SwiftMessages/App (10.0.1)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
   - BRPickerView
   - EmptyDataSet-Swift
-  - FSPagerView
   - GKNavigationBarSwift
   - HXPhotoPicker-Lite
   - HXPhotoPicker-Lite/Camera
   - HXPhotoPicker-Lite/Editor
   - HXPhotoPicker-Lite/Picker
   - IQKeyboardManagerSwift
-  - JXPagingView/Paging
   - JXPhotoBrowser
-  - JXSegmentedView
   - Kingfisher
   - LookinServer
-  - lottie-ios
   - MBProgressHUD
   - MJExtension
   - MJRefresh
   - MMKV
   - SnapKit
-  - SwiftKeychainWrapper
-  - SwiftMessages
   - SwiftyStoreKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - BRPickerView
     - EmptyDataSet-Swift
-    - FSPagerView
     - GKNavigationBarSwift
     - HXPhotoPicker-Lite
     - IQKeyboardCore
@@ -167,26 +152,20 @@ SPEC REPOS:
     - IQKeyboardToolbarManager
     - IQTextInputViewNotification
     - IQTextView
-    - JXPagingView
     - JXPhotoBrowser
-    - JXSegmentedView
     - Kingfisher
     - LookinServer
-    - lottie-ios
     - MBProgressHUD
     - MJExtension
     - MJRefresh
     - MMKV
     - MMKVCore
     - SnapKit
-    - SwiftKeychainWrapper
-    - SwiftMessages
     - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   BRPickerView: 6548c8fbe21c0f29e72ab2fae177d196edc83f09
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
-  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GKNavigationBarSwift: dd492c09547dcaeca53be23f94af992dbca97c48
   HXPhotoPicker-Lite: 6d4f5d8e8f606dad317c3f46f1feec246e7c8cc3
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
@@ -197,22 +176,17 @@ SPEC CHECKSUMS:
   IQKeyboardToolbarManager: 6c693c8478d6327a7ef2107528d29698b3514dbb
   IQTextInputViewNotification: f5e954d8881fd9808b744e49e024cc0d4bcfe572
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
-  JXPagingView: afdd2e9af09c90160dd232b970d603cc6e7ddd0e
   JXPhotoBrowser: a6d745f5711bde79b02ba29165e2456ab5bde476
-  JXSegmentedView: cd73555ce2134d1656db2cb383ba9c2f36fb5078
   Kingfisher: 0621d0ac0c78fecb19f6dc5303bde2b52abaf2f5
   LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
-  lottie-ios: 96784afc26ea031d3e2b6cae342a4b8915072489
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MMKV: b4802ebd5a7c68fc0c4a5ccb4926fbdfb62d68e0
   MMKVCore: a255341a3746955f50da2ad9121b18cb2b346e61
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
-  SwiftMessages: 759b4a0bf5c3a116a0d7e8a34b098ba83c458625
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: e01fd00211e0e50a23f89f7a545e09c3f3865344
+PODFILE CHECKSUM: 7091046756afbe21e3d202ea44cb1e8d9660a466
 
 COCOAPODS: 1.16.2

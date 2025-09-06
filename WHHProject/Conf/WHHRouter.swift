@@ -16,13 +16,20 @@ func routerSwitchRootViewController() {
 }
 
 func jumpVIPController(callBlack: (() -> Void)?) {
-    if let currentVC = UIViewController.currentViewController() {
-        let vipViewController = WHHVIPCenterViewController()
-        vipViewController.didPuyFinish = {
-            callBlack?()
+    
+    WHHHUD.whhShowLoadView()
+    FCVIPRequestApiViewModel.whhRequestProductList { dataArray in
+        WHHHUD.whhHidenLoadView()
+        if let currentVC = UIViewController.currentViewController() {
+            let vipViewController = WHHVIPCenterViewController()
+            vipViewController.dataArray = dataArray
+            vipViewController.didPuyFinish = {
+                callBlack?()
+            }
+            let nav = WHHNavigationController(rootVC: vipViewController)
+            nav.modalPresentationStyle = .overFullScreen
+            currentVC.present(nav, animated: true)
         }
-        let nav = WHHNavigationController(rootVC: vipViewController)
-        nav.modalPresentationStyle = .overFullScreen
-        currentVC.present(nav, animated: true)
     }
+    
 }

@@ -43,14 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
         } else {
             WHHHUD.whhShowLoadView()
-            WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish in
-                WHHHUD.whhHidenLoadView()
-                if finish {
-                    if WHHUserInfoManager.shared.isShowpPrivacyAlert {
-                        if WHHUserInfoManager.shared.isLogin {
-                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
-                        } else {
-                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
+
+            WHHHomeRequestViewModel.whhGetSystemInfoRequestApi { _ in
+                
+                WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish in
+                    WHHHUD.whhHidenLoadView()
+                    if finish {
+                        if WHHUserInfoManager.shared.isShowpPrivacyAlert {
+                            if WHHUserInfoManager.shared.isLogin {
+                                self?.window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+                            } else {
+                                self?.window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
+                            }
                         }
                     }
                 }

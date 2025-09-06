@@ -42,6 +42,15 @@
 		2F043BD12E6598EA00E8C04E /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043BD02E6598EA00E8C04E /* UIColor+Hex.swift */; };
 		2F043C2B2E684AD400E8C04E /* FCMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C2A2E684AD400E8C04E /* FCMineModel.m */; };
 		2F043C2E2E68657700E8C04E /* FCUploadSourceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C2D2E68657700E8C04E /* FCUploadSourceApi.m */; };
+		2F043C422E6B070000E8C04E /* WHHVIPRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C412E6B070000E8C04E /* WHHVIPRequestApi.swift */; };
+		2F043C442E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C432E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift */; };
+		2F043C492E6B0D2700E8C04E /* WHHSystemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C482E6B0D2700E8C04E /* WHHSystemModel.m */; };
+		2F043C4B2E6BD8A800E8C04E /* WHHNetConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C4A2E6BD8A800E8C04E /* WHHNetConf.swift */; };
+		2F043C4E2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C4D2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift */; };
+		2F043C502E6BE94300E8C04E /* WHHMineRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C4F2E6BE94300E8C04E /* WHHMineRequestApi.swift */; };
+		2F043C522E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C512E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift */; };
+		2F043C552E6C138A00E8C04E /* WHHMineUploadApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C542E6C138A00E8C04E /* WHHMineUploadApi.m */; };
+		2F043C582E6C1CE500E8C04E /* WHHHomeForetellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C572E6C1CE500E8C04E /* WHHHomeForetellModel.m */; };
 		2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */; };
 		2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BF792DF7C96200CA36E8 /* Assets.xcassets */; };
 		2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BF7C2DF7C96200CA36E8 /* LaunchScreen.storyboard */; };
@@ -209,6 +218,18 @@
 		2F043C2A2E684AD400E8C04E /* FCMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMineModel.m; sourceTree = "<group>"; };
 		2F043C2C2E68657700E8C04E /* FCUploadSourceApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCUploadSourceApi.h; sourceTree = "<group>"; };
 		2F043C2D2E68657700E8C04E /* FCUploadSourceApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCUploadSourceApi.m; sourceTree = "<group>"; };
+		2F043C412E6B070000E8C04E /* WHHVIPRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPRequestApi.swift; sourceTree = "<group>"; };
+		2F043C432E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCVIPRequestApiViewModel.swift; sourceTree = "<group>"; };
+		2F043C472E6B0D2700E8C04E /* WHHSystemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHSystemModel.h; sourceTree = "<group>"; };
+		2F043C482E6B0D2700E8C04E /* WHHSystemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHSystemModel.m; sourceTree = "<group>"; };
+		2F043C4A2E6BD8A800E8C04E /* WHHNetConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHNetConf.swift; sourceTree = "<group>"; };
+		2F043C4D2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHApplePurchaseManager.swift; sourceTree = "<group>"; };
+		2F043C4F2E6BE94300E8C04E /* WHHMineRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineRequestApi.swift; sourceTree = "<group>"; };
+		2F043C512E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineRequestApiViewModel.swift; sourceTree = "<group>"; };
+		2F043C532E6C138A00E8C04E /* WHHMineUploadApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHMineUploadApi.h; sourceTree = "<group>"; };
+		2F043C542E6C138A00E8C04E /* WHHMineUploadApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHMineUploadApi.m; sourceTree = "<group>"; };
+		2F043C562E6C1CE500E8C04E /* WHHHomeForetellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHHomeForetellModel.h; sourceTree = "<group>"; };
+		2F043C572E6C1CE500E8C04E /* WHHHomeForetellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHHomeForetellModel.m; sourceTree = "<group>"; };
 		2F17BF602DF7C81900CA36E8 /* WHHProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHHProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F17BF792DF7C96200CA36E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -441,6 +462,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2F043C4C2E6BDA8700E8C04E /* WHHApplePurchase */ = {
+			isa = PBXGroup;
+			children = (
+				2F043C4D2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift */,
+			);
+			path = WHHApplePurchase;
+			sourceTree = "<group>";
+		};
 		2F17BF572DF7C81900CA36E8 = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +532,7 @@
 		2F17BF872DF7CAA300CA36E8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2F043C4C2E6BDA8700E8C04E /* WHHApplePurchase */,
 				2F043BC72E65586400E8C04E /* WHHLog */,
 				2F043BB22E653F6600E8C04E /* YTKNetwork */,
 				2FDC69972E3CE50400A523B0 /* WHHDeviceManager */,
@@ -577,6 +607,7 @@
 				2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */,
 				2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */,
 				2FDC69A42E3E182F00A523B0 /* WHHRouter.swift */,
+				2F043C4A2E6BD8A800E8C04E /* WHHNetConf.swift */,
 			);
 			path = Conf;
 			sourceTree = "<group>";
@@ -639,6 +670,10 @@
 		2FDC68D42E2E275A00A523B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2F043C4F2E6BE94300E8C04E /* WHHMineRequestApi.swift */,
+				2F043C512E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift */,
+				2F043C532E6C138A00E8C04E /* WHHMineUploadApi.h */,
+				2F043C542E6C138A00E8C04E /* WHHMineUploadApi.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -805,6 +840,8 @@
 			children = (
 				2FDC69B82E3F082A00A523B0 /* WHHVIPCenterModel.h */,
 				2FDC69B92E3F082A00A523B0 /* WHHVIPCenterModel.m */,
+				2F043C412E6B070000E8C04E /* WHHVIPRequestApi.swift */,
+				2F043C432E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -857,6 +894,8 @@
 			children = (
 				2F043BCB2E65945700E8C04E /* WHHHomeWitchModel.h */,
 				2F043BCC2E65945700E8C04E /* WHHHomeWitchModel.m */,
+				2F043C472E6B0D2700E8C04E /* WHHSystemModel.h */,
+				2F043C482E6B0D2700E8C04E /* WHHSystemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -866,6 +905,8 @@
 			children = (
 				2F043BC32E6547A500E8C04E /* WHHHomeRequestApi.swift */,
 				2F043BC52E65499800E8C04E /* WHHHomeRequestViewModel.swift */,
+				2F043C562E6C1CE500E8C04E /* WHHHomeForetellModel.h */,
+				2F043C572E6C1CE500E8C04E /* WHHHomeForetellModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1085,6 +1126,7 @@
 				2F043BB32E653F6600E8C04E /* YTKRequest.m in Sources */,
 				2F043BB42E653F6600E8C04E /* YTKNetworkPrivate.m in Sources */,
 				2F043BB52E653F6600E8C04E /* YTKNetworkAgent.m in Sources */,
+				2F043C422E6B070000E8C04E /* WHHVIPRequestApi.swift in Sources */,
 				2F043BB62E653F6600E8C04E /* YTKRequestEventAccessory.m in Sources */,
 				2F043BB72E653F6600E8C04E /* YTKBatchRequestAgent.m in Sources */,
 				2F043BB82E653F6600E8C04E /* YTKBatchRequest.m in Sources */,
@@ -1094,6 +1136,7 @@
 				2F043BBB2E653F6600E8C04E /* YTKBaseRequest.m in Sources */,
 				2F043BBC2E653F6600E8C04E /* YTKChainRequest.m in Sources */,
 				2FDC69C42E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift in Sources */,
+				2F043C502E6BE94300E8C04E /* WHHMineRequestApi.swift in Sources */,
 				2F004E1E2E0E35100016DA6B /* AFURLRequestSerialization.m in Sources */,
 				2F004E1F2E0E35100016DA6B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2FDC69272E37959600A523B0 /* WHHSetView.swift in Sources */,
@@ -1107,6 +1150,7 @@
 				2F004E242E0E35100016DA6B /* AFHTTPSessionManager.m in Sources */,
 				2FE448B12E29F54D0054083E /* WHHLabel.swift in Sources */,
 				2F004E252E0E35100016DA6B /* AFNetworkReachabilityManager.m in Sources */,
+				2F043C4B2E6BD8A800E8C04E /* WHHNetConf.swift in Sources */,
 				2F043BC42E6547A500E8C04E /* WHHHomeRequestApi.swift in Sources */,
 				2FDC69452E38D84400A523B0 /* WHHHomeNoSubscriptionCell.swift in Sources */,
 				2F004E262E0E35100016DA6B /* WKWebView+AFNetworking.m in Sources */,
@@ -1125,16 +1169,22 @@
 				2FDC69BA2E3F082A00A523B0 /* WHHVIPCenterModel.m in Sources */,
 				2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */,
 				2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */,
+				2F043C4E2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift in Sources */,
 				2FDC69792E3B72B100A523B0 /* WHHControllTableViewCell.swift in Sources */,
+				2F043C442E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift in Sources */,
 				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
 				2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */,
 				2FE448BB2E2A25760054083E /* WHHNoNetAlertView.swift in Sources */,
 				2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */,
 				2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */,
+				2F043C522E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift in Sources */,
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
 				2FDC69492E38D8CF00A523B0 /* WHHHomeWitchTableViewCell.swift in Sources */,
+				2F043C552E6C138A00E8C04E /* WHHMineUploadApi.m in Sources */,
+				2F043C492E6B0D2700E8C04E /* WHHSystemModel.m in Sources */,
 				2FDC69912E3CDFF300A523B0 /* WHHAboutUsViewController.swift in Sources */,
+				2F043C582E6C1CE500E8C04E /* WHHHomeForetellModel.m in Sources */,
 				2FDC692D2E3867A700A523B0 /* WHHSexItemView.swift in Sources */,
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,
 				2FDC69AA2E3EF24700A523B0 /* WHHAppleAccountExplainView.swift in Sources */,

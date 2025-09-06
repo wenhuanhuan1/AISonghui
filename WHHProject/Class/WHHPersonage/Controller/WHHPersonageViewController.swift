@@ -9,9 +9,10 @@ import UIKit
 
 class WHHPersonageViewController: WHHBaseViewController {
     lazy var abbIcon: WHHBaseImageView = {
-        let abbIcon = WHHBaseImageView()
-        abbIcon.image = UIImage(named: "whhSetDefaultIcon")
-        return abbIcon
+        let view = WHHBaseImageView()
+        view.layer.cornerRadius = 55 / 2
+        view.layer.masksToBounds = true
+        return view
     }()
 
     lazy var oneSectionArray: [[String: Any]] = {
@@ -46,17 +47,16 @@ class WHHPersonageViewController: WHHBaseViewController {
         homeTableView.separatorStyle = .none
         homeTableView.layer.cornerRadius = 22
         homeTableView.isScrollEnabled = false
-        
+
         homeTableView.register(UINib(nibName: "WHHPersonageTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageTableViewCell")
         homeTableView.register(UINib(nibName: "WHHPersonageControllTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageControllTableViewCell")
         homeTableView.register(UINib(nibName: "WHHBuyFinishTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHBuyFinishTableViewCell")
 
         return homeTableView
     }()
-    
-    
+
     var netModel = FCMineModel()
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = "资料卡"
@@ -86,12 +86,10 @@ class WHHPersonageViewController: WHHBaseViewController {
     }
 
     @objc func editButtonClick() {
-        
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest {[weak self] code, model in
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, model in
             WHHHUD.whhHidenLoadView()
             if code == 1 {
-                
                 let setView = WHHSetView()
                 setView.logoFileId = model.logo
                 setView.birthday = model.birthday
@@ -99,17 +97,20 @@ class WHHPersonageViewController: WHHBaseViewController {
                 self?.view.addSubview(setView)
             }
         }
-        
-        
     }
-    
+
     private func getUserInfo() {
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest {[weak self] code, model in
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, model in
             WHHHUD.whhHidenLoadView()
             if code == 1 {
                 self?.netModel = model
-                self?.abbIcon.whhSetImageView(url: model.logo)
+                if model.logo.isEmpty {
+                    self?.abbIcon.image = UIImage(named: "whhSetDefaultIcon")
+
+                } else {
+                    self?.abbIcon.whhSetImageView(url: model.logo)
+                }
             }
         }
     }

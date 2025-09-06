@@ -10,21 +10,17 @@ import UIKit
 class WHHHomeRequestViewModel: NSObject {
     /// 设备安装或者第一次启动
     static func whhDeviceInstallRequest() {
-        let api = WHHHomeRequestApi(parameter: ["api-v": "1.0", "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .deviceInstall)
+        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .deviceInstall)
 
         api.whhStartConsequenceHandle { baseModel in
 
-            if baseModel.code == 200 {
-            } else {
-                debugPrint("\(baseModel.msg)")
-            }
         }
     }
 
     /// 登录
     /// - Parameter callHandle: 回调
     static func whhLoginRequest(callHandle: ((Bool) -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["api-v": "1.0", "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .loginMode1)
+        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .loginMode1)
 
         api.whhStartConsequenceHandle { baseModel in
 
@@ -57,7 +53,7 @@ class WHHHomeRequestViewModel: NSObject {
     }
 
     static func whhMineWriteOffAccoutRequest(callback: ((Int, WHHHomeWitchModel) -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": "1.0", "reason": ""], type: .userDestroyApply)
+        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv, "reason": ""], type: .userDestroyApply)
 
         api.whhStartConsequenceHandle { baseModel in
 
@@ -69,19 +65,11 @@ class WHHHomeRequestViewModel: NSObject {
         }
     }
 
-    static func whhHomeGetPredictionRequest(callBlack: (() -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .appUserwitchGetFortune)
-
-        api.whhStartConsequenceHandle { _ in
-
-//            callback?(requestModel.success)
-        }
-    }
 
     /// 获取注销消息-1.0
     /// - Parameter callHandle: 回调
     static func whhMineGetUserDestroyInfo(callHandle: ((Int, WHHHomeWitchModel) -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": "1.0"], type: .getUserDestroyInfo)
+        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv], type: .getUserDestroyInfo)
         api.whhStartConsequenceHandle { baseModel in
 
             if baseModel.success == 1, let model = WHHHomeWitchModel.mj_object(withKeyValues: baseModel.data) {
@@ -93,7 +81,7 @@ class WHHHomeRequestViewModel: NSObject {
     }
 
     static func whhMineCancleUserDestroyInfo(callHandle: ((Int) -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": "1.0"], type: .userCancelDestroyApply)
+        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv], type: .userCancelDestroyApply)
         api.whhStartConsequenceHandle { baseModel in
 
             callHandle?(baseModel.success)
@@ -109,7 +97,7 @@ class WHHHomeRequestViewModel: NSObject {
 
     /// 获取个人信息数据
     static func whhPersonGetMineUserInfoRequest(callBlack: ((Int, FCMineModel) -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": "1.0"], type: .myDetail)
+        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv], type: .myDetail)
         api.whhStartConsequenceHandle { baseModel in
             if baseModel.success == 1, let model = FCMineModel.mj_object(withKeyValues: baseModel.data) {
                 callBlack?(baseModel.success, model)
@@ -126,7 +114,7 @@ class WHHHomeRequestViewModel: NSObject {
     static func whhModificationPersonInfo(dict: [String: Any], callBlack: ((Int) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: dict, type: .userUpdateInfo)
         api.whhStartConsequenceHandle { baseModel in
-            callBlack?(baseModel.code)
+            callBlack?(baseModel.success)
         }
     }
 
@@ -140,5 +128,47 @@ class WHHHomeRequestViewModel: NSObject {
                 callBlack?("")
             }
         }
+    }
+    
+/// 获取新预言
+    static func whhHomeGetWHHHomeappUserWitchGetFortuneRequest(callBlack:((Int,WHHHomeForetellModel,String)->Void)?) {
+        
+        let requestApi =  WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .appUserWitchGetFortune)
+        requestApi.whhStartConsequenceHandle { baseModel in
+          
+            if baseModel.success == 1,let model = WHHHomeForetellModel.mj_object(withKeyValues: baseModel.data) {
+                callBlack?(baseModel.success,model,baseModel.msg)
+            }else{
+                callBlack?(baseModel.success,WHHHomeForetellModel(),baseModel.msg)
+            }
+        }
+        
+    }
+    
+    /// 获取旧预言
+    static func whhHomeGetWHHHomeappUserWitchGetOldFortuneRequest() {
+        
+        let requestApi =  WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .appUserWitchGetOldFortune)
+        requestApi.whhStartConsequenceHandle { baseModel in
+          
+            if baseModel.success == 1 {
+                
+                
+            }
+        }
+        
+    }
+    
+    static func whhGetSystemInfoRequestApi(callBlack:((Int)->Void)?) {
+        let api = WHHHomeRequestApi(parameter: ["api-v":WHHNetConf.apiv,"userId":WHHUserInfoManager.shared.userId], type: .sysInfo)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1,let model = WHHSystemModel.mj_object(withKeyValues: baseModel.data),let jsonString = model.mj_JSONString() {
+                WHHUserInfoManager.whhSaveSystemConf(conf: jsonString)
+                
+            }
+            callBlack?(baseModel.success)
+        }
+        
     }
 }

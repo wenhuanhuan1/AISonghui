@@ -23,7 +23,7 @@ class WHHVIPCenterCollectionViewCell: UICollectionViewCell {
         didSet {
             guard let newCellModel = cellModel else { return }
 
-            vipTitle.text = newCellModel.title
+            vipTitle.text = newCellModel.name
 
             let attr = NSMutableAttributedString(string: "￥", attributes: [.font: pingfangMedium(size: 14)!, .foregroundColor: UIColor.white])
             let att1 = NSAttributedString(string: newCellModel.price, attributes: [.font: pingfangMedium(size: 22)!, .foregroundColor: UIColor.white])

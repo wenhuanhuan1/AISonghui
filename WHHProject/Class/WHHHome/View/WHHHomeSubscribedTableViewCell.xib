@@ -53,7 +53,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“不算最糟，但也别指望天上掉馅饼—如果真掉了，大概率是过期馅的。”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-wp-whr">
-                                <rect key="frame" x="119" y="16" width="612" height="17"/>
+                                <rect key="frame" x="119" y="16" width="602" height="17"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
                                 <color key="textColor" red="0.17254901960784313" green="0.16862745098039217" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -280,7 +280,7 @@
                             <constraint firstItem="59v-Hd-Vwd" firstAttribute="centerY" secondItem="dkb-Rr-dZA" secondAttribute="centerY" id="rmA-14-ryb"/>
                             <constraint firstItem="wKu-3p-zjO" firstAttribute="leading" secondItem="f8n-gk-nnz" secondAttribute="trailing" id="sB9-Gk-ORC"/>
                             <constraint firstItem="dkb-Rr-dZA" firstAttribute="top" secondItem="M7k-xq-Qke" secondAttribute="bottom" constant="19" id="sYx-3K-3zc"/>
-                            <constraint firstAttribute="trailing" secondItem="SE5-wp-whr" secondAttribute="trailing" constant="10" id="sii-TZ-SrX"/>
+                            <constraint firstAttribute="trailing" secondItem="SE5-wp-whr" secondAttribute="trailing" constant="20" id="sii-TZ-SrX"/>
                             <constraint firstItem="5Ce-rz-N3w" firstAttribute="centerX" secondItem="wjP-84-OOM" secondAttribute="centerX" id="stw-pc-JLP"/>
                             <constraint firstItem="M7k-xq-Qke" firstAttribute="leading" secondItem="Waa-m5-oGq" secondAttribute="trailing" constant="13" id="tlB-9v-kLD"/>
                             <constraint firstItem="8jy-pE-L6I" firstAttribute="top" secondItem="Waa-m5-oGq" secondAttribute="bottom" constant="8" symbolic="YES" id="vXq-DE-eqH"/>
@@ -296,9 +296,21 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bigTitle" destination="SE5-wp-whr" id="iWx-hI-MbV"/>
                 <outlet property="detailButton" destination="o2m-RR-Ir8" id="a5g-Ts-yA3"/>
+                <outlet property="fortuneScoreLabel" destination="3nI-Gg-wsL" id="1vG-Kv-PHU"/>
+                <outlet property="goodsDesLabel" destination="S4Y-Ri-iFq" id="4OR-K2-BhA"/>
+                <outlet property="goodsLabel" destination="OAi-tC-cs5" id="osi-ZH-JzC"/>
                 <outlet property="gradeBgView" destination="cRs-SE-eOF" id="TzN-s7-YHP"/>
                 <outlet property="heightCon" destination="mXa-e2-KMa" id="Kic-aA-bWW"/>
+                <outlet property="label1" destination="dx0-sl-cWM" id="66g-tz-u9v"/>
+                <outlet property="label2" destination="CBx-jG-0sY" id="DeE-aX-kmC"/>
+                <outlet property="label3" destination="59v-Hd-Vwd" id="H48-iQ-Mj0"/>
+                <outlet property="label4" destination="qPn-kr-7U4" id="GRo-Y3-7TP"/>
+                <outlet property="luckColor" destination="R32-99-W15" id="r6o-fL-spM"/>
+                <outlet property="luckColorDes" destination="TxC-DN-IbR" id="Dnp-SV-ZTy"/>
+                <outlet property="luckNumberDesLabel" destination="4Ev-RK-OYc" id="oJT-9d-iAM"/>
+                <outlet property="luckNumberLabel" destination="GsT-pH-qIV" id="N8l-tI-Jys"/>
                 <outlet property="topConf" destination="5kD-rT-VtS" id="nCr-2C-NJz"/>
             </connections>
             <point key="canvasLocation" x="648.09160305343505" y="471.47887323943667"/>

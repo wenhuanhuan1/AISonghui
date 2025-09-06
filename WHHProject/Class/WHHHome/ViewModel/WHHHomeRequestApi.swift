@@ -29,6 +29,17 @@ enum WHHHomeRequestApiType: Int {
     /// 提交信息
     
     case userUpdateInfo
+    
+    /// 获取预言
+    
+    case appUserWitchGetFortune
+    
+    /// 获取旧预言
+    case appUserWitchGetOldFortune
+    /// 获取系统配置信息
+    
+    /// 获取系统信息
+    case sysInfo
 }
 
 class WHHHomeRequestApi: WHHRequest {
@@ -65,6 +76,12 @@ class WHHHomeRequestApi: WHHRequest {
             return "/my/detail"
         case .userUpdateInfo:
             return "/user/update-info"
+        case .appUserWitchGetFortune:
+            return "/app-user/witch/get-fortune"
+        case .appUserWitchGetOldFortune:
+            return "/app-user/witch/get-old-fortune"
+        case .sysInfo:
+            return "/sys/info"
         }
     }
 
@@ -74,7 +91,7 @@ class WHHHomeRequestApi: WHHRequest {
 
     override func requestMethod() -> YTKRequestMethod {
         switch aType {
-        case .witchList, .appUserwitchGetFortune,.myDetail:
+        case .witchList, .appUserwitchGetFortune,.myDetail,.appUserWitchGetFortune,.appUserWitchGetOldFortune,.sysInfo:
             return .GET
         default:
             return .POST

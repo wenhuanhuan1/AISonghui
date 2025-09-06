@@ -15,6 +15,15 @@ private let WHHUserInfoManagerSaveUserInfoKey = "WHHUserInfoManagerSaveUserInfoK
 class WHHUserInfoManager: NSObject {
     static let shared = WHHUserInfoManager()
 
+    var confModel: WHHSystemModel {
+        var model = WHHSystemModel()
+        if let userString = MMKV.default()?.string(forKey: "whhSaveSystemConf") {
+            let dict = userString.mj_JSONObject()
+            model = WHHSystemModel.mj_object(withKeyValues: dict)
+        }
+        return model
+    }
+
     var token: String {
         return userModel.token
     }
@@ -42,6 +51,13 @@ class WHHUserInfoManager: NSObject {
             model = WHHUserModel.mj_object(withKeyValues: dict)
         }
         return model
+    }
+
+    /// 保存配置信息
+    /// - Parameter conf: json
+    static func whhSaveSystemConf(conf: String) {
+        MMKV.default()?.set(conf, forKey: "whhSaveSystemConf")
+        MMKV.default()?.sync()
     }
 }
 

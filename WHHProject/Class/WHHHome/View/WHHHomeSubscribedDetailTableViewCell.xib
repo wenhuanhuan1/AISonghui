@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxz-f5-2Jz">
                         <rect key="frame" x="20" y="0.0" width="280" height="306"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P2G-BJ-ZZ9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P2G-BJ-ZZ9">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="H3e-Gs-nhb"/>
@@ -100,6 +100,8 @@
                 <outlet property="contentLabel1" destination="fpk-iC-Tf3" id="cgJ-bf-Zxd"/>
                 <outlet property="contentLabel2" destination="gj6-qq-t3o" id="fZA-9X-b5e"/>
                 <outlet property="icon" destination="qxz-f5-2Jz" id="Tby-QB-myB"/>
+                <outlet property="smallIcon" destination="FZd-lM-Oo9" id="sa7-Bh-I6i"/>
+                <outlet property="topIcon" destination="P2G-BJ-ZZ9" id="rCy-KZ-p6H"/>
             </connections>
             <point key="canvasLocation" x="68.702290076335871" y="111.9718309859155"/>
         </tableViewCell>

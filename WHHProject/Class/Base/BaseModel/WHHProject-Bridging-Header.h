@@ -13,3 +13,6 @@
 #import "WHHHomeWitchModel.h"
 #import "FCMineModel.h"
 #import "FCUploadSourceApi.h"
+#import "WHHSystemModel.h"
+#import "WHHMineUploadApi.h"
+#import "WHHHomeForetellModel.h"

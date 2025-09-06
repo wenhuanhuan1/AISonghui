@@ -46,11 +46,11 @@ class WHHAgreementView: WHHBaseView {
         attributedString1.addAttribute(.link, value: "conceal://", range: range1)
         att.append(attributedString1)
         
-        let heAtt1 = NSAttributedString(
-            string: " ，点击「同意」即表示已阅读并完全同意全部条款。 ",
-            attributes: [.font: pingfangRegular(size: 12)!,.foregroundColor:Color6A6A6B]
-        )
-        att.append(heAtt1)
+//        let heAtt1 = NSAttributedString(
+//            string: " ，点击「同意」即表示已阅读并完全同意全部条款。 ",
+//            attributes: [.font: pingfangRegular(size: 12)!,.foregroundColor:Color6A6A6B]
+//        )
+//        att.append(heAtt1)
         textView.attributedText = att
         return textView
     }()
@@ -81,17 +81,17 @@ class WHHAgreementView: WHHBaseView {
         return contentTitle
     }()
     
-    lazy var backButton: UIButton = {
-        let backButton = UIButton(type: .custom)
-        backButton.setTitle("whhDivinationBackTitleKey".localized, for: .normal)
-        backButton.titleLabel?.font = pingfangRegular(size: 14)
-        backButton.setTitleColor(Color2C2B2D, for: .normal)
-        backButton.backgroundColor = ColorEDEBEF
-        backButton.layer.cornerRadius = 22
-        backButton.layer.masksToBounds = true
-        backButton.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
-        return backButton
-    }()
+//    lazy var backButton: UIButton = {
+//        let backButton = UIButton(type: .custom)
+//        backButton.setTitle("whhDivinationBackTitleKey".localized, for: .normal)
+//        backButton.titleLabel?.font = pingfangRegular(size: 14)
+//        backButton.setTitleColor(Color2C2B2D, for: .normal)
+//        backButton.backgroundColor = ColorEDEBEF
+//        backButton.layer.cornerRadius = 22
+//        backButton.layer.masksToBounds = true
+//        backButton.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
+//        return backButton
+//    }()
     
     lazy var submitButton: WHHGradientButton = {
         let submitButton = WHHGradientButton(type: .custom)
@@ -115,17 +115,18 @@ class WHHAgreementView: WHHBaseView {
             make.height.equalTo(326)
         }
         
-        centerView.addSubview(backButton)
+//        centerView.addSubview(backButton)
+//        backButton.snp.makeConstraints { make in
+//            make.left.equalToSuperview().offset(12)
+//            make.bottom.equalToSuperview().offset(-24)
+//            make.height.equalTo(44)
+//        }
         centerView.addSubview(submitButton)
-        backButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(12)
+        submitButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-24)
             make.height.equalTo(44)
-        }
-        submitButton.snp.makeConstraints { make in
-            make.left.equalTo(backButton.snp.right).offset(16)
-            make.right.equalToSuperview().offset(-12)
-            make.height.width.bottom.equalTo(backButton)
         }
         centerView.addSubview(bigTitle)
         bigTitle.snp.makeConstraints { make in

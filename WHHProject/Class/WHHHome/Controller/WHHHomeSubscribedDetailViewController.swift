@@ -57,7 +57,23 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         homeTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        whhRefreshHeader()
     }
+
+    override func whhRefreshHeader() {
+        super.whhRefreshHeader()
+
+        WHHHUD.whhShowLoadView()
+        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest { [weak self] success, dataModel, _ in
+            WHHHUD.whhHidenLoadView()
+            if success == 1 {
+                self?.foretellModel = dataModel
+                self?.homeTableView.reloadData()
+            }
+        }
+    }
+
+    private var foretellModel = WHHHomeForetellModel()
 
     @objc func upRightButtonClick() {
     }
@@ -208,7 +224,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
 
 extension WHHHomeSubscribedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return foretellModel.fortune.items.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -217,7 +233,7 @@ extension WHHHomeSubscribedDetailViewController: UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeSubscribedDetailTableViewCell") as! WHHHomeSubscribedDetailTableViewCell
-
+        cell.cellModel = foretellModel.fortune.items[indexPath.section]
         return cell
     }
 

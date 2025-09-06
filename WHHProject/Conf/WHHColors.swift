@@ -46,6 +46,7 @@ let Color929192 = #colorLiteral(red: 0.5725490196, green: 0.568627451, blue: 0.5
 let Color6C73FF = #colorLiteral(red: 0.4235294118, green: 0.4509803922, blue: 1, alpha: 1)
 
 
+
 let Color2C2B2D = #colorLiteral(red: 0.1725490196, green: 0.168627451, blue: 0.1764705882, alpha: 1)
 
 let Color6A6A6B = #colorLiteral(red: 0.4156862745, green: 0.4156862745, blue: 0.4196078431, alpha: 1)

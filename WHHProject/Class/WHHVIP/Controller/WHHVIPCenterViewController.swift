@@ -12,14 +12,10 @@ class WHHVIPCenterViewController: WHHBaseViewController {
         let bgView = WHHVIPCenterBgView()
         return bgView
     }()
-    
-    
-    var didPuyFinish:(()->Void)?
 
-    lazy var dataArray: [WHHVIPCenterModel] = {
-        let dataArray = [WHHVIPCenterModel]()
-        return dataArray
-    }()
+    var didPuyFinish: (() -> Void)?
+
+    var dataArray = [WHHVIPCenterModel]()
 
     lazy var submitButton: WHHGradientButton = {
         let submitButton = WHHGradientButton(type: .custom)
@@ -31,8 +27,9 @@ class WHHVIPCenterViewController: WHHBaseViewController {
         submitButton.addTarget(self, action: #selector(submitButtonClick), for: .touchUpInside)
         return submitButton
     }()
-    @IBOutlet weak var closeButtonConf: NSLayoutConstraint!
-    
+
+    @IBOutlet var closeButtonConf: NSLayoutConstraint!
+
     lazy var itemCollectionViw: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let paddig = (WHHScreenW - 91 * 3 - 16 - 46) / 2
@@ -73,34 +70,23 @@ class WHHVIPCenterViewController: WHHBaseViewController {
         itemCollectionViw.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
-        let model = WHHVIPCenterModel()
-        model.title = "1 周特权"
-        model.price = "6"
-        model.isSelect = true
-
-        let model1 = WHHVIPCenterModel()
-        model1.title = "1 月特权"
-        model1.price = "18"
-        model1.isSelect = false
-
-        let model2 = WHHVIPCenterModel()
-        model2.title = "1 年特权"
-        model2.price = "168"
-        model2.isSelect = false
-        dataArray.append(model)
-        dataArray.append(model1)
-        dataArray.append(model2)
-        itemCollectionViw.reloadData()
     }
-    
-    
+
     @IBAction func closeButtonClick(_ sender: UIButton) {
-        
         dismiss(animated: true)
     }
-    
+
     @objc func submitButtonClick() {
+        if let model = dataArray.first(where: { $0.isSelect }) {
+            WHHApplePurchaseManager.shared.whhCreateOrderRequest(goodsId: model.productId, payPage: "不知道是啥")
+            WHHApplePurchaseManager.shared.purchaseHandle = { [weak self] status in
+
+                if status == .success {
+                    self?.dismiss(animated: true)
+                } else {
+                }
+            }
+        }
     }
 }
 
@@ -110,9 +96,8 @@ extension WHHVIPCenterViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell: WHHVIPCenterCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WHHVIPCenterCollectionViewCell", for: indexPath) as! WHHVIPCenterCollectionViewCell
-        
+
         let model = dataArray[indexPath.row]
 
         cell.cellModel = model
@@ -128,5 +113,4 @@ extension WHHVIPCenterViewController: UICollectionViewDelegate, UICollectionView
         currentModel.isSelect = true
         collectionView.reloadData()
     }
-    
 }

@@ -425,9 +425,10 @@ class WHHSetView: WHHBaseView {
     }
 
     @objc func saveButtonClick() {
-        let dict = ["api-v": "1.0", "userId": WHHUserInfoManager.shared.userId, "logoFileId": logoFileId, "gender": gender, "birthday": birthday, "starSign": ""] as [String: Any]
+        let dict = ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId, "logoFileId": logoFileId, "gender": gender, "birthday": birthday, "starSign": ""] as [String: Any]
         WHHHUD.whhShowLoadView()
         WHHHomeRequestViewModel.whhModificationPersonInfo(dict: dict) { [weak self] success in
+            WHHHUD.whhHidenLoadView()
             if success == 1 {
                 dispatchAfter(delay: 0.5) {
                     WHHHUD.whhShowInfoText(text: "修改成功")
@@ -453,7 +454,9 @@ class WHHSetView: WHHBaseView {
     }
 
     @objc func changeAvatarButtonClick() {
-        WHHMediaManager.shared.whhGetOnePhoto { [weak self] image in
+        
+        
+        WHHMediaManager.whhGetAlbumOnlyOnePhoto { [weak self] image in
 
             if let imageData = image.pngData() {
                 WHHHUD.whhShowLoadView()
@@ -461,7 +464,7 @@ class WHHSetView: WHHBaseView {
                     WHHHUD.whhHidenLoadView()
                     if file.isEmpty == false {
                         self?.logoFileId = file
-                        self?.avatarIcon.icon.whhSetKFWithImage(imageString: file)
+                        self?.avatarIcon.icon.image = image
                     } else {
                         dispatchAfter(delay: 0.5) {
                             WHHHUD.whhShowInfoText(text: "上传错误")

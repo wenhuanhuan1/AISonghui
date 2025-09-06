@@ -68,6 +68,8 @@ class WHHHomeViewController: WHHBaseViewController {
         topBgImageView.image = UIImage(named: "whhHomeTopBgIcon")
         return topBgImageView
     }()
+    
+    private(set) var foretellModel = WHHHomeForetellModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,14 +105,22 @@ class WHHHomeViewController: WHHBaseViewController {
             make.centerY.equalTo(todayTitle)
         }
         whhHomeGetWitchList()
-        get()
+        
     }
     
-    func get() {
-        
-        WHHHomeRequestViewModel.whhHomeGetPredictionRequest {
-            
-            
+
+
+    func getFortuneRequest() {
+        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest {[weak self] success, dataModel, msg in
+            if success == 1 {
+                self?.foretellModel = dataModel
+                if dataModel.fortune.items.isEmpty {
+                    self?.isSubscribed = false
+                }else{
+                    self?.isSubscribed = true
+                }
+                self?.homeTableView.reloadData()
+            }
         }
     }
 
@@ -123,6 +133,16 @@ class WHHHomeViewController: WHHBaseViewController {
                 self?.homeTableView.reloadData()
             }
         }
+    }
+
+    private func getAppUserWitchGetFortuneRequest() {
+        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetOldFortuneRequest()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAppUserWitchGetFortuneRequest()
+        getFortuneRequest()
     }
 
     @objc func rightButtonClick() {
@@ -143,7 +163,7 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             if isSubscribed {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeSubscribedTableViewCell", for: indexPath) as! WHHHomeSubscribedTableViewCell
-
+                cell.cellModel = foretellModel
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeNoSubscriptionCell", for: indexPath) as! WHHHomeNoSubscriptionCell
@@ -177,6 +197,7 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             if isSubscribed {
+                
                 let detailVC = WHHHomeSubscribedDetailViewController()
                 navigationController?.pushViewController(detailVC, animated: true)
             }

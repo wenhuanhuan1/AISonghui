@@ -28,12 +28,12 @@ extension AppDelegate {
 
             configure.backgroundColor = .clear
             // 导航栏标题颜色
-            configure.titleColor = Color6A6A6B
+            configure.titleColor = .white
             configure.lineHidden = true
             // 导航栏标题字体
-            configure.titleFont = pingfangSemibold(size: 16)!
+            configure.titleFont = pingfangSemibold(size: 18)!
             // 导航栏返回按钮样式
-            configure.backStyle = .black
+            configure.backStyle = .white
 //            configure.backImage = UIImage(named: "navBackIcon")
             // 导航栏左右item间距
             configure.gk_disableFixSpace = true

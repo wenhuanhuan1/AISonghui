@@ -38,12 +38,10 @@
 - (id)requestArgument {
 
     return @{
-        @"api-v": @"1.0",
+        @"api-v":[WHHNetConf apiv],
         @"type":@(self.type),
         @"userId":[WHHUserInfoManager shared].userId
     };
-
-    return nil;
 }
 
 //设置上传图片 所需要的 HTTP HEADER

@@ -9,7 +9,6 @@ import UIKit
 @preconcurrency import WebKit
 
 class WHHWKWebViewViewController: WHHBaseViewController {
-
     lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = ColorF2F4FE
@@ -17,7 +16,7 @@ class WHHWKWebViewViewController: WHHBaseViewController {
         contentView.layer.masksToBounds = true
         return contentView
     }()
-    
+
     lazy var submitButton: WHHGradientButton = {
         let submitButton = WHHGradientButton(type: .custom)
         submitButton.setTitle("确认".localized, for: .normal)
@@ -28,7 +27,7 @@ class WHHWKWebViewViewController: WHHBaseViewController {
         submitButton.addTarget(self, action: #selector(submitButtonClick), for: .touchUpInside)
         return submitButton
     }()
-    
+
     lazy var wkWebView: WKWebView = {
         let config = WKWebViewConfiguration()
         config.allowsAirPlayForMediaPlayback = false
@@ -46,12 +45,12 @@ class WHHWKWebViewViewController: WHHBaseViewController {
     }()
 
     private(set) var webUrl: String?
-    
+
     deinit {
         wkWebView.removeObserver(self, forKeyPath: "estimatedProgress")
         wkWebView.removeObserver(self, forKeyPath: "title")
     }
-    
+
     init(url: String) {
         super.init(nibName: nil, bundle: nil)
         webUrl = url
@@ -64,49 +63,49 @@ class WHHWKWebViewViewController: WHHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = "协议"
-        
-        
+
+        view.backgroundColor = .white
+
         view.addSubview(contentView)
         contentView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.top.equalToSuperview().offset(WHHAllNavBarHeight + 14)
         }
-        
+
         view.addSubview(submitButton)
         submitButton.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
             make.height.equalTo(44)
-            make.bottom.equalToSuperview().offset( -WHHBottomSafe - 20)
+            make.bottom.equalToSuperview().offset(-WHHBottomSafe - 20)
             make.top.equalTo(contentView.snp.bottom).offset(42)
         }
-        
-        
+
         wkWebView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         wkWebView.addObserver(self, forKeyPath: "title", options: .new, context: nil)
-       
-    
+
         contentView.addSubview(wkWebView)
         wkWebView.snp.makeConstraints { make in
             make.left.top.equalToSuperview().offset(14)
             make.bottom.right.equalToSuperview().offset(-14)
         }
-        
+
         guard let tempUrl = webUrl else { return }
-        
+
         /// 清理缓存
         let websiteDataTypes = WKWebsiteDataStore.allWebsiteDataTypes()
         let date = Date(timeIntervalSince1970: 0)
         WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes, modifiedSince: date) {
             print("WKWebView 缓存已清除")
         }
-        
+
         if let url = URL(string: tempUrl) {
             let request = URLRequest(url: url)
             wkWebView.load(request)
         }
     }
+
     @objc func submitButtonClick() {
         navigationController?.popViewController(animated: true)
     }
@@ -132,7 +131,6 @@ extension WHHWKWebViewViewController: WKUIDelegate, WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
     }
 
     private func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
@@ -144,8 +142,6 @@ extension WHHWKWebViewViewController: WKUIDelegate, WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation) {
-        
-        
     }
 
     private func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation) {}

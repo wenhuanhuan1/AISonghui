@@ -9,6 +9,8 @@ import UIKit
 
 class WHHAboutUsViewController: WHHBaseViewController {
     @IBOutlet var tableview: UITableView!
+    
+    @IBOutlet weak var whiteBgView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = ""
@@ -17,6 +19,11 @@ class WHHAboutUsViewController: WHHBaseViewController {
         tableview.isScrollEnabled = false
         tableview.separatorStyle = .none
         tableview.register(UINib(nibName: "WHHAboutUsTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHAboutUsTableViewCell")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        whiteBgView.whhAddSetRectConrner(corner: [.topLeft,.topRight], radile: 22)
     }
 }
 
@@ -76,11 +83,11 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
             
             break
         case 1:
-            let webView = WHHWKWebViewViewController(url: "https://www.baidu.com")
+            let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.privacyAgreementUrl)
             navigationController?.pushViewController(webView, animated: true)
             break
         case 2:
-            let webView = WHHWKWebViewViewController(url: "https://www.baidu.com")
+            let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.registerAgreementUrl)
             navigationController?.pushViewController(webView, animated: true)
             break
         case 3:
