@@ -18,6 +18,7 @@ class WHHHomeSubscribedDetailTableViewCell: UITableViewCell {
     @IBOutlet var bgView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         bgView.layer.cornerRadius = 10
         bgView.layer.masksToBounds = true
     }

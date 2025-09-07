@@ -32,6 +32,8 @@ class WHHInputView: WHHBaseView {
         return inputTextView
     }()
 
+    var changeFinishBlock: ((WHHInputView) -> Void)?
+
     lazy var centerView: UIView = {
         let centerView = UIView(frame: CGRectMake((WHHScreenW - 325) / 2, WHHScreenH, 325, 375))
         centerView.layer.cornerRadius = 22
@@ -96,10 +98,24 @@ class WHHInputView: WHHBaseView {
     }
 
     private func handleSendAction() {
-        
-        let loadView = WHHLoadAlertView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenH))
-        addSubview(loadView)
-        debugPrint("哈哈哈哈这是输入的文案\(inputTextView.text)")
+        WHHHUD.whhShowLoadView()
+        WHHHomeRequestViewModel.whhPOSTAppUserWitchAmendFortuneRequest(inputString: inputTextView.text) { [weak self] code, msg in
+            WHHHUD.whhHidenLoadView()
+            if code == 1 {
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: msg)
+                    self?.didChangeFinishBlock()
+                }
+            } else {
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
+            }
+        }
+    }
+
+    private func didChangeFinishBlock() {
+        changeFinishBlock?(self)
     }
 
     @objc func closeButtonClick() {

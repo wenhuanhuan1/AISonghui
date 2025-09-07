@@ -12,11 +12,11 @@ typealias WHHRefreshComponent = (() -> Void)?
 class WHHRefreshNormalHeader: MJRefreshNormalHeader {
     override func prepare() {
         super.prepare()
-        stateLabel?.font = pingfangRegular(size: 12)
-        stateLabel?.textColor = ColorFF4746
-        lastUpdatedTimeLabel?.textColor = ColorFF4746
+        stateLabel?.font = pingfangRegular(size: 13)
+        stateLabel?.textColor = .black
+        lastUpdatedTimeLabel?.textColor = .black
         lastUpdatedTimeLabel?.font = pingfangRegular(size: 12)
-        loadingView?.color = ColorFF4746
+        loadingView?.color = .black
     }
 }
 

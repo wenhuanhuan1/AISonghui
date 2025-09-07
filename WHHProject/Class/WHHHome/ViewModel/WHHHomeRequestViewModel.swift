@@ -80,18 +80,18 @@ class WHHHomeRequestViewModel: NSObject {
         }
     }
 
-    static func whhMineCancleUserDestroyInfo(callHandle: ((Int) -> Void)?) {
+    static func whhMineCancleUserDestroyInfo(callHandle: ((Int,String) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv], type: .userCancelDestroyApply)
         api.whhStartConsequenceHandle { baseModel in
 
-            callHandle?(baseModel.success)
+            callHandle?(baseModel.success,baseModel.msg)
         }
     }
 
-    static func whhSubscriptionRequest(witchId: String, callHandle: ((Int) -> Void)?) {
+    static func whhSubscriptionRequest(witchId: String, callHandle: ((Int,String) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "witchId": witchId], type: .appUserWitchSubscribe)
         api.whhStartConsequenceHandle { baseModel in
-            callHandle?(baseModel.success)
+            callHandle?(baseModel.success,baseModel.msg)
         }
     }
 
@@ -146,14 +146,15 @@ class WHHHomeRequestViewModel: NSObject {
     }
     
     /// 获取旧预言
-    static func whhHomeGetWHHHomeappUserWitchGetOldFortuneRequest() {
+    static func whhHomeGetWHHHomeappUserWitchGetOldFortuneRequest(callBlack:((Int,WHHHomeForetellModel,String)->Void)?) {
         
         let requestApi =  WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .appUserWitchGetOldFortune)
         requestApi.whhStartConsequenceHandle { baseModel in
           
-            if baseModel.success == 1 {
-                
-                
+            if baseModel.success == 1,let model = WHHHomeForetellModel.mj_object(withKeyValues: baseModel.data) {
+                callBlack?(baseModel.success,model,baseModel.msg)
+            }else{
+                callBlack?(baseModel.success,WHHHomeForetellModel(),baseModel.msg)
             }
         }
         
@@ -170,5 +171,19 @@ class WHHHomeRequestViewModel: NSObject {
             callBlack?(baseModel.success)
         }
         
+    }
+    
+    
+    /// 修正预言接口
+    /// - Parameters:
+    ///   - inputString: 输入的内容
+    ///   - callBlack: 回调
+    static func whhPOSTAppUserWitchAmendFortuneRequest(inputString:String,callBlack:((Int,String)->Void)?) {
+        
+        let api = WHHHomeRequestApi(parameter: ["input":inputString,"userId":WHHUserInfoManager.shared.userId], type: .appUserWitchAmendFortune)
+        api.whhStartConsequenceHandle { baseModel in
+            callBlack?(baseModel.success,baseModel.msg)
+            
+        }
     }
 }

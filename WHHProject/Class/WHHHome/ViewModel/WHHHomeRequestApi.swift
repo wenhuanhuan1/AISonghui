@@ -40,6 +40,9 @@ enum WHHHomeRequestApiType: Int {
     
     /// 获取系统信息
     case sysInfo
+    
+    /// 修正预言
+    case appUserWitchAmendFortune
 }
 
 class WHHHomeRequestApi: WHHRequest {
@@ -82,6 +85,8 @@ class WHHHomeRequestApi: WHHRequest {
             return "/app-user/witch/get-old-fortune"
         case .sysInfo:
             return "/sys/info"
+        case .appUserWitchAmendFortune:
+            return "/app-user/witch/amend-fortune"
         }
     }
 

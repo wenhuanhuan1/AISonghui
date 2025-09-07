@@ -18,6 +18,9 @@ class WHHHomeViewController: WHHBaseViewController {
         homeTableView.register(WHHHomeWitchTableViewCell.self, forCellReuseIdentifier: "WHHHomeWitchTableViewCell")
         homeTableView.register(UINib(nibName: "WHHHomeSubscribedTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHHomeSubscribedTableViewCell")
         homeTableView.whhSetTableViewDefault()
+        homeTableView.whhAddRefreshNormalHeader { [weak self] in
+            self?.whhRefreshFooter()
+        }
         return homeTableView
     }()
 
@@ -68,19 +71,13 @@ class WHHHomeViewController: WHHBaseViewController {
         topBgImageView.image = UIImage(named: "whhHomeTopBgIcon")
         return topBgImageView
     }()
-    
+
     private(set) var foretellModel = WHHHomeForetellModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         gk_navigationBar.isHidden = true
-
-//        dispatchAfter(delay: 1) {
-//            WHHAlertView.initWHHAlertView(title: "whhNetAlertBigTitle".localized, contentText: "whhNetAlertContentTitle".localized, cancleTitle: "whhNetAlertContentRetryTitle".localized, submitTitle: "whhNetAlertContentSettingTitle".localized) { showView in
-//                showView.cancleButtonClick()
-//            }
-//        }
 
         view.addSubview(homeTableView)
         homeTableView.snp.makeConstraints { make in
@@ -104,47 +101,57 @@ class WHHHomeViewController: WHHBaseViewController {
             make.left.equalTo(todayTitle.snp.right).offset(5)
             make.centerY.equalTo(todayTitle)
         }
-        whhHomeGetWitchList()
         
     }
     
-
-
-    func getFortuneRequest() {
-        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest {[weak self] success, dataModel, msg in
-            if success == 1 {
-                self?.foretellModel = dataModel
-                if dataModel.fortune.items.isEmpty {
-                    self?.isSubscribed = false
-                }else{
-                    self?.isSubscribed = true
-                }
-                self?.homeTableView.reloadData()
-            }
-        }
-    }
-
-    private func whhHomeGetWitchList() {
-        WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
-            WHHHUD.whhHidenLoadView()
-            if witchDataArray.isEmpty == false {
-                self?.dataArray = witchDataArray
-                self?.homeTableView.reloadData()
-            }
-        }
-    }
-
-    private func getAppUserWitchGetFortuneRequest() {
-        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetOldFortuneRequest()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getAppUserWitchGetFortuneRequest()
-        getFortuneRequest()
+        whhRefreshFooter()
     }
 
+
+    override func whhRefreshFooter() {
+        super.whhRefreshFooter()
+
+        let group = DispatchGroup()
+        let queue = DispatchQueue.global()
+
+        group.enter()
+
+        WHHHUD.whhShowLoadView()
+        queue.async {
+            WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest { [weak self] success, dataModel, _ in
+
+                if success == 1 {
+                    self?.foretellModel = dataModel
+                    if dataModel.fortune.items.isEmpty {
+                        self?.isSubscribed = false
+                    } else {
+                        self?.isSubscribed = true
+                    }
+                }
+                group.leave()
+            }
+        }
+
+        group.enter()
+        queue.async {
+            WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
+                if witchDataArray.isEmpty == false {
+                    self?.dataArray = witchDataArray
+                }
+                group.leave()
+            }
+        }
+        // 等待所有请求完成
+        group.notify(queue: DispatchQueue.main) {
+            WHHHUD.whhHidenLoadView()
+            self.homeTableView.mj_header?.endRefreshing()
+            self.homeTableView.reloadData()
+        }
+    }
+
+   
     @objc func rightButtonClick() {
         debugPrint("点击了右边的按钮")
 
@@ -197,7 +204,6 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             if isSubscribed {
-                
                 let detailVC = WHHHomeSubscribedDetailViewController()
                 navigationController?.pushViewController(detailVC, animated: true)
             }

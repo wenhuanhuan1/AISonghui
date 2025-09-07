@@ -15,45 +15,48 @@ class WHHHomeWitchTableViewCell: WHHBaseTableViewCell {
     }()
 
     lazy var centerItemView: WHHHomeItemView = {
-        let centerItemView = WHHHomeItemView()
-        centerItemView.bigIconImageView.image = UIImage(named: "whhHomeConstellationIcon")
-        centerItemView.witchName.text = "神奇女巫"
-        centerItemView.witchName.textColor = Color5A92FF
-        centerItemView.witchIconImageView.image = UIImage(named: "whhHomeWonderWitchIcon")
-        centerItemView.submitButton.setTitle("星座", for: .normal)
-        centerItemView.submitButton.backgroundColor = Color5A92FF
-        centerItemView.didWHHHomeItemViewSubmitButton = { [weak self] in
-            self?.didAbbHomePage()
+        let view = WHHHomeItemView()
+        view.button.tag = 1
+        view.bigIconImageView.image = UIImage(named: "whhHomeConstellationIcon")
+        view.witchName.text = "神奇女巫"
+        view.witchName.textColor = Color5A92FF
+        view.witchIconImageView.image = UIImage(named: "whhHomeWonderWitchIcon")
+        view.submitButton.setTitle("星座", for: .normal)
+        view.submitButton.backgroundColor = Color5A92FF
+        view.didWHHHomeItemViewSubmitButton = { [weak self] in
+            self?.didAbbHomePage(btn: view.button)
         }
-        return centerItemView
+        return view
     }()
 
     lazy var leftItemView: WHHHomeItemView = {
-        let leftItemView = WHHHomeItemView()
-        leftItemView.bigIconImageView.image = UIImage(named: "whhHomeHoroscopeIcon")
-        leftItemView.witchName.text = "璇玑女巫"
-        leftItemView.witchName.textColor = Color746CF7
-        leftItemView.witchIconImageView.image = UIImage(named: "whhHomeWeiqiWitchIcon")
-        leftItemView.submitButton.setTitle("奇门八字", for: .normal)
-        leftItemView.submitButton.backgroundColor = Color746CF7
-        leftItemView.didWHHHomeItemViewSubmitButton = { [weak self] in
-            self?.didAbbHomePage()
+        let view = WHHHomeItemView()
+        view.button.tag = 0
+        view.bigIconImageView.image = UIImage(named: "whhHomeHoroscopeIcon")
+        view.witchName.text = "璇玑女巫"
+        view.witchName.textColor = Color746CF7
+        view.witchIconImageView.image = UIImage(named: "whhHomeWeiqiWitchIcon")
+        view.submitButton.setTitle("奇门八字", for: .normal)
+        view.submitButton.backgroundColor = Color746CF7
+        view.didWHHHomeItemViewSubmitButton = { [weak self] in
+            self?.didAbbHomePage(btn: view.button)
         }
-        return leftItemView
+        return view
     }()
 
     lazy var rightItemView: WHHHomeItemView = {
-        let rightItemView = WHHHomeItemView()
-        rightItemView.bigIconImageView.image = UIImage(named: "whhHomeMagicIcon")
-        rightItemView.witchName.text = "恶毒女巫"
-        rightItemView.witchName.textColor = Color389E0D
-        rightItemView.witchIconImageView.image = UIImage(named: "whhHomeVillainousWitchIcon")
-        rightItemView.submitButton.setTitle("黑魔法", for: .normal)
-        rightItemView.submitButton.backgroundColor = Color389E0D
-        rightItemView.didWHHHomeItemViewSubmitButton = { [weak self] in
-            self?.didAbbHomePage()
+        let view = WHHHomeItemView()
+        view.button.tag = 2
+        view.bigIconImageView.image = UIImage(named: "whhHomeMagicIcon")
+        view.witchName.text = "恶毒女巫"
+        view.witchName.textColor = Color389E0D
+        view.witchIconImageView.image = UIImage(named: "whhHomeVillainousWitchIcon")
+        view.submitButton.setTitle("黑魔法", for: .normal)
+        view.submitButton.backgroundColor = Color389E0D
+        view.didWHHHomeItemViewSubmitButton = { [weak self] in
+            self?.didAbbHomePage(btn: view.button)
         }
-        return rightItemView
+        return view
     }()
 
     lazy var bottomTitle: UILabel = {
@@ -138,21 +141,22 @@ class WHHHomeWitchTableViewCell: WHHBaseTableViewCell {
         }
     }
 
-    private func didAbbHomePage() {
-        if let currentVC = UIViewController.currentViewController() {
-            let abbHomeVC = WHHABBHomeViewController()
-            currentVC.navigationController?.pushViewController(abbHomeVC, animated: true)
+    private func didAbbHomePage(btn: UIButton) {
+        if let tempArray = dataArray, btn.tag < tempArray.count {
+            if let currentVC = UIViewController.currentViewController() {
+                let model = tempArray[btn.tag]
+                let abbHomeVC = WHHABBHomeViewController()
+                abbHomeVC.model = model
+                currentVC.navigationController?.pushViewController(abbHomeVC, animated: true)
+            }
         }
     }
-    
-    var dataArray: [WHHHomeWitchModel]?{
-        
-        didSet{
-            
+
+    var dataArray: [WHHHomeWitchModel]? {
+        didSet {
             if let newDataArray = dataArray, newDataArray.isEmpty == false {
-                
                 let model1 = newDataArray[0]
-                
+
                 leftItemView.witchName.text = model1.name
                 leftItemView.witchName.textColor = UIColor(hex: model1.luckyColorValue)
                 leftItemView.submitButton.backgroundColor = UIColor(hex: model1.luckyColorValue)
@@ -164,11 +168,9 @@ class WHHHomeWitchTableViewCell: WHHBaseTableViewCell {
                 leftItemView.spellbookContentLabel.text = model1.quotes
                 leftItemView.subscriptionLabel.text = "订阅: \(model1.stat.subscribeTimes)人"
                 leftItemView.divinationLabel.text = "占卜: \(model1.stat.fortuneTimes)次"
-                
 
-                
                 let model2 = newDataArray[1]
-                
+
                 centerItemView.witchName.text = model2.name
                 centerItemView.witchName.textColor = UIColor(hex: model2.luckyColorValue)
                 centerItemView.submitButton.backgroundColor = UIColor(hex: model2.luckyColorValue)
@@ -179,12 +181,12 @@ class WHHHomeWitchTableViewCell: WHHBaseTableViewCell {
                 centerItemView.spellbookContentLabel.text = model2.quotes
                 centerItemView.subscriptionLabel.text = "订阅: \(model2.stat.subscribeTimes)人"
                 centerItemView.divinationLabel.text = "占卜: \(model2.stat.fortuneTimes)次"
-                
+
                 centerItemView.firstIcon.image = UIImage(named: "SHxingzhuIcon")
                 centerItemView.secondIcon.image = UIImage(named: "songghiColor1Icon")
-                
+
                 let model3 = newDataArray[2]
-                
+
                 rightItemView.witchName.text = model3.name
                 rightItemView.witchName.textColor = UIColor(hex: model3.luckyColorValue)
                 rightItemView.submitButton.backgroundColor = UIColor(hex: model3.luckyColorValue)
@@ -199,6 +201,5 @@ class WHHHomeWitchTableViewCell: WHHBaseTableViewCell {
                 rightItemView.secondIcon.image = UIImage(named: "songghiColor2Icon")
             }
         }
-        
     }
 }

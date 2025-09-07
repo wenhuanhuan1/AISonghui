@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WHHHomeForetellModel : NSObject
 @property(nonatomic,copy) NSString *creating;
-@property(nonatomic,copy) NSString *hasFortuneOld;
+@property(nonatomic,assign) NSInteger hasOldFortune;
 @property(nonatomic,strong) WHHHomeForetellModel *fortune;
 @property(nonatomic,copy) NSString *luckyColorIntroduction;
 @property(nonatomic,copy) NSString *avgScore;

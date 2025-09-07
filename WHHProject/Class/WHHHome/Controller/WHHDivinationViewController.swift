@@ -196,34 +196,16 @@ class WHHDivinationViewController: WHHBaseViewController {
     private func whhSubscriptionRequest() {
         guard let newSelectModel = selectModel else { return }
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhSubscriptionRequest(witchId: newSelectModel.wichId) {[weak self] success in
+        WHHHomeRequestViewModel.whhSubscriptionRequest(witchId: newSelectModel.wichId) {[weak self] success,msg in
             WHHHUD.whhHidenLoadView()
             if success == 1 {
                 self?.whhHomeGetWitchList()
                 dispatchAfter(delay: 0.5) {
-                    WHHHUD.whhShowInfoText(text: "订阅成功")
+                    WHHHUD.whhShowInfoText(text: msg)
                 }
                
             }else{
-                WHHHUD.whhShowInfoText(text: "订阅失败")
-            }
-        }
-    }
-
-    private func whhCancleSubscriptionRequest() {
-        
-        guard let newSelectModel = selectModel else { return }
-        WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhSubscriptionRequest(witchId: newSelectModel.wichId) {[weak self] success in
-            WHHHUD.whhHidenLoadView()
-            if success == 1 {
-                self?.whhHomeGetWitchList()
-                dispatchAfter(delay: 0.5) {
-                    WHHHUD.whhShowInfoText(text: "订阅成功")
-                }
-               
-            }else{
-                WHHHUD.whhShowInfoText(text: "订阅失败")
+                WHHHUD.whhShowInfoText(text: msg)
             }
         }
     }

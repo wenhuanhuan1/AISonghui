@@ -14,6 +14,8 @@ class WHHABBSubscriptionAlertView: WHHBaseView {
         return topIcon
     }()
 
+    var didSubscriptionSubmitButtonClickBlock: ((WHHHomeWitchModel, WHHABBSubscriptionAlertView) -> Void)?
+
     lazy var witchIcon: WHHBaseImageView = {
         let witchIcon = WHHBaseImageView()
         witchIcon.image = UIImage(named: "whhWitchIcon")
@@ -93,12 +95,12 @@ class WHHABBSubscriptionAlertView: WHHBaseView {
     }()
 
     lazy var welfareContentName: UILabel = {
-        let welfareContentName = UILabel()
-        welfareContentName.text = "订阅福利：\n·每天6:66准时推送（别问为什么是这个时间）\n ·附赠每天一次的突发事件修正预言"
-        welfareContentName.font = pingfangSemibold(size: 12)
-        welfareContentName.textColor = .white
-        welfareContentName.numberOfLines = 0
-        return welfareContentName
+        let view = UILabel()
+        view.text = "订阅福利：\n·每天6:66准时推送（别问为什么是这个时间）\n ·附赠每天一次的突发事件修正预言"
+        view.font = pingfangSemibold(size: 12)
+        view.textColor = .white
+        view.numberOfLines = 0
+        return view
     }()
 
     lazy var bookNameTips: UILabel = {
@@ -188,6 +190,33 @@ class WHHABBSubscriptionAlertView: WHHBaseView {
         submitButton.addTarget(self, action: #selector(submitButtonClick), for: .touchUpInside)
         return submitButton
     }()
+
+    var model: WHHHomeWitchModel? {
+        didSet {
+            guard let tempModel = model else { return }
+            witchIcon.whhSetImageView(url: tempModel.icon)
+            witchNickName.text = tempModel.name + " · 贝贝"
+            forecastReturnTitle.text = tempModel.meetingWords
+            var name1 = ""
+            if let welfares1 = tempModel.welfares.first {
+                name1 = welfares1
+            }
+            if let welfares2 = tempModel.welfares.last {
+                name1 += "\n" + welfares2
+            }
+            welfareContentName.text = name1
+
+            subscriptionAndDivination.text = "订阅: \(tempModel.stat.subscribeTimes)人" + " " + "占卜: \(tempModel.stat.fortuneTimes)次"
+            anaContentName.text = tempModel.quotes
+            bookName.text = tempModel.goodAt
+            colorName.text = tempModel.luckyColor
+            if tempModel.subscribed {
+                submitButton.setTitle("已订阅", for: .normal)
+            } else {
+                submitButton.setTitle("订阅", for: .normal)
+            }
+        }
+    }
 
     override func setupViews() {
         super.setupViews()
@@ -338,8 +367,7 @@ class WHHABBSubscriptionAlertView: WHHBaseView {
     }
 
     @objc func submitButtonClick() {
-        let subscriptAlertView = WHHDivinationAlertView()
-        subscriptAlertView.type = .subscription
-        addSubview(subscriptAlertView)
+        guard let newModel = model else { return }
+        didSubscriptionSubmitButtonClickBlock?(newModel, self)
     }
 }

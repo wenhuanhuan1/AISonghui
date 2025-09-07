@@ -60,12 +60,10 @@ class WHHlogoutAccoutViewController: WHHBaseViewController {
 
     private func cancleAccount() {
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhMineCancleUserDestroyInfo { code in
+        WHHHomeRequestViewModel.whhMineCancleUserDestroyInfo { code,msg in
             WHHHUD.whhHidenLoadView()
-            if code == 1 {
-                dispatchAfter(delay: 0.5) {
-                    WHHHUD.whhShowInfoText(text: "取消注销")
-                }
+            dispatchAfter(delay: 0.5) {
+                WHHHUD.whhShowInfoText(text: msg)
             }
         }
     }

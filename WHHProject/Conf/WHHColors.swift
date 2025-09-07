@@ -57,6 +57,9 @@ let ColorEDEBEF = #colorLiteral(red: 0.9294117647, green: 0.9215686275, blue: 0.
 
 let ColorF2F4FE = #colorLiteral(red: 0.9490196078, green: 0.9568627451, blue: 0.9960784314, alpha: 1)
 
+let ColorE0E0E0 = #colorLiteral(red: 0.8784313725, green: 0.8784313725, blue: 0.8784313725, alpha: 1)
+
+
 let ColorBDBCC1 = #colorLiteral(red: 0.7411764706, green: 0.737254902, blue: 0.7568627451, alpha: 1)
 let ColorFF4D4F = #colorLiteral(red: 1, green: 0.3019607843, blue: 0.3098039216, alpha: 1)
 let ColorFEF5E6 = #colorLiteral(red: 0.9960784314, green: 0.9607843137, blue: 0.9019607843, alpha: 1)
