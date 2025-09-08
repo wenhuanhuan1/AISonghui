@@ -50,31 +50,27 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.rightTitle.isHidden = true
             cell.arraw.isHidden = false
             cell.lineView.isHidden = false
-        case 3:
-            cell.leftTitle.text = "Apple账号"
-            cell.leftIcon.image = UIImage(named: "whhAboutAppleIcon")
-            cell.rightTitle.isHidden = true
-            cell.arraw.isHidden = true
-            cell.lineView.isHidden = false
-        case 4:
+//        case 3:
+//            cell.leftTitle.text = "Apple账号"
+//            cell.leftIcon.image = UIImage(named: "whhAboutAppleIcon")
+//            cell.rightTitle.isHidden = true
+//            cell.arraw.isHidden = true
+//            cell.lineView.isHidden = false
+//        case 3:
+           
+        default:
+
             cell.leftTitle.text = "注销账号"
             cell.leftIcon.image = UIImage(named: "whhAboutzhuxiaoIcon")
             cell.rightTitle.isHidden = true
             cell.arraw.isHidden = false
             cell.lineView.isHidden = false
-        default:
-
-            cell.leftTitle.text = "退出登录"
-            cell.leftIcon.image = UIImage(named: "whhAboutXinyiIcon")
-            cell.rightTitle.isHidden = true
-            cell.arraw.isHidden = false
-            cell.lineView.isHidden = true
         }
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 4
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -90,20 +86,21 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
             let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.registerAgreementUrl)
             navigationController?.pushViewController(webView, animated: true)
             break
+//        case 3:
+//            debugPrint("苹果登录")
+//            let alert = WHHAppleAccountExplainView()
+//            view.addSubview(alert)
+//            break
         case 3:
-            debugPrint("苹果登录")
-            let alert = WHHAppleAccountExplainView()
-            view.addSubview(alert)
-            break
-        case 4:
             debugPrint("注销账号")
             let accountVC = WHHlogoutAccoutViewController()
             navigationController?.pushViewController(accountVC, animated: true)
             break
         default:
-            debugPrint("退出登陆")
-            let alert = WHHAppleAccountRegisterView(type: .logOut)
-            view.addSubview(alert)
+            debugPrint("hhhh")
+//            debugPrint("退出登陆")
+//            let alert = WHHAppleAccountRegisterView(type: .logOut)
+//            view.addSubview(alert)
         }
     }
 

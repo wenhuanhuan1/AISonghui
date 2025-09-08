@@ -97,7 +97,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         view.backgroundColor = ColorF0F1F5
         gk_navBackgroundColor = .clear
         gk_navTitle = "whhHomeSubscribedDetailNavTitleKey".localized
-        gk_navRightBarButtonItem = UIBarButtonItem(customView: upRightButton)
+//        gk_navRightBarButtonItem = UIBarButtonItem(customView: upRightButton)
         view.addSubview(homeTableView)
         homeTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

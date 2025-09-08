@@ -19,6 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) NSInteger newUser;
 @property(nonatomic,assign) NSInteger improveUserInfo;
 
+@property(nonatomic,copy) NSString *vipExpireTime;
+@property(nonatomic,assign) NSInteger gender;
+@property(nonatomic,copy) NSString *status;
+@property(nonatomic,copy) NSString *logo;
+@property(nonatomic,copy) NSString *birthday;
+
 @end
 
 NS_ASSUME_NONNULL_END

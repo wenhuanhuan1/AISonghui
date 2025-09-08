@@ -70,6 +70,13 @@
 		2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */; };
 		2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */; };
 		2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */; };
+		2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */; };
+		2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */; };
+		2F6079542E6E7F11001CD6BB /* WHHChatMesageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079532E6E7F11001CD6BB /* WHHChatMesageModel.m */; };
+		2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079552E6E85E8001CD6BB /* WHHChatInputView.swift */; };
+		2F6079582E6E87F7001CD6BB /* WHHTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079572E6E87F7001CD6BB /* WHHTextView.swift */; };
+		2F60795A2E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079592E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift */; };
+		2F60795C2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */; };
 		2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */; };
 		2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */; };
 		2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */; };
@@ -254,6 +261,14 @@
 		2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHUserInfoManager.swift; sourceTree = "<group>"; };
 		2F17BFB92DF80E2C00CA36E8 /* WHHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHUserModel.h; sourceTree = "<group>"; };
 		2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHUserModel.m; sourceTree = "<group>"; };
+		2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatViewController.swift; sourceTree = "<group>"; };
+		2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatTableViewCell.swift; sourceTree = "<group>"; };
+		2F6079522E6E7F11001CD6BB /* WHHChatMesageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHChatMesageModel.h; sourceTree = "<group>"; };
+		2F6079532E6E7F11001CD6BB /* WHHChatMesageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHChatMesageModel.m; sourceTree = "<group>"; };
+		2F6079552E6E85E8001CD6BB /* WHHChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHChatInputView.swift; sourceTree = "<group>"; };
+		2F6079572E6E87F7001CD6BB /* WHHTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHTextView.swift; sourceTree = "<group>"; };
+		2F6079592E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatRequestApi.swift; sourceTree = "<group>"; };
+		2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatRequestApiViewModel.swift; sourceTree = "<group>"; };
 		2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineViewController.swift; sourceTree = "<group>"; };
 		2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHGradualView.swift; sourceTree = "<group>"; };
 		2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHomeItemView.swift; sourceTree = "<group>"; };
@@ -508,6 +523,7 @@
 		2F17BF852DF7CA9000CA36E8 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2F6079492E6E73FA001CD6BB /* WHHChat */,
 				2F043BBD2E653F7200E8C04E /* WHHNetworking */,
 				2FDC69A62E3E191E00A523B0 /* WHHVIP */,
 				2FDC698C2E3CDFCA00A523B0 /* WHHAboutUs */,
@@ -637,6 +653,53 @@
 				2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */,
 			);
 			path = UserManager;
+			sourceTree = "<group>";
+		};
+		2F6079492E6E73FA001CD6BB /* WHHChat */ = {
+			isa = PBXGroup;
+			children = (
+				2F60794D2E6E741D001CD6BB /* ViewModel */,
+				2F60794C2E6E7417001CD6BB /* Model */,
+				2F60794B2E6E7413001CD6BB /* View */,
+				2F60794A2E6E7406001CD6BB /* Controller */,
+			);
+			path = WHHChat;
+			sourceTree = "<group>";
+		};
+		2F60794A2E6E7406001CD6BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F60794B2E6E7413001CD6BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */,
+				2F6079552E6E85E8001CD6BB /* WHHChatInputView.swift */,
+				2F6079572E6E87F7001CD6BB /* WHHTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F60794C2E6E7417001CD6BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F6079522E6E7F11001CD6BB /* WHHChatMesageModel.h */,
+				2F6079532E6E7F11001CD6BB /* WHHChatMesageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F60794D2E6E741D001CD6BB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F6079592E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift */,
+				2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2FDC68D12E2E272A00A523B0 /* WHHMine */ = {
@@ -1085,6 +1148,7 @@
 				2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */,
 				2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */,
 				2F043C2E2E68657700E8C04E /* FCUploadSourceApi.m in Sources */,
+				2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */,
 				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
 				2FDC699B2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift in Sources */,
 				2F043BC62E65499800E8C04E /* WHHHomeRequestViewModel.swift in Sources */,
@@ -1099,6 +1163,7 @@
 				2FDC692B2E38652900A523B0 /* WHHGradientButton.swift in Sources */,
 				2F004E112E0E35100016DA6B /* UIImageView+AFNetworking.m in Sources */,
 				2F004E122E0E35100016DA6B /* AFNetworkActivityIndicatorManager.m in Sources */,
+				2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */,
 				2F004E132E0E35100016DA6B /* AFImageDownloader.m in Sources */,
 				2FDC69592E3A063000A523B0 /* WHHLoadAlertView.swift in Sources */,
 				2F004E142E0E35100016DA6B /* AFURLResponseSerialization.m in Sources */,
@@ -1127,10 +1192,13 @@
 				2F043BB42E653F6600E8C04E /* YTKNetworkPrivate.m in Sources */,
 				2F043BB52E653F6600E8C04E /* YTKNetworkAgent.m in Sources */,
 				2F043C422E6B070000E8C04E /* WHHVIPRequestApi.swift in Sources */,
+				2F60795A2E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift in Sources */,
 				2F043BB62E653F6600E8C04E /* YTKRequestEventAccessory.m in Sources */,
 				2F043BB72E653F6600E8C04E /* YTKBatchRequestAgent.m in Sources */,
 				2F043BB82E653F6600E8C04E /* YTKBatchRequest.m in Sources */,
+				2F6079582E6E87F7001CD6BB /* WHHTextView.swift in Sources */,
 				2F043BCD2E65945700E8C04E /* WHHHomeWitchModel.m in Sources */,
+				2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */,
 				2F043BB92E653F6600E8C04E /* YTKChainRequestAgent.m in Sources */,
 				2F043BBA2E653F6600E8C04E /* YTKNetworkConfig.m in Sources */,
 				2F043BBB2E653F6600E8C04E /* YTKBaseRequest.m in Sources */,
@@ -1138,8 +1206,10 @@
 				2FDC69C42E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift in Sources */,
 				2F043C502E6BE94300E8C04E /* WHHMineRequestApi.swift in Sources */,
 				2F004E1E2E0E35100016DA6B /* AFURLRequestSerialization.m in Sources */,
+				2F60795C2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift in Sources */,
 				2F004E1F2E0E35100016DA6B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2FDC69272E37959600A523B0 /* WHHSetView.swift in Sources */,
+				2F6079542E6E7F11001CD6BB /* WHHChatMesageModel.m in Sources */,
 				2F004E202E0E35100016DA6B /* AFSecurityPolicy.m in Sources */,
 				2F004E222E0E35100016DA6B /* AFAutoPurgingImageCache.m in Sources */,
 				2FDC695F2E3B0B5600A523B0 /* WHHABBHomeViewController.swift in Sources */,
@@ -1242,13 +1312,15 @@
 				DEVELOPMENT_TEAM = YM7WN74R82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "\"\"访问您的相机用于上传头像功能";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"\"访问您的相册用于上传头像功能";
+				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"阿贝贝\"访问您的相机用于上传头像功能";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"阿贝贝\"访问您的相册用于上传头像功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1281,13 +1353,15 @@
 				DEVELOPMENT_TEAM = YM7WN74R82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "\"\"访问您的相机用于上传头像功能";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"\"访问您的相册用于上传头像功能";
+				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"阿贝贝\"访问您的相机用于上传头像功能";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"阿贝贝\"访问您的相册用于上传头像功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

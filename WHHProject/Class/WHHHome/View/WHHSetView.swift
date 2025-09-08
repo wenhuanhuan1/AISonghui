@@ -85,6 +85,9 @@ class WHHSetView: WHHBaseView {
 
     var gender = 1
 
+    
+    var didFinishBlock:(()->Void)?
+    
     var birthday = ""
 
     lazy var centrView: UIView = {
@@ -432,6 +435,7 @@ class WHHSetView: WHHBaseView {
             if success == 1 {
                 dispatchAfter(delay: 0.5) {
                     WHHHUD.whhShowInfoText(text: "修改成功")
+                    self?.didFinishBlock?()
                     self?.removeFromSuperview()
                 }
             }
@@ -458,7 +462,7 @@ class WHHSetView: WHHBaseView {
         
         WHHMediaManager.whhGetAlbumOnlyOnePhoto { [weak self] image in
 
-            if let imageData = image.pngData() {
+            if let imageData = image.jpegData(compressionQuality: 0.8) {
                 WHHHUD.whhShowLoadView()
                 WHHHomeRequestViewModel.whhUploadSourceWithType(type: 1, data: imageData) { file in
                     WHHHUD.whhHidenLoadView()

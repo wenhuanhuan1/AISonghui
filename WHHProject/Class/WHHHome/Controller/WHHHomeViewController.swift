@@ -107,9 +107,12 @@ class WHHHomeViewController: WHHBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         whhRefreshFooter()
+        getUserInfo()
     }
 
-
+    private func getUserInfo() {
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest(callBlack: nil)
+    }
     override func whhRefreshFooter() {
         super.whhRefreshFooter()
 

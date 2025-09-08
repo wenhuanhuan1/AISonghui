@@ -60,6 +60,8 @@ class WHHPersonageViewController: WHHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = "资料卡"
+        gk_backStyle = .black
+        gk_navTitleColor = .black
         view.backgroundColor = ColorF2F4FE
         view.addSubview(homeTableView)
         homeTableView.snp.makeConstraints { make in
@@ -84,6 +86,10 @@ class WHHPersonageViewController: WHHBaseViewController {
         }
         getUserInfo()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     @objc func editButtonClick() {
         WHHHUD.whhShowLoadView()
@@ -91,6 +97,9 @@ class WHHPersonageViewController: WHHBaseViewController {
             WHHHUD.whhHidenLoadView()
             if code == 1 {
                 let setView = WHHSetView()
+                setView.didFinishBlock = {[weak self] in
+                    self?.getUserInfo()
+                }
                 setView.logoFileId = model.logo
                 setView.birthday = model.birthday
                 setView.gender = model.gender

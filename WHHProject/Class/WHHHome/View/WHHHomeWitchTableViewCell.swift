@@ -145,7 +145,7 @@ class WHHHomeWitchTableViewCell: WHHBaseTableViewCell {
         if let tempArray = dataArray, btn.tag < tempArray.count {
             if let currentVC = UIViewController.currentViewController() {
                 let model = tempArray[btn.tag]
-                let abbHomeVC = WHHABBHomeViewController()
+                let abbHomeVC = WHHABBChatViewController()
                 abbHomeVC.model = model
                 currentVC.navigationController?.pushViewController(abbHomeVC, animated: true)
             }
