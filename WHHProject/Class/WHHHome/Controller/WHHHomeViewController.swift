@@ -101,7 +101,7 @@ class WHHHomeViewController: WHHBaseViewController {
             make.left.equalTo(todayTitle.snp.right).offset(5)
             make.centerY.equalTo(todayTitle)
         }
-        
+        dateTitle.text = String.getCurrentDateString()
     }
     
     override func viewWillAppear(_ animated: Bool) {

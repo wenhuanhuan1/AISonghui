@@ -390,4 +390,11 @@ extension WHHHomeSubscribedDetailViewController: UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offsetY = scrollView.contentOffset.y
+        let alpha = min(1, max(0, offsetY / 100))
+        gk_navBackgroundColor = Color5A92FF.withAlphaComponent(alpha)
+    }
 }

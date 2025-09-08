@@ -37,8 +37,10 @@ class WHHWKWebViewViewController: WHHBaseViewController {
         let userContentController = WKUserContentController()
         config.suppressesIncrementalRendering = true
         config.userContentController = userContentController
+        
         let view = WKWebView(frame: .zero, configuration: config)
         view.backgroundColor = .clear
+        view.isOpaque = false
         view.uiDelegate = self
         view.navigationDelegate = self
         return view

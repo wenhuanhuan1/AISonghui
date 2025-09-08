@@ -25,5 +25,12 @@ extension String {
         return ceil(boundingBox.height)
     }
     
-   
+    /// 获取当前日期字符串，格式: 7月 23日 周三
+    static func getCurrentDateString() -> String {
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "zh_CN") // 中文
+        formatter.dateFormat = "yyyy年 M月 d日 E"            // M=月, d=日, E=星期几
+        return formatter.string(from: now)
+    }
 }

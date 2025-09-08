@@ -13,7 +13,10 @@ class WHHAboutUsViewController: WHHBaseViewController {
     @IBOutlet weak var whiteBgView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        gk_navTitle = ""
+
+        gk_backStyle = .black
+        gk_navTitle = "关于阿贝贝"
+        gk_navTitleColor = .black
         tableview.delegate = self
         tableview.dataSource = self
         tableview.isScrollEnabled = false
@@ -64,7 +67,7 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.leftIcon.image = UIImage(named: "whhAboutzhuxiaoIcon")
             cell.rightTitle.isHidden = true
             cell.arraw.isHidden = false
-            cell.lineView.isHidden = false
+            cell.lineView.isHidden = true
         }
         return cell
     }
