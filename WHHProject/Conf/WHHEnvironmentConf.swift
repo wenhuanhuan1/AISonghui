@@ -7,11 +7,11 @@
 
 import UIKit
 
-private let isDevelop = true
+private let isDevelop = false
 
 @objcMembers
 class WHHEnvironmentConf: NSObject {
     class var baseUrl: String {
-        return isDevelop ? "http://123.57.247.185/ai" : ""
+        return isDevelop ? "http://123.57.247.185/ai" : "https://api.abeibei.vip"
     }
 }

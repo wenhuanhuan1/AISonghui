@@ -145,9 +145,16 @@ class WHHHomeWitchTableViewCell: WHHBaseTableViewCell {
         if let tempArray = dataArray, btn.tag < tempArray.count {
             if let currentVC = UIViewController.currentViewController() {
                 let model = tempArray[btn.tag]
-                let abbHomeVC = WHHABBChatViewController()
-                abbHomeVC.model = model
-                currentVC.navigationController?.pushViewController(abbHomeVC, animated: true)
+                if WHHUserInfoManager.shared.userModel.vip > 0 {
+                    let abbHomeVC = WHHABBChatViewController()
+                    abbHomeVC.model = model
+                    currentVC.navigationController?.pushViewController(abbHomeVC, animated: true)
+                }else {
+                    jumpVIPController {
+                        debugPrint("支付成功")
+                    }
+                }
+               
             }
         }
     }

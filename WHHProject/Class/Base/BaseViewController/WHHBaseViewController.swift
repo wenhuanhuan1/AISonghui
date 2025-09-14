@@ -12,6 +12,9 @@ import IQKeyboardToolbarManager
 import UIKit
 
 class WHHBaseViewController: UIViewController {
+    
+    var stayle:UIStatusBarStyle = .darkContent
+    
     var isIQKeyboardManagerIsEnabled: Bool = false {
         didSet {
             IQKeyboardManager.shared.isEnabled = isIQKeyboardManagerIsEnabled
@@ -44,6 +47,10 @@ class WHHBaseViewController: UIViewController {
     
     override func backItemClick(_ sender: Any) {
         super.backItemClick(sender)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return stayle
     }
 }
 

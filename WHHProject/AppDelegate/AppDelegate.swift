@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             WHHHomeRequestViewModel.whhGetSystemInfoRequestApi { _ in
                 
-                WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish in
+                WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish,msg in
                     WHHHUD.whhHidenLoadView()
                     if finish {
                         if WHHUserInfoManager.shared.isShowpPrivacyAlert {
@@ -56,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 self?.window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
                             }
                         }
+                    }else{
+                        WHHHUD.whhShowInfoText(text: msg)
                     }
                 }
             }

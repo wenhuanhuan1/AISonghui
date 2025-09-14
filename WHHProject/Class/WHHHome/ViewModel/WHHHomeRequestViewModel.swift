@@ -18,7 +18,7 @@ class WHHHomeRequestViewModel: NSObject {
 
     /// 登录
     /// - Parameter callHandle: 回调
-    static func whhLoginRequest(callHandle: ((Bool) -> Void)?) {
+    static func whhLoginRequest(callHandle: ((Bool,String) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .loginMode1)
 
         api.whhStartConsequenceHandle { baseModel in
@@ -26,10 +26,10 @@ class WHHHomeRequestViewModel: NSObject {
             if baseModel.success == 1, let json = (baseModel.data as AnyObject).mj_JSONString() {
                 // 保存用户信息
                 WHHUserInfoManager.whhSaveUserInfoJsonString(jsonString: json)
-                callHandle?(true)
+                callHandle?(true,baseModel.msg)
             } else {
                 debugPrint("\(baseModel.msg)")
-                callHandle?(false)
+                callHandle?(false,baseModel.msg)
             }
         }
     }

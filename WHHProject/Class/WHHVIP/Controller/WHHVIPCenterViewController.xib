@@ -205,7 +205,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击立即开通购买即视为已同意《用户协议》，付款将从您的 ApplelD 账户中扣除，自动续费将在当前期限结束前 24 小时内收取续订费用，您也可以在购买后到 Apple store 的账户设置中来管理和取消订阅。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0I-Nc-Vbm">
-                    <rect key="frame" x="20" y="754.33333333333337" width="353" height="33.666666666666629"/>
+                    <rect key="frame" x="20" y="769.33333333333337" width="353" height="33.666666666666629"/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="8"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -230,7 +230,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ycT-Sl-Wgb" secondAttribute="trailing" constant="8" id="Aeh-W6-YOe"/>
                 <constraint firstItem="ycT-Sl-Wgb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="129" id="Ceu-xg-Zf9"/>
                 <constraint firstItem="Rwr-0B-N5P" firstAttribute="centerX" secondItem="FWh-0Y-dut" secondAttribute="centerX" id="DHk-vM-cDN"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c0I-Nc-Vbm" secondAttribute="bottom" constant="30" id="QNq-SZ-WXS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c0I-Nc-Vbm" secondAttribute="bottom" constant="15" id="QNq-SZ-WXS"/>
                 <constraint firstItem="c0I-Nc-Vbm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="T9D-HC-R7g"/>
                 <constraint firstItem="6hn-hG-dmr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Zoc-sb-rFb"/>
                 <constraint firstAttribute="trailing" secondItem="c0I-Nc-Vbm" secondAttribute="trailing" constant="20" id="a6B-6Q-mHs"/>

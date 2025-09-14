@@ -134,10 +134,8 @@
     if (baseUrl.length > 0 && ![baseUrl hasSuffix:@"/"]) {
         url = [url URLByAppendingPathComponent:@""];
     }
-     
-    NSString *xxx = [NSURL URLWithString:detailUrl relativeToURL:url].relativeString;
 
-    return [NSString stringWithFormat:@"%@%@",url,detailUrl];
+    return [NSURL URLWithString:detailUrl relativeToURL:url].absoluteString;
 }
 
 - (AFHTTPRequestSerializer *)requestSerializerForRequest:(YTKBaseRequest *)request {
