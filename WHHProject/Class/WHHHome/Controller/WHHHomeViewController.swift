@@ -9,19 +9,28 @@ import GKNavigationBarSwift
 import UIKit
 class WHHHomeViewController: WHHBaseViewController {
     lazy var homeTableView: UITableView = {
-        let homeTableView = UITableView(frame: .zero, style: .plain)
+        let homeTableView = UITableView(frame: .zero, style: .grouped)
         homeTableView.backgroundColor = .white
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        homeTableView.whhSetTableViewDefault()
         homeTableView.separatorStyle = .none
         homeTableView.register(WHHHomeNoSubscriptionCell.self, forCellReuseIdentifier: "WHHHomeNoSubscriptionCell")
         homeTableView.register(WHHHomeWitchTableViewCell.self, forCellReuseIdentifier: "WHHHomeWitchTableViewCell")
         homeTableView.register(UINib(nibName: "WHHHomeSubscribedTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHHomeSubscribedTableViewCell")
+        homeTableView.register(UINib(nibName: "HomeVideoOrPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeVideoOrPhotoTableViewCell")
+        homeTableView.register(UINib(nibName: "HomeABBTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeABBTableViewCell")
+
         homeTableView.whhSetTableViewDefault()
         homeTableView.whhAddRefreshNormalHeader { [weak self] in
             self?.whhRefreshFooter()
         }
         return homeTableView
+    }()
+
+    lazy var bannerDataArray: [WHHSystemModel] = {
+        let view = [WHHSystemModel]()
+        return view
     }()
 
     private(set) var isSubscribed = false
@@ -81,7 +90,8 @@ class WHHHomeViewController: WHHBaseViewController {
 
         view.addSubview(homeTableView)
         homeTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(WHHAllNavBarHeight)
         }
 
         view.addSubview(rightButton)
@@ -103,7 +113,7 @@ class WHHHomeViewController: WHHBaseViewController {
         }
         dateTitle.text = String.getCurrentDateString()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         whhRefreshFooter()
@@ -113,6 +123,7 @@ class WHHHomeViewController: WHHBaseViewController {
     private func getUserInfo() {
         WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest(callBlack: nil)
     }
+
     override func whhRefreshFooter() {
         super.whhRefreshFooter()
 
@@ -139,9 +150,16 @@ class WHHHomeViewController: WHHBaseViewController {
 
         group.enter()
         queue.async {
-            WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
-                if witchDataArray.isEmpty == false {
-                    self?.dataArray = witchDataArray
+//            WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
+//                if witchDataArray.isEmpty == false {
+//                    self?.dataArray = witchDataArray
+//                }
+//
+//            }
+            WHHHomeRequestViewModel.getSysIndexBannerConfig { [weak self] model, _, code in
+                self?.homeTableView.mj_header?.endRefreshing()
+                if code {
+                    self?.bannerDataArray = model
                 }
                 group.leave()
             }
@@ -154,7 +172,6 @@ class WHHHomeViewController: WHHBaseViewController {
         }
     }
 
-   
     @objc func rightButtonClick() {
         debugPrint("点击了右边的按钮")
 
@@ -162,54 +179,113 @@ class WHHHomeViewController: WHHBaseViewController {
 
         navigationController?.pushViewController(personVC, animated: true)
     }
+
+    private func jumpABBWitch(array: [WHHHomeWitchModel]) {
+        if let model = array.first(where: { $0.wichId == "2" }) {
+            if WHHUserInfoManager.shared.userModel.vip > 0 {
+                let abbHomeVC = WHHABBChatViewController()
+                abbHomeVC.model = model
+                navigationController?.pushViewController(abbHomeVC, animated: true)
+            } else {
+                jumpVIPController {
+                    debugPrint("支付成功")
+                }
+            }
+        }
+    }
 }
 
 extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return bannerDataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            if isSubscribed {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeSubscribedTableViewCell", for: indexPath) as! WHHHomeSubscribedTableViewCell
-                cell.cellModel = foretellModel
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeNoSubscriptionCell", for: indexPath) as! WHHHomeNoSubscriptionCell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeVideoOrPhotoTableViewCell", for: indexPath) as! HomeVideoOrPhotoTableViewCell
+            cell.cellModel = bannerDataArray[indexPath.section]
+            return cell
 
-                return cell
-            }
+//            if isSubscribed {
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeSubscribedTableViewCell", for: indexPath) as! WHHHomeSubscribedTableViewCell
+//                cell.cellModel = foretellModel
+//                return cell
+//            } else {
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeNoSubscriptionCell", for: indexPath) as! WHHHomeNoSubscriptionCell
+//
+//                return cell
+//            }
 
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeWitchTableViewCell", for: indexPath) as! WHHHomeWitchTableViewCell
-            cell.dataArray = dataArray
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeABBTableViewCell", for: indexPath) as! HomeABBTableViewCell
+            cell.cellModel = bannerDataArray[indexPath.section]
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeWitchTableViewCell", for: indexPath) as! WHHHomeWitchTableViewCell
+//            cell.dataArray = dataArray
             return cell
         }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            if isSubscribed {
-                return (WHHAllNavBarHeight + 14) + ((WHHScreenW - 40) * 325 / 335)
+        if indexPath.section == 0 {
+            return (WHHScreenW - 32) * 474 / 339
 
-            } else {
-                return WHHScreenW * 353 / 375
-            }
-
-        } else if indexPath.row == 1 {
-            return (WHHScreenW - 16) * 413 / 360
         } else {
-            return .zero
+            return (WHHScreenW - 32) * 174 / 339
         }
+
+//        if indexPath.row == 0 {
+//            if isSubscribed {
+//                return (WHHAllNavBarHeight + 14) + ((WHHScreenW - 40) * 325 / 335)
+//
+//            } else {
+//                return WHHScreenW * 353 / 375
+//            }
+//
+//        } else if indexPath.row == 1 {
+//            return (WHHScreenW - 16) * 413 / 360
+//        } else {
+//            return .zero
+//        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
+            WHHHUD.whhShowLoadView()
+            WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
+                WHHHUD.whhHidenLoadView()
+                if witchDataArray.isEmpty == false {
+                    self?.jumpABBWitch(array: witchDataArray)
+                }
+            }
+
+        } else {
             if isSubscribed {
                 let detailVC = WHHHomeSubscribedDetailViewController()
                 navigationController?.pushViewController(detailVC, animated: true)
+            } else {
+                let divinationVC = WHHDivinationViewController()
+                navigationController?.pushViewController(divinationVC, animated: true)
             }
         }
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 18
     }
 }

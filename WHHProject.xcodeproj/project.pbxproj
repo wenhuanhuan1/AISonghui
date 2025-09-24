@@ -77,6 +77,11 @@
 		2F6079582E6E87F7001CD6BB /* WHHTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079572E6E87F7001CD6BB /* WHHTextView.swift */; };
 		2F60795A2E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079592E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift */; };
 		2F60795C2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */; };
+		2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */; };
+		2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */; };
+		2F6D948F2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */; };
+		2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */; };
+		2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D949D2E83A52E00CE27A3 /* WebPManager.m */; };
 		2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */; };
 		2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */; };
 		2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */; };
@@ -269,6 +274,12 @@
 		2F6079572E6E87F7001CD6BB /* WHHTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHTextView.swift; sourceTree = "<group>"; };
 		2F6079592E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatRequestApi.swift; sourceTree = "<group>"; };
 		2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatRequestApiViewModel.swift; sourceTree = "<group>"; };
+		2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoOrPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoOrPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeABBTableViewCell.swift; sourceTree = "<group>"; };
+		2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeABBTableViewCell.xib; sourceTree = "<group>"; };
+		2F6D949C2E83A52E00CE27A3 /* WebPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPManager.h; sourceTree = "<group>"; };
+		2F6D949D2E83A52E00CE27A3 /* WebPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPManager.m; sourceTree = "<group>"; };
 		2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineViewController.swift; sourceTree = "<group>"; };
 		2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHGradualView.swift; sourceTree = "<group>"; };
 		2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHomeItemView.swift; sourceTree = "<group>"; };
@@ -548,6 +559,7 @@
 		2F17BF872DF7CAA300CA36E8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2F6D949B2E83A51A00CE27A3 /* WebPManager */,
 				2F043C4C2E6BDA8700E8C04E /* WHHApplePurchase */,
 				2F043BC72E65586400E8C04E /* WHHLog */,
 				2F043BB22E653F6600E8C04E /* YTKNetwork */,
@@ -700,6 +712,15 @@
 				2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F6D949B2E83A51A00CE27A3 /* WebPManager */ = {
+			isa = PBXGroup;
+			children = (
+				2F6D949C2E83A52E00CE27A3 /* WebPManager.h */,
+				2F6D949D2E83A52E00CE27A3 /* WebPManager.m */,
+			);
+			path = WebPManager;
 			sourceTree = "<group>";
 		};
 		2FDC68D12E2E272A00A523B0 /* WHHMine */ = {
@@ -948,6 +969,10 @@
 				2FDC69562E39F7A500A523B0 /* WHHInputView.swift */,
 				2FDC69582E3A063000A523B0 /* WHHLoadAlertView.swift */,
 				2FDC695A2E3A064D00A523B0 /* WHHLoadAlertView.xib */,
+				2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */,
+				2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */,
+				2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */,
+				2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1080,9 +1105,11 @@
 				2FDC697C2E3B7AF800A523B0 /* WHHContactUsViewController.xib in Resources */,
 				2FDC69542E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.xib in Resources */,
 				2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */,
+				2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */,
 				2FDC69BD2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib in Resources */,
 				2FDC69742E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.xib in Resources */,
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
+				2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
@@ -1188,6 +1215,7 @@
 				2FDC69B62E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift in Sources */,
 				2F043C2B2E684AD400E8C04E /* FCMineModel.m in Sources */,
 				2FDC696C2E3B5FFC00A523B0 /* WHHPersonageViewController.swift in Sources */,
+				2F6D948F2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift in Sources */,
 				2F043BB32E653F6600E8C04E /* YTKRequest.m in Sources */,
 				2F043BB42E653F6600E8C04E /* YTKNetworkPrivate.m in Sources */,
 				2F043BB52E653F6600E8C04E /* YTKNetworkAgent.m in Sources */,
@@ -1196,6 +1224,7 @@
 				2F043BB62E653F6600E8C04E /* YTKRequestEventAccessory.m in Sources */,
 				2F043BB72E653F6600E8C04E /* YTKBatchRequestAgent.m in Sources */,
 				2F043BB82E653F6600E8C04E /* YTKBatchRequest.m in Sources */,
+				2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */,
 				2F6079582E6E87F7001CD6BB /* WHHTextView.swift in Sources */,
 				2F043BCD2E65945700E8C04E /* WHHHomeWitchModel.m in Sources */,
 				2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */,
@@ -1214,6 +1243,7 @@
 				2F004E222E0E35100016DA6B /* AFAutoPurgingImageCache.m in Sources */,
 				2FDC695F2E3B0B5600A523B0 /* WHHABBHomeViewController.swift in Sources */,
 				2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */,
+				2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */,
 				2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */,
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
 				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
@@ -1307,9 +1337,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YM7WN74R82;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
@@ -1327,8 +1359,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayl.whh.WHHProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianyan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = jianyan_dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1348,9 +1382,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YM7WN74R82;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
@@ -1368,8 +1404,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ayl.whh.WHHProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianyan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = jianyan_dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

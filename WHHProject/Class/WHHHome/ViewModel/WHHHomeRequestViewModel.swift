@@ -18,7 +18,7 @@ class WHHHomeRequestViewModel: NSObject {
 
     /// 登录
     /// - Parameter callHandle: 回调
-    static func whhLoginRequest(callHandle: ((Bool,String) -> Void)?) {
+    static func whhLoginRequest(callHandle: ((Bool, String) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .loginMode1)
 
         api.whhStartConsequenceHandle { baseModel in
@@ -26,10 +26,10 @@ class WHHHomeRequestViewModel: NSObject {
             if baseModel.success == 1, let json = (baseModel.data as AnyObject).mj_JSONString() {
                 // 保存用户信息
                 WHHUserInfoManager.whhSaveUserInfoJsonString(jsonString: json)
-                callHandle?(true,baseModel.msg)
+                callHandle?(true, baseModel.msg)
             } else {
                 debugPrint("\(baseModel.msg)")
-                callHandle?(false,baseModel.msg)
+                callHandle?(false, baseModel.msg)
             }
         }
     }
@@ -182,6 +182,20 @@ class WHHHomeRequestViewModel: NSObject {
         let api = WHHHomeRequestApi(parameter: ["input": inputString, "userId": WHHUserInfoManager.shared.userId], type: .appUserWitchAmendFortune)
         api.whhStartConsequenceHandle { baseModel in
             callBlack?(baseModel.success, baseModel.msg)
+        }
+    }
+
+    /// 获取首页数据
+    /// - Parameter canllBlack: 回调
+    static func getSysIndexBannerConfig(canllBlack: (([WHHSystemModel], String, Bool) -> Void)?) {
+        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId], type: .sysIndexBannerConfig)
+        api.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1, let array = WHHSystemModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHSystemModel] {
+                canllBlack?(array, baseModel.msg, true)
+            } else {
+                canllBlack?([WHHSystemModel](), baseModel.msg, false)
+            }
         }
     }
 }

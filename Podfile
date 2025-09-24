@@ -43,5 +43,6 @@ target 'WHHProject' do
   pod 'HXPhotoPicker-Lite/Camera'
   pod 'MJExtension'
   pod 'BRPickerView'
-#  pod 'YYKit'
+  pod 'YYWebImage', '~> 1.0.5'
+  pod 'YYImage/WebP'
 end

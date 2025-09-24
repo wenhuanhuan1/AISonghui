@@ -20,6 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *contactUsMail;
 @property(nonatomic,copy) NSString *vipAgreementUrl;
 
+@property(nonatomic,assign) NSInteger type;
+
+@property(nonatomic,copy) NSString *assetUrl;
+@property(nonatomic,copy) NSString *title;
+@property(nonatomic,copy) NSString *content;
+@property(nonatomic,copy) NSString *buttonText;
+
 @end
 
 NS_ASSUME_NONNULL_END

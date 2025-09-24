@@ -43,6 +43,10 @@ enum WHHHomeRequestApiType: Int {
     
     /// 修正预言
     case appUserWitchAmendFortune
+    
+    /// 首页首页banner配置-1.0
+    
+    case sysIndexBannerConfig
 }
 
 class WHHHomeRequestApi: WHHRequest {
@@ -87,7 +91,11 @@ class WHHHomeRequestApi: WHHRequest {
             return "/sys/info"
         case .appUserWitchAmendFortune:
             return "/app-user/witch/amend-fortune"
+        case .sysIndexBannerConfig:
+            return "/sys/index/banner/config"
         }
+
+        
     }
 
     override func requestArgument() -> Any? {
@@ -96,7 +104,7 @@ class WHHHomeRequestApi: WHHRequest {
 
     override func requestMethod() -> YTKRequestMethod {
         switch aType {
-        case .witchList, .appUserwitchGetFortune,.myDetail,.appUserWitchGetFortune,.appUserWitchGetOldFortune,.sysInfo:
+        case .witchList, .appUserwitchGetFortune,.myDetail,.appUserWitchGetFortune,.appUserWitchGetOldFortune,.sysInfo,.sysIndexBannerConfig:
             return .GET
         default:
             return .POST

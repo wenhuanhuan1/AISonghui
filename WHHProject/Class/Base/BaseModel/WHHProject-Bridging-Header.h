@@ -17,3 +17,4 @@
 #import "WHHMineUploadApi.h"
 #import "WHHHomeForetellModel.h"
 #import "WHHChatMesageModel.h"
+#import "WebPManager.h"
