@@ -80,21 +80,21 @@ class WHHAgreementView: WHHBaseView {
         return contentTitle
     }()
 
-//    lazy var backButton: UIButton = {
-//        let backButton = UIButton(type: .custom)
-//        backButton.setTitle("whhDivinationBackTitleKey".localized, for: .normal)
-//        backButton.titleLabel?.font = pingfangRegular(size: 14)
-//        backButton.setTitleColor(Color2C2B2D, for: .normal)
-//        backButton.backgroundColor = ColorEDEBEF
-//        backButton.layer.cornerRadius = 22
-//        backButton.layer.masksToBounds = true
-//        backButton.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
-//        return backButton
-//    }()
+    lazy var backButton: UIButton = {
+        let backButton = UIButton(type: .custom)
+        backButton.setTitle("whhDivinationBackTitleKey".localized, for: .normal)
+        backButton.titleLabel?.font = pingfangRegular(size: 14)
+        backButton.setTitleColor(Color2C2B2D, for: .normal)
+        backButton.backgroundColor = ColorEDEBEF
+        backButton.layer.cornerRadius = 22
+        backButton.layer.masksToBounds = true
+        backButton.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
+        return backButton
+    }()
 
     lazy var submitButton: WHHGradientButton = {
         let submitButton = WHHGradientButton(type: .custom)
-        submitButton.setTitle("同意并继续".localized, for: .normal)
+        submitButton.setTitle("继续".localized, for: .normal)
         submitButton.titleLabel?.font = pingfangRegular(size: 14)
         submitButton.setTitleColor(.white, for: .normal)
         submitButton.layer.cornerRadius = 22
@@ -114,16 +114,17 @@ class WHHAgreementView: WHHBaseView {
             make.height.equalTo(326)
         }
 
-//        centerView.addSubview(backButton)
-//        backButton.snp.makeConstraints { make in
-//            make.left.equalToSuperview().offset(12)
-//            make.bottom.equalToSuperview().offset(-24)
-//            make.height.equalTo(44)
-//        }
+        centerView.addSubview(backButton)
+        backButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(12)
+            make.bottom.equalToSuperview().offset(-24)
+            make.height.equalTo(44)
+        }
         centerView.addSubview(submitButton)
         submitButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16)
+            make.left.equalTo(backButton.snp.right).offset(16)
             make.right.equalToSuperview().offset(-16)
+            make.width.equalTo(backButton)
             make.bottom.equalToSuperview().offset(-24)
             make.height.equalTo(44)
         }
@@ -149,15 +150,27 @@ class WHHAgreementView: WHHBaseView {
     }
 
     @objc func backButtonClick() {
-        WHHHUD.whhShowInfoText(text: "APP即将退出")
-        dispatchAfter(delay: 1) {
+        let alertVC = UIAlertController(title: "温馨提示", message: "确定要退出APP吗?", preferredStyle: .alert)
+
+        let cancle = UIAlertAction(title: "取消", style: .cancel)
+        alertVC.addAction(cancle)
+
+        let submit = UIAlertAction(title: "确定", style: .default) { _ in
             exit(1)
+        }
+        alertVC.addAction(submit)
+
+        if let vc = UIViewController.currentViewController() {
+            vc.present(alertVC, animated: true)
         }
     }
 
     @objc func submitButtonClick() {
         WHHUserInfoManager.whhSaveShowPrivacyAlertView()
-        routerSwitchRootViewController()
+        
+        if let appdelegate = UIApplication.shared.delegate as? AppDelegate {
+            appdelegate.switchRootViewController()
+        }
     }
 }
 

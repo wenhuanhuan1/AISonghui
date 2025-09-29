@@ -22,20 +22,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-Sl-Wgb">
-                    <rect key="frame" x="8" y="188" width="377" height="509"/>
+                    <rect key="frame" x="16.666666666666657" y="224.33333333333337" width="360" height="509"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhVIPContent" translatesAutoresizingMaskIntoConstraints="NO" id="bsb-bf-4uA">
-                            <rect key="frame" x="0.0" y="0.0" width="377" height="509"/>
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="509"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhVipTopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FWh-0Y-dut">
-                            <rect key="frame" x="43.666666666666657" y="-72" width="290" height="144"/>
+                            <rect key="frame" x="35" y="-72" width="290" height="144"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="290" id="7B4-xd-1BR"/>
                                 <constraint firstAttribute="height" constant="144" id="B6z-So-4Yf"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47j-Vb-BcX">
-                            <rect key="frame" x="60.666666666666686" y="9.0000000000000036" width="256" height="46.333333333333343"/>
+                            <rect key="frame" x="52" y="9.0000000000000036" width="256" height="46.333333333333343"/>
                             <string key="text">亲爱的~请接收受到三位女巫的祝福
 这顶全域智慧缀满月光宝石的魔法帽能为你开启特殊的功能</string>
                             <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="11"/>
@@ -43,14 +43,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bu3-up-BG7">
-                            <rect key="frame" x="23" y="420" width="331" height="44"/>
+                            <rect key="frame" x="23" y="420" width="314" height="44"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="NrF-cp-6qF"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUB-yL-5bZ">
-                            <rect key="frame" x="31.666666666666657" y="94" width="314" height="90"/>
+                            <rect key="frame" x="23" y="93.999999999999972" width="314" height="90"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhVipItem1Icon" translatesAutoresizingMaskIntoConstraints="NO" id="sSw-ef-nEw">
                                     <rect key="frame" x="21" y="17" width="38" height="38"/>
@@ -137,33 +137,33 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帽檐藏着精灵们写的小幸运纸条哦~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gP-9o-4zT">
-                            <rect key="frame" x="111" y="208" width="155" height="14"/>
+                            <rect key="frame" x="102.33333333333331" y="207.99999999999997" width="155" height="14"/>
                             <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="10"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="现在请伸出双手，让阿贝贝为你戴上这顶星空之冠吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYh-rQ-BMt">
-                            <rect key="frame" x="73.666666666666686" y="232" width="230" height="14"/>
+                            <rect key="frame" x="65" y="231.99999999999997" width="230" height="14"/>
                             <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="10"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhVIPItemLeftIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zSe-Oc-5eg">
-                            <rect key="frame" x="79" y="197" width="27" height="36"/>
+                            <rect key="frame" x="70.333333333333329" y="196.99999999999997" width="27" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="27" id="6A5-IX-acw"/>
                                 <constraint firstAttribute="height" constant="36" id="9M7-a9-i7i"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhVIPItemRightIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xhv-B9-Im1">
-                            <rect key="frame" x="271" y="197" width="27" height="36"/>
+                            <rect key="frame" x="262.33333333333331" y="196.99999999999997" width="27" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="D0C-Zl-Oi4"/>
                                 <constraint firstAttribute="width" constant="27" id="JKV-oc-Xrb"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0j-r7-mdK">
-                            <rect key="frame" x="0.0" y="266" width="377" height="120"/>
+                            <rect key="frame" x="0.0" y="266" width="360" height="120"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="120" id="hor-2f-thB"/>
@@ -186,6 +186,7 @@
                         <constraint firstItem="xhv-B9-Im1" firstAttribute="centerY" secondItem="6gP-9o-4zT" secondAttribute="centerY" id="Nk3-eN-UEg"/>
                         <constraint firstAttribute="trailing" secondItem="p0j-r7-mdK" secondAttribute="trailing" id="Scu-ZU-3eh"/>
                         <constraint firstAttribute="trailing" secondItem="bu3-up-BG7" secondAttribute="trailing" constant="23" id="Sum-60-mKu"/>
+                        <constraint firstAttribute="width" constant="360" id="Sxr-cz-q4q"/>
                         <constraint firstItem="FWh-0Y-dut" firstAttribute="leading" secondItem="47j-Vb-BcX" secondAttribute="leading" constant="-17" id="YN2-Xa-DyP"/>
                         <constraint firstItem="6gP-9o-4zT" firstAttribute="centerY" secondItem="zSe-Oc-5eg" secondAttribute="centerY" id="YbR-zK-xxd"/>
                         <constraint firstItem="6gP-9o-4zT" firstAttribute="leading" secondItem="zSe-Oc-5eg" secondAttribute="trailing" constant="5" id="Ylp-ss-LNS"/>
@@ -199,7 +200,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿贝贝的特权魔法帽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwr-0B-N5P">
-                    <rect key="frame" x="106.66666666666669" y="151" width="180" height="28"/>
+                    <rect key="frame" x="106.66666666666669" y="187.33333333333334" width="180" height="28"/>
                     <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -226,12 +227,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ycT-Sl-Wgb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="AMu-wx-zhl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ycT-Sl-Wgb" secondAttribute="trailing" constant="8" id="Aeh-W6-YOe"/>
-                <constraint firstItem="ycT-Sl-Wgb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="129" id="Ceu-xg-Zf9"/>
                 <constraint firstItem="Rwr-0B-N5P" firstAttribute="centerX" secondItem="FWh-0Y-dut" secondAttribute="centerX" id="DHk-vM-cDN"/>
+                <constraint firstItem="ycT-Sl-Wgb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MbR-xa-tko"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c0I-Nc-Vbm" secondAttribute="bottom" constant="15" id="QNq-SZ-WXS"/>
                 <constraint firstItem="c0I-Nc-Vbm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="T9D-HC-R7g"/>
+                <constraint firstItem="c0I-Nc-Vbm" firstAttribute="top" secondItem="ycT-Sl-Wgb" secondAttribute="bottom" constant="36" id="Z4s-aG-YIE"/>
                 <constraint firstItem="6hn-hG-dmr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Zoc-sb-rFb"/>
                 <constraint firstAttribute="trailing" secondItem="c0I-Nc-Vbm" secondAttribute="trailing" constant="20" id="a6B-6Q-mHs"/>
                 <constraint firstItem="6hn-hG-dmr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="hVi-Sj-ark"/>

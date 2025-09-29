@@ -32,10 +32,10 @@ class WHHVIPCenterViewController: WHHBaseViewController {
 
     lazy var itemCollectionViw: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let paddig = (WHHScreenW - 91 * 3 - 16 - 46) / 2
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 23, bottom: 0, right: 23)
-        layout.minimumLineSpacing = paddig
-        layout.minimumInteritemSpacing = paddig
+        let paddig = (360 - 91 * 3 - 16 - 48) / 2
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 24)
+        layout.minimumLineSpacing = CGFloat(paddig)
+        layout.minimumInteritemSpacing = CGFloat(paddig)
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 91, height: 100)
         let itemCollectionViw = UICollectionView(frame: .zero, collectionViewLayout: layout)

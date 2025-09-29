@@ -7,11 +7,13 @@
 
 import UIKit
 import YYImage
+import GPUImage
+
 class HomeVideoOrPhotoTableViewCell: UITableViewCell {
     @IBOutlet var buttonTitle: UILabel!
     @IBOutlet var smallLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
-
+    private(set) var blurView:UIVisualEffectView?
     @IBOutlet weak var sourceBgView: UIView!
     @IBOutlet weak var buttomView: UIView!
     lazy var bigIconImageView: YYAnimatedImageView = {
@@ -27,6 +29,12 @@ class HomeVideoOrPhotoTableViewCell: UITableViewCell {
         view.isHidden = true
         return view
     }()
+    
+//    lazy var blurFilter: GPUImageGaussianBlurFilter = {
+//        let blurFilter = GPUImageGaussianBlurFilter()
+//        blurFilter.blurRadiusInPixels = 1.0 // 可以调整模糊程度
+//        return blurFilter
+//    }()
 
     @IBOutlet var starBgView: UIView!
     @IBOutlet var bgConentView: UIView!
@@ -46,6 +54,12 @@ class HomeVideoOrPhotoTableViewCell: UITableViewCell {
         bigIconImageView.snp.makeConstraints { make in
             make.edges.equalTo(sourceBgView)
         }
+       
+        buttomView.addGPUImageBlur(radius: 20)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
 
     }
 

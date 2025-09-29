@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HXPhotoPicker-Lite-HXPhotoPicker_Privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>

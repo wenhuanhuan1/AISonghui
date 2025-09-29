@@ -19,51 +19,32 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhSetDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="B8S-S5-byP">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yuanjiaoLog" translatesAutoresizingMaskIntoConstraints="NO" id="B8S-S5-byP">
                     <rect key="frame" x="111.66666666666669" y="119" width="170" height="170"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="170" id="M1c-4J-NJ0"/>
                         <constraint firstAttribute="width" constant="170" id="c33-aP-CkD"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="85"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="神奇女巫·阿贝贝的今日运势密语" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVf-LM-sQs">
-                    <rect key="frame" x="10" y="738.33333333333337" width="373" height="19.666666666666629"/>
-                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="14"/>
-                    <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhLaunchButtomIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WHX-Ul-fUd">
-                    <rect key="frame" x="124.66666666666669" y="712.33333333333337" width="144" height="7"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="7" id="mI2-P3-hQz"/>
-                        <constraint firstAttribute="width" constant="144" id="wZh-x5-Qk5"/>
-                    </constraints>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchBottomIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WHX-Ul-fUd">
+                    <rect key="frame" x="82.666666666666686" y="686" width="228" height="52"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CVf-LM-sQs" secondAttribute="trailing" constant="10" id="CPw-XU-Ugr"/>
+                <constraint firstItem="WHX-Ul-fUd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0UD-Bc-yjW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WHX-Ul-fUd" secondAttribute="bottom" constant="80" id="0z4-Xj-g48"/>
                 <constraint firstItem="B8S-S5-byP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="Gg4-Sg-OGM"/>
-                <constraint firstItem="CVf-LM-sQs" firstAttribute="top" secondItem="WHX-Ul-fUd" secondAttribute="bottom" constant="19" id="Lsq-x0-wfe"/>
                 <constraint firstItem="B8S-S5-byP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VIO-Pq-xF0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CVf-LM-sQs" secondAttribute="bottom" constant="60" id="aGv-kH-22F"/>
-                <constraint firstItem="CVf-LM-sQs" firstAttribute="centerX" secondItem="WHX-Ul-fUd" secondAttribute="centerX" id="bX3-lq-QPh"/>
-                <constraint firstItem="CVf-LM-sQs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="x7x-dG-MJe"/>
             </constraints>
             <point key="canvasLocation" x="59" y="21"/>
         </view>
     </objects>
     <resources>
-        <image name="whhLaunchButtomIcon" width="48.666667938232422" height="3"/>
-        <image name="whhSetDefaultIcon" width="28.666666030883789" height="29"/>
+        <image name="lunchBottomIcon" width="228" height="52"/>
+        <image name="yuanjiaoLog" width="170" height="170"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

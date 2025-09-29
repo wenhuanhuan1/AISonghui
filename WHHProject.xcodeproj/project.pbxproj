@@ -82,6 +82,7 @@
 		2F6D948F2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */; };
 		2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */; };
 		2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D949D2E83A52E00CE27A3 /* WebPManager.m */; };
+		2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */; };
 		2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */; };
 		2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */; };
 		2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */; };
@@ -280,6 +281,7 @@
 		2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeABBTableViewCell.xib; sourceTree = "<group>"; };
 		2F6D949C2E83A52E00CE27A3 /* WebPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPManager.h; sourceTree = "<group>"; };
 		2F6D949D2E83A52E00CE27A3 /* WebPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPManager.m; sourceTree = "<group>"; };
+		2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineViewController.swift; sourceTree = "<group>"; };
 		2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHGradualView.swift; sourceTree = "<group>"; };
 		2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHomeItemView.swift; sourceTree = "<group>"; };
@@ -647,6 +649,7 @@
 				2FDC69642E3B1EE800A523B0 /* String+Ext.swift */,
 				2F043BCE2E65970D00E8C04E /* UIImageView+KF.swift */,
 				2F043BD02E6598EA00E8C04E /* UIColor+Hex.swift */,
+				2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1191,6 +1194,7 @@
 				2F004E112E0E35100016DA6B /* UIImageView+AFNetworking.m in Sources */,
 				2F004E122E0E35100016DA6B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */,
+				2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */,
 				2F004E132E0E35100016DA6B /* AFImageDownloader.m in Sources */,
 				2FDC69592E3A063000A523B0 /* WHHLoadAlertView.swift in Sources */,
 				2F004E142E0E35100016DA6B /* AFURLResponseSerialization.m in Sources */,

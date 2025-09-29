@@ -10,12 +10,14 @@ import UIKit
 class WHHAboutUsViewController: WHHBaseViewController {
     @IBOutlet var tableview: UITableView!
     
+    
+    
     @IBOutlet weak var whiteBgView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         gk_backStyle = .black
-        gk_navTitle = "关于阿贝贝"
+        gk_navTitle = ""
         gk_navTitleColor = .black
         tableview.delegate = self
         tableview.dataSource = self
@@ -26,7 +28,8 @@ class WHHAboutUsViewController: WHHBaseViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        whiteBgView.whhAddSetRectConrner(corner: [.topLeft,.topRight], radile: 22)
+        whiteBgView.whhAddShadow(ofColor: Color6C73FF, radius: 22, offset: CGSize(width: 0, height: -2), opacity: 0.4)
+        whiteBgView.layer.cornerRadius = 22
     }
 }
 

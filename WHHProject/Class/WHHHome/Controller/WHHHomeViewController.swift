@@ -60,7 +60,7 @@ class WHHHomeViewController: WHHBaseViewController {
     lazy var todayTitle: UILabel = {
         let todayTitle = UILabel()
         todayTitle.text = "whhHomeTodayKey".localized
-        todayTitle.font = pingfangSemibold(size: 18)
+        todayTitle.font = pingfangSemibold(size: 28)
         todayTitle.textColor = Color121212
         todayTitle.numberOfLines = 0
         return todayTitle
@@ -69,8 +69,8 @@ class WHHHomeViewController: WHHBaseViewController {
     lazy var dateTitle: UILabel = {
         let dateTitle = UILabel()
         dateTitle.text = "7月3日 周三"
-        dateTitle.font = pingfangRegular(size: 14)
-        dateTitle.textColor = Color929192
+        dateTitle.font = pingfangRegular(size: 20)
+        dateTitle.textColor = Color89898D
         dateTitle.numberOfLines = 0
         return dateTitle
     }()
@@ -90,7 +90,8 @@ class WHHHomeViewController: WHHBaseViewController {
 
         view.addSubview(homeTableView)
         homeTableView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-WHHBottomSafe)
             make.top.equalToSuperview().offset(WHHAllNavBarHeight)
         }
 

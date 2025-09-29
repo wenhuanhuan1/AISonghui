@@ -45,4 +45,5 @@ target 'WHHProject' do
   pod 'BRPickerView'
   pod 'YYWebImage', '~> 1.0.5'
   pod 'YYImage/WebP'
+  pod 'GPUImage'
 end

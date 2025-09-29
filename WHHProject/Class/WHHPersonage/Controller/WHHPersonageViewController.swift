@@ -41,13 +41,12 @@ class WHHPersonageViewController: WHHBaseViewController {
     lazy var homeTableView: UITableView = {
         let homeTableView = UITableView(frame: .zero, style: .grouped)
         homeTableView.backgroundColor = .white
-//        homeTableView.whhSetTableViewDefault()
         homeTableView.delegate = self
         homeTableView.dataSource = self
         homeTableView.separatorStyle = .none
         homeTableView.layer.cornerRadius = 22
         homeTableView.isScrollEnabled = false
-
+       
         homeTableView.register(UINib(nibName: "WHHPersonageTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageTableViewCell")
         homeTableView.register(UINib(nibName: "WHHPersonageControllTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageControllTableViewCell")
         homeTableView.register(UINib(nibName: "WHHBuyFinishTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHBuyFinishTableViewCell")
@@ -61,13 +60,13 @@ class WHHPersonageViewController: WHHBaseViewController {
         super.viewDidLoad()
         gk_navTitle = "资料卡"
         gk_backStyle = .black
-        gk_navTitleColor = .black
+        gk_navTitleColor = Color6A6A6B
         view.backgroundColor = ColorF2F4FE
         view.addSubview(homeTableView)
         homeTableView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(WHHAllNavBarHeight + 77)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(30)
         }
 
         view.addSubview(abbIcon)
@@ -85,6 +84,12 @@ class WHHPersonageViewController: WHHBaseViewController {
             make.right.equalToSuperview().offset(-13)
         }
         getUserInfo()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        homeTableView.whhAddShadow(ofColor: Color6C73FF, radius: 22, offset: CGSize(width: 0, height: -2), opacity: 0.4)
+        homeTableView.layer.cornerRadius = 22
     }
     
     override func viewWillAppear(_ animated: Bool) {

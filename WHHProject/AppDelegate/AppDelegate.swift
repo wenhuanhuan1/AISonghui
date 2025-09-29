@@ -39,28 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func switchRootViewController() {
-        if WHHUserInfoManager.shared.isLogin {
-            window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
-        } else {
-            WHHHUD.whhShowLoadView()
+        if WHHUserInfoManager.shared.isShowpPrivacyAlert {
+            // 同意协议
+            if WHHUserInfoManager.shared.isLogin {
+                window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+            } else {
+                WHHHUD.whhShowLoadView()
 
-            WHHHomeRequestViewModel.whhGetSystemInfoRequestApi { _ in
-                
-                WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish,msg in
-                    WHHHUD.whhHidenLoadView()
-                    if finish {
-                        if WHHUserInfoManager.shared.isShowpPrivacyAlert {
-                            if WHHUserInfoManager.shared.isLogin {
-                                self?.window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
-                            } else {
-                                self?.window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
-                            }
+                WHHHomeRequestViewModel.whhGetSystemInfoRequestApi { _ in
+
+                    WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish, msg in
+                        WHHHUD.whhHidenLoadView()
+                        if finish {
+                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+                        } else {
+                            WHHHUD.whhShowInfoText(text: msg)
                         }
-                    }else{
-                        WHHHUD.whhShowInfoText(text: msg)
                     }
                 }
             }
+
+        } else {
+            window?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
         }
     }
 }
