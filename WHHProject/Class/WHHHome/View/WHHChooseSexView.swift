@@ -29,10 +29,12 @@ class WHHChooseSexView: WHHBaseView {
         maleItemView.backgroundColor = Color0091F
         maleItemView.didSelectButtonBlock = { [weak self] currentView in
             currentView.isSelect = true
+            currentView.titleLabel.textColor = .white
             currentView.backgroundColor = Color0091F
             currentView.sexIcon.image = UIImage(named: "whhSetMaleIcon")
 
             self?.femaleItemView.isSelect = false
+            self?.femaleItemView.titleLabel.textColor = Color2C2B2D
             self?.femaleItemView.sexIcon.image = UIImage(named: "whhSetFemaleIcon")
             self?.femaleItemView.backgroundColor = ColorF2F4FE
         }
@@ -49,9 +51,10 @@ class WHHChooseSexView: WHHBaseView {
             currentView.isSelect = true
             currentView.sexIcon.image = UIImage(named: "whhFemaleWhiteIcon")
             currentView.backgroundColor = ColorFF4D94
-
+            currentView.titleLabel.textColor = .white
             self?.maleItemView.isSelect = false
             self?.maleItemView.sexIcon.image = UIImage(named: "whhBlueMaleIcon")
+            self?.maleItemView.titleLabel.textColor = Color2C2B2D
             self?.maleItemView.backgroundColor = ColorF2F4FE
         }
         return femaleItemView

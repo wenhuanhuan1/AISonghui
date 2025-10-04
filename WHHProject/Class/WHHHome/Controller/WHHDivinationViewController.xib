@@ -27,6 +27,7 @@
                 <outlet property="shenqiNvButton" destination="JK9-Js-6E2" id="c2m-vY-YwN"/>
                 <outlet property="subscriptionButton" destination="RKf-bm-d83" id="mnl-GQ-WwO"/>
                 <outlet property="subscriptionLabel" destination="rIp-tc-KZL" id="Kse-28-GEf"/>
+                <outlet property="topConf" destination="iVZ-kF-YIR" id="XwC-fk-zjS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="welfaresLabel" destination="w7Q-BO-HCn" id="tx2-9w-JyN"/>
                 <outlet property="xuanjinvButton" destination="cJ1-71-xa5" id="rXv-H3-8IP"/>
@@ -278,7 +279,7 @@
                             <color key="textColor" red="0.17254901959999999" green="0.16862745100000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhBottomIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-UZ-cyl">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhBottomIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-UZ-cyl">
                             <rect key="frame" x="0.0" y="196" width="353" height="312"/>
                             <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -348,7 +349,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="x2k-nl-db0" firstAttribute="leading" secondItem="PIW-Hm-RkR" secondAttribute="leading" constant="34" id="24b-4p-1dy"/>
                         <constraint firstItem="JK9-Js-6E2" firstAttribute="leading" secondItem="cJ1-71-xa5" secondAttribute="trailing" constant="11" id="2on-4I-LDD"/>

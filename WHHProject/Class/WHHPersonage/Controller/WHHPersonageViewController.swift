@@ -108,6 +108,7 @@ class WHHPersonageViewController: WHHBaseViewController {
                 setView.logoFileId = model.logo
                 setView.birthday = model.birthday
                 setView.gender = model.gender
+                setView.setDefauleData()
                 self?.view.addSubview(setView)
             }
         }

@@ -16,6 +16,7 @@ class WHHDivinationViewController: WHHBaseViewController {
     @IBOutlet var nvBgIocn: UIImageView!
     @IBOutlet var xuanjinvButton: UIButton!
 
+    @IBOutlet weak var topConf: NSLayoutConstraint!
     @IBOutlet var meetingWordsLabel: UILabel!
     @IBOutlet var anaLabel: UILabel!
     @IBOutlet var label2: UILabel!
@@ -57,6 +58,9 @@ class WHHDivinationViewController: WHHBaseViewController {
         subscriptionButton.setTitle("whhDivinationFinishTitleKey".localized, for: .selected)
         subscriptionButton.setImage(UIImage(named: "whhSubscriptionButtonIcon"), for: .normal)
         subscriptionButton.setImage(UIImage(named: "whhSubscriptionButtonIcon"), for: .selected)
+        
+        topConf.constant = 44
+        
         whhHomeGetWitchList()
     }
 

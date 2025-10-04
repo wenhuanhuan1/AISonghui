@@ -81,14 +81,36 @@ class WHHCustomButtonView: WHHBaseView {
 }
 
 class WHHSetView: WHHBaseView {
-    var logoFileId = ""
+    var logoFileId = "" {
+        didSet {
+            avatarIcon.icon.whhSetImageView(url: logoFileId)
+        }
+    }
 
-    var gender = 1
+    var gender = 1 {
+        didSet {
+            if gender == 1 {
+                sexButton.isSelected = false
+            } else if gender == 2 {
+                sexButton.isSelected = true
+            }
+        }
+    }
 
-    
-    var didFinishBlock:(()->Void)?
-    
-    var birthday = ""
+    var didFinishBlock: (() -> Void)?
+
+    var birthday = "" {
+        didSet {
+//            let segmentationStr = segmentationCharacter(needString: birthday)
+//            let year = segmentationStr[0]
+//            let month = segmentationStr[1]
+//            let day = segmentationStr[2]
+//
+//            yearView.leftTitle.text = year
+//            monthView.leftTitle.text = month
+//            dayView.leftTitle.text = day
+        }
+    }
 
     lazy var centrView: UIView = {
         let centrView = UIView()
@@ -367,8 +389,41 @@ class WHHSetView: WHHBaseView {
             make.left.equalTo(cancleButton.snp.right).offset(20)
             make.bottom.width.height.equalTo(cancleButton)
         }
+    }
 
-        setDefauleValue()
+    func setDefauleData() {
+        if birthday.isEmpty {
+            setDefauleValue()
+        } else {
+            // 转换时间
+            let newTime = timestampToDateString(birthday)
+
+            let segmentationStr = segmentationCharacter(needString: newTime)
+            let year = segmentationStr[0]
+            let month = segmentationStr[1]
+            let day = segmentationStr[2]
+
+            yearView.leftTitle.text = year
+            monthView.leftTitle.text = month
+            dayView.leftTitle.text = day
+        }
+    }
+
+    func timestampToDateString(_ timestampString: String, format: String = "yyyy-MM-dd") -> String {
+        guard let timestamp = Double(timestampString) else {
+            return "" // 无法转换为数字时返回空字符串
+        }
+
+        // 判断是否为毫秒时间戳
+        let isMillisecond = timestamp > 9999999999
+        let timeInterval = isMillisecond ? timestamp / 1000 : timestamp
+
+        let date = Date(timeIntervalSince1970: timeInterval)
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.timeZone = TimeZone.current
+
+        return formatter.string(from: date)
     }
 
     private func setDefauleValue() {
@@ -391,8 +446,23 @@ class WHHSetView: WHHBaseView {
         let chooseView = WHHChooseSexView()
         if gender == 1 {
             chooseView.maleItemView.isSelect = true
+            chooseView.maleItemView.backgroundColor = Color0091F
+            chooseView.maleItemView.sexIcon.image = UIImage(named: "whhSetMaleIcon")
+            chooseView.maleItemView.titleLabel.textColor = .white
+
+            chooseView.femaleItemView.isSelect = false
+            chooseView.femaleItemView.sexIcon.image = UIImage(named: "whhSetFemaleIcon")
+            chooseView.femaleItemView.backgroundColor = ColorF2F4FE
+
         } else if gender == 2 {
             chooseView.femaleItemView.isSelect = true
+
+            chooseView.femaleItemView.sexIcon.image = UIImage(named: "whhFemaleWhiteIcon")
+            chooseView.femaleItemView.backgroundColor = ColorFF4D94
+            chooseView.femaleItemView.titleLabel.textColor = .white
+            chooseView.maleItemView.isSelect = false
+            chooseView.maleItemView.sexIcon.image = UIImage(named: "whhBlueMaleIcon")
+            chooseView.maleItemView.backgroundColor = ColorF2F4FE
         }
         chooseView.didWHHChooseSexView = { [weak self] sexType in
 
@@ -430,13 +500,17 @@ class WHHSetView: WHHBaseView {
     @objc func saveButtonClick() {
         let dict = ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId, "logoFileId": logoFileId, "gender": gender, "birthday": birthday, "starSign": ""] as [String: Any]
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhModificationPersonInfo(dict: dict) { [weak self] success in
+        WHHHomeRequestViewModel.whhModificationPersonInfo(dict: dict) { [weak self] success,msg in
             WHHHUD.whhHidenLoadView()
             if success == 1 {
                 dispatchAfter(delay: 0.5) {
                     WHHHUD.whhShowInfoText(text: "修改成功")
                     self?.didFinishBlock?()
                     self?.removeFromSuperview()
+                }
+            }else{
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: msg)
                 }
             }
         }
@@ -458,8 +532,6 @@ class WHHSetView: WHHBaseView {
     }
 
     @objc func changeAvatarButtonClick() {
-        
-        
         WHHMediaManager.whhGetAlbumOnlyOnePhoto { [weak self] image in
 
             if let imageData = image.jpegData(compressionQuality: 0.8) {

@@ -118,10 +118,10 @@ class WHHHomeRequestViewModel: NSObject {
     /// - Parameters:
     ///   - dict: 参数
     ///   - callBlack: 回调
-    static func whhModificationPersonInfo(dict: [String: Any], callBlack: ((Int) -> Void)?) {
+    static func whhModificationPersonInfo(dict: [String: Any], callBlack: ((Int,String) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: dict, type: .userUpdateInfo)
         api.whhStartConsequenceHandle { baseModel in
-            callBlack?(baseModel.success)
+            callBlack?(baseModel.success,baseModel.msg)
         }
     }
 
