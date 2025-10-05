@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self?.jumpSetOpenNetJurisdiction()
         }
         noNetAlertView.againSubmitBlock = { [weak self] _ in
-            self?.checkNetJurisdiction()
+            self?.checkNetJurisdiction { _ in
+                
+            }
         }
         return noNetAlertView
     }()
@@ -33,7 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switchRootViewController()
         window?.makeKeyAndVisible()
         window?.addSubview(noNetAlertView)
-        checkNetJurisdiction()
+        checkNetJurisdiction { [weak self] success in
+            if success {
+                self?.switchRootViewController()
+            }
+        }
 
         return true
     }
@@ -66,15 +72,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    private func checkNetJurisdiction() {
+    private func checkNetJurisdiction(callBlack: ((Bool) -> Void)?) {
         let manager = AFNetworkReachabilityManager.shared()
         manager.startMonitoring()
         manager.setReachabilityStatusChange { [weak self] status in
             if status.rawValue == 1 || status.rawValue == 2 {
                 // 已经授权
                 self?.noNetAlertView.isHidden = true
+                callBlack?(true)
             } else {
                 self?.noNetAlertView.isHidden = false
+                callBlack?(false)
             }
         }
     }
