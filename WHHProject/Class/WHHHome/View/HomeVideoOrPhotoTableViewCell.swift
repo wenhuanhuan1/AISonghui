@@ -7,7 +7,6 @@
 
 import UIKit
 import YYImage
-import GPUImage
 
 class HomeVideoOrPhotoTableViewCell: UITableViewCell {
     @IBOutlet var buttonTitle: UILabel!
@@ -55,7 +54,6 @@ class HomeVideoOrPhotoTableViewCell: UITableViewCell {
             make.edges.equalTo(sourceBgView)
         }
        
-        buttomView.addGPUImageBlur(radius: 20)
     }
     
     override func layoutSubviews() {

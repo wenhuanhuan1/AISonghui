@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WHHlogoutAccoutViewController" customModule="WHHProject" customModuleProvider="target">
             <connections>
+                <outlet property="abbGitBgImageView" destination="fCv-2p-rnK" id="JEb-RV-pKz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhAboutUsWIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-2p-rnK">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-2p-rnK">
                     <rect key="frame" x="136.66666666666666" y="69" width="119.99999999999997" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="iAp-JT-HAk"/>
@@ -27,19 +28,19 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="别急着离开，亲爱的伙伴~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-mS-bZo">
-                    <rect key="frame" x="116" y="191" width="161" height="19.666666666666657"/>
+                    <rect key="frame" x="116" y="219" width="161" height="19.666666666666657"/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
                     <color key="textColor" red="0.17254901960784313" green="0.16862745098039217" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿贝贝看到你的命运线正微微发颤呢！是预言不够准确，还是星光指引有偏差？先喝杯魔法茶歇歇脚，告诉我你的困扰，让我用塔罗牌重新为你占卜一次——或许转机就在下一张牌里。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqR-Km-tp4">
-                    <rect key="frame" x="20" y="216.66666666666666" width="353" height="50.666666666666657"/>
+                    <rect key="frame" x="20" y="248.66666666666666" width="353" height="50.666666666666657"/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
                     <color key="textColor" red="0.17254901959999999" green="0.16862745100000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9B-go-KkW">
-                    <rect key="frame" x="20" y="279.33333333333326" width="353" height="314.66666666666674"/>
+                    <rect key="frame" x="20" y="311.33333333333331" width="353" height="217.33333333333331"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注销前，请阅读并确认以下内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIl-Gs-ccP">
                             <rect key="frame" x="78.666666666666686" y="14" width="196" height="20"/>
@@ -97,29 +98,6 @@
                             <color key="textColor" red="0.17254901959999999" green="0.16862745100000001" blue="0.1764705882" alpha="0.89556601820000004" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhZhuxiaoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="eSP-lP-nwO">
-                            <rect key="frame" x="20" y="213.33333333333337" width="14" height="14"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="14" id="Lr7-p5-zeZ"/>
-                                <constraint firstAttribute="height" constant="14" id="WpW-g4-aiL"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已绑定的Apple账号数据清空" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWK-Yi-6G4">
-                            <rect key="frame" x="38" y="210.33333333333337" width="153.33333333333334" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="4Rc-un-6ca"/>
-                                <constraint firstAttribute="height" constant="20" id="Gw0-mR-nOd"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="12"/>
-                            <color key="textColor" red="0.17254901959999999" green="0.16862745100000001" blue="0.1764705882" alpha="0.89556601820000004" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已绑定Apple账号数据清空，账号内所有资产和数据无法追回，注销后再次绑定此Apple账号，为新注册用户，Apple账号数据清空不会影响当前设备的使用记录和资产。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf6-t0-SDD">
-                            <rect key="frame" x="38" y="233.33333333333334" width="295" height="67.333333333333343"/>
-                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
-                            <color key="textColor" red="0.17254901959999999" green="0.16862745100000001" blue="0.1764705882" alpha="0.59504346029999999" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未绑定Apple账号的设备，会将当前设备的所有资产品和数据清空，且无法追回，注销后再次登录，为新注册用户。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oQ-wp-LND">
                             <rect key="frame" x="38" y="146.66666666666669" width="295" height="50.666666666666657"/>
                             <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
@@ -130,32 +108,25 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="4oQ-wp-LND" firstAttribute="leading" secondItem="r5a-1g-n9B" secondAttribute="leading" id="4b3-3J-w5g"/>
-                        <constraint firstItem="eSP-lP-nwO" firstAttribute="top" secondItem="4oQ-wp-LND" secondAttribute="bottom" constant="16" id="4w3-Rt-zlR"/>
                         <constraint firstItem="br8-3S-tFC" firstAttribute="top" secondItem="KHl-DW-B49" secondAttribute="bottom" constant="16" id="6h4-8d-YOW"/>
                         <constraint firstItem="Nlp-XM-7EE" firstAttribute="leading" secondItem="bfV-Ib-Soa" secondAttribute="trailing" constant="4" id="7o7-Yf-khp"/>
                         <constraint firstItem="r5a-1g-n9B" firstAttribute="leading" secondItem="br8-3S-tFC" secondAttribute="trailing" constant="4" id="7wD-jG-L0G"/>
+                        <constraint firstAttribute="bottom" secondItem="4oQ-wp-LND" secondAttribute="bottom" constant="20" id="Bjn-Wv-4HD"/>
                         <constraint firstItem="r5a-1g-n9B" firstAttribute="centerY" secondItem="br8-3S-tFC" secondAttribute="centerY" id="EAj-U9-3R6"/>
-                        <constraint firstItem="AWK-Yi-6G4" firstAttribute="leading" secondItem="eSP-lP-nwO" secondAttribute="trailing" constant="4" id="Fy5-I0-Rnf"/>
                         <constraint firstItem="br8-3S-tFC" firstAttribute="leading" secondItem="bfV-Ib-Soa" secondAttribute="leading" id="J32-5E-rMf"/>
                         <constraint firstItem="4oQ-wp-LND" firstAttribute="top" secondItem="r5a-1g-n9B" secondAttribute="bottom" constant="3" id="Rog-dS-heS"/>
                         <constraint firstItem="KHl-DW-B49" firstAttribute="leading" secondItem="Nlp-XM-7EE" secondAttribute="leading" id="Ryv-Sy-gGh"/>
                         <constraint firstAttribute="trailing" secondItem="KHl-DW-B49" secondAttribute="trailing" constant="20" id="USQ-xE-Hr8"/>
                         <constraint firstItem="CIl-Gs-ccP" firstAttribute="centerX" secondItem="b9B-go-KkW" secondAttribute="centerX" id="Wej-B1-1eu"/>
-                        <constraint firstItem="Pf6-t0-SDD" firstAttribute="top" secondItem="AWK-Yi-6G4" secondAttribute="bottom" constant="3" id="Xc8-7r-ea5"/>
                         <constraint firstAttribute="trailing" secondItem="4oQ-wp-LND" secondAttribute="trailing" constant="20" id="d1t-YY-NuE"/>
                         <constraint firstAttribute="trailing" secondItem="73H-vi-I7t" secondAttribute="trailing" constant="20" id="e6i-mc-rx0"/>
                         <constraint firstItem="73H-vi-I7t" firstAttribute="top" secondItem="CIl-Gs-ccP" secondAttribute="bottom" constant="6" id="ehk-EM-tSr"/>
-                        <constraint firstAttribute="bottom" secondItem="Pf6-t0-SDD" secondAttribute="bottom" constant="14" id="fOY-zZ-ifB"/>
-                        <constraint firstItem="AWK-Yi-6G4" firstAttribute="centerY" secondItem="eSP-lP-nwO" secondAttribute="centerY" id="fjC-R6-lly"/>
                         <constraint firstItem="bfV-Ib-Soa" firstAttribute="leading" secondItem="b9B-go-KkW" secondAttribute="leading" constant="20" id="iTb-TB-LIv"/>
                         <constraint firstItem="bfV-Ib-Soa" firstAttribute="top" secondItem="b9B-go-KkW" secondAttribute="top" constant="57" id="jB9-Ki-nWu"/>
                         <constraint firstItem="73H-vi-I7t" firstAttribute="leading" secondItem="b9B-go-KkW" secondAttribute="leading" constant="20" id="ja9-zu-uLt"/>
                         <constraint firstItem="CIl-Gs-ccP" firstAttribute="top" secondItem="b9B-go-KkW" secondAttribute="top" constant="14" id="n3E-EG-aVr"/>
                         <constraint firstItem="Nlp-XM-7EE" firstAttribute="centerY" secondItem="bfV-Ib-Soa" secondAttribute="centerY" id="nWk-x7-b1L"/>
                         <constraint firstItem="KHl-DW-B49" firstAttribute="top" secondItem="Nlp-XM-7EE" secondAttribute="bottom" constant="3" id="qUY-dj-l46"/>
-                        <constraint firstItem="Pf6-t0-SDD" firstAttribute="leading" secondItem="AWK-Yi-6G4" secondAttribute="leading" id="quR-zf-hsw"/>
-                        <constraint firstAttribute="trailing" secondItem="Pf6-t0-SDD" secondAttribute="trailing" constant="20" id="typ-Tf-2bL"/>
-                        <constraint firstItem="eSP-lP-nwO" firstAttribute="leading" secondItem="br8-3S-tFC" secondAttribute="leading" id="xmi-02-BrN"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -208,8 +179,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b9B-go-KkW" secondAttribute="trailing" constant="20" id="5SN-fM-qg0"/>
                 <constraint firstItem="b9B-go-KkW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9YT-hk-pyS"/>
                 <constraint firstItem="lxt-vM-Dac" firstAttribute="height" secondItem="gtq-jJ-Enb" secondAttribute="height" id="Fa5-uT-3Zi"/>
-                <constraint firstItem="Khk-mS-bZo" firstAttribute="top" secondItem="fCv-2p-rnK" secondAttribute="bottom" constant="2" id="IaY-V1-uht"/>
-                <constraint firstItem="XqR-Km-tp4" firstAttribute="top" secondItem="Khk-mS-bZo" secondAttribute="bottom" constant="6" id="JsA-zA-WL5"/>
+                <constraint firstItem="Khk-mS-bZo" firstAttribute="top" secondItem="fCv-2p-rnK" secondAttribute="bottom" constant="30" id="IaY-V1-uht"/>
+                <constraint firstItem="XqR-Km-tp4" firstAttribute="top" secondItem="Khk-mS-bZo" secondAttribute="bottom" constant="10" id="JsA-zA-WL5"/>
                 <constraint firstItem="fCv-2p-rnK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="L33-sn-YvI"/>
                 <constraint firstItem="XqR-Km-tp4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LgS-JD-9Zo"/>
                 <constraint firstItem="gtq-jJ-Enb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="OFD-TK-sGs"/>
@@ -226,7 +197,6 @@
         </view>
     </objects>
     <resources>
-        <image name="whhAboutUsWIcon" width="36.333332061767578" height="36.333332061767578"/>
         <image name="whhZhuxiaoIcon" width="4.6666665077209473" height="4.6666665077209473"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

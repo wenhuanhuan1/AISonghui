@@ -14,4 +14,12 @@
     [imageView yy_setImageWithURL:imageUrl
                                    options:YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive | YYWebImageOptionIgnoreImageDecoding];
 }
++ (void)displayImageView:(YYAnimatedImageView *)imageView{
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"aboutUs" ofType:@"webp"];
+    
+    NSURL *url = [NSURL fileURLWithPath:path];
+    [imageView yy_setImageWithURL:url
+                                   options:YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive | YYWebImageOptionIgnoreImageDecoding];
+}
 @end

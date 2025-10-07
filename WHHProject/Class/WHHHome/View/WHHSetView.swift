@@ -83,7 +83,12 @@ class WHHCustomButtonView: WHHBaseView {
 class WHHSetView: WHHBaseView {
     var logoFileId = "" {
         didSet {
-            avatarIcon.icon.whhSetImageView(url: logoFileId)
+            if logoFileId.isEmpty {
+                avatarIcon.icon.image = UIImage(named: "whhAbbBigAvatar")
+            }else{
+                avatarIcon.icon.whhSetImageView(url: logoFileId)
+            }
+            
         }
     }
 
@@ -498,7 +503,14 @@ class WHHSetView: WHHBaseView {
     }
 
     @objc func saveButtonClick() {
-        let dict = ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId, "logoFileId": logoFileId, "gender": gender, "birthday": birthday, "starSign": ""] as [String: Any]
+        var tempBirthday = ""
+        if birthday.contains("-"){
+            tempBirthday = birthday
+        }else{
+            tempBirthday = timestampToDateString(birthday)
+        }
+        
+        let dict = ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId, "logoFileId": logoFileId, "gender": gender, "birthday": tempBirthday, "starSign": ""] as [String: Any]
         WHHHUD.whhShowLoadView()
         WHHHomeRequestViewModel.whhModificationPersonInfo(dict: dict) { [weak self] success,msg in
             WHHHUD.whhHidenLoadView()

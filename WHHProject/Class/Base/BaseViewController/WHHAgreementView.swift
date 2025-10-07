@@ -178,13 +178,13 @@ extension WHHAgreementView: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in range: NSRange) -> Bool {
         if URL.scheme == "terms" {
             if let vc = UIViewController.currentViewController() {
-                let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.privacyAgreementUrl)
+                let webView = WHHWKWebViewViewController(url: "https://abeibei.vip/terms.html")
                 vc.navigationController?.pushViewController(webView, animated: true)
             }
             return false // 阻止系统默认行为:ml-citation{ref="4,9" data="citationList"}
         } else if URL.scheme == "conceal" {
             if let vc = UIViewController.currentViewController() {
-                let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.privacyAgreementUrl)
+                let webView = WHHWKWebViewViewController(url: "https://abeibei.vip/privacy.html")
                 vc.navigationController?.pushViewController(webView, animated: true)
             }
         }

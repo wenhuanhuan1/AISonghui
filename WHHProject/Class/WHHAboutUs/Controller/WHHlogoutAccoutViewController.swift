@@ -5,14 +5,31 @@
 //  Created by wenhuan on 2025/8/1.
 //
 
+import Kingfisher
 import UIKit
-
 class WHHlogoutAccoutViewController: WHHBaseViewController {
+    lazy var bigIconImageView: AnimatedImageView = {
+        let view = AnimatedImageView()
+        view.contentMode = .scaleAspectFill
+        view.backgroundColor = .white
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = ""
+        gk_backStyle = .black
+        abbGitBgImageView.addSubview(bigIconImageView)
+        bigIconImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        if let path = Bundle.main.path(forResource: "aboutUsAbb", ofType: "gif") {
+            let url = URL(fileURLWithPath: path)
+            bigIconImageView.kf.setImage(with: url)
+        }
     }
 
+    @IBOutlet var abbGitBgImageView: UIImageView!
     @IBAction func backButtonCliick(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -60,7 +77,7 @@ class WHHlogoutAccoutViewController: WHHBaseViewController {
 
     private func cancleAccount() {
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhMineCancleUserDestroyInfo { code,msg in
+        WHHHomeRequestViewModel.whhMineCancleUserDestroyInfo { _, msg in
             WHHHUD.whhHidenLoadView()
             dispatchAfter(delay: 0.5) {
                 WHHHUD.whhShowInfoText(text: msg)

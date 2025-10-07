@@ -6,11 +6,18 @@
 //
 
 import UIKit
-
+import Kingfisher
 class WHHAboutUsViewController: WHHBaseViewController {
     @IBOutlet var tableview: UITableView!
     
+    lazy var bigIconImageView: AnimatedImageView = {
+        let view = AnimatedImageView()
+        view.contentMode = .scaleAspectFill
+        view.backgroundColor = .white
+        return view
+    }()
     
+    @IBOutlet weak var webpBgView: UIView!
     
     @IBOutlet weak var whiteBgView: UIView!
     override func viewDidLoad() {
@@ -24,6 +31,15 @@ class WHHAboutUsViewController: WHHBaseViewController {
         tableview.isScrollEnabled = false
         tableview.separatorStyle = .none
         tableview.register(UINib(nibName: "WHHAboutUsTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHAboutUsTableViewCell")
+        webpBgView.addSubview(bigIconImageView)
+        bigIconImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        if let path = Bundle.main.path(forResource: "aboutUsAbb", ofType: "gif") {
+            let url = URL(fileURLWithPath: path)
+            bigIconImageView.kf.setImage(with: url)
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -85,11 +101,11 @@ extension WHHAboutUsViewController: UITableViewDataSource, UITableViewDelegate {
             
             break
         case 1:
-            let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.privacyAgreementUrl)
+            let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.registerAgreementUrl)
             navigationController?.pushViewController(webView, animated: true)
             break
         case 2:
-            let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.registerAgreementUrl)
+            let webView = WHHWKWebViewViewController(url: WHHUserInfoManager.shared.confModel.config.privacyAgreementUrl)
             navigationController?.pushViewController(webView, animated: true)
             break
 //        case 3:

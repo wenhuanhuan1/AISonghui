@@ -59,7 +59,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="0.70428911423841056" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="0.69637313741721851" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Zmu-RF-ucr" firstAttribute="top" secondItem="6B4-l8-x2T" secondAttribute="top" constant="12" id="3Di-Xz-os7"/>
                                     <constraint firstAttribute="height" constant="70" id="VNF-up-Y1w"/>

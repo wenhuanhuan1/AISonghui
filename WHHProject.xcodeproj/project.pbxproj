@@ -82,6 +82,8 @@
 		2F6D948F2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */; };
 		2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */; };
 		2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D949D2E83A52E00CE27A3 /* WebPManager.m */; };
+		2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C8192E93F5700078F1A8 /* aboutUs.webp */; };
+		2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */; };
 		2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */; };
 		2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */; };
 		2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */; };
@@ -281,6 +283,8 @@
 		2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeABBTableViewCell.xib; sourceTree = "<group>"; };
 		2F6D949C2E83A52E00CE27A3 /* WebPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPManager.h; sourceTree = "<group>"; };
 		2F6D949D2E83A52E00CE27A3 /* WebPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPManager.m; sourceTree = "<group>"; };
+		2FC1C8192E93F5700078F1A8 /* aboutUs.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutUs.webp; sourceTree = "<group>"; };
+		2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aboutUsAbb.gif; sourceTree = "<group>"; };
 		2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineViewController.swift; sourceTree = "<group>"; };
 		2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHGradualView.swift; sourceTree = "<group>"; };
@@ -520,6 +524,8 @@
 		2F17BF7F2DF7C96200CA36E8 /* WHHProject */ = {
 			isa = PBXGroup;
 			children = (
+				2FC1C8192E93F5700078F1A8 /* aboutUs.webp */,
+				2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */,
 				2F17BF982DF7D32000CA36E8 /* Category */,
 				2F17BF902DF7D02600CA36E8 /* Conf */,
 				2F17BF862DF7CA9400CA36E8 /* AppDelegate */,
@@ -1100,6 +1106,7 @@
 				2FDC69952E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib in Resources */,
 				2FDC69782E3B72B100A523B0 /* WHHControllTableViewCell.xib in Resources */,
 				2FDC695E2E3B0B5600A523B0 /* WHHABBHomeViewController.xib in Resources */,
+				2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */,
 				2FDC694E2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.xib in Resources */,
 				2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */,
 				2FDC69412E38D55000A523B0 /* WHHSubscriptionDivinationView.xib in Resources */,
@@ -1117,6 +1124,7 @@
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
+				2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */,
 				2FDC69C32E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

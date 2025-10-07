@@ -10,8 +10,11 @@ import UIKit
 class WHHPersonageViewController: WHHBaseViewController {
     lazy var abbIcon: WHHBaseImageView = {
         let view = WHHBaseImageView()
+        view.backgroundColor = ColorF2F4FE
         view.layer.cornerRadius = 55 / 2
         view.layer.masksToBounds = true
+        view.layer.borderColor = UIColor.white.cgColor
+        view.layer.borderWidth = 2
         return view
     }()
 
@@ -31,7 +34,6 @@ class WHHPersonageViewController: WHHBaseViewController {
         editInfoButton.setTitle("设置资料", for: .normal)
         editInfoButton.setTitleColor(.white, for: .normal)
         editInfoButton.titleLabel?.font = pingfangMedium(size: 12)
-        editInfoButton.setImage(UIImage(named: "whhEditIcon"), for: .normal)
         editInfoButton.layer.cornerRadius = 18
         editInfoButton.backgroundColor = Color2C2B2D
         editInfoButton.addTarget(self, action: #selector(editButtonClick), for: .touchUpInside)
@@ -121,8 +123,8 @@ class WHHPersonageViewController: WHHBaseViewController {
             if code == 1 {
                 self?.netModel = model
                 if model.logo.isEmpty {
-                    self?.abbIcon.image = UIImage(named: "whhSetDefaultIcon")
-
+                    self?.abbIcon.image = UIImage(named: "whhAbbBigAvatar")
+                    
                 } else {
                     self?.abbIcon.whhSetImageView(url: model.logo)
                 }

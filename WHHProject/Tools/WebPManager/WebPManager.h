@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WebPManager : NSObject
 + (void)loadNetWebUrl:(NSString *)url displayImageView:(YYAnimatedImageView *)imageView;
+
++ (void)displayImageView:(YYAnimatedImageView *)imageView;
 @end
 
 NS_ASSUME_NONNULL_END

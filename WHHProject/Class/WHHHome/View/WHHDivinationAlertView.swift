@@ -59,7 +59,6 @@ class WHHDivinationAlertView: WHHBaseView {
     lazy var submitButton: WHHGradientButton = {
         let submitButton = WHHGradientButton(type: .custom)
         submitButton.setTitle("whhDivinationTitleKey".localized, for: .normal)
-        submitButton.setImage(UIImage(named: "subscriptionManagerIcon"), for: .normal)
         submitButton.titleLabel?.font = pingfangRegular(size: 14)
         submitButton.setTitleColor(.white, for: .normal)
         submitButton.layer.cornerRadius = 22

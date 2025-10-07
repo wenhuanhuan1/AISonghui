@@ -56,8 +56,8 @@ class WHHDivinationViewController: WHHBaseViewController {
         subscriptionButton.layer.masksToBounds = true
         subscriptionButton.setTitle("whhDivinationTitleKey".localized, for: .normal)
         subscriptionButton.setTitle("whhDivinationFinishTitleKey".localized, for: .selected)
-        subscriptionButton.setImage(UIImage(named: "whhSubscriptionButtonIcon"), for: .normal)
-        subscriptionButton.setImage(UIImage(named: "whhSubscriptionButtonIcon"), for: .selected)
+//        subscriptionButton.setImage(UIImage(named: "whhSubscriptionButtonIcon"), for: .normal)
+//        subscriptionButton.setImage(UIImage(named: "whhSubscriptionButtonIcon"), for: .selected)
         
         topConf.constant = 44
         

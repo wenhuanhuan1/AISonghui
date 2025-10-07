@@ -30,7 +30,7 @@ class WHHControllTableViewCell: UITableViewCell {
                 lineView.isHidden = isHiddenLine
             }
             if let leftIconString = tempDict["leftIconString"] as? String {
-                leftIcon.image = UIImage(named: leftIconString)
+//                leftIcon.image = UIImage(named: leftIconString)
             }
             if let leftTitleString = tempDict["leftTitleString"] as? String {
                 leftTitleLabel.text = leftTitleString

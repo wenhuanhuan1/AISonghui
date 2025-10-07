@@ -20,12 +20,12 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZc-1h-b2u">
                         <rect key="frame" x="0.0" y="0.0" width="149" height="133"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhABBVIPSelect" translatesAutoresizingMaskIntoConstraints="NO" id="OfD-Hx-kIn">
-                                <rect key="frame" x="124" y="5" width="20" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="OfD-Hx-kIn">
+                                <rect key="frame" x="129" y="5" width="15" height="15"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Y6e-EX-vPd"/>
-                                    <constraint firstAttribute="width" constant="20" id="wsK-uJ-DIl"/>
+                                    <constraint firstAttribute="height" constant="15" id="Y6e-EX-vPd"/>
+                                    <constraint firstAttribute="width" constant="15" id="wsK-uJ-DIl"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 周特权" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAm-uM-rAU">
@@ -71,6 +71,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="whhABBVIPSelect" width="14" height="14"/>
+        <image name="choose" width="26.666666030883789" height="26.666666030883789"/>
     </resources>
 </document>

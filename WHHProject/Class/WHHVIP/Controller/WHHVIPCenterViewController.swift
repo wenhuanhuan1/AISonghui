@@ -70,6 +70,14 @@ class WHHVIPCenterViewController: WHHBaseViewController {
         itemCollectionViw.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        locationSelectOneData()
+    }
+    
+    private func locationSelectOneData() {
+        
+        let selectModel = dataArray.first(where: {$0.code == "com.abb.AIProjectWeek"})
+        selectModel?.isSelect = true
+         itemCollectionViw.reloadData()
     }
 
     @IBAction func closeButtonClick(_ sender: UIButton) {

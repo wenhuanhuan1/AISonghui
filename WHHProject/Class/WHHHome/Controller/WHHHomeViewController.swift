@@ -9,23 +9,35 @@ import GKNavigationBarSwift
 import UIKit
 class WHHHomeViewController: WHHBaseViewController {
     lazy var homeTableView: UITableView = {
-        let homeTableView = UITableView(frame: .zero, style: .grouped)
+        let homeTableView = UITableView(frame: .zero, style: .plain)
         homeTableView.backgroundColor = .white
         homeTableView.delegate = self
         homeTableView.dataSource = self
-        homeTableView.whhSetTableViewDefault()
+
+        homeTableView.estimatedRowHeight = 0
+        homeTableView.estimatedSectionHeaderHeight = 0
+        homeTableView.estimatedSectionFooterHeight = 0
+
         homeTableView.separatorStyle = .none
         homeTableView.register(WHHHomeNoSubscriptionCell.self, forCellReuseIdentifier: "WHHHomeNoSubscriptionCell")
         homeTableView.register(WHHHomeWitchTableViewCell.self, forCellReuseIdentifier: "WHHHomeWitchTableViewCell")
         homeTableView.register(UINib(nibName: "WHHHomeSubscribedTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHHomeSubscribedTableViewCell")
         homeTableView.register(UINib(nibName: "HomeVideoOrPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeVideoOrPhotoTableViewCell")
         homeTableView.register(UINib(nibName: "HomeABBTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeABBTableViewCell")
-
-        homeTableView.whhSetTableViewDefault()
-        homeTableView.whhAddRefreshNormalHeader { [weak self] in
-            self?.whhRefreshFooter()
-        }
+        homeTableView.isScrollEnabled = false
+//        homeTableView.whhAddRefreshNormalHeader { [weak self] in
+//            self?.whhRefreshFooter()
+//        }
         return homeTableView
+    }()
+
+    lazy var userAvIcon: WHHBaseImageView = {
+        let view = WHHBaseImageView()
+        view.layer.cornerRadius = 18
+        view.layer.masksToBounds = true
+        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor.white.cgColor
+        return view
     }()
 
     lazy var bannerDataArray: [WHHSystemModel] = {
@@ -38,7 +50,6 @@ class WHHHomeViewController: WHHBaseViewController {
     lazy var gradualView: WHHGradualView = {
         let gradualView = WHHGradualView()
         gradualView.didActionButtonClick = { [weak self] in
-            debugPrint("哈哈哈点击了按钮")
             let divinationVC = WHHDivinationViewController()
             self?.navigationController?.pushViewController(divinationVC, animated: true)
         }
@@ -47,7 +58,6 @@ class WHHHomeViewController: WHHBaseViewController {
 
     lazy var rightButton: UIButton = {
         let rightButton = UIButton(type: .custom)
-        rightButton.setImage(UIImage(named: "whhHomeNavRightIcon"), for: .normal)
         rightButton.addTarget(self, action: #selector(rightButtonClick), for: .touchUpInside)
         return rightButton
     }()
@@ -69,7 +79,7 @@ class WHHHomeViewController: WHHBaseViewController {
     lazy var dateTitle: UILabel = {
         let dateTitle = UILabel()
         dateTitle.text = "7月3日 周三"
-        dateTitle.font = pingfangRegular(size: 20)
+        dateTitle.font = pingfangSemibold(size: 20)
         dateTitle.textColor = Color89898D
         dateTitle.numberOfLines = 0
         return dateTitle
@@ -86,6 +96,7 @@ class WHHHomeViewController: WHHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .white
         gk_navigationBar.isHidden = true
 
         view.addSubview(homeTableView)
@@ -95,11 +106,15 @@ class WHHHomeViewController: WHHBaseViewController {
             make.top.equalToSuperview().offset(WHHAllNavBarHeight)
         }
 
-        view.addSubview(rightButton)
-        rightButton.snp.makeConstraints { make in
-            make.size.equalTo(44)
-            make.right.equalToSuperview().offset(0)
+        view.addSubview(userAvIcon)
+        userAvIcon.snp.makeConstraints { make in
+            make.size.equalTo(36)
+            make.right.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(WHHTopSafe)
+        }
+        userAvIcon.addSubview(rightButton)
+        rightButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
 
         view.addSubview(todayTitle)
@@ -122,54 +137,32 @@ class WHHHomeViewController: WHHBaseViewController {
     }
 
     private func getUserInfo() {
-        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest(callBlack: nil)
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, model in
+            if code == 1 {
+                if model.logo.isEmpty {
+                    self?.userAvIcon.image = UIImage(named: "whhAbbBigAvatar")
+                } else {
+                    self?.userAvIcon.whhSetImageView(url: model.logo)
+                   
+                }
+
+            } else {
+                self?.userAvIcon.image = UIImage(named: "whhAbbBigAvatar")
+            }
+        }
     }
 
     override func whhRefreshFooter() {
         super.whhRefreshFooter()
 
-        let group = DispatchGroup()
-        let queue = DispatchQueue.global()
-
-        group.enter()
-
         WHHHUD.whhShowLoadView()
-        queue.async {
-            WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest { [weak self] success, dataModel, _ in
-
-                if success == 1 {
-                    self?.foretellModel = dataModel
-                    if dataModel.fortune.items.isEmpty {
-                        self?.isSubscribed = false
-                    } else {
-                        self?.isSubscribed = true
-                    }
-                }
-                group.leave()
-            }
-        }
-
-        group.enter()
-        queue.async {
-//            WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
-//                if witchDataArray.isEmpty == false {
-//                    self?.dataArray = witchDataArray
-//                }
-//
-//            }
-            WHHHomeRequestViewModel.getSysIndexBannerConfig { [weak self] model, _, code in
-                self?.homeTableView.mj_header?.endRefreshing()
-                if code {
-                    self?.bannerDataArray = model
-                }
-                group.leave()
-            }
-        }
-        // 等待所有请求完成
-        group.notify(queue: DispatchQueue.main) {
+        WHHHomeRequestViewModel.getSysIndexBannerConfig { [weak self] model, _, code in
             WHHHUD.whhHidenLoadView()
-            self.homeTableView.mj_header?.endRefreshing()
-            self.homeTableView.reloadData()
+            self?.homeTableView.mj_header?.endRefreshing()
+            if code {
+                self?.bannerDataArray = model
+                self?.homeTableView.reloadData()
+            }
         }
     }
 
@@ -193,6 +186,19 @@ class WHHHomeViewController: WHHBaseViewController {
                 }
             }
         }
+    }
+    
+    private func returnCellSacalHeight() -> CGFloat {
+
+        debugPrint("当前的高\(WHHScreenH)")
+        switch WHHScreenH {
+        case 852,932,874,956:
+            return 330
+        default:
+            return 390
+        }
+        
+        
     }
 }
 
@@ -232,7 +238,7 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return (WHHScreenW - 32) * 474 / 339
+            return (WHHScreenW - 32) * 474 / returnCellSacalHeight()
 
         } else {
             return (WHHScreenW - 32) * 174 / 339
@@ -264,12 +270,16 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
         } else {
-            if isSubscribed {
-                let detailVC = WHHHomeSubscribedDetailViewController()
-                navigationController?.pushViewController(detailVC, animated: true)
-            } else {
-                let divinationVC = WHHDivinationViewController()
-                navigationController?.pushViewController(divinationVC, animated: true)
+            WHHHUD.whhShowLoadView()
+            WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest { [weak self] success, dataModel, _ in
+                WHHHUD.whhHidenLoadView()
+                if success == 1, dataModel.fortune.items.isEmpty == false {
+                    let detailVC = WHHHomeSubscribedDetailViewController()
+                    self?.navigationController?.pushViewController(detailVC, animated: true)
+                } else {
+                    let divinationVC = WHHDivinationViewController()
+                    self?.navigationController?.pushViewController(divinationVC, animated: true)
+                }
             }
         }
     }
@@ -287,6 +297,11 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 18
+        if section == 0 {
+            return 10
+        }else{
+            return .zero
+        }
+        
     }
 }
