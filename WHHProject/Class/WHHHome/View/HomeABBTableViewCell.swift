@@ -59,10 +59,11 @@ class HomeABBTableViewCell: UITableViewCell {
                 iconImageView.isHidden = true
                 bigIconImageView.isHidden = false
                 WebPManager.loadNetWebUrl(model.assetUrl, display: bigIconImageView)
-            } else if model.type == 3 {
+            } else if model.type == 2 {
                 iconImageView.isHidden = false
                 bigIconImageView.isHidden = true
-                iconImageView.whhSetKFWithImage(imageString: model.assetUrl)
+                iconImageView.image = UIImage(named: "whhanshsHomeButomIcon")
+//                iconImageView.whhSetKFWithImage(imageString: model.assetUrl)
             }
         }
     }
