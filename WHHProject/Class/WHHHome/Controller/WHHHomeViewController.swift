@@ -125,7 +125,7 @@ class WHHHomeViewController: WHHBaseViewController {
         view.addSubview(dateTitle)
         dateTitle.snp.makeConstraints { make in
             make.left.equalTo(todayTitle.snp.right).offset(5)
-            make.centerY.equalTo(todayTitle)
+            make.bottom.equalTo(todayTitle)
         }
         dateTitle.text = String.getCurrentDateString()
     }
@@ -194,6 +194,8 @@ class WHHHomeViewController: WHHBaseViewController {
         switch WHHScreenH {
         case 852,932,874,956:
             return 330
+        case 896:
+            return 320
         default:
             return 390
         }

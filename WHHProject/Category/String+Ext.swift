@@ -30,7 +30,7 @@ extension String {
         let now = Date()
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "zh_CN") // 中文
-        formatter.dateFormat = "M月 d日 E"            // M=月, d=日, E=星期几
+        formatter.dateFormat = "M月d日 E"            // M=月, d=日, E=星期几
         return formatter.string(from: now)
     }
 }

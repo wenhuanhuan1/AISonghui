@@ -14,6 +14,8 @@ class WHHAboutUsViewController: WHHBaseViewController {
         let view = AnimatedImageView()
         view.contentMode = .scaleAspectFill
         view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.layer.masksToBounds = true
         return view
     }()
     

@@ -21,6 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abbVipBgIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ji9-Wf-2ku">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-Sl-Wgb">
                     <rect key="frame" x="16.666666666666657" y="224.33333333333337" width="360" height="509"/>
                     <subviews>
@@ -227,7 +230,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ji9-Wf-2ku" secondAttribute="trailing" id="3rY-MP-AQn"/>
                 <constraint firstItem="Rwr-0B-N5P" firstAttribute="centerX" secondItem="FWh-0Y-dut" secondAttribute="centerX" id="DHk-vM-cDN"/>
+                <constraint firstAttribute="bottom" secondItem="Ji9-Wf-2ku" secondAttribute="bottom" id="IBR-2m-9dl"/>
+                <constraint firstItem="Ji9-Wf-2ku" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ILf-8y-EbB"/>
                 <constraint firstItem="ycT-Sl-Wgb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MbR-xa-tko"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c0I-Nc-Vbm" secondAttribute="bottom" constant="15" id="QNq-SZ-WXS"/>
                 <constraint firstItem="c0I-Nc-Vbm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="T9D-HC-R7g"/>
@@ -236,6 +242,7 @@
                 <constraint firstAttribute="trailing" secondItem="c0I-Nc-Vbm" secondAttribute="trailing" constant="20" id="a6B-6Q-mHs"/>
                 <constraint firstItem="6hn-hG-dmr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="hVi-Sj-ark"/>
                 <constraint firstItem="FWh-0Y-dut" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lZd-ZE-29r"/>
+                <constraint firstItem="Ji9-Wf-2ku" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mPp-mp-JID"/>
                 <constraint firstItem="6gP-9o-4zT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mXb-ot-g2P"/>
                 <constraint firstItem="Rwr-0B-N5P" firstAttribute="top" secondItem="FWh-0Y-dut" secondAttribute="top" constant="35" id="y5L-5e-jB7"/>
             </constraints>
@@ -243,6 +250,7 @@
         </view>
     </objects>
     <resources>
+        <image name="abbVipBgIcon" width="375" height="812"/>
         <image name="whhCloseIcon" width="20" height="20"/>
         <image name="whhVIPContent" width="120" height="169.66667175292969"/>
         <image name="whhVIPItemLeftIcon" width="9.6666669845581055" height="12.333333015441895"/>
