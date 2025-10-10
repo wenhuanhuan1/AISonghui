@@ -33,15 +33,17 @@ class WHHAboutUsViewController: WHHBaseViewController {
         tableview.isScrollEnabled = false
         tableview.separatorStyle = .none
         tableview.register(UINib(nibName: "WHHAboutUsTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHAboutUsTableViewCell")
-        webpBgView.addSubview(bigIconImageView)
-        bigIconImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        if let path = Bundle.main.path(forResource: "aboutUsAbb", ofType: "gif") {
-            let url = URL(fileURLWithPath: path)
-            bigIconImageView.kf.setImage(with: url)
-        }
+        webpBgView.layer.cornerRadius = 20
+        webpBgView.layer.masksToBounds = true
+//        webpBgView.addSubview(bigIconImageView)
+//        bigIconImageView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+//        
+//        if let path = Bundle.main.path(forResource: "aboutUsAbb", ofType: "gif") {
+//            let url = URL(fileURLWithPath: path)
+//            bigIconImageView.kf.setImage(with: url)
+//        }
     }
     
     override func viewWillLayoutSubviews() {
