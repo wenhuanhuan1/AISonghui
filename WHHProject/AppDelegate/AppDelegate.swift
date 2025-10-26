@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if WHHUserInfoManager.shared.isShowpPrivacyAlert {
             // 同意协议
             if WHHUserInfoManager.shared.isLogin {
-                window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+                window?.rootViewController = WHHNavigationController(rootVC: WHHAINewHomeViewController())
             } else {
                 WHHHUD.whhShowLoadView()
 

@@ -44,6 +44,6 @@ target 'WHHProject' do
   pod 'MJExtension'
   pod 'BRPickerView'
   pod 'YYWebImage', '~> 1.0.5'
-  pod 'YYImage/WebP'
+#  pod 'YYImage/WebP'
   pod 'GPUImage'
 end

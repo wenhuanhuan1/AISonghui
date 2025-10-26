@@ -192,7 +192,7 @@ class WHHHomeViewController: WHHBaseViewController {
 
         debugPrint("当前的高\(WHHScreenH)")
         switch WHHScreenH {
-        case 852,932,874,956:
+        case 852,932,874,956,844:
             return 330
         case 896:
             return 320

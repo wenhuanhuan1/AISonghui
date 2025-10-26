@@ -52,6 +52,7 @@ class WHHPersonageViewController: WHHBaseViewController {
         homeTableView.register(UINib(nibName: "WHHPersonageTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageTableViewCell")
         homeTableView.register(UINib(nibName: "WHHPersonageControllTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHPersonageControllTableViewCell")
         homeTableView.register(UINib(nibName: "WHHBuyFinishTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHBuyFinishTableViewCell")
+        homeTableView.register(WHHAIPersonVIPCell.self, forCellReuseIdentifier: "WHHAIPersonVIPCell")
 
         return homeTableView
     }()
@@ -144,14 +145,16 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+           
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WHHAIPersonVIPCell", for: indexPath) as! WHHAIPersonVIPCell
             if netModel.vip == 1 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHBuyFinishTableViewCell", for: indexPath) as! WHHBuyFinishTableViewCell
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "WHHPersonageTableViewCell", for: indexPath) as! WHHPersonageTableViewCell
-                return cell
+                cell.status.isHidden = true
+            }else{
+                cell.status.isHidden = false
             }
-
+            cell.lineLabel.text = "命运丝线:" + "\(netModel.luckValueNum)"
+           
+            return cell
         } else {
             let cell: WHHPersonageControllTableViewCell = tableView.dequeueReusableCell(withIdentifier: "WHHPersonageControllTableViewCell") as! WHHPersonageControllTableViewCell
 
@@ -189,11 +192,8 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            if netModel.vip == 1 {
-                return (WHHScreenW - 40) * 54 / 355
-            } else {
-                return (WHHScreenW - 40) * 152 / 355
-            }
+            
+            return 170
 
         } else if indexPath.section == 1 {
             return CGFloat(oneSectionArray.count * 52)
@@ -204,9 +204,10 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            jumpVIPController {
-                debugPrint("支付了")
-            }
+            
+            let vc = WHHAIDestinyLinesViewController()
+            navigationController?.pushViewController(vc, animated: true)
+          
         }
     }
 }

@@ -123,8 +123,6 @@ PODS:
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
-  - YYImage/WebP (1.0.4):
-    - YYImage/Core
   - YYWebImage (1.0.5):
     - YYCache
     - YYImage
@@ -148,7 +146,6 @@ DEPENDENCIES:
   - MMKV
   - SnapKit
   - SwiftyStoreKit
-  - YYImage/WebP
   - YYWebImage (~> 1.0.5)
 
 SPEC REPOS:
@@ -208,6 +205,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: c359abfdf29da08e266bdaa73ff26a2ab1dd50aa
+PODFILE CHECKSUM: 0dd0f7c0f8c2034e40994c8de16b7e1c75ef0f72
 
 COCOAPODS: 1.16.2

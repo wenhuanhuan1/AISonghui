@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,copy) NSString *vipExpireTime;
 
+@property(nonatomic,assign) NSInteger luckValueNum;
+
 @end
 
 NS_ASSUME_NONNULL_END

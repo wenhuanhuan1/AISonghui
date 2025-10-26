@@ -119,7 +119,7 @@ class WHHDivinationViewController: WHHBaseViewController {
         // 恶毒
         sender.backgroundColor = Color6D64FF
         sender.setTitleColor(.white, for: .normal)
-
+        nvBgIocn.image = UIImage(named: "whhAbbEduRiBaoIcon")
         xuanjinvButton.backgroundColor = .white
         xuanjinvButton.setTitleColor(Color6D64FF, for: .normal)
         xuanjinvButton.isSelected = false
@@ -140,6 +140,7 @@ class WHHDivinationViewController: WHHBaseViewController {
         sender.setTitleColor(.white, for: .normal)
         sender.isSelected = true
 
+        nvBgIocn.image = UIImage(named: "whhAbbShenqiRibaoIcon")
         xuanjinvButton.backgroundColor = .white
         xuanjinvButton.setTitleColor(Color6D64FF, for: .normal)
         xuanjinvButton.isSelected = false
@@ -158,6 +159,7 @@ class WHHDivinationViewController: WHHBaseViewController {
         sender.backgroundColor = Color6D64FF
         sender.setTitleColor(.white, for: .normal)
         sender.isSelected = true
+        nvBgIocn.image = UIImage(named: "xuanjiNVBgIcon")
 
         shenqiNvButton.backgroundColor = .white
         shenqiNvButton.setTitleColor(Color6D64FF, for: .normal)

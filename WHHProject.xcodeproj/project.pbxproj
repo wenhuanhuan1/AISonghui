@@ -82,6 +82,12 @@
 		2F6D948F2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */; };
 		2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */; };
 		2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D949D2E83A52E00CE27A3 /* WebPManager.m */; };
+		2F76BFD42EADFC3E00710B52 /* WHHAIPersonVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */; };
+		2F76BFD62EAE0EF000710B52 /* homeView2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2F76BFD52EAE0EF000710B52 /* homeView2.gif */; };
+		2F9D04652EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */; };
+		2FA9973E2EADED0700B61D04 /* WHHAINewHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */; };
+		2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */; };
+		2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */; };
 		2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C8192E93F5700078F1A8 /* aboutUs.webp */; };
 		2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */; };
 		2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */; };
@@ -283,6 +289,12 @@
 		2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeABBTableViewCell.xib; sourceTree = "<group>"; };
 		2F6D949C2E83A52E00CE27A3 /* WebPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPManager.h; sourceTree = "<group>"; };
 		2F6D949D2E83A52E00CE27A3 /* WebPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPManager.m; sourceTree = "<group>"; };
+		2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIPersonVIPCell.swift; sourceTree = "<group>"; };
+		2F76BFD52EAE0EF000710B52 /* homeView2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = homeView2.gif; sourceTree = "<group>"; };
+		2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLinesViewController.swift; sourceTree = "<group>"; };
+		2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAINewHomeViewController.swift; sourceTree = "<group>"; };
+		2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAugurViewController.swift; sourceTree = "<group>"; };
+		2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIAugurView.swift; sourceTree = "<group>"; };
 		2FC1C8192E93F5700078F1A8 /* aboutUs.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutUs.webp; sourceTree = "<group>"; };
 		2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aboutUsAbb.gif; sourceTree = "<group>"; };
 		2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
@@ -524,6 +536,7 @@
 		2F17BF7F2DF7C96200CA36E8 /* WHHProject */ = {
 			isa = PBXGroup;
 			children = (
+				2F76BFD52EAE0EF000710B52 /* homeView2.gif */,
 				2FC1C8192E93F5700078F1A8 /* aboutUs.webp */,
 				2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */,
 				2F17BF982DF7D32000CA36E8 /* Category */,
@@ -836,6 +849,7 @@
 				2FDC697A2E3B7AF800A523B0 /* WHHContactUsViewController.swift */,
 				2FDC697B2E3B7AF800A523B0 /* WHHContactUsViewController.xib */,
 				2FDC697E2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift */,
+				2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -852,6 +866,7 @@
 				2FDC69802E3C60B400A523B0 /* WHHAgainAlertView.swift */,
 				2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */,
 				2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */,
+				2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -982,6 +997,7 @@
 				2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */,
 				2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */,
 				2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */,
+				2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1015,6 +1031,8 @@
 				2FDC69382E38A53200A523B0 /* WHHDivinationViewController.swift */,
 				2FDC69392E38A53200A523B0 /* WHHDivinationViewController.xib */,
 				2FDC69502E39BE0600A523B0 /* WHHHomeSubscribedDetailViewController.swift */,
+				2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */,
+				2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1121,6 +1139,7 @@
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
 				2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
+				2F76BFD62EAE0EF000710B52 /* homeView2.gif in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
@@ -1199,6 +1218,7 @@
 				2F043BCF2E65970D00E8C04E /* UIImageView+KF.swift in Sources */,
 				2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */,
 				2FDC692B2E38652900A523B0 /* WHHGradientButton.swift in Sources */,
+				2F9D04652EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift in Sources */,
 				2F004E112E0E35100016DA6B /* UIImageView+AFNetworking.m in Sources */,
 				2F004E122E0E35100016DA6B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */,
@@ -1208,8 +1228,10 @@
 				2F004E142E0E35100016DA6B /* AFURLResponseSerialization.m in Sources */,
 				2FDC697D2E3B7AF800A523B0 /* WHHContactUsViewController.swift in Sources */,
 				2FDC693B2E38A53200A523B0 /* WHHDivinationViewController.swift in Sources */,
+				2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */,
 				2FDC69652E3B1EE800A523B0 /* String+Ext.swift in Sources */,
 				2F004E182E0E35100016DA6B /* UIRefreshControl+AFNetworking.m in Sources */,
+				2FA9973E2EADED0700B61D04 /* WHHAINewHomeViewController.swift in Sources */,
 				2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */,
 				2FDC69292E37A91500A523B0 /* WHHChooseSexView.swift in Sources */,
 				2FDC694F2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.swift in Sources */,
@@ -1286,6 +1308,7 @@
 				2F043C442E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift in Sources */,
 				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
 				2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */,
+				2F76BFD42EADFC3E00710B52 /* WHHAIPersonVIPCell.swift in Sources */,
 				2FE448BB2E2A25760054083E /* WHHNoNetAlertView.swift in Sources */,
 				2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */,
 				2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */,
@@ -1303,6 +1326,7 @@
 				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,
 				2FDC69612E3B124A00A523B0 /* WHHABBInputBarView.swift in Sources */,
 				2FDC69812E3C60B400A523B0 /* WHHAgainAlertView.swift in Sources */,
+				2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
