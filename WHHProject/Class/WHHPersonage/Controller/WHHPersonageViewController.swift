@@ -59,8 +59,14 @@ class WHHPersonageViewController: WHHBaseViewController {
 
     var netModel = FCMineModel()
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("vipBuyFinish"), object: nil)
+        
         gk_navTitle = "资料卡"
         gk_backStyle = .black
         gk_navTitleColor = Color6A6A6B
@@ -117,7 +123,7 @@ class WHHPersonageViewController: WHHBaseViewController {
         }
     }
 
-    private func getUserInfo() {
+    @objc private func getUserInfo() {
         WHHHUD.whhShowLoadView()
         WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, model in
             WHHHUD.whhHidenLoadView()

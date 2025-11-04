@@ -30,4 +30,28 @@ class WHHMineRequestApiViewModel: NSObject {
             }
         }
     }
+    
+    /// 我的命运丝线记录-1.0
+    /// - Parameter handle: 回调
+    static func whhGetMyLuckValueRecordList(lastGetMaxId:String,income:Int,handle: (([ WHHAIDestinyLineItemModel],Int, String) -> Void)?) {
+        
+        var dict = [String:Any]()
+        if income == 0 {
+            dict = ["userId": WHHUserInfoManager.shared.userId,"lastGetMaxId":lastGetMaxId, "api-v": WHHNetConf.apiv]
+        }else if income == 1 {
+            dict = ["userId": WHHUserInfoManager.shared.userId,"lastGetMaxId":lastGetMaxId, "api-v": WHHNetConf.apiv,"income":true]
+        }else {
+            dict = ["userId": WHHUserInfoManager.shared.userId,"lastGetMaxId":lastGetMaxId, "api-v": WHHNetConf.apiv,"income":false]
+        }
+        let api = WHHMineRequestApi(parameter: dict, type: .sysFeedbackCheck)
+        api.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1,
+               let model = WHHAIDestinyLineItemModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHAIDestinyLineItemModel] {
+                handle?(model,baseModel.success, baseModel.msg)
+            } else {
+                handle?([WHHAIDestinyLineItemModel](),0, baseModel.msg)
+            }
+        }
+    }
 }

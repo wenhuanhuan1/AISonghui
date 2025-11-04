@@ -85,6 +85,15 @@
 		2F76BFD42EADFC3E00710B52 /* WHHAIPersonVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */; };
 		2F76BFD62EAE0EF000710B52 /* homeView2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2F76BFD52EAE0EF000710B52 /* homeView2.gif */; };
 		2F9D04652EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */; };
+		2F9D04672EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04662EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift */; };
+		2F9D046A2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04682EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift */; };
+		2F9D046B2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04692EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib */; };
+		2F9D04702EAF65B000F34017 /* WHHAIDestinyLineItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D046F2EAF65B000F34017 /* WHHAIDestinyLineItemModel.m */; };
+		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
+		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
+		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
+		2F9D047B2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04792EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib */; };
+		2F9D047E2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */; };
 		2FA9973E2EADED0700B61D04 /* WHHAINewHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */; };
 		2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */; };
 		2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */; };
@@ -292,6 +301,16 @@
 		2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIPersonVIPCell.swift; sourceTree = "<group>"; };
 		2F76BFD52EAE0EF000710B52 /* homeView2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = homeView2.gif; sourceTree = "<group>"; };
 		2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLinesViewController.swift; sourceTree = "<group>"; };
+		2F9D04662EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineItemViewController.swift; sourceTree = "<group>"; };
+		2F9D04682EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineItemTableViewCell.swift; sourceTree = "<group>"; };
+		2F9D04692EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineItemTableViewCell.xib; sourceTree = "<group>"; };
+		2F9D046E2EAF65B000F34017 /* WHHAIDestinyLineItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHAIDestinyLineItemModel.h; sourceTree = "<group>"; };
+		2F9D046F2EAF65B000F34017 /* WHHAIDestinyLineItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHAIDestinyLineItemModel.m; sourceTree = "<group>"; };
+		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
+		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
+		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
+		2F9D04792EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPCell.xib; sourceTree = "<group>"; };
+		2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAnimationView.swift; sourceTree = "<group>"; };
 		2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAINewHomeViewController.swift; sourceTree = "<group>"; };
 		2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAugurViewController.swift; sourceTree = "<group>"; };
 		2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIAugurView.swift; sourceTree = "<group>"; };
@@ -745,6 +764,14 @@
 			path = WebPManager;
 			sourceTree = "<group>";
 		};
+		2F9D047C2EAF9BCA00F34017 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2FDC68D12E2E272A00A523B0 /* WHHMine */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +807,8 @@
 				2F043C512E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift */,
 				2F043C532E6C138A00E8C04E /* WHHMineUploadApi.h */,
 				2F043C542E6C138A00E8C04E /* WHHMineUploadApi.m */,
+				2F9D046E2EAF65B000F34017 /* WHHAIDestinyLineItemModel.h */,
+				2F9D046F2EAF65B000F34017 /* WHHAIDestinyLineItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -850,6 +879,7 @@
 				2FDC697B2E3B7AF800A523B0 /* WHHContactUsViewController.xib */,
 				2FDC697E2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift */,
 				2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */,
+				2F9D04662EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -867,6 +897,8 @@
 				2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */,
 				2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */,
 				2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */,
+				2F9D04682EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift */,
+				2F9D04692EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -939,6 +971,10 @@
 				2FDC69B12E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift */,
 				2FDC69BB2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift */,
 				2FDC69BC2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib */,
+				2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */,
+				2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */,
+				2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */,
+				2F9D04792EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1027,6 +1063,7 @@
 		2FE448AD2E29E7AA0054083E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2F9D047C2EAF9BCA00F34017 /* View */,
 				2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */,
 				2FDC69382E38A53200A523B0 /* WHHDivinationViewController.swift */,
 				2FDC69392E38A53200A523B0 /* WHHDivinationViewController.xib */,
@@ -1123,12 +1160,14 @@
 				2FE448A22E29E6D00054083E /* Localizable.strings in Resources */,
 				2FDC69952E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib in Resources */,
 				2FDC69782E3B72B100A523B0 /* WHHControllTableViewCell.xib in Resources */,
+				2F9D046B2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib in Resources */,
 				2FDC695E2E3B0B5600A523B0 /* WHHABBHomeViewController.xib in Resources */,
 				2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */,
 				2FDC694E2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.xib in Resources */,
 				2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */,
 				2FDC69412E38D55000A523B0 /* WHHSubscriptionDivinationView.xib in Resources */,
 				2FDC695B2E3A064D00A523B0 /* WHHLoadAlertView.xib in Resources */,
+				2F9D047B2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib in Resources */,
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
 				2FDC697C2E3B7AF800A523B0 /* WHHContactUsViewController.xib in Resources */,
 				2FDC69542E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.xib in Resources */,
@@ -1144,6 +1183,7 @@
 				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
 				2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */,
+				2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */,
 				2FDC69C32E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1203,6 +1243,7 @@
 				2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */,
 				2F043BD12E6598EA00E8C04E /* UIColor+Hex.swift in Sources */,
 				2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */,
+				2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */,
 				2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */,
 				2F043C2E2E68657700E8C04E /* FCUploadSourceApi.m in Sources */,
 				2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */,
@@ -1216,10 +1257,12 @@
 				2FDC69992E3CE51600A523B0 /* WHHDeviceManager.swift in Sources */,
 				2FDC69512E39BE0600A523B0 /* WHHHomeSubscribedDetailViewController.swift in Sources */,
 				2F043BCF2E65970D00E8C04E /* UIImageView+KF.swift in Sources */,
+				2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */,
 				2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */,
 				2FDC692B2E38652900A523B0 /* WHHGradientButton.swift in Sources */,
 				2F9D04652EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift in Sources */,
 				2F004E112E0E35100016DA6B /* UIImageView+AFNetworking.m in Sources */,
+				2F9D04702EAF65B000F34017 /* WHHAIDestinyLineItemModel.m in Sources */,
 				2F004E122E0E35100016DA6B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */,
 				2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */,
@@ -1294,6 +1337,7 @@
 				2F043BC22E653FDD00E8C04E /* WHHRequest.m in Sources */,
 				2FDC69572E39F7A500A523B0 /* WHHInputView.swift in Sources */,
 				2FDC69752E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.swift in Sources */,
+				2F9D046A2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift in Sources */,
 				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
 				2FDC693D2E38C76800A523B0 /* WHHDivinationAlertView.swift in Sources */,
 				2FDC69A12E3E048200A523B0 /* WHHlogoutAccoutAlertView.swift in Sources */,
@@ -1319,12 +1363,14 @@
 				2F043C552E6C138A00E8C04E /* WHHMineUploadApi.m in Sources */,
 				2F043C492E6B0D2700E8C04E /* WHHSystemModel.m in Sources */,
 				2FDC69912E3CDFF300A523B0 /* WHHAboutUsViewController.swift in Sources */,
+				2F9D047E2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift in Sources */,
 				2F043C582E6C1CE500E8C04E /* WHHHomeForetellModel.m in Sources */,
 				2FDC692D2E3867A700A523B0 /* WHHSexItemView.swift in Sources */,
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,
 				2FDC69AA2E3EF24700A523B0 /* WHHAppleAccountExplainView.swift in Sources */,
 				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,
 				2FDC69612E3B124A00A523B0 /* WHHABBInputBarView.swift in Sources */,
+				2F9D04672EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift in Sources */,
 				2FDC69812E3C60B400A523B0 /* WHHAgainAlertView.swift in Sources */,
 				2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */,
 			);
@@ -1378,7 +1424,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FDQF58PX62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
@@ -1396,10 +1442,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianyan.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abb.AIProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = jianyanDevPushProfile;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = abeibeiDev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1424,7 +1470,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FDQF58PX62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
@@ -1442,10 +1488,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianyan.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abb.AIProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = jianyanDevPushProfile;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = abeibeiDev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

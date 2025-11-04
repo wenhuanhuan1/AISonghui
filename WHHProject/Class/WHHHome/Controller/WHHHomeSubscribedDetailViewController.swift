@@ -109,7 +109,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         super.whhRefreshHeader()
 
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest { [weak self] success, dataModel, _ in
+        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest(witchId: 1) { [weak self] success, dataModel, _ in
             self?.homeTableView.mj_header?.endRefreshing()
             WHHHUD.whhHidenLoadView()
             if success == 1 {

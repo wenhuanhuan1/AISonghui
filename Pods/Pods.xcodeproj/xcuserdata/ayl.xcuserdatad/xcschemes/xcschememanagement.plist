@@ -119,7 +119,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JXPagingView-JXPagingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JXPagingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JXPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JXSegmentedView-JXSegmentedView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JXSegmentedView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

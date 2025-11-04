@@ -273,7 +273,7 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         } else {
             WHHHUD.whhShowLoadView()
-            WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest { [weak self] success, dataModel, _ in
+            WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest(witchId: 1) { [weak self] success, dataModel, _ in
                 WHHHUD.whhHidenLoadView()
                 if success == 1, dataModel.fortune.items.isEmpty == false {
                     let detailVC = WHHHomeSubscribedDetailViewController()

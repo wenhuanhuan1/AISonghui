@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import JXSegmentedView
 
 class WHHAIDestinyLinesViewController: WHHBaseViewController {
     lazy var topView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
+        return view
+    }()
+    
+    lazy var bottomLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = ColorD6D4FF
         return view
     }()
 
@@ -32,6 +39,21 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
         view.layer.masksToBounds = true
         return view
     }()
+    
+    lazy var jumpButton: UIButton = {
+        let view = UIButton(type: .custom)
+        view.addTarget(self, action: #selector(didVipButtonClick), for: .touchUpInside)
+        return view
+    }()
+    
+    lazy var listTitle: UILabel = {
+        let view = UILabel()
+        view.text = "记录"
+        view.textAlignment = .center
+        view.textColor = .black
+        view.font = pingfangSemibold(size: 15)
+        return view
+    }()
 
     lazy var lineLabel: UILabel = {
         let view = UILabel()
@@ -47,10 +69,49 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
         bgView.backgroundColor = .black.withAlphaComponent(0.5)
         return bgView
     }()
+    
+    lazy var segmentedDataSource: JXSegmentedTitleDataSource = {
+        let segmentedDataSource = JXSegmentedTitleDataSource()
+        segmentedDataSource.titles = ["全部", "消耗", "获取"]
+        segmentedDataSource.itemSpacing = 5
+        segmentedDataSource.itemWidthIncrement = 20
+        segmentedDataSource.isTitleColorGradientEnabled = true
+        segmentedDataSource.titleNormalFont = pingfangRegular(size: 12)!
+        segmentedDataSource.titleSelectedFont = pingfangSemibold(size: 12)
+        segmentedDataSource.titleNormalColor = UIColor.white.withAlphaComponent(0.8)
+        segmentedDataSource.titleSelectedColor = .black
+        
 
+        return segmentedDataSource
+    }()
+
+    lazy var listContainerView: JXSegmentedListContainerView! = JXSegmentedListContainerView(dataSource: self)
+
+    lazy var segmentedView: JXSegmentedView = {
+        let segmentedView = JXSegmentedView()
+        segmentedView.dataSource = segmentedDataSource
+        segmentedView.backgroundColor = .black
+        segmentedView.listContainer = listContainerView
+        segmentedView.layer.masksToBounds = true
+        segmentedView.layer.cornerRadius = 20
+        let indicator = JXSegmentedIndicatorBackgroundView()
+               indicator.indicatorHeight = 36
+        indicator.layer.cornerRadius = 18
+        indicator.layer.masksToBounds = true
+        indicator.indicatorWidth = 120
+        indicator.indicatorWidthIncrement = 0
+        indicator.indicatorColor = UIColor.white
+        segmentedView.indicators = [indicator]
+        return segmentedView
+    }()
+
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("vipBuyFinish"), object: nil)
         gk_navTitle = "命运丝线"
         gk_backStyle = .black
         gk_navTitleColor = .black
@@ -84,18 +145,82 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
             make.right.equalToSuperview().offset(-10)
             make.centerY.equalToSuperview()
         }
+        view.addSubview(bottomLineView)
+        bottomLineView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview()
+            make.top.equalTo(topView.snp.bottom).offset(10)
+        }
+        bottomLineView.addSubview(listTitle)
+        listTitle.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
+        }
+        
+        bottomLineView.addSubview(segmentedView)
+        segmentedView.snp.makeConstraints { make in
+            make.left.equalTo(20)
+            make.top.equalTo(listTitle.snp.bottom).offset(10)
+            make.right.equalToSuperview().offset(-20)
+            make.height.equalTo(40)
+        }
+
+        bottomLineView.addSubview(listContainerView)
+        listContainerView.scrollView.backgroundColor = .clear
+        listContainerView.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(segmentedView.snp.bottom).offset(10)
+        }
+        topView.addSubview(jumpButton)
+        jumpButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        getUserInfo()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getUserInfo()
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        bottomLineView.whhAddSetRectConrner(corner: [.topLeft,.topRight], radile: 12)
     }
 
-    private func getUserInfo() {
+   @objc private func getUserInfo() {
         WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, model in
             if code == 1 {
                 self?.lineLabel.text = "命运丝线:" + "\(model.luckValueNum)"
             }
         }
+    }
+    
+   @objc func didVipButtonClick() {
+       WHHHUD.whhShowLoadView()
+       FCVIPRequestApiViewModel.whhRequestProductList {[weak self] dataArray in
+           WHHHUD.whhHidenLoadView()
+           let vipView = WHHAIDestinyLineIVIPView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenH))
+          let model = dataArray.first(where: {$0.code == "com.abb.AIProjectWeek"})
+           model?.isSelect = true
+           vipView.dataArray = dataArray
+           self?.view.addSubview(vipView)
+       }
+      
+    }
+}
+extension WHHAIDestinyLinesViewController: JXSegmentedListContainerViewDataSource {
+    func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
+        if let titleDataSource = segmentedView.dataSource as? JXSegmentedBaseDataSource {
+            return titleDataSource.dataSource.count
+        }
+        return 0
+    }
+
+    func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
+        let sqVC = WHHAIDestinyLineItemViewController()
+        sqVC.index = index
+        return sqVC
     }
 }

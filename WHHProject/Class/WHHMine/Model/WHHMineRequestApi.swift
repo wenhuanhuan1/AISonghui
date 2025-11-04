@@ -10,6 +10,7 @@ import UIKit
 enum WHHMineRequestApiType: Int {
     case sysFeedback
     case sysFeedbackCheck
+    case myLuckValueRecordList
 }
 
 class WHHMineRequestApi: WHHRequest {
@@ -29,6 +30,8 @@ class WHHMineRequestApi: WHHRequest {
             return "sys/feedback"
         case .sysFeedbackCheck:
             return "sys/feedback-check"
+        case .myLuckValueRecordList:
+            return "/my/luck-value/record/list"
         }
     }
 

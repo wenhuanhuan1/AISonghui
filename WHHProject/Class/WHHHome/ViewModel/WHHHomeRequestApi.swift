@@ -17,9 +17,7 @@ enum WHHHomeRequestApiType: Int {
     case getUserDestroyInfo
     /// 取消注销
     case userCancelDestroyApply
-    /// 获取语言
-    case appUserwitchGetFortune
-
+  
     /// 订阅
     case appUserWitchSubscribe
     
@@ -73,7 +71,7 @@ class WHHHomeRequestApi: WHHRequest {
         case .getUserDestroyInfo:
             return "/user/destroy/info"
 
-        case .appUserwitchGetFortune:
+        case .appUserWitchGetFortune:
             return "/app-user/witch/get-fortune"
         case .userCancelDestroyApply:
             return "/user/cancel/destroy/apply"
@@ -83,8 +81,7 @@ class WHHHomeRequestApi: WHHRequest {
             return "/my/detail"
         case .userUpdateInfo:
             return "/user/update-info"
-        case .appUserWitchGetFortune:
-            return "/app-user/witch/get-fortune"
+
         case .appUserWitchGetOldFortune:
             return "/app-user/witch/get-old-fortune"
         case .sysInfo:
@@ -104,7 +101,7 @@ class WHHHomeRequestApi: WHHRequest {
 
     override func requestMethod() -> YTKRequestMethod {
         switch aType {
-        case .witchList, .appUserwitchGetFortune,.myDetail,.appUserWitchGetFortune,.appUserWitchGetOldFortune,.sysInfo,.sysIndexBannerConfig:
+        case .witchList, .appUserWitchGetFortune,.myDetail,.appUserWitchGetOldFortune,.sysInfo,.sysIndexBannerConfig:
             return .GET
         default:
             return .POST

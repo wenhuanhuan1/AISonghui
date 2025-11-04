@@ -8,33 +8,33 @@
 import UIKit
 
 class WHHAIChooseAugurViewController: WHHBaseViewController {
-
     lazy var augurView: WHHAIAugurView = {
         let view = WHHAIAugurView(type: .zhiming)
-        view.didWHHAIAugurViewButtonBlock = {
-            
-            
+        view.didWHHAIAugurViewButtonBlock = { [weak self] in
+
+            self?.amplificationAnimation(type: .zhiming)
         }
-        return augurView
+        return view
     }()
-    
+
     lazy var augurView1: WHHAIAugurView = {
         let view = WHHAIAugurView(type: .xuanji)
-        view.didWHHAIAugurViewButtonBlock = {
-            
-            
+        view.didWHHAIAugurViewButtonBlock = { [weak self] in
+
+            self?.amplificationAnimation(type: .xuanji)
         }
-        return augurView1
+        return view
     }()
+
     lazy var augurView2: WHHAIAugurView = {
         let view = WHHAIAugurView(type: .siye)
-        view.didWHHAIAugurViewButtonBlock = {
-            
-            
+        view.didWHHAIAugurViewButtonBlock = { [weak self] in
+
+            self?.amplificationAnimation(type: .siye)
         }
-        return augurView2
+        return view
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = "选择占卜师"
@@ -57,7 +57,22 @@ class WHHAIChooseAugurViewController: WHHBaseViewController {
             make.top.equalTo(augurView1.snp.bottom).offset(10)
             make.bottom.equalToSuperview().offset(-WHHBottomSafe)
         }
-        
     }
-    
+
+    private func amplificationAnimation(type: WHHAIAugurViewType) {
+        let anView = WHHAIChooseAnimationView()
+        
+        if type == .siye {
+            anView.bigImageView.image = UIImage(named: "司夜-全身")
+            anView.witchId = 3
+        } else if type == .xuanji {
+            anView.bigImageView.image = UIImage(named: "璇玑-全身")
+            anView.witchId = 3
+        } else if type == .zhiming {
+            anView.bigImageView.image = UIImage(named: "织命-全身")
+            anView.witchId = 1
+        }
+        anView.startAnimation()
+        view.addSubview(anView)
+    }
 }

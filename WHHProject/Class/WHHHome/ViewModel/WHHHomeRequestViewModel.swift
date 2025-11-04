@@ -138,8 +138,8 @@ class WHHHomeRequestViewModel: NSObject {
     }
 
     /// 获取新预言
-    static func whhHomeGetWHHHomeappUserWitchGetFortuneRequest(callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
-        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .appUserWitchGetFortune)
+    static func whhHomeGetWHHHomeappUserWitchGetFortuneRequest(witchId: Int, callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId,"witchId":witchId], type: .appUserWitchGetFortune)
         requestApi.whhStartConsequenceHandle { baseModel in
 
             if baseModel.success == 1, let model = WHHHomeForetellModel.mj_object(withKeyValues: baseModel.data) {
