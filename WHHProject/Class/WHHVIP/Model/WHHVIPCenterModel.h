@@ -6,7 +6,7 @@
 //
 
 #import "WHHBaseModel.h"
-
+#import "MJRefresh.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WHHVIPCenterModel : NSObject
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *code;
 @property(nonatomic,copy) NSString *productId;
 @property(nonatomic,copy) NSString *name;
+@property(nonatomic,copy) NSString *shopId;
 
 @property(nonatomic,copy) NSString *orderId;
 @property(nonatomic,copy) NSString *uuid;

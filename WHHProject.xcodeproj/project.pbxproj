@@ -70,6 +70,7 @@
 		2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */; };
 		2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */; };
 		2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */; };
+		2F5D87102EB9B58400570612 /* WHHAIWitchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */; };
 		2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */; };
 		2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */; };
 		2F6079542E6E7F11001CD6BB /* WHHChatMesageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079532E6E7F11001CD6BB /* WHHChatMesageModel.m */; };
@@ -284,6 +285,7 @@
 		2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHUserInfoManager.swift; sourceTree = "<group>"; };
 		2F17BFB92DF80E2C00CA36E8 /* WHHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHUserModel.h; sourceTree = "<group>"; };
 		2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHUserModel.m; sourceTree = "<group>"; };
+		2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIWitchImageView.swift; sourceTree = "<group>"; };
 		2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatViewController.swift; sourceTree = "<group>"; };
 		2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatTableViewCell.swift; sourceTree = "<group>"; };
 		2F6079522E6E7F11001CD6BB /* WHHChatMesageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHChatMesageModel.h; sourceTree = "<group>"; };
@@ -1034,6 +1036,7 @@
 				2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */,
 				2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */,
 				2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */,
+				2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1248,6 +1251,7 @@
 				2F043C2E2E68657700E8C04E /* FCUploadSourceApi.m in Sources */,
 				2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */,
 				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
+				2F5D87102EB9B58400570612 /* WHHAIWitchImageView.swift in Sources */,
 				2FDC699B2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift in Sources */,
 				2F043BC62E65499800E8C04E /* WHHHomeRequestViewModel.swift in Sources */,
 				2FDC69322E38781D00A523B0 /* WHHDatePicker.m in Sources */,
@@ -1424,7 +1428,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FDQF58PX62;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
@@ -1442,10 +1446,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.abb.AIProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianyan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = abeibeiDev;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = jianyan_dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1470,7 +1474,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FDQF58PX62;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHHProject/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "阿贝贝";
@@ -1488,10 +1492,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.abb.AIProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianyan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = abeibeiDev;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = jianyan_dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

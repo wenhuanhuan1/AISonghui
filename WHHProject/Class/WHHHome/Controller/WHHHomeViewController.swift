@@ -175,7 +175,7 @@ class WHHHomeViewController: WHHBaseViewController {
     }
 
     private func jumpABBWitch(array: [WHHHomeWitchModel]) {
-        if let model = array.first(where: { $0.wichId == "2" }) {
+        if let model = array.first(where: { $0.wichId == 2 }) {
             if WHHUserInfoManager.shared.userModel.vip > 0 {
                 let abbHomeVC = WHHABBChatViewController()
                 abbHomeVC.model = model
@@ -273,7 +273,7 @@ extension WHHHomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         } else {
             WHHHUD.whhShowLoadView()
-            WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest(witchId: 1) { [weak self] success, dataModel, _ in
+            WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest() { [weak self] success, dataModel, _ in
                 WHHHUD.whhHidenLoadView()
                 if success == 1, dataModel.fortune.items.isEmpty == false {
                     let detailVC = WHHHomeSubscribedDetailViewController()

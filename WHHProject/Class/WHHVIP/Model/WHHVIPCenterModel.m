@@ -9,4 +9,9 @@
 
 @implementation WHHVIPCenterModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+        @"shopId": @"id"
+    };
+}
 @end

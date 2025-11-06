@@ -45,6 +45,11 @@ enum WHHHomeRequestApiType: Int {
     /// 首页首页banner配置-1.0
     
     case sysIndexBannerConfig
+    /// 获取已订阅的女巫
+    case appUserWitchSubscribeInfo
+    
+    /// 创建日报
+    case appUserWitchCreateFortune
 }
 
 class WHHHomeRequestApi: WHHRequest {
@@ -90,8 +95,13 @@ class WHHHomeRequestApi: WHHRequest {
             return "/app-user/witch/amend-fortune"
         case .sysIndexBannerConfig:
             return "/sys/index/banner/config"
+        case .appUserWitchSubscribeInfo:
+            return "/app-user/witch/subscribe/info"
+        case .appUserWitchCreateFortune:
+            return "/app-user/witch/create-fortune"
+        
         }
-
+        
         
     }
 
@@ -101,7 +111,7 @@ class WHHHomeRequestApi: WHHRequest {
 
     override func requestMethod() -> YTKRequestMethod {
         switch aType {
-        case .witchList, .appUserWitchGetFortune,.myDetail,.appUserWitchGetOldFortune,.sysInfo,.sysIndexBannerConfig:
+        case .witchList, .appUserWitchGetFortune,.myDetail,.appUserWitchGetOldFortune,.sysInfo,.sysIndexBannerConfig,.appUserWitchSubscribeInfo,.appUserWitchCreateFortune:
             return .GET
         default:
             return .POST

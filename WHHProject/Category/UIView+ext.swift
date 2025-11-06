@@ -57,4 +57,20 @@ extension UIView {
            self.layer.shadowRadius = radius
            self.layer.masksToBounds = false
        }
+    
+    func addGradientBackground(colors: [UIColor],
+                               startPoint: CGPoint = CGPoint(x: 0, y: 0),
+                               endPoint: CGPoint = CGPoint(x: 1, y: 1)) {
+        // 移除旧的渐变层，避免重复叠加
+        layer.sublayers?.filter { $0.name == "gradientLayer" }.forEach { $0.removeFromSuperlayer() }
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.name = "gradientLayer"
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        gradientLayer.cornerRadius = layer.cornerRadius
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

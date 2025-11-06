@@ -7,11 +7,9 @@
 
 import UIKit
 
-
 class WHHOldOrNewForetellView: WHHBaseView {
-    
-    var didButtonClickBlock:((WHHOldOrNewForetellView,Bool)->Void)?
-    
+    var didButtonClickBlock: ((WHHOldOrNewForetellView, Bool) -> Void)?
+
     lazy var title: WHHLabel = {
         let view = WHHLabel()
         view.text = "预言(旧)"
@@ -19,13 +17,13 @@ class WHHOldOrNewForetellView: WHHBaseView {
         view.font = pingfangRegular(size: 14)
         return view
     }()
-    
+
     lazy var button: UIButton = {
         let view = UIButton(type: .custom)
         view.addTarget(self, action: #selector(didButtonClick), for: .touchUpInside)
         return view
     }()
-    
+
     override func setupViews() {
         super.setupViews()
         addSubview(title)
@@ -39,18 +37,30 @@ class WHHOldOrNewForetellView: WHHBaseView {
             make.edges.equalToSuperview()
         }
     }
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        whhAddSetRectConrner(corner: [.topRight,.bottomRight], radile: 10)
+        whhAddSetRectConrner(corner: [.topRight, .bottomRight], radile: 10)
     }
-    
-    @objc func didButtonClick(btn:UIButton)  {
+
+    @objc func didButtonClick(btn: UIButton) {
         btn.isSelected = !btn.isSelected
-        didButtonClickBlock?(self,btn.isSelected)
+        didButtonClickBlock?(self, btn.isSelected)
     }
 }
 
 class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
+    var witchId: Int = 0
+
+    lazy var rightButton: UIButton = {
+        let view = UIButton(type: .custom)
+        view.setTitle("回溯", for: .normal)
+        view.titleLabel?.font = pingfangRegular(size: 15)
+        view.setTitleColor(.white, for: .normal)
+        view.addTarget(self, action: #selector(rightButtonClick), for: .touchUpInside)
+        return view
+    }()
+
     lazy var amendmentButton: WHHGradientButton = {
         let amendmentButton = WHHGradientButton(type: .custom)
         amendmentButton.setTitle("whhAmendmentButtonTitleKey".localized, for: .normal)
@@ -72,7 +82,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
 
         view.whhSetTableViewDefault()
         view.register(UINib(nibName: "WHHHomeSubscribedDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHHomeSubscribedDetailTableViewCell")
-        view.whhAddRefreshNormalHeader {[weak self] in
+        view.whhAddRefreshNormalHeader { [weak self] in
             self?.whhRefreshHeader()
         }
         return view
@@ -96,8 +106,8 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         super.viewDidLoad()
         view.backgroundColor = ColorF0F1F5
         gk_navBackgroundColor = .clear
-        gk_navTitle = "whhHomeSubscribedDetailNavTitleKey".localized
-//        gk_navRightBarButtonItem = UIBarButtonItem(customView: upRightButton)
+        gk_navTitle = ""
+        gk_navRightBarButtonItem = UIBarButtonItem(customView: rightButton)
         view.addSubview(homeTableView)
         homeTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -105,11 +115,15 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         whhRefreshHeader()
     }
 
+    @objc func rightButtonClick() {
+        navigationController?.popViewController(animated: true)
+    }
+
     override func whhRefreshHeader() {
         super.whhRefreshHeader()
 
         WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest(witchId: 1) { [weak self] success, dataModel, _ in
+        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest() { [weak self] success, dataModel, _ in
             self?.homeTableView.mj_header?.endRefreshing()
             WHHHUD.whhHidenLoadView()
             if success == 1 {
@@ -120,9 +134,8 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
             }
         }
     }
-    
+
     private func getOldFortuneRequest() {
-        
         WHHHUD.whhShowLoadView()
         WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetOldFortuneRequest { [weak self] success, dataModel, _ in
             WHHHUD.whhHidenLoadView()
@@ -133,25 +146,22 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
                 self?.homeTableView.reloadData()
             }
         }
-        
     }
 
     private var foretellModel = WHHHomeForetellModel()
 
     @objc func upRightButtonClick() {
     }
-    
-    private func requestOldOrNewRrediction(view:WHHOldOrNewForetellView,isStatus:Bool)
-    {
-        
-        if isStatus{
+
+    private func requestOldOrNewRrediction(view: WHHOldOrNewForetellView, isStatus: Bool) {
+        if isStatus {
             // 请求旧的
             view.title.text = "预言(旧)"
             view.title.textColor = Color6A6A6B
             view.backgroundColor = ColorE0E0E0
             getOldFortuneRequest()
-            
-        }else{
+
+        } else {
             // 新的
             view.title.text = "预言(新)"
             view.title.textColor = ColorDAAE4D
@@ -160,20 +170,25 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
             view.layer.borderColor = ColorDAAE4D.cgColor
             whhRefreshHeader()
         }
-        
     }
 
     private func whhHomeSubscribedDetailHeaderView() -> UIView {
-        
-        
-        let headerView = UIView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenW * 308 / 375))
-        let headerIcon = UIImageView(image: UIImage(named: "whhDeDetailTopBgIcon"))
+        let headerView = UIView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenW * 1056 / 1584))
+
+        var bgImageViewStr = ""
+        if witchId == 1 {
+            bgImageViewStr = "璇玑"
+        } else if witchId == 2 {
+            bgImageViewStr = "织命"
+        } else {
+            bgImageViewStr = "司夜"
+        }
+        let headerIcon = WHHAIWitchImageView(image: UIImage(named: bgImageViewStr))
         headerView.addSubview(headerIcon)
         headerIcon.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
 
-        
         let switchButton = WHHOldOrNewForetellView()
         switchButton.isHidden = true
         switchButton.title.text = "预言(新)"
@@ -181,8 +196,8 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         switchButton.backgroundColor = ColorFEF5E6
         switchButton.layer.borderWidth = 1
         switchButton.layer.borderColor = ColorDAAE4D.cgColor
-        switchButton.didButtonClickBlock = {[weak self] view,status in
-            
+        switchButton.didButtonClickBlock = { [weak self] view, status in
+
             self?.requestOldOrNewRrediction(view: view, isStatus: status)
         }
         headerView.addSubview(switchButton)
@@ -191,13 +206,13 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
             make.centerY.equalToSuperview()
             make.height.equalTo(20)
         }
-        
+
         if foretellModel.hasOldFortune == 1 {
-            switchButton.isHidden = false
-        }else{
+            switchButton.isHidden = true
+        } else {
             switchButton.isHidden = true
         }
-        
+
         let contBgIcon = UIImageView(image: UIImage(named: "whhContentBgICon"))
         headerView.addSubview(contBgIcon)
         contBgIcon.snp.makeConstraints { make in
@@ -223,7 +238,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
 
         let gradeLabel = UILabel()
 
-        let att = NSMutableAttributedString(string: foretellModel.fortune.avgScore, attributes: [.foregroundColor: Color746CF7, .font: pingfangSemibold(size: 32)!])
+        let att = NSMutableAttributedString(string: foretellModel.avgScore, attributes: [.foregroundColor: Color746CF7, .font: pingfangSemibold(size: 32)!])
         let att1 = NSAttributedString(string: "/100", attributes: [.foregroundColor: Color6A6A6B, .font: pingfangRegular(size: 18)!])
         att.append(att1)
         gradeLabel.attributedText = att
@@ -246,7 +261,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         }
 
         let contentLabel = UILabel()
-        contentLabel.text = foretellModel.fortune.suggestion
+        contentLabel.text = foretellModel.suggestion
         contentLabel.numberOfLines = 0
         contentLabel.font = pingfangRegular(size: 12)
         contentLabel.textColor = Color2C2B2D
@@ -261,19 +276,18 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
     }
 
     private func getFootView() -> UIView {
-        let footerView = UIView(frame: CGRectMake(0, 0, WHHScreenW, 200))
-        footerView.addSubview(amendmentButton)
-        amendmentButton.isHidden = true
-        amendmentButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-            make.height.equalTo(44)
-            make.top.equalToSuperview().offset(30)
-        }
+        let footerView = UIView(frame: CGRectMake(0, 0, WHHScreenW, 100))
+//        footerView.addSubview(amendmentButton)
+//        amendmentButton.isHidden = true
+//        amendmentButton.snp.makeConstraints { make in
+//            make.left.equalToSuperview().offset(20)
+//            make.right.equalToSuperview().offset(-20)
+//            make.height.equalTo(44)
+//            make.top.equalToSuperview().offset(30)
+//        }
 
         let tipsLabel = UILabel()
-        tipsLabel.isHidden = true
-        tipsLabel.text = "whhAmendmentTipsTitleKey".localized
+        tipsLabel.text = "回答由 AI 生成，内容仅供参考，请仔细甄别"
         tipsLabel.textAlignment = .center
         tipsLabel.numberOfLines = 0
         tipsLabel.font = pingfangRegular(size: 10)
@@ -282,57 +296,57 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
         tipsLabel.snp.makeConstraints { make in
             make.width.equalTo(220)
             make.centerX.equalToSuperview()
-            make.top.equalTo(amendmentButton.snp.bottom).offset(8)
+            make.top.equalToSuperview().offset(8)
         }
 
-        let chooseWitchView = UIView()
-        chooseWitchView.isHidden = true
-        chooseWitchView.layer.cornerRadius = 15
-        chooseWitchView.layer.masksToBounds = true
-        chooseWitchView.layer.borderWidth = 1
-        chooseWitchView.layer.borderColor = Color746CF7.cgColor
-
-        footerView.addSubview(chooseWitchView)
-        chooseWitchView.snp.makeConstraints { make in
-            make.width.equalTo(104)
-            make.height.equalTo(30)
-            make.top.equalToSuperview().offset(50)
-            make.centerX.equalToSuperview()
-        }
-        let witchIcon = UIImageView(image: UIImage(named: "whhButtonWitchIcon"))
-        chooseWitchView.addSubview(witchIcon)
-        witchIcon.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview()
-            make.size.equalTo(20)
-        }
-        let title = UILabel()
-        title.text = "whhChooseWitchTitleKey".localized
-        title.font = pingfangRegular(size: 12)
-        title.textColor = Color746CF7
-        chooseWitchView.addSubview(title)
-        title.snp.makeConstraints { make in
-            make.left.equalTo(witchIcon.snp.right).offset(2)
-            make.right.equalToSuperview().offset(-16)
-            make.centerY.equalToSuperview()
-        }
-
-        let button = UIButton(type: .custom)
-        button.addTarget(self, action: #selector(chooseWitchButtonClick), for: .touchUpInside)
-        chooseWitchView.addSubview(button)
-        button.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        if foretellModel.hasOldFortune == 1 {
-            // 有旧的预言
-            chooseWitchView.isHidden = false
-            amendmentButton.isHidden = true
-            tipsLabel.isHidden = true
-        } else {
-            chooseWitchView.isHidden = true
-            amendmentButton.isHidden = false
-            tipsLabel.isHidden = false
-        }
+//        let chooseWitchView = UIView()
+//        chooseWitchView.isHidden = true
+//        chooseWitchView.layer.cornerRadius = 15
+//        chooseWitchView.layer.masksToBounds = true
+//        chooseWitchView.layer.borderWidth = 1
+//        chooseWitchView.layer.borderColor = Color746CF7.cgColor
+//
+//        footerView.addSubview(chooseWitchView)
+//        chooseWitchView.snp.makeConstraints { make in
+//            make.width.equalTo(104)
+//            make.height.equalTo(30)
+//            make.top.equalToSuperview().offset(50)
+//            make.centerX.equalToSuperview()
+//        }
+//        let witchIcon = UIImageView(image: UIImage(named: "whhButtonWitchIcon"))
+//        chooseWitchView.addSubview(witchIcon)
+//        witchIcon.snp.makeConstraints { make in
+//            make.left.equalToSuperview().offset(16)
+//            make.centerY.equalToSuperview()
+//            make.size.equalTo(20)
+//        }
+//        let title = UILabel()
+//        title.text = "whhChooseWitchTitleKey".localized
+//        title.font = pingfangRegular(size: 12)
+//        title.textColor = Color746CF7
+//        chooseWitchView.addSubview(title)
+//        title.snp.makeConstraints { make in
+//            make.left.equalTo(witchIcon.snp.right).offset(2)
+//            make.right.equalToSuperview().offset(-16)
+//            make.centerY.equalToSuperview()
+//        }
+//
+//        let button = UIButton(type: .custom)
+//        button.addTarget(self, action: #selector(chooseWitchButtonClick), for: .touchUpInside)
+//        chooseWitchView.addSubview(button)
+//        button.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+//        if foretellModel.hasOldFortune == 1 {
+//            // 有旧的预言
+//            chooseWitchView.isHidden = false
+//            amendmentButton.isHidden = true
+//            tipsLabel.isHidden = true
+//        } else {
+//            chooseWitchView.isHidden = true
+//            amendmentButton.isHidden = false
+//            tipsLabel.isHidden = false
+//        }
 
         return footerView
     }
@@ -345,7 +359,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
 
     @objc func submitButtonClick() {
         let inputView = WHHInputView()
-        inputView.changeFinishBlock = {[weak self] displayView in
+        inputView.changeFinishBlock = { [weak self] displayView in
             self?.whhRefreshHeader()
             displayView.closeButtonClick()
         }
@@ -355,7 +369,7 @@ class WHHHomeSubscribedDetailViewController: WHHBaseViewController {
 
 extension WHHHomeSubscribedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return foretellModel.fortune.items.count
+        return foretellModel.items.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -364,7 +378,7 @@ extension WHHHomeSubscribedDetailViewController: UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WHHHomeSubscribedDetailTableViewCell") as! WHHHomeSubscribedDetailTableViewCell
-        cell.cellModel = foretellModel.fortune.items[indexPath.section]
+        cell.cellModel = foretellModel.items[indexPath.section]
         return cell
     }
 
@@ -390,9 +404,8 @@ extension WHHHomeSubscribedDetailViewController: UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         let offsetY = scrollView.contentOffset.y
         let alpha = min(1, max(0, offsetY / 100))
         gk_navBackgroundColor = Color5A92FF.withAlphaComponent(alpha)

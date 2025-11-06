@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *quotes;
 @property(nonatomic,copy) NSString *name;
 @property(nonatomic,strong) NSArray<NSString *> *welfares;
-@property(nonatomic,copy) NSString *wichId;
+@property(nonatomic,assign) NSInteger wichId;
 @property(nonatomic,assign) BOOL subscribed;
 @property(nonatomic,strong) WHHHomeWitchModel *stat;
 @property(nonatomic,copy) NSString *fortuneTimes;

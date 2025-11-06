@@ -86,7 +86,7 @@ class WHHHomeRequestViewModel: NSObject {
         }
     }
 
-    static func whhSubscriptionRequest(witchId: String, callHandle: ((Int, String) -> Void)?) {
+    static func whhSubscriptionRequest(witchId: Int, callHandle: ((Int, String) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "witchId": witchId], type: .appUserWitchSubscribe)
         api.whhStartConsequenceHandle { baseModel in
             callHandle?(baseModel.success, baseModel.msg)
@@ -138,8 +138,8 @@ class WHHHomeRequestViewModel: NSObject {
     }
 
     /// 获取新预言
-    static func whhHomeGetWHHHomeappUserWitchGetFortuneRequest(witchId: Int, callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
-        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId,"witchId":witchId], type: .appUserWitchGetFortune)
+    static func whhHomeGetWHHHomeappUserWitchGetFortuneRequest( callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .appUserWitchGetFortune)
         requestApi.whhStartConsequenceHandle { baseModel in
 
             if baseModel.success == 1, let model = WHHHomeForetellModel.mj_object(withKeyValues: baseModel.data) {
@@ -195,6 +195,34 @@ class WHHHomeRequestViewModel: NSObject {
                 canllBlack?(array, baseModel.msg, true)
             } else {
                 canllBlack?([WHHSystemModel](), baseModel.msg, false)
+            }
+        }
+    }
+    
+    /// 获取已订阅的女巫信息-1.0
+    /// - Parameter canllBlack: 回调
+    static func getAppUserWitchSubscribeInfo(canllBlack: (([WHHSystemModel], String, Bool) -> Void)?) {
+        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId], type: .appUserWitchSubscribeInfo)
+        api.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1, let array = WHHSystemModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHSystemModel] {
+                canllBlack?(array, baseModel.msg, true)
+            } else {
+                canllBlack?([WHHSystemModel](), baseModel.msg, false)
+            }
+        }
+    }
+    
+    /// 创建语言
+    static func getCreateAppUserWitchCreateFortune(witchId:Int,callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
+        
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId,"witchId":witchId], type: .appUserWitchCreateFortune)
+        requestApi.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1, let model = WHHHomeForetellModel.mj_object(withKeyValues: baseModel.data) {
+                callBlack?(baseModel.success, model, baseModel.msg)
+            } else {
+                callBlack?(baseModel.success, WHHHomeForetellModel(), baseModel.msg)
             }
         }
     }

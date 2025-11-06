@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish, msg in
                         WHHHUD.whhHidenLoadView()
                         if finish {
-                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
+                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHAINewHomeViewController())
                         } else {
                             WHHHUD.whhShowInfoText(text: msg)
                         }

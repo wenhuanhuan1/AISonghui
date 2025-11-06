@@ -16,6 +16,54 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         homeView1.backgroundColor = .red
         return homeView1
     }()
+    
+    lazy var homeView1Button: UIButton = {
+        let view = UIButton(type: .custom)
+        view.addTarget(self, action: #selector(getOneDayWordButtonClick), for: .touchUpInside)
+        return view
+    }()
+    
+    lazy var homeView2Button: UIButton = {
+        let view = UIButton(type: .custom)
+        view.addTarget(self, action: #selector(getWordButtonClick), for: .touchUpInside)
+        return view
+    }()
+    
+    lazy var todayScore: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 12
+        view.layer.masksToBounds = true
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var todayScoreTitle: UILabel = {
+        let view = UILabel()
+        view.text = "今日运势"
+        view.font = pingfangRegular(size: 12)
+        view.textColor = .black
+        view.textAlignment = .center
+        return view
+    }()
+    
+    lazy var scoreContentTitle: UILabel = {
+        let view = UILabel()
+        view.text = "100"
+        view.font = pingfangSemibold(size: 25)
+        view.textColor = Color6D64FF
+        view.textAlignment = .center
+        return view
+    }()
+    
+    lazy var rightScoreContentTitle: UILabel = {
+        let view = UILabel()
+        view.text = "今日运势整体平稳，建议保持耐心应对挑战。抓住机会展现自我，方能趋吉避凶。"
+        view.font = pingfangRegular(size: 15)
+        view.textColor = .white
+        view.numberOfLines = 0
+        return view
+    }()
 
     lazy var topGetWordButton: UIButton = {
         let view = UIButton(type: .custom)
@@ -189,6 +237,36 @@ class WHHAINewHomeViewController: WHHBaseViewController {
             make.width.equalTo(120)
             make.bottom.equalToSuperview().offset(-20)
         }
+        
+        homeView1.addSubview(todayScore)
+        todayScore.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-20)
+            make.size.equalTo(80)
+        }
+        todayScore.addSubview(todayScoreTitle)
+        todayScoreTitle.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
+        }
+        
+        todayScore.addSubview(scoreContentTitle)
+        scoreContentTitle.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(todayScoreTitle.snp.bottom).offset(5)
+        }
+        
+        homeView1.addSubview(rightScoreContentTitle)
+        rightScoreContentTitle.snp.makeConstraints { make in
+            make.left.equalTo(todayScore.snp.right).offset(10)
+            make.right.equalToSuperview().offset(-20)
+            make.centerY.equalTo(todayScore)
+        }
+        
+        homeView1.addSubview(homeView1Button)
+        homeView1Button.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
 
         view.addSubview(homeView2)
         homeView2.snp.makeConstraints { make in
@@ -227,23 +305,37 @@ class WHHAINewHomeViewController: WHHBaseViewController {
             let url = URL(fileURLWithPath: path)
             bigIconImageView.kf.setImage(with: url)
         }
+        
+        homeView2.addSubview(homeView2Button)
+        homeView2Button.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+
+   @objc func homeView1ButtonClick() {
+        
+        
     }
 
     @objc func getWordButtonClick() {
-        WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
-            WHHHUD.whhHidenLoadView()
-            if witchDataArray.isEmpty == false {
-                self?.jumpABBWitch(array: witchDataArray)
-            }
-        }
+        
+#warning("这里需要更改喝水喝水")
+        
+//        
+//        WHHHUD.whhShowLoadView()
+//        WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
+//            WHHHUD.whhHidenLoadView()
+//            if witchDataArray.isEmpty == false {
+//                self?.jumpABBWitch(array: witchDataArray)
+//            }
+//        }
     }
 
     private func jumpABBWitch(array: [WHHHomeWitchModel]) {
         
-        
     
-        if let model = array.first(where: { $0.wichId == "2" }) {
+        if let model = array.first(where: { $0.wichId == 2 }) {
             if WHHUserInfoManager.shared.userModel.vip > 0 {
                 let abbHomeVC = WHHABBChatViewController()
                 abbHomeVC.model = model
@@ -278,6 +370,39 @@ class WHHAINewHomeViewController: WHHBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getUserInfo()
+        getAppUserWitchSubscribeInfo()
+    }
+    
+    
+    
+    private func getAppUserWitchSubscribeInfo() {
+        
+        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest() { [weak self] success, dataModel, _ in
+            if success == 1, dataModel.items.isEmpty == false {
+                self?.hidenOtherMessage(isHaveDaily: true,model: dataModel)
+            } else {
+                self?.hidenOtherMessage(isHaveDaily: false,model:dataModel)
+            }
+        }
+    }
+    
+    private func hidenOtherMessage(isHaveDaily:Bool,model:WHHHomeForetellModel) {
+        
+        if isHaveDaily {
+            todayScore.isHidden = false
+            todayScoreTitle.isHidden = false
+            topGetWordButton.isHidden = true
+            topTitle1.isHidden = true
+            scoreContentTitle.text = model.avgScore
+            rightScoreContentTitle.text = model.suggestion
+            
+        }else{
+            todayScore.isHidden = true
+            todayScoreTitle.isHidden = true
+            topGetWordButton.isHidden = false
+            topTitle1.isHidden = false
+        }
+        
     }
 
     private func getUserInfo() {
