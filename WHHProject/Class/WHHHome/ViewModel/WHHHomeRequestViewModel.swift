@@ -118,10 +118,10 @@ class WHHHomeRequestViewModel: NSObject {
     /// - Parameters:
     ///   - dict: 参数
     ///   - callBlack: 回调
-    static func whhModificationPersonInfo(dict: [String: Any], callBlack: ((Int,String) -> Void)?) {
+    static func whhModificationPersonInfo(dict: [String: Any], callBlack: ((Int, String) -> Void)?) {
         let api = WHHHomeRequestApi(parameter: dict, type: .userUpdateInfo)
         api.whhStartConsequenceHandle { baseModel in
-            callBlack?(baseModel.success,baseModel.msg)
+            callBlack?(baseModel.success, baseModel.msg)
         }
     }
 
@@ -138,7 +138,7 @@ class WHHHomeRequestViewModel: NSObject {
     }
 
     /// 获取新预言
-    static func whhHomeGetWHHHomeappUserWitchGetFortuneRequest( callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
+    static func whhHomeGetWHHHomeappUserWitchGetFortuneRequest(callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
         let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .appUserWitchGetFortune)
         requestApi.whhStartConsequenceHandle { baseModel in
 
@@ -198,7 +198,7 @@ class WHHHomeRequestViewModel: NSObject {
             }
         }
     }
-    
+
     /// 获取已订阅的女巫信息-1.0
     /// - Parameter canllBlack: 回调
     static func getAppUserWitchSubscribeInfo(canllBlack: (([WHHSystemModel], String, Bool) -> Void)?) {
@@ -212,11 +212,10 @@ class WHHHomeRequestViewModel: NSObject {
             }
         }
     }
-    
+
     /// 创建语言
-    static func getCreateAppUserWitchCreateFortune(witchId:Int,callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
-        
-        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId,"witchId":witchId], type: .appUserWitchCreateFortune)
+    static func getCreateAppUserWitchCreateFortune(witchId: Int, callBlack: ((Int, WHHHomeForetellModel, String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "witchId": witchId], type: .appUserWitchCreateFortune)
         requestApi.whhStartConsequenceHandle { baseModel in
 
             if baseModel.success == 1, let model = WHHHomeForetellModel.mj_object(withKeyValues: baseModel.data) {
@@ -224,6 +223,52 @@ class WHHHomeRequestViewModel: NSObject {
             } else {
                 callBlack?(baseModel.success, WHHHomeForetellModel(), baseModel.msg)
             }
+        }
+    }
+
+    /// 创建会话
+    static func postCreateChatConversationCreate(input: String, callBlack: ((Int, WHHAIChatListModel, String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "input": input], type: .chatConversationCreate)
+        requestApi.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1, let model = WHHAIChatListModel.mj_object(withKeyValues: baseModel.data) {
+                callBlack?(baseModel.success, model, baseModel.msg)
+            } else {
+                callBlack?(baseModel.success, WHHAIChatListModel(), baseModel.msg)
+            }
+        }
+    }
+
+    /// 获取列表
+    static func getChatConversationList(callBlack: ((Int, [WHHAIChatListModel], String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv], type: .chatConversationList)
+        requestApi.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1, let model = WHHAIChatListModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHAIChatListModel] {
+                callBlack?(baseModel.success, model, baseModel.msg)
+            } else {
+                callBlack?(baseModel.success, [WHHAIChatListModel](), baseModel.msg)
+            }
+        }
+    }
+
+    /// 获取聊天记录
+    static func getChatMessageRequest(conversationId: String, lastId: String, swipeUp: Bool, callBlack: ((Int, [WHHChatMesageModel], String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "conversationId": conversationId, "lastId": conversationId, "swipeUp": swipeUp], type: .chatMessage)
+        requestApi.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1, let array = WHHChatMesageModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHChatMesageModel] {
+                callBlack?(baseModel.success, array, baseModel.msg)
+            } else {
+                callBlack?(baseModel.success, [WHHChatMesageModel](), baseModel.msg)
+            }
+        }
+    }
+
+    static func deleteRequestchatConversationDelete(conversationId: String, callBlack: ((Int, String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "conversationId": conversationId], type: .chatConversationDelete)
+        requestApi.whhStartConsequenceHandle { baseModel in
+            callBlack?(baseModel.success, baseModel.msg)
         }
     }
 }

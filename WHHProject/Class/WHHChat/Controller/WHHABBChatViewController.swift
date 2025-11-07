@@ -20,6 +20,11 @@ class WHHABBChatViewController: WHHBaseViewController {
         view.addGestureRecognizer(tap)
         return view
     }()
+    
+    lazy var dataArray: [WHHChatMesageModel] = {
+        let view = [WHHChatMesageModel]()
+        return view
+    }()
 
     lazy var chatInputView: WHHChatInputView = {
         let view = WHHChatInputView()
@@ -29,11 +34,7 @@ class WHHABBChatViewController: WHHBaseViewController {
         return view
     }()
 
-    lazy var dataArray: [WHHChatMesageModel] = {
-        let view = [WHHChatMesageModel]()
-        return view
-    }()
-
+  
     lazy var bgView: WHHBaseView = {
         let view = WHHBaseView()
         view.backgroundColor = .white
@@ -80,7 +81,10 @@ class WHHABBChatViewController: WHHBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        gk_navTitle = ""
+        gk_navRightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        gk_statusBarStyle = .default
+       
         // 添加键盘显示通知监听
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
@@ -88,9 +92,7 @@ class WHHABBChatViewController: WHHBaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         view.backgroundColor = Color746CF7
-        gk_navTitle = ""
-        gk_navRightBarButtonItem = UIBarButtonItem(customView: rightButton)
-
+        
         view.addSubview(witchIcon)
         witchIcon.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(50)
@@ -228,7 +230,7 @@ class WHHABBChatViewController: WHHBaseViewController {
     private func didSendMessageWithRequest(message: String, inpputView: WHHChatInputView) {
         createSendMessageBody(msg: message)
         WHHHUD.whhShowLoadView()
-        WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message) { [weak self] success, msg in
+        WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message,conversationId: "") { [weak self] success, msg in
             WHHHUD.whhHidenLoadView()
             if success == 1 {
                 self?.createReceiveMessageBody(msg: msg)

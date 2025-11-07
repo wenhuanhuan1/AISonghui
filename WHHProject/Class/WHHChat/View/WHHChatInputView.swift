@@ -11,7 +11,7 @@ class WHHChatInputView: WHHBaseView {
     lazy var inputTextView: WHHTextView = {
         let view = WHHTextView()
         view.backgroundColor = .clear
-        view.textColor = Color2C2B2D
+        view.textColor = .white
         view.font = pingfangRegular(size: 14)
         view.delegate = self
         view.placeHolder = "请输入文字"

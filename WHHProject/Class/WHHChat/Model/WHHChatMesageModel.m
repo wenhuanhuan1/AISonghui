@@ -8,5 +8,8 @@
 #import "WHHChatMesageModel.h"
 
 @implementation WHHChatMesageModel
-
++(NSDictionary *)mj_replacedKeyFromPropertyName{
+    
+    return @{@"messageId":@"id"};
+}
 @end

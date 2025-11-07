@@ -70,6 +70,13 @@
 		2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */; };
 		2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */; };
 		2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */; };
+		2F22A9322EBDA6D30093ECA8 /* WHHAIChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9302EBDA6D30093ECA8 /* WHHAIChatViewController.swift */; };
+		2F22A9332EBDA6D30093ECA8 /* WHHAIChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F22A9312EBDA6D30093ECA8 /* WHHAIChatViewController.xib */; };
+		2F22A9352EBDAA090093ECA8 /* WHHAIChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9342EBDAA090093ECA8 /* WHHAIChatListViewController.swift */; };
+		2F22A9382EBDAB220093ECA8 /* WHHAIChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9362EBDAB220093ECA8 /* WHHAIChatListTableViewCell.swift */; };
+		2F22A9392EBDAB220093ECA8 /* WHHAIChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F22A9372EBDAB220093ECA8 /* WHHAIChatListTableViewCell.xib */; };
+		2F22A93C2EBDCE240093ECA8 /* WHHAIChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A93B2EBDCE240093ECA8 /* WHHAIChatListModel.m */; };
+		2F22A9412EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9402EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift */; };
 		2F5D87102EB9B58400570612 /* WHHAIWitchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */; };
 		2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */; };
 		2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */; };
@@ -285,6 +292,14 @@
 		2F17BFB72DF80D0100CA36E8 /* WHHUserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHUserInfoManager.swift; sourceTree = "<group>"; };
 		2F17BFB92DF80E2C00CA36E8 /* WHHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHUserModel.h; sourceTree = "<group>"; };
 		2F17BFBA2DF80E2C00CA36E8 /* WHHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHUserModel.m; sourceTree = "<group>"; };
+		2F22A9302EBDA6D30093ECA8 /* WHHAIChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChatViewController.swift; sourceTree = "<group>"; };
+		2F22A9312EBDA6D30093ECA8 /* WHHAIChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIChatViewController.xib; sourceTree = "<group>"; };
+		2F22A9342EBDAA090093ECA8 /* WHHAIChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChatListViewController.swift; sourceTree = "<group>"; };
+		2F22A9362EBDAB220093ECA8 /* WHHAIChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChatListTableViewCell.swift; sourceTree = "<group>"; };
+		2F22A9372EBDAB220093ECA8 /* WHHAIChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIChatListTableViewCell.xib; sourceTree = "<group>"; };
+		2F22A93A2EBDCE240093ECA8 /* WHHAIChatListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHAIChatListModel.h; sourceTree = "<group>"; };
+		2F22A93B2EBDCE240093ECA8 /* WHHAIChatListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHAIChatListModel.m; sourceTree = "<group>"; };
+		2F22A9402EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChatListDeleteView.swift; sourceTree = "<group>"; };
 		2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIWitchImageView.swift; sourceTree = "<group>"; };
 		2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatViewController.swift; sourceTree = "<group>"; };
 		2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatTableViewCell.swift; sourceTree = "<group>"; };
@@ -770,6 +785,9 @@
 			isa = PBXGroup;
 			children = (
 				2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */,
+				2F22A9362EBDAB220093ECA8 /* WHHAIChatListTableViewCell.swift */,
+				2F22A9372EBDAB220093ECA8 /* WHHAIChatListTableViewCell.xib */,
+				2F22A9402EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1048,6 +1066,8 @@
 				2F043BCC2E65945700E8C04E /* WHHHomeWitchModel.m */,
 				2F043C472E6B0D2700E8C04E /* WHHSystemModel.h */,
 				2F043C482E6B0D2700E8C04E /* WHHSystemModel.m */,
+				2F22A93A2EBDCE240093ECA8 /* WHHAIChatListModel.h */,
+				2F22A93B2EBDCE240093ECA8 /* WHHAIChatListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1066,6 +1086,8 @@
 		2FE448AD2E29E7AA0054083E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2F22A9302EBDA6D30093ECA8 /* WHHAIChatViewController.swift */,
+				2F22A9312EBDA6D30093ECA8 /* WHHAIChatViewController.xib */,
 				2F9D047C2EAF9BCA00F34017 /* View */,
 				2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */,
 				2FDC69382E38A53200A523B0 /* WHHDivinationViewController.swift */,
@@ -1073,6 +1095,7 @@
 				2FDC69502E39BE0600A523B0 /* WHHHomeSubscribedDetailViewController.swift */,
 				2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */,
 				2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */,
+				2F22A9342EBDAA090093ECA8 /* WHHAIChatListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1185,9 +1208,11 @@
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
+				2F22A9332EBDA6D30093ECA8 /* WHHAIChatViewController.xib in Resources */,
 				2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */,
 				2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */,
 				2FDC69C32E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib in Resources */,
+				2F22A9392EBDAB220093ECA8 /* WHHAIChatListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1277,6 +1302,7 @@
 				2FDC693B2E38A53200A523B0 /* WHHDivinationViewController.swift in Sources */,
 				2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */,
 				2FDC69652E3B1EE800A523B0 /* String+Ext.swift in Sources */,
+				2F22A93C2EBDCE240093ECA8 /* WHHAIChatListModel.m in Sources */,
 				2F004E182E0E35100016DA6B /* UIRefreshControl+AFNetworking.m in Sources */,
 				2FA9973E2EADED0700B61D04 /* WHHAINewHomeViewController.swift in Sources */,
 				2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */,
@@ -1325,6 +1351,7 @@
 				2FDC695F2E3B0B5600A523B0 /* WHHABBHomeViewController.swift in Sources */,
 				2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */,
 				2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */,
+				2F22A9352EBDAA090093ECA8 /* WHHAIChatListViewController.swift in Sources */,
 				2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */,
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
 				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
@@ -1354,12 +1381,15 @@
 				2F043C4E2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift in Sources */,
 				2FDC69792E3B72B100A523B0 /* WHHControllTableViewCell.swift in Sources */,
 				2F043C442E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift in Sources */,
+				2F22A9322EBDA6D30093ECA8 /* WHHAIChatViewController.swift in Sources */,
 				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
 				2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */,
 				2F76BFD42EADFC3E00710B52 /* WHHAIPersonVIPCell.swift in Sources */,
 				2FE448BB2E2A25760054083E /* WHHNoNetAlertView.swift in Sources */,
+				2F22A9412EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift in Sources */,
 				2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */,
 				2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */,
+				2F22A9382EBDAB220093ECA8 /* WHHAIChatListTableViewCell.swift in Sources */,
 				2F043C522E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift in Sources */,
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,

@@ -8,8 +8,9 @@
 import UIKit
 
 class WHHABBChatRequestApiViewModel: NSObject {
-    static func whhAbbChatSendMessageRequestApi(inputText: String, callBlack: ((Int, String) -> Void)?) {
-        let api = WHHABBChatRequestApi(parameter: ["input": inputText, "userId": WHHUserInfoManager.shared.userId])
+    static func whhAbbChatSendMessageRequestApi(inputText: String,conversationId:String, callBlack: ((Int, String) -> Void)?) {
+        
+        let api = WHHABBChatRequestApi(parameter: ["input": inputText, "userId": WHHUserInfoManager.shared.userId,"conversationId":conversationId])
             .onChunk { chunk in
                 debugPrint("回调的数据\(chunk)")
                 callBlack?(1,chunk)

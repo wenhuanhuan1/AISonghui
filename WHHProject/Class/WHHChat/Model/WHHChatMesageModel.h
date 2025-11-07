@@ -28,6 +28,14 @@ typedef NS_ENUM(NSInteger, WHHChatMesageDirection) {
 /// 消息方向
 @property(nonatomic,assign) WHHChatMesageDirection messageDirection;
 
+
+@property(nonatomic,copy) NSString *messageId;
+@property(nonatomic,copy) NSString *title;
+@property(nonatomic,copy) NSString *createTime;
+@property(nonatomic,copy) NSString *content;
+@property(nonatomic,copy) NSString *messageType;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

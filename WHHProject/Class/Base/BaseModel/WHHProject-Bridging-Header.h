@@ -19,3 +19,4 @@
 #import "WHHChatMesageModel.h"
 #import "WebPManager.h"
 #import "WHHAIDestinyLineItemModel.h"
+#import "WHHAIChatListModel.h"

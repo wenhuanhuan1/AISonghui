@@ -1,0 +1,252 @@
+//
+//  WHHAIChatViewController.swift
+//  WHHProject
+//
+//  Created by wenhuan on 2025/11/7.
+//
+
+import UIKit
+
+class WHHAIChatViewController: WHHBaseViewController {
+
+    var conversationId = ""
+
+    private(set) var lastId = ""
+
+    lazy var rightButton: UIButton = {
+        let a = UIButton(type: .custom)
+        a.setImage(UIImage(named: "recordaww"), for: .normal)
+        a.addTarget(self, action: #selector(rightButtonClick), for: .touchUpInside)
+        return a
+    }()
+
+    lazy var dataArray: [WHHChatMesageModel] = {
+        let view = [WHHChatMesageModel]()
+        return view
+    }()
+
+    lazy var chatInputView: WHHChatInputView = {
+        let view = WHHChatInputView()
+        view.didSendMessageBlock = { [weak self] showView, message in
+            self?.didSendMessageWithRequest(message: message, inpputView: showView)
+        }
+        return view
+    }()
+
+    lazy var chatTableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .plain)
+        view.backgroundColor = .clear
+        view.separatorStyle = .none
+        view.delegate = self
+        view.dataSource = self
+        view.rowHeight = UITableView.automaticDimension
+        view.register(WHHABBChatTableViewCell.self, forCellReuseIdentifier: "WHHABBChatTableViewCell")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTabViewTapGestureRecognizerHidenOtherView(aTap:)))
+        view.addGestureRecognizer(tap)
+        view.whhAddRefreshNormalHeader { [weak self] in
+            self?.getChatListHeaderRequest()
+        }
+        view.whhAddRefreshNormalFooter { [weak self] in
+            self?.getChatListFooterRequest()
+        }
+        view.mj_footer?.isHidden = true
+        return view
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        gk_navTitle = ""
+        gk_navRightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        // 添加键盘显示通知监听
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        // 添加键盘隐藏通知监听
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+        view.addSubview(chatTableView)
+        chatTableView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(WHHAllNavBarHeight)
+        }
+        view.addSubview(chatInputView)
+        chatInputView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(chatTableView.snp.bottom)
+            make.bottom.equalToSuperview().offset(-WHHBottomSafe)
+        }
+        getChatListHeaderRequest()
+    }
+
+    private func getChatListHeaderRequest() {
+        WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: "", swipeUp: false) { [weak self] code, listArray, _ in
+            self?.chatTableView.mj_header?.endRefreshing()
+            if code == 1 {
+                self?.chatTableView.mj_footer?.isHidden = listArray.count > 3 ? false : true
+                self?.dataArray = listArray
+                if let lastObject = listArray.first {
+                    self?.lastId = lastObject.messageId
+                }
+                self?.chatTableView.reloadData()
+            } else {
+            }
+        }
+    }
+
+    private func getChatListFooterRequest() {
+        WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: lastId, swipeUp: true) { [weak self] code, listArray, _ in
+            self?.chatTableView.mj_footer?.endRefreshing()
+            if code == 1 {
+                if let lastObject = listArray.last {
+                    self?.lastId = lastObject.messageId
+                }
+                self?.dataArray.append(contentsOf: listArray)
+                if listArray.isEmpty {
+                    self?.chatTableView.mj_footer?.endRefreshingWithNoMoreData()
+                }
+                self?.chatTableView.reloadData()
+            }
+        }
+    }
+
+    @objc func rightButtonClick() {
+        let recordList = WHHAIChatListViewController()
+        recordList.callBackBlock = {[weak self] conversationId in
+            self?.conversationId = conversationId
+            self?.getChatListHeaderRequest()
+        }
+        navigationController?.pushViewController(recordList, animated: true)
+    }
+
+    @objc func didTabViewTapGestureRecognizerHidenOtherView(aTap: UITapGestureRecognizer) {
+        if aTap.state == .ended {
+            view.endEditing(true)
+            dispatchAfter(delay: 0.05) { [weak self] in
+                self?.scrollToBottomRow()
+            }
+        }
+    }
+
+    // MARK: - Notification Methods
+
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            UIView.animate(withDuration: 0.25) {
+                self.chatInputView.snp.updateConstraints { make in
+                    make.bottom.equalToSuperview().offset(-keyboardHeight)
+                }
+            } completion: { finish in
+
+                if finish {
+                    self.scrollToBottomRow()
+                }
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(_ notification: Notification) {
+
+        UIView.animate(withDuration: 0.25) {
+            self.chatInputView.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().offset(-WHHBottomSafe)
+            }
+        }
+    }
+
+    /// 滚动到最底部
+    private func scrollToBottomRow() {
+        var toRow = -1
+
+        if dataArray.count > 0 {
+            toRow = dataArray.count - 1
+            let toIndexPath = IndexPath(row: toRow, section: 0)
+            chatTableView.scrollToRow(at: toIndexPath, at: .bottom, animated: true)
+        }
+    }
+
+    /// 发送请求
+    private func didSendMessageWithRequest(message: String, inpputView: WHHChatInputView) {
+        if conversationId.isEmpty {
+            // 新创建的
+
+            WHHHomeRequestViewModel.postCreateChatConversationCreate(input: message) { [weak self] code, model, msg in
+
+                if code == 1 {
+                    self?.createSendMessageBody(msg: message)
+                    WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message, conversationId: model.conversationId) { [weak self] success, msg in
+                        if success == 1 {
+                            self?.createReceiveMessageBody(msg: msg)
+                        }
+                    }
+                } else {
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
+            }
+
+        } else {
+            // 历史会话
+
+            createSendMessageBody(msg: message)
+            WHHHUD.whhShowLoadView()
+            WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message, conversationId: conversationId) { [weak self] success, msg in
+                WHHHUD.whhHidenLoadView()
+                if success == 1 {
+                    self?.createReceiveMessageBody(msg: msg)
+                }
+            }
+        }
+    }
+
+    /// 创建发送方的消息体
+    /// - Parameter msg: 消息
+    private func createSendMessageBody(msg: String) {
+        let sendModel = WHHChatMesageModel()
+        sendModel.messageDirection = .send
+        sendModel.icon = WHHUserInfoManager.shared.userModel.logo
+        sendModel.chatContent = msg
+        dataArray.append(sendModel)
+        onMainThread { [weak self] in
+            self?.reloadTableViewData()
+        }
+    }
+
+    private func createReceiveMessageBody(msg: String) {
+            let sendModel = WHHChatMesageModel()
+            sendModel.messageDirection = .receive
+            sendModel.chatContent = msg
+            dataArray.append(sendModel)
+            onMainThread { [weak self] in
+                self?.reloadTableViewData()
+            }
+    }
+
+    private func reloadTableViewData() {
+        chatTableView.reloadData()
+        chatTableView.setNeedsLayout()
+        chatTableView.layoutIfNeeded()
+        dispatchAfter(delay: 0.25) { [weak self] in
+            self?.scrollToBottomRow()
+        }
+    }
+}
+
+extension WHHAIChatViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WHHABBChatTableViewCell", for: indexPath) as! WHHABBChatTableViewCell
+        let model = dataArray[indexPath.row]
+        cell.cellModel = model
+        return cell
+    }
+
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 400
+//    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+}
