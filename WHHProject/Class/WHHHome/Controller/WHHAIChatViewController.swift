@@ -8,8 +8,9 @@
 import UIKit
 
 class WHHAIChatViewController: WHHBaseViewController {
-
     var conversationId = ""
+
+    private var currentStreamedText: String = ""
 
     private(set) var lastId = ""
 
@@ -55,6 +56,7 @@ class WHHAIChatViewController: WHHBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        stayle = .lightContent
         gk_navTitle = ""
         gk_navRightBarButtonItem = UIBarButtonItem(customView: rightButton)
         // 添加键盘显示通知监听
@@ -110,7 +112,7 @@ class WHHAIChatViewController: WHHBaseViewController {
 
     @objc func rightButtonClick() {
         let recordList = WHHAIChatListViewController()
-        recordList.callBackBlock = {[weak self] conversationId in
+        recordList.callBackBlock = { [weak self] conversationId in
             self?.conversationId = conversationId
             self?.getChatListHeaderRequest()
         }
@@ -145,7 +147,6 @@ class WHHAIChatViewController: WHHBaseViewController {
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
-
         UIView.animate(withDuration: 0.25) {
             self.chatInputView.snp.updateConstraints { make in
                 make.bottom.equalToSuperview().offset(-WHHBottomSafe)
@@ -211,19 +212,45 @@ class WHHAIChatViewController: WHHBaseViewController {
     }
 
     private func createReceiveMessageBody(msg: String) {
-            let sendModel = WHHChatMesageModel()
-            sendModel.messageDirection = .receive
-            sendModel.chatContent = msg
-            dataArray.append(sendModel)
-            onMainThread { [weak self] in
-                self?.reloadTableViewData()
+        if msg.containsNeedVIP() {
+            WHHHUD.whhShowLoadView()
+            FCVIPRequestApiViewModel.whhRequestProductList { [weak self] dataArray in
+                WHHHUD.whhHidenLoadView()
+                let vipView = WHHAIDestinyLineIVIPView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenH))
+                let model = dataArray.first(where: { $0.code == "com.abb.AIProjectWeek" })
+                model?.isSelect = true
+                vipView.dataArray = dataArray
+                self?.view.addSubview(vipView)
             }
+
+            return
+        } else if msg.containsUserInput() {
+        } else {
+            let all = SSEParser.clean(msg)
+            // 真正的内容
+            let characters = Array(all)
+            for (i, c) in characters.enumerated() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02 * Double(i)) {
+                    self.currentStreamedText.append(c)
+                    if self.dataArray.isEmpty || self.dataArray.last?.messageDirection == .send {
+                        let sendModel = WHHChatMesageModel()
+                        sendModel.messageDirection = .receive
+                        sendModel.chatContent = self.currentStreamedText
+                        self.dataArray.append(sendModel)
+                    } else {
+                        self.dataArray[self.dataArray.count - 1].chatContent = self.currentStreamedText
+                    }
+
+                    onMainThread { [weak self] in
+                        self?.reloadTableViewData()
+                    }
+                }
+            }
+        }
     }
 
     private func reloadTableViewData() {
         chatTableView.reloadData()
-        chatTableView.setNeedsLayout()
-        chatTableView.layoutIfNeeded()
         dispatchAfter(delay: 0.25) { [weak self] in
             self?.scrollToBottomRow()
         }

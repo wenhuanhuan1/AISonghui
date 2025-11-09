@@ -272,7 +272,7 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         homeView2.snp.makeConstraints { make in
             make.left.right.equalTo(homeView1)
             make.top.equalTo(homeView1.snp.bottom).offset(20)
-            make.bottom.equalToSuperview().offset(-WHHBottomSafe)
+            make.bottom.equalToSuperview().offset(-WHHBottomSafe-10)
         }
 
         homeView2.addSubview(bigIconImageView)
@@ -316,11 +316,23 @@ class WHHAINewHomeViewController: WHHBaseViewController {
     }
 
     @objc func getWordButtonClick() {
+        WHHHUD.whhShowLoadView()
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, userInfo in
+            WHHHUD.whhHidenLoadView()
+            if code == 1 {
+                if userInfo.vip == 1 {
+                    let vc = WHHAIChatViewController()
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    self?.jumpVipView()
+                }
+            } else {
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: "请求失败")
+                }
+            }
+        }
 
-        
-        let vc = WHHAIChatViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        
 //
 //        WHHHUD.whhShowLoadView()
 //        WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
@@ -331,6 +343,18 @@ class WHHAINewHomeViewController: WHHBaseViewController {
 //        }
     }
 
+    private func jumpVipView() {
+        WHHHUD.whhShowLoadView()
+        FCVIPRequestApiViewModel.whhRequestProductList { [weak self] dataArray in
+            WHHHUD.whhHidenLoadView()
+            let vipView = WHHAIDestinyLineIVIPView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenH))
+            let model = dataArray.first(where: { $0.code == "com.abb.AIProjectWeek" })
+            model?.isSelect = true
+            vipView.dataArray = dataArray
+            self?.view.addSubview(vipView)
+        }
+    }
+
     private func jumpABBWitch(array: [WHHHomeWitchModel]) {
         if let model = array.first(where: { $0.wichId == 2 }) {
             if WHHUserInfoManager.shared.userModel.vip > 0 {
@@ -338,15 +362,7 @@ class WHHAINewHomeViewController: WHHBaseViewController {
                 abbHomeVC.model = model
                 navigationController?.pushViewController(abbHomeVC, animated: true)
             } else {
-                WHHHUD.whhShowLoadView()
-                FCVIPRequestApiViewModel.whhRequestProductList { [weak self] dataArray in
-                    WHHHUD.whhHidenLoadView()
-                    let vipView = WHHAIDestinyLineIVIPView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenH))
-                    let model = dataArray.first(where: { $0.code == "com.abb.AIProjectWeek" })
-                    model?.isSelect = true
-                    vipView.dataArray = dataArray
-                    self?.view.addSubview(vipView)
-                }
+                jumpVipView()
             }
         }
     }

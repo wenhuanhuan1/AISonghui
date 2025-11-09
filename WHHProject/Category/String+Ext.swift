@@ -33,4 +33,13 @@ extension String {
         formatter.dateFormat = "M月d日 E"            // M=月, d=日, E=星期几
         return formatter.string(from: now)
     }
+    
+    /// chat  是否需要VIP
+     func containsNeedVIP() -> Bool {
+        return self.contains("<need-vip>")
+    }
+    /// 是否有这个
+    func containsUserInput() -> Bool {
+        return self.contains("<user-input")
+    }
 }
