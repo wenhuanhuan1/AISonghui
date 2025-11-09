@@ -106,10 +106,13 @@ class WHHAIChooseAnimationView: UIView {
     private func requestss() {
         WHHHomeRequestViewModel.getCreateAppUserWitchCreateFortune(witchId: witchId) { [weak self] code, data, msg in
             if code == 1 {
-                if data.suggestion.isEmpty == false {
+                if data.fortune.suggestion.isEmpty == false {
                     self?.stopTimer()
                     self?.jumpyuYan()
                     self?.removeFromSuperview()
+                }else{
+                    
+                    WHHHUD.whhShowInfoText(text: msg)
                 }
                
             } else {
