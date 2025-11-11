@@ -29,7 +29,8 @@ class WHHApplePurchaseManager: NSObject {
         WHHHUD.whhShowLoadView()
         FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId, payPage: payPage) { [weak self] model, code, msg in
             if code == 1 {
-                self?.whhInvocationSwiftyStoreKit(orderId: model.orderId, goodsId: model.productId)
+                self?.whhInvocationSwiftyStoreKit(orderId: model.orderId, goodsId: model.goodsCode)
+                
             } else {
                 WHHHUD.whhHidenLoadView()
                 dispatchAfter(delay: 0.5) {

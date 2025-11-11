@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *uuid;
 @property(nonatomic,copy) NSString *payAmount;
 
+@property(nonatomic,copy) NSString *goodsCode;
+
 /// 0 门票 1：vip
 @property(nonatomic,assign) NSInteger groups;
 @property(nonatomic,copy) NSString *discountedPrice;
