@@ -164,8 +164,6 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
             }
         }
     }
-    
-    
 }
 
 // MARK: - 收据刷新代理封装
@@ -185,51 +183,5 @@ private class ReceiptRequestDelegate: NSObject, SKRequestDelegate {
         completion(false, error)
     }
     
-    // MARK: - 恢复购买
-        func restorePurchases(callBack: ((Bool, String) -> Void)? = nil) {
-            Task {
-                WHHHUD.whhShowLoadView()
-                var restoredCount = 0
-                var lastRestoredProductID = ""
-
-                do {
-                    for await result in Transaction.currentEntitlements {
-                        do {
-                            let transaction = try checkVerified(result)
-                            restoredCount += 1
-                            lastRestoredProductID = transaction.productID
-
-                            // 👇 确保本地票据存在
-                            try await ensureReceiptExists()
-
-                            // 👇 上传票据给服务器验证恢复
-                            await withCheckedContinuation { continuation in
-                                self.whhInspectAndServer(orderId: transaction.id.description) { success, msg in
-                                    continuation.resume()
-                                    if success {
-                                        print("✅ 恢复成功：\(transaction.productID)")
-                                    } else {
-                                        print("⚠️ 恢复失败：\(msg)")
-                                    }
-                                }
-                            }
-
-                        } catch {
-                            print("❌ 恢复交易验证失败：\(error)")
-                        }
-                    }
-
-                    WHHHUD.whhHidenLoadView()
-                    if restoredCount > 0 {
-                        callBack?(true, "已恢复 \(restoredCount) 项购买（最后恢复：\(lastRestoredProductID)）")
-                    } else {
-                        callBack?(false, "未发现可恢复的购买项目")
-                    }
-
-                } catch {
-                    WHHHUD.whhHidenLoadView()
-                    callBack?(false, "恢复购买失败：\(error.localizedDescription)")
-                }
-            }
-        }
+    
 }
