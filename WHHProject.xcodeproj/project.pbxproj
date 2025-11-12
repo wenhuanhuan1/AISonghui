@@ -78,6 +78,7 @@
 		2F22A93C2EBDCE240093ECA8 /* WHHAIChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A93B2EBDCE240093ECA8 /* WHHAIChatListModel.m */; };
 		2F22A9412EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9402EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift */; };
 		2F22A9432EC07D320093ECA8 /* SSEParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9422EC07D320093ECA8 /* SSEParser.swift */; };
+		2F22AA202EC466380093ECA8 /* WHHAIInAppPurchaseV2Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22AA1F2EC466380093ECA8 /* WHHAIInAppPurchaseV2Manager.swift */; };
 		2F5D87102EB9B58400570612 /* WHHAIWitchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */; };
 		2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */; };
 		2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */; };
@@ -302,6 +303,7 @@
 		2F22A93B2EBDCE240093ECA8 /* WHHAIChatListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHAIChatListModel.m; sourceTree = "<group>"; };
 		2F22A9402EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChatListDeleteView.swift; sourceTree = "<group>"; };
 		2F22A9422EC07D320093ECA8 /* SSEParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSEParser.swift; sourceTree = "<group>"; };
+		2F22AA1F2EC466380093ECA8 /* WHHAIInAppPurchaseV2Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIInAppPurchaseV2Manager.swift; sourceTree = "<group>"; };
 		2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIWitchImageView.swift; sourceTree = "<group>"; };
 		2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatViewController.swift; sourceTree = "<group>"; };
 		2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatTableViewCell.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				2F043C4D2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift */,
+				2F22AA1F2EC466380093ECA8 /* WHHAIInAppPurchaseV2Manager.swift */,
 			);
 			path = WHHApplePurchase;
 			sourceTree = "<group>";
@@ -1389,6 +1392,7 @@
 				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
 				2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */,
 				2F76BFD42EADFC3E00710B52 /* WHHAIPersonVIPCell.swift in Sources */,
+				2F22AA202EC466380093ECA8 /* WHHAIInAppPurchaseV2Manager.swift in Sources */,
 				2FE448BB2E2A25760054083E /* WHHNoNetAlertView.swift in Sources */,
 				2F22A9412EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift in Sources */,
 				2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */,

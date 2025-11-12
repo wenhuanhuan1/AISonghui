@@ -65,11 +65,13 @@ class WHHAIDestinyLineIVIPView: UIView {
 
     @IBAction func openButtonClicl(_ sender: UIButton) {
         if let model = dataArray.first(where: { $0.isSelect }) {
-            WHHApplePurchaseManager.shared.whhCreateOrderRequest(goodsId: model.shopId, payPage: "不知道是啥")
-            WHHApplePurchaseManager.shared.purchaseHandle = { [weak self] status in
-                if status == .success {
+            WHHAIInAppPurchaseV2Manager.shared.inAppPurchaseV2ManagerCreateOrder(goodsId: model.shopId) { [weak self] success, msg in
+
+                if success {
                     self?.getUserInfo()
                     NotificationCenter.default.post(name: NSNotification.Name("vipBuyFinish"), object: nil)
+                } else {
+                    WHHHUD.whhShowInfoText(text: msg)
                 }
             }
         }

@@ -100,5 +100,67 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AC13CB6-2B99-4CB4-9026-4D94DD23E3FC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHAIInAppPurchaseV2Manager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "inAppPurchaseV2ManagerStartPurchasing(productID:userUUID:orderId:callBack:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2AC13CB6-2B99-4CB4-9026-4D94DD23E3FC - 554f83abef0286ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 () async -&gt; () in WHHProject.WHHAIInAppPurchaseV2Manager.inAppPurchaseV2ManagerStartPurchasing(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String, callBack: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHAIInAppPurchaseV2Manager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67">
+               </Location>
+               <Location
+                  uuid = "2AC13CB6-2B99-4CB4-9026-4D94DD23E3FC - 6b402153b7c8f49b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String) -&gt; () in closure #1 () async -&gt; () in WHHProject.WHHAIInAppPurchaseV2Manager.inAppPurchaseV2ManagerStartPurchasing(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String, callBack: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHAIInAppPurchaseV2Manager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DF2A6EE-7B27-45EB-A7EA-1F012CA23313"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHAIInAppPurchaseV2Manager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "inAppPurchaseV2ManagerStartPurchasing(productID:userUUID:orderId:callBack:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
