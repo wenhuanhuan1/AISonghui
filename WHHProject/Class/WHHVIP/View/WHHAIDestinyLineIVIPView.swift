@@ -65,7 +65,7 @@ class WHHAIDestinyLineIVIPView: UIView {
 
     @IBAction func openButtonClicl(_ sender: UIButton) {
         if let model = dataArray.first(where: { $0.isSelect }) {
-            WHHAIInAppPurchaseV2Manager.shared.inAppPurchaseV2ManagerCreateOrder(goodsId: model.shopId) { [weak self] success, msg in
+            WHHAIInAppPurchaseV2ManagerV2.shared.createOrder(goodsId: model.shopId) { [weak self] success, msg in
 
                 if success {
                     self?.getUserInfo()
