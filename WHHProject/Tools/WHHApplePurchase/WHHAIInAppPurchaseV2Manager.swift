@@ -4,7 +4,6 @@
 //
 //  Created by wenhuan on 2025/11/12.
 //
-
 import StoreKit
 import UIKit
 
@@ -69,20 +68,26 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
                     // 4️⃣ 确保收据存在
                     try await ensureReceiptExists()
 
-                    // 5️⃣ 上传收据
-                    whhInspectAndServer(orderId: orderId) { success, msg in
-                        callBack?(success, msg)
-                    }
+                    // 5️⃣ 上传最新收据
+                    try await uploadLatestReceipt(orderId: orderId)
+
+                    callBack?(true, "支付成功")
 
                 case .userCancelled:
+                    // 用户取消购买也刷新收据
+                    try? await refreshReceipt()
                     WHHHUD.whhHidenLoadView()
                     callBack?(false, "用户取消购买")
 
                 case .pending:
+                    // 购买待处理也刷新收据
+                    try? await refreshReceipt()
                     WHHHUD.whhHidenLoadView()
                     callBack?(false, "购买待处理")
 
                 @unknown default:
+                    // 未知状态也刷新收据
+                    try? await refreshReceipt()
                     WHHHUD.whhHidenLoadView()
                     callBack?(false, "未知购买状态")
                 }
@@ -110,15 +115,12 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
     // MARK: - 确保收据存在（自动刷新）
 
     private func ensureReceiptExists() async throws {
-        guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL else {
+        let appStoreReceiptURL = Bundle.main.appStoreReceiptURL
+        if appStoreReceiptURL == nil || !FileManager.default.fileExists(atPath: appStoreReceiptURL!.path) {
             try await refreshReceipt()
             return
         }
-        if !FileManager.default.fileExists(atPath: appStoreReceiptURL.path) {
-            try await refreshReceipt()
-            return
-        }
-        let data = try Data(contentsOf: appStoreReceiptURL)
+        let data = try Data(contentsOf: appStoreReceiptURL!)
         if data.isEmpty {
             try await refreshReceipt()
         }
@@ -139,28 +141,29 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
         }
     }
 
-    // MARK: - 上传收据
+    // MARK: - 上传最新收据
 
-    private func whhInspectAndServer(orderId: String, callBlock: ((Bool, String) -> Void)?) {
+    private func uploadLatestReceipt(orderId: String) async throws {
+        try await ensureReceiptExists() // 确保最新收据存在
+
         guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
               let receiptData = try? Data(contentsOf: appStoreReceiptURL),
               !receiptData.isEmpty else {
             WHHHUD.whhHidenLoadView()
-            callBlock?(false, "本地票据仍然为空，请重试或恢复购买")
-            return
+            throw NSError(domain: "iap.receipt.empty", code: -3,
+                          userInfo: [NSLocalizedDescriptionKey: "本地票据为空，请重试或恢复购买"])
         }
 
         let base64Receipt = receiptData.base64EncodedString()
-        WHHHUD.whhShowLoadView()
-        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(orderId: orderId, receiptData: base64Receipt) { success, msg in
-            WHHHUD.whhHidenLoadView()
-            if success == 1 {
-                callBlock?(true, "支付成功")
-            } else {
-                dispatchAfter(delay: 0.5) {
-                    WHHHUD.whhShowInfoText(text: msg)
+        try await withCheckedThrowingContinuation { continuation in
+            FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(orderId: orderId, receiptData: base64Receipt) { success, _ in
+                WHHHUD.whhHidenLoadView()
+                if success == 1 {
+                    continuation.resume()
+                } else {
+                    continuation.resume(throwing: NSError(domain: "iap.upload.failed", code: -4,
+                                                          userInfo: [NSLocalizedDescriptionKey: "支付验证上传失败"]))
                 }
-                callBlock?(false, "支付失败")
             }
         }
     }
@@ -182,6 +185,4 @@ private class ReceiptRequestDelegate: NSObject, SKRequestDelegate {
     func request(_ request: SKRequest, didFailWithError error: Error) {
         completion(false, error)
     }
-    
-    
 }
