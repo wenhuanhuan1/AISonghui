@@ -148,6 +148,7 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
             }
 
         } else {
+            
             WHHHUD.whhHidenLoadView()
             callBlock?(false, "支付失败")
         }
