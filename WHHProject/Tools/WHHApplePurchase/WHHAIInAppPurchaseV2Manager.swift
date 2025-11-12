@@ -20,7 +20,7 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
     ///   - productID: 商品
     ///   - userUUID: uuid
     ///   - callBack: 回调
-    func inAppPurchaseV2ManagerCreateOrder(goodsId: String,payPage:String = "VIP", callBack: ((Bool, String) -> Void)?) {
+    func inAppPurchaseV2ManagerCreateOrder(goodsId: String, payPage: String = "VIP", callBack: ((Bool, String) -> Void)?) {
         WHHHUD.whhShowLoadView()
         FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId, payPage: payPage) { [weak self] model, code, msg in
             if code == 1 {
@@ -58,14 +58,15 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
                     purchasingProductID = nil
 
                     switch result {
-                       
                     case let .success(verification):
                         let transaction = try checkVerified(verification)
                         await transaction.finish()
 
-                        // 上传收据给服务器
-                        whhInspectAndServer(orderId: orderId) { success, msg in
-                            callBack?(success, msg)
+                        Task {
+                            // 上传收据给服务器
+                            whhInspectAndServer(orderId: orderId) { success, msg in
+                                callBack?(success, msg)
+                            }
                         }
 
                     case .userCancelled:
@@ -148,9 +149,8 @@ class WHHAIInAppPurchaseV2Manager: NSObject {
             }
 
         } else {
-            
             WHHHUD.whhHidenLoadView()
-            callBlock?(false, "支付失败")
+            callBlock?(false, "获取本地票据失败")
         }
     }
 }
