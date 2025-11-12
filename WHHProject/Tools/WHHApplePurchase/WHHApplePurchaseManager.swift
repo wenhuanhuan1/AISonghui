@@ -29,7 +29,7 @@ class WHHApplePurchaseManager: NSObject {
         WHHHUD.whhShowLoadView()
         FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId, payPage: payPage) { [weak self] model, code, msg in
             if code == 1 {
-                self?.whhInvocationSwiftyStoreKit(orderId: model.orderId, goodsId: model.goodsCode)
+                self?.whhInvocationSwiftyStoreKit(orderId: model.orderId, goodsId: model.goodsCode,uuid: model.uuid)
                 
             } else {
                 WHHHUD.whhHidenLoadView()
@@ -40,8 +40,8 @@ class WHHApplePurchaseManager: NSObject {
         }
     }
 
-    private func whhInvocationSwiftyStoreKit(orderId: String, goodsId: String) {
-        SwiftyStoreKit.purchaseProduct(goodsId, atomically: false, applicationUsername: WHHUserInfoManager.shared.userId) { [self] result in
+    private func whhInvocationSwiftyStoreKit(orderId: String, goodsId: String,uuid:String) {
+        SwiftyStoreKit.purchaseProduct(goodsId, atomically: false, applicationUsername: uuid) { [self] result in
             switch result {
             case let .success(purchase):
 
