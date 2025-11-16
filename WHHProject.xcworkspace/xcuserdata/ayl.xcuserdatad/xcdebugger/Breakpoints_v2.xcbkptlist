@@ -100,5 +100,391 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0A8ED6B-910D-4A7D-A35E-A429C8B63BE7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "WHHStoreKitManagerV2"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "B0A8ED6B-910D-4A7D-A35E-A429C8B63BE7 - aa2ffff9fb3ce22f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WHHProject.WHHStoreKitManagerV2.refreshReceipt() async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201">
+               </Location>
+               <Location
+                  uuid = "B0A8ED6B-910D-4A7D-A35E-A429C8B63BE7 - 702799c4c838f99f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.refreshReceipt() async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DEE3477-A556-4C9B-BEFB-9AE44AE21312"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6851A1E5-1430-4A67-9C0F-5DB33CC66C79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD2BDB82-39B3-43DA-8CEE-42A731EBE314"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A928445C-1E17-438C-8C68-9EB06CA49D78"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55BDAC80-4B6C-40B0-8CB5-15EE5FA85567"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "55BDAC80-4B6C-40B0-8CB5-15EE5FA85567 - fd4eafbe87c3ba0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131">
+               </Location>
+               <Location
+                  uuid = "55BDAC80-4B6C-40B0-8CB5-15EE5FA85567 - 9a98624eaa78a93c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) await resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BE9F7AB-1FE4-4DC4-A855-92188E091B97"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "601CA9E5-00F7-4445-9B4F-1EB3C69E7C88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "WHHStoreKitManagerV2"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA0E314A-7F6D-4F96-A0EC-A1CADF0DE528"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5678576-0126-4BBA-9A13-2E0ED5A34F2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E5678576-0126-4BBA-9A13-2E0ED5A34F2C - 19baf9f491ab7851"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145">
+               </Location>
+               <Location
+                  uuid = "E5678576-0126-4BBA-9A13-2E0ED5A34F2C - fd4eafbe87c3b45f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145">
+               </Location>
+               <Location
+                  uuid = "E5678576-0126-4BBA-9A13-2E0ED5A34F2C - c9a83359eb1341c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(11) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145">
+               </Location>
+               <Location
+                  uuid = "E5678576-0126-4BBA-9A13-2E0ED5A34F2C - a0a7e4c13adb22c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(12) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145">
+               </Location>
+               <Location
+                  uuid = "E5678576-0126-4BBA-9A13-2E0ED5A34F2C - bbbf54488d839fb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(13) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145">
+               </Location>
+               <Location
+                  uuid = "E5678576-0126-4BBA-9A13-2E0ED5A34F2C - 92b605f0dd4c78b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(14) suspend resume partial function for WHHProject.WHHStoreKitManagerV2.purchaseAsync(productID: Swift.String, userUUID: Swift.String, orderId: Swift.String) async throws -&gt; ()"
+                  moduleName = "WHHProject.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C57D3A10-F125-4079-985C-0E3607647AD0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3811DF08-24C3-423F-9EE2-0D128B557E2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A318A387-6E20-48CE-8D09-850EDC54C673"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "purchaseAsync(productID:userUUID:orderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BE4DF9B-70A3-4DE5-8B67-FE8FC4E539C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "uploadReceiptWithTimeout(orderId:timeout:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47C09BA2-BFBC-483B-8ACC-9EAA33A8C20B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WHHProject/Tools/WHHApplePurchase/WHHStoreKitManagerV2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "refreshReceipt()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

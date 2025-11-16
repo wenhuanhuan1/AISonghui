@@ -16,6 +16,8 @@ extension AppDelegate {
         initGkNav()
         ///设备安装和启动
         WHHHomeRequestViewModel.whhDeviceInstallRequest()
+        // 启动监听 StoreKit 交易更新，避免漏单
+        WHHStoreKitManagerV2.shared.startTransactionUpdatesListener()
 
     }
 
