@@ -109,12 +109,12 @@ final class WHHStoreKitManagerV2 {
         switch result {
         case .userCancelled:
             // 刷新收据以便后续恢复使用
-//            try? await refreshReceipt()
+            try? await refreshReceipt()
             WHHHUD.whhHidenLoadView()
             throw WHHStoreKitError.purchaseFailed("用户取消购买")
 
         case .pending:
-//            try? await refreshReceipt()
+            try? await refreshReceipt()
             WHHHUD.whhHidenLoadView()
             throw WHHStoreKitError.purchaseFailed("购买待处理")
 
@@ -132,10 +132,9 @@ final class WHHStoreKitManagerV2 {
             return
 
         @unknown default:
-//            try? await refreshReceipt()
+            try? await refreshReceipt()
             throw WHHStoreKitError.purchaseFailed("未知购买状态")
         }
-        WHHHUD.whhHidenLoadView()
     }
 
     // MARK: - 交易更新监听
@@ -238,7 +237,7 @@ final class WHHStoreKitManagerV2 {
             group.addTask {
                 try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
                     // TODO: 替换为你真实的上传接口
-                    // 这里假设 FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(orderId: String, receiptData: String, completion: (Int, String) -> Void)
+                
                     FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(orderId: orderId, receiptData: base64) { success, msg in
                         WHHHUD.whhHidenLoadView()
                         if success == 1 {

@@ -182,6 +182,9 @@ class WHHAINewHomeViewController: WHHBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// 更新是否有票据
+        WHHStoreKitManagerV2.shared.startTransactionUpdatesListener()
+        
         view.backgroundColor = .white
         gk_navigationBar.isHidden = true
         view.addSubview(todayTitle)
