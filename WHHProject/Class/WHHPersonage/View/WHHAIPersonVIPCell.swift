@@ -46,7 +46,7 @@ class WHHAIPersonVIPCell: UITableViewCell {
     
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.layer.cornerRadius = 12
+        bgView.layer.cornerRadius = 30
         bgView.layer.masksToBounds = true
         bgView.backgroundColor = .white
         return bgView
@@ -90,7 +90,7 @@ class WHHAIPersonVIPCell: UITableViewCell {
         }
         bgView.addSubview(status)
         status.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(10)
             make.height.equalTo(20)
             make.width.equalTo(60)
@@ -103,14 +103,14 @@ class WHHAIPersonVIPCell: UITableViewCell {
         
         bottomView.addSubview(lineLabel)
         lineLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(20)
             make.centerY.equalToSuperview()
         }
         bottomView.addSubview(getButton)
         getButton.snp.makeConstraints { make in
             make.height.equalTo(30)
             make.width.equalTo(80)
-            make.right.equalToSuperview().offset(-10)
+            make.right.equalToSuperview().offset(-20)
             make.centerY.equalToSuperview()
         }
     }

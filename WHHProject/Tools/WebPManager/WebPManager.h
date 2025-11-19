@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)loadNetWebUrl:(NSString *)url displayImageView:(YYAnimatedImageView *)imageView;
 
 + (void)displayImageView:(YYAnimatedImageView *)imageView;
+
++ (void)displayHomeWebImageView:(YYAnimatedImageView *)imageView;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -33,7 +33,7 @@ class WHHAgreementView: WHHBaseView {
 
         let heAtt = NSAttributedString(
             string: "和",
-            attributes: [.font: pingfangRegular(size: 12)!, .foregroundColor: Color6D64FF]
+            attributes: [.font: pingfangRegular(size: 12)!, .foregroundColor: UIColor.black]
         )
         att.append(heAtt)
 

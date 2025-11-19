@@ -31,7 +31,7 @@ class WHHAIAugurView: UIView {
         let view = UILabel()
         view.textColor = .white
         view.text = "织命"
-        view.font = pingfangRegular(size: 15)
+        view.font = pingfangSemibold(size: 16)
         return view
     }()
     
@@ -53,7 +53,7 @@ class WHHAIAugurView: UIView {
 
     init(type:WHHAIAugurViewType) {
         super.init(frame: .zero)
-        layer.cornerRadius = 12
+        layer.cornerRadius = 20
         layer.masksToBounds = true
         addSubview(augurImageView)
         augurImageView.snp.makeConstraints { make in

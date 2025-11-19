@@ -13,6 +13,9 @@ import UIKit
 
 class WHHBaseViewController: UIViewController {
     
+    
+    var isPopOnGesture = true
+    
     var stayle:UIStatusBarStyle = .darkContent
     
     var isIQKeyboardManagerIsEnabled: Bool = false {
@@ -51,6 +54,10 @@ class WHHBaseViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return stayle
+    }
+    
+    func navigationShouldPopOnGesture() -> Bool {
+        return isPopOnGesture
     }
 }
 

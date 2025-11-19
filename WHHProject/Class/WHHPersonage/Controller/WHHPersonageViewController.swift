@@ -84,7 +84,15 @@ class WHHPersonageViewController: WHHBaseViewController {
             make.left.equalToSuperview().offset(21)
             make.bottom.equalTo(homeTableView.snp.top).offset(-10)
         }
-
+        
+        let button = UIButton(type: .custom)
+        button.addTarget(self, action: #selector(editButtonClick), for: .touchUpInside)
+        
+        abbIcon.addSubview(button)
+        button.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         view.addSubview(editInfoButton)
         editInfoButton.snp.makeConstraints { make in
             make.centerY.equalTo(abbIcon)
@@ -199,7 +207,7 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             
-            return 170
+            return 220
 
         } else if indexPath.section == 1 {
             return CGFloat(oneSectionArray.count * 52)

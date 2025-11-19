@@ -42,6 +42,7 @@ class WHHAIChooseAugurViewController: WHHBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        isPopOnGesture = false
         gk_navTitle = "选择占卜师"
         gk_navTitleColor = .black
         gk_backStyle = .black

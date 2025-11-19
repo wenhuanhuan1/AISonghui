@@ -30,7 +30,7 @@
 "whhSetFemaleMaleTitleKey" = "女";
 
 "whhSetAgeDesTitleKey" = "生日：是命运密码的钥匙";
-"whhSetTipsTitleKey" = "少任意一个都可能导致水晶球蒙上迷雾哦～\n快告诉阿贝贝完整的魔法坐标吧！";
+"whhSetTipsTitleKey" = "";
 
 
 "whhCancleTitleKey" = "取消";

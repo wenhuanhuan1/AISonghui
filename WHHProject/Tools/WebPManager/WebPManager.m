@@ -22,4 +22,17 @@
     [imageView yy_setImageWithURL:url
                                    options:YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive | YYWebImageOptionIgnoreImageDecoding];
 }
+
++ (void)displayHomeWebImageView:(YYAnimatedImageView *)imageView{
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"asset" ofType:@"webp"];
+    
+    NSURL *url = [NSURL fileURLWithPath:path];
+    [imageView yy_setImageWithURL:url
+                                   options:YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive | YYWebImageOptionIgnoreImageDecoding];
+    
+    
+    
+    
+}
 @end

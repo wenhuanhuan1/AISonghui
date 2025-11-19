@@ -75,7 +75,6 @@ final class WHHStoreKitManagerV2 {
                   userUUID: String,
                   orderId: String,
                   completion: @escaping (Bool, String) -> Void) {
-        WHHHUD.whhShowLoadView()
         Task {
             do {
                 try await purchaseAsync(productID: productID, userUUID: userUUID, orderId: orderId)
@@ -83,6 +82,9 @@ final class WHHStoreKitManagerV2 {
                 completion(true, "支付成功")
             } catch {
                 WHHHUD.whhHidenLoadView()
+                
+                debugPrint("sasasasasasasas\(error.localizedDescription)")
+                
                 completion(false, error.localizedDescription)
             }
         }
@@ -131,6 +133,7 @@ final class WHHStoreKitManagerV2 {
             pendingOrderIdByProductId[productID] = nil
             return
 
+            
         @unknown default:
             try? await refreshReceipt()
             throw WHHStoreKitError.purchaseFailed("未知购买状态")
@@ -238,12 +241,12 @@ final class WHHStoreKitManagerV2 {
                 try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
                     // TODO: 替换为你真实的上传接口
                 
-                    FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(orderId: orderId, receiptData: base64) { success, msg in
+                    FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: self.isSandboxReceipt(), receiptData: base64) { success, msg in
                         WHHHUD.whhHidenLoadView()
                         if success == 1 {
                             continuation.resume()
                         } else {
-                            continuation.resume(throwing: WHHStoreKitError.uploadFailed(msg ?? "未知"))
+                            continuation.resume(throwing: WHHStoreKitError.uploadFailed(msg))
                         }
                     }
                 }
@@ -260,6 +263,10 @@ final class WHHStoreKitManagerV2 {
             try await group.next()!
             group.cancelAll()
         }
+    }
+    private func isSandboxReceipt() -> Bool {
+        guard let url = Bundle.main.appStoreReceiptURL else { return false }
+        return url.lastPathComponent == "sandboxReceipt"
     }
 }
 

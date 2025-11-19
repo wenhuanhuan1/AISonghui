@@ -47,9 +47,9 @@ class FCVIPRequestApiViewModel: NSObject {
     ///   - orderId: 订单号
     ///   - receiptData: 支付票据
     ///   - callBlack: 回调
-    static func whhAppleBuyFinishAndServerCheck(orderId:String,receiptData:String,callBlack:((Int,String)->Void)?) {
+    static func whhAppleBuyFinishAndServerCheck(sandbox:Bool,receiptData:String,callBlack:((Int,String)->Void)?) {
     
-        let requestApi = WHHVIPRequestApi(parameter: ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId, "receiptData": receiptData], type: .payCheckResult)
+        let requestApi = WHHVIPRequestApi(parameter: ["api-v": WHHNetConf.apiv, "userId": WHHUserInfoManager.shared.userId,"sandbox":sandbox, "receiptData": receiptData], type: .payCheckResult)
 
         requestApi.whhStartConsequenceHandle { baseModel in
             callBlack?(baseModel.success,baseModel.msg)

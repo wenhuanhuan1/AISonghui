@@ -7,7 +7,7 @@
 
 import Kingfisher
 import UIKit
-
+import YYWebImage
 class WHHAINewHomeViewController: WHHBaseViewController {
     lazy var homeView1: UIView = {
         let homeView1 = UIView()
@@ -59,9 +59,10 @@ class WHHAINewHomeViewController: WHHBaseViewController {
     lazy var rightScoreContentTitle: UILabel = {
         let view = UILabel()
         view.text = "今日运势整体平稳，建议保持耐心应对挑战。抓住机会展现自我，方能趋吉避凶。"
-        view.font = pingfangRegular(size: 15)
+        view.font = pingfangRegular(size: 13)
         view.textColor = .white
         view.numberOfLines = 0
+        view.isHidden = true
         return view
     }()
 
@@ -107,7 +108,7 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         let buttomTitle1 = UILabel()
         buttomTitle1.text = "未来等你来问"
         buttomTitle1.textColor = .white
-        buttomTitle1.font = pingfangRegular(size: 14)
+        buttomTitle1.font = pingfangRegular(size: 13)
         return buttomTitle1
     }()
 
@@ -127,7 +128,7 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         let buttomTitle2 = UILabel()
         buttomTitle2.text = "任何问题都能获得答案"
         buttomTitle2.textColor = .white
-        buttomTitle2.font = pingfangRegular(size: 15)
+        buttomTitle2.font = pingfangRegular(size: 13)
         return buttomTitle2
     }()
 
@@ -136,7 +137,7 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         view.text = "亲爱的有缘人~\n让阿贝贝能更精准捕捉你今天的命运波纹~\n我们都要知道\n世界上没有不起风的潋滟"
         view.numberOfLines = 0
         view.textColor = .white
-        view.font = pingfangRegular(size: 15)
+        view.font = pingfangRegular(size: 13)
         return view
     }()
 
@@ -164,8 +165,8 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         return dateTitle
     }()
 
-    lazy var bigIconImageView: AnimatedImageView = {
-        let view = AnimatedImageView()
+    lazy var bigIconImageView: YYAnimatedImageView = {
+        let view = YYAnimatedImageView()
         view.contentMode = .scaleAspectFill
         view.backgroundColor = .white
         return view
@@ -184,7 +185,7 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         super.viewDidLoad()
         /// 更新是否有票据
         WHHStoreKitManagerV2.shared.startTransactionUpdatesListener()
-        
+
         view.backgroundColor = .white
         gk_navigationBar.isHidden = true
         view.addSubview(todayTitle)
@@ -275,7 +276,7 @@ class WHHAINewHomeViewController: WHHBaseViewController {
         homeView2.snp.makeConstraints { make in
             make.left.right.equalTo(homeView1)
             make.top.equalTo(homeView1.snp.bottom).offset(20)
-            make.bottom.equalToSuperview().offset(-WHHBottomSafe-10)
+            make.bottom.equalToSuperview().offset(-WHHBottomSafe - 10)
         }
 
         homeView2.addSubview(bigIconImageView)
@@ -304,11 +305,8 @@ class WHHAINewHomeViewController: WHHBaseViewController {
             make.left.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-15)
         }
-        if let path = Bundle.main.path(forResource: "homeView2", ofType: "gif") {
-            let url = URL(fileURLWithPath: path)
-            bigIconImageView.kf.setImage(with: url)
-        }
-
+        WebPManager.displayHomeWebImageView(bigIconImageView)
+        
         homeView2.addSubview(homeView2Button)
         homeView2Button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
