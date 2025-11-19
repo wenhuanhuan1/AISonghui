@@ -241,7 +241,7 @@ final class WHHStoreKitManagerV2 {
                 try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
                     // TODO: 替换为你真实的上传接口
                 
-                    FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: self.isSandboxReceipt(), receiptData: base64) { success, msg in
+                    FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: self.isSandboxReceipt(), receiptData: base64,orderId: "") { success, msg in
                         WHHHUD.whhHidenLoadView()
                         if success == 1 {
                             continuation.resume()

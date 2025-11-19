@@ -50,6 +50,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                             return
                         }
 
+                        
                         self.purchase(product: product, uuidString: model.uuid,orderId: model.orderId) { success, msg in
                             callBack?(success, msg)
                         }

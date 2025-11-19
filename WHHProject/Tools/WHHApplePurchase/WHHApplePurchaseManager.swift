@@ -72,7 +72,7 @@ class WHHApplePurchaseManager: NSObject {
 
     private func whhInspectAndServer(transation: PaymentTransaction, order: String, receiptData: String) {
         WHHHUD.whhShowLoadView()
-        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: true, receiptData: receiptData) { [weak self] success, msg in
+        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: true, receiptData: receiptData,orderId: order) { [weak self] success, msg in
             WHHHUD.whhHidenLoadView()
             SwiftyStoreKit.finishTransaction(transation)
             if success == 1 {
