@@ -317,22 +317,25 @@ class WHHAINewHomeViewController: WHHBaseViewController {
     }
 
     @objc func getWordButtonClick() {
-        WHHHUD.whhShowLoadView()
-        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, userInfo in
-            WHHHUD.whhHidenLoadView()
-            if code == 1 {
-                if userInfo.vip == 1 {
-                    let vc = WHHAIChatViewController()
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                } else {
-                    self?.jumpVipView()
-                }
-            } else {
-                dispatchAfter(delay: 0.5) {
-                    WHHHUD.whhShowInfoText(text: "请求失败")
-                }
-            }
-        }
+        
+        let vc = WHHAIChatViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
+//        WHHHUD.whhShowLoadView()
+//        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, userInfo in
+//            WHHHUD.whhHidenLoadView()
+//            if code == 1 {
+//                if userInfo.vip == 1 {
+//                   
+//                } else {
+//                    self?.jumpVipView()
+//                }
+//            } else {
+//                dispatchAfter(delay: 0.5) {
+//                    WHHHUD.whhShowInfoText(text: "请求失败")
+//                }
+//            }
+//        }
 
 //
 //        WHHHUD.whhShowLoadView()

@@ -35,6 +35,8 @@ typedef NS_ENUM(NSInteger, WHHChatMesageDirection) {
 @property(nonatomic,copy) NSString *content;
 @property(nonatomic,copy) NSString *messageType;
 
+@property(nonatomic,assign) BOOL isChat;
+
 
 @end
 

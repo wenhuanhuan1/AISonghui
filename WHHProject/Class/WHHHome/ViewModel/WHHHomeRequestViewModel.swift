@@ -254,7 +254,7 @@ class WHHHomeRequestViewModel: NSObject {
 
     /// 获取聊天记录
     static func getChatMessageRequest(conversationId: String, lastId: String, swipeUp: Bool, callBlack: ((Int, [WHHChatMesageModel], String) -> Void)?) {
-        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "conversationId": conversationId, "lastId": conversationId, "swipeUp": swipeUp], type: .chatMessage)
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "conversationId": conversationId, "lastId": lastId, "swipeUp": swipeUp], type: .chatMessage)
         requestApi.whhStartConsequenceHandle { baseModel in
 
             if baseModel.success == 1, let array = WHHChatMesageModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHChatMesageModel] {

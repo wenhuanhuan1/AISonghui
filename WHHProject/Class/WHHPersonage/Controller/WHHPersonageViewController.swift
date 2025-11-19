@@ -139,10 +139,11 @@ class WHHPersonageViewController: WHHBaseViewController {
                 self?.netModel = model
                 if model.logo.isEmpty {
                     self?.abbIcon.image = UIImage(named: "whhAbbBigAvatar")
-                    
+                
                 } else {
                     self?.abbIcon.whhSetImageView(url: model.logo)
                 }
+                self?.homeTableView.reloadData()
             }
         }
     }

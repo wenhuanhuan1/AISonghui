@@ -176,6 +176,7 @@ class WHHAIChatViewController: WHHBaseViewController {
                     self?.createSendMessageBody(msg: message)
                     WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message, conversationId: model.conversationId) { [weak self] success, msg in
                         if success == 1 {
+                            self?.conversationId = model.conversationId
                             self?.createReceiveMessageBody(msg: msg)
                         }
                     }
@@ -203,6 +204,7 @@ class WHHAIChatViewController: WHHBaseViewController {
     private func createSendMessageBody(msg: String) {
         let sendModel = WHHChatMesageModel()
         sendModel.messageDirection = .send
+        sendModel.isChat = true
         sendModel.icon = WHHUserInfoManager.shared.userModel.logo
         sendModel.chatContent = msg
         dataArray.append(sendModel)
@@ -235,6 +237,7 @@ class WHHAIChatViewController: WHHBaseViewController {
                     if self.dataArray.isEmpty || self.dataArray.last?.messageDirection == .send {
                         let sendModel = WHHChatMesageModel()
                         sendModel.messageDirection = .receive
+                        sendModel.isChat = true
                         sendModel.chatContent = self.currentStreamedText
                         self.dataArray.append(sendModel)
                     } else {
