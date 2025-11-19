@@ -50,7 +50,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                             return
                         }
 
-                        self.purchase(product: product, uuidString: model.uuid) { success, msg in
+                        self.purchase(product: product, uuidString: model.uuid,orderId: model.orderId) { success, msg in
                             callBack?(success, msg)
                         }
 
@@ -89,7 +89,7 @@ public final class WHHAIStorekitManager: ObservableObject {
     }
 
     /// 将交易发送到自己服务器验证
-    private func verifyWithServer(_ transaction: Transaction) async throws {
+    private func verifyWithServer(_ transaction: Transaction,orderId:String) async throws {
         guard let receiptURL = Bundle.main.appStoreReceiptURL,
               let receiptData = try? Data(contentsOf: receiptURL),
               !receiptData.isEmpty else {
@@ -99,7 +99,7 @@ public final class WHHAIStorekitManager: ObservableObject {
 
         let base64 = receiptData.base64EncodedString()
 
-        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: isSandboxReceipt(), receiptData: base64) { success, _ in
+        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: isSandboxReceipt(), receiptData: base64,orderId: orderId) { success, _ in
             WHHHUD.whhHidenLoadView()
             if success == 1 {
                 debugPrint("验证成功")
@@ -111,21 +111,21 @@ public final class WHHAIStorekitManager: ObservableObject {
     }
 
     /// 外部无需再写 Task，内部自动封装
-    public func purchase(product: Product, uuidString: String, callback: @escaping (Bool, String) -> Void) {
+    public func purchase(product: Product, uuidString: String,orderId:String, callback: @escaping (Bool, String) -> Void) {
         Task { [weak self] in
-            await self?._purchaseAsync(product: product, uuidString: uuidString, callback: callback)
+            await self?._purchaseAsync(product: product, uuidString: uuidString,orderId: orderId, callback: callback)
         }
     }
 
     /// 实际处理购买的异步方法
-    private func _purchaseAsync(product: Product, uuidString: String, callback: @escaping (Bool, String) -> Void) async {
+    private func _purchaseAsync(product: Product, uuidString: String,orderId:String, callback: @escaping (Bool, String) -> Void) async {
         do {
             let result = try await product.purchase(options: [.appAccountToken(UUID(uuidString: uuidString)!)])
             switch result {
                
             case let .success(verification):
                 let transaction = try checkVerified(verification)
-                try await verifyWithServer(transaction)
+                try await verifyWithServer(transaction,orderId: orderId)
                 await updatePurchasedIdentifiers()
                 await transaction.finish()
                 callback(true, transaction.productID)
