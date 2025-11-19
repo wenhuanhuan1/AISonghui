@@ -96,7 +96,7 @@ extension WHHAIDestinyLineItemViewController: UITableViewDataSource, UITableView
         }else {
             cell.priceLabel.text = "+" + model.num
         }
-        cell.timeLabel.text = model.createTime
+        cell.timeLabel.text = WHHDateFormatterManager.shared.convertTimestamp(model.createTime/1000)
         
         return cell
     }

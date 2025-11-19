@@ -132,9 +132,7 @@ class WHHAIChooseAnimationView: UIView {
     private func showLoad(isShow: Bool) {
         loadTitle.isHidden = isShow
         activityIndicatorView.isHidden = isShow
-        if isShow {
-            activityIndicatorView.startAnimating()
-        }
+        activityIndicatorView.startAnimating()
     }
 
     private func startRequestAction() {
@@ -148,6 +146,8 @@ class WHHAIChooseAnimationView: UIView {
                 print("接口返回有内容，停止请求，message: \(message)")
             } else {
                 print("请求失败或超时，message: \(message)")
+                WHHHUD.whhShowInfoText(text: "请求超时")
+                self?.removeFromSuperview()
             }
         }
     }

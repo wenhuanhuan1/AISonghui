@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *leftNum;
 @property(nonatomic,copy) NSString *type;
 @property(nonatomic,copy) NSString *remark;
-@property(nonatomic,copy) NSString *createTime;
+@property(nonatomic,assign) double createTime;
 @property(nonatomic,copy) NSString *lastGetMaxId;
 
 @end

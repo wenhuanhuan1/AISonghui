@@ -43,7 +43,7 @@ class WHHMineRequestApiViewModel: NSObject {
         }else {
             dict = ["userId": WHHUserInfoManager.shared.userId,"lastGetMaxId":lastGetMaxId, "api-v": WHHNetConf.apiv,"income":false]
         }
-        let api = WHHMineRequestApi(parameter: dict, type: .sysFeedbackCheck)
+        let api = WHHMineRequestApi(parameter: dict, type: .myLuckValueRecordList)
         api.whhStartConsequenceHandle { baseModel in
 
             if baseModel.success == 1,

@@ -20,8 +20,8 @@ class FortuneRequestManager {
     private var witchId: Int = 0
     private var timer: Timer?
     private var elapsedTime: TimeInterval = 0
-    private let interval: TimeInterval = 3      // 请求间隔
-    private let timeout: TimeInterval = 15      // 最大等待时间
+    private let interval: TimeInterval = 2      // 请求间隔
+    private let timeout: TimeInterval = 35      // 最大等待时间
 
     private var completion: Completion?
     private var hasCompleted: Bool = false  // 防止重复回调
