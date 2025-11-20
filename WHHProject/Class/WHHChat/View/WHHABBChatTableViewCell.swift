@@ -10,7 +10,7 @@ import UIKit
 class WHHABBChatTableViewCell: WHHBaseTableViewCell {
     lazy var avatarIcon: WHHBaseImageView = {
         let view = WHHBaseImageView()
-        view.layer.cornerRadius = 18
+        view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
         return view
     }()
@@ -57,67 +57,40 @@ class WHHABBChatTableViewCell: WHHBaseTableViewCell {
         didSet {
             guard let model = cellModel else { return }
 
-            avatarIcon.whhSetImageView(url: model.icon)
+            chatContent.text = model.content
+            if model.messageType == "user" {
+                inputBgView.backgroundColor = .white
 
-            if model.isChat == false {
-                chatContent.text = model.content
-                if model.messageType == "user" {
-                    inputBgView.backgroundColor = .white
-                    avatarIcon.snp.remakeConstraints { make in
-                        make.right.equalToSuperview().offset(-12)
-                        make.top.equalToSuperview().offset(14)
-                        make.size.equalTo(36)
-                    }
-                    inputBgView.snp.remakeConstraints { make in
-                        make.left.equalToSuperview().offset(70)
-                        make.right.equalTo(avatarIcon.snp.left).offset(-7)
-                        make.top.equalTo(avatarIcon)
-                        make.bottom.equalToSuperview()
-                    }
-
-                } else if model.messageType == "assistant" {
-                    inputBgView.backgroundColor = ColorD6D4FF
-                    avatarIcon.snp.remakeConstraints { make in
-                        make.left.equalToSuperview().offset(12)
-                        make.top.equalToSuperview().offset(14)
-                        make.size.equalTo(36)
-                    }
-                    inputBgView.snp.remakeConstraints { make in
-                        make.right.equalToSuperview().offset(-70)
-                        make.left.equalTo(avatarIcon.snp.right).offset(7)
-                        make.top.equalTo(avatarIcon)
-                        make.bottom.equalToSuperview()
-                    }
+                avatarIcon.whhSetKFWithImage(imageString: WHHUserInfoManager.shared.userModel.logo)
+                
+                avatarIcon.snp.remakeConstraints { make in
+                    make.size.equalTo(50)
+                    make.top.equalToSuperview().offset(10)
+                    make.right.equalToSuperview().offset(-10)
                 }
-            } else {
-                chatContent.text = model.chatContent
-                if model.messageDirection == .send {
-                    inputBgView.backgroundColor = .white
-                    avatarIcon.snp.remakeConstraints { make in
-                        make.right.equalToSuperview().offset(-12)
-                        make.top.equalToSuperview().offset(14)
-                        make.size.equalTo(36)
-                    }
-                    inputBgView.snp.remakeConstraints { make in
-                        make.left.equalToSuperview().offset(70)
-                        make.right.equalTo(avatarIcon.snp.left).offset(-7)
-                        make.top.equalTo(avatarIcon)
-                        make.bottom.equalToSuperview()
-                    }
 
-                } else if model.messageDirection == .receive {
-                    inputBgView.backgroundColor = ColorD6D4FF
-                    avatarIcon.snp.remakeConstraints { make in
-                        make.left.equalToSuperview().offset(12)
-                        make.top.equalToSuperview().offset(14)
-                        make.size.equalTo(36)
-                    }
-                    inputBgView.snp.remakeConstraints { make in
-                        make.right.equalToSuperview().offset(-70)
-                        make.left.equalTo(avatarIcon.snp.right).offset(7)
-                        make.top.equalTo(avatarIcon)
-                        make.bottom.equalToSuperview()
-                    }
+                inputBgView.snp.remakeConstraints { make in
+                    make.left.equalToSuperview().offset(60)
+                    make.right.equalTo(avatarIcon.snp.left).offset(-10)
+                    make.top.equalTo(avatarIcon)
+                    make.bottom.equalToSuperview().offset(-10)
+                }
+
+            } else if model.messageType == "assistant" {
+                inputBgView.backgroundColor = ColorD6D4FF
+
+                avatarIcon.image = UIImage(named: "AIDefaultAv")
+                avatarIcon.snp.remakeConstraints { make in
+                    make.size.equalTo(50)
+                    make.top.equalToSuperview().offset(10)
+                    make.left.equalToSuperview().offset(10)
+                }
+
+                inputBgView.snp.remakeConstraints { make in
+                    make.right.equalToSuperview().offset(-60)
+                    make.left.equalTo(avatarIcon.snp.right).offset(10)
+                    make.top.equalTo(avatarIcon)
+                    make.bottom.equalToSuperview().offset(-10)
                 }
             }
         }

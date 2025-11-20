@@ -31,7 +31,7 @@ final class SSEParser {
        /// ✅ 清理字符串中的 `data:` 前缀、空格、换行
        static func clean(_ text: String) -> String {
            return text
-               .replacingOccurrences(of: #"(?i)\s*data:\s*"#, with: "", options: .regularExpression)
+               .replacingOccurrences(of: #"(?im)^\s*data:\s*"#, with: "", options: .regularExpression)
                .trimmingCharacters(in: .whitespacesAndNewlines)
        }
 }

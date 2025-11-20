@@ -83,7 +83,7 @@ extension WHHAIDestinyLineItemViewController: JXSegmentedListContainerViewListDe
 
 extension WHHAIDestinyLineItemViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,9 +92,9 @@ extension WHHAIDestinyLineItemViewController: UITableViewDataSource, UITableView
         
         cell.nameLabel.text = model.remark
         if model.income {
-            cell.priceLabel.text = "-" + model.num
-        }else {
             cell.priceLabel.text = "+" + model.num
+        }else {
+            cell.priceLabel.text = "-" + model.num
         }
         cell.timeLabel.text = WHHDateFormatterManager.shared.convertTimestamp(model.createTime/1000)
         

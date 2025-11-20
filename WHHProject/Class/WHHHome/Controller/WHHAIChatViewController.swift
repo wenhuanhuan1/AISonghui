@@ -76,36 +76,47 @@ class WHHAIChatViewController: WHHBaseViewController {
             make.top.equalTo(chatTableView.snp.bottom)
             make.bottom.equalToSuperview().offset(-WHHBottomSafe)
         }
-        getChatListHeaderRequest()
+        getChatListFooterRequest()
     }
 
     private func getChatListHeaderRequest() {
-        WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: "", swipeUp: false) { [weak self] code, listArray, _ in
+        WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: lastId, swipeUp: false) { [weak self] code, listArray, _ in
             self?.chatTableView.mj_header?.endRefreshing()
             if code == 1 {
-                self?.chatTableView.mj_footer?.isHidden = listArray.count > 3 ? false : true
-                self?.dataArray = listArray
-                if let lastObject = listArray.first {
-                    self?.lastId = lastObject.messageId
-                }
-                self?.chatTableView.reloadData()
-            } else {
+                self?.getMessageHistory(netmMsgArray: listArray)
             }
         }
     }
 
+    /// 获取历史记录
+    /// - Parameter dataArray: 数据
+    private func getMessageHistory(netmMsgArray: [WHHChatMesageModel]) {
+        // 1. 计算插入前的 contentSize 高度
+        let beforeHeight = chatTableView.contentSize.height
+
+        dataArray.insert(contentsOf: netmMsgArray, at: 0)
+
+        // 重新加载
+        chatTableView.reloadData()
+        chatTableView.layoutIfNeeded()
+        // 4. 计算插入后的 contentSize 高度
+        let afterHeight = chatTableView.contentSize.height
+
+        // 5. 偏移差值 = 新旧高度差，使位置不跳动
+        let heightDiff = afterHeight - beforeHeight
+
+        chatTableView.contentOffset.y += heightDiff
+    }
+
     private func getChatListFooterRequest() {
-        WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: lastId, swipeUp: true) { [weak self] code, listArray, _ in
+        WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: "", swipeUp: true) { [weak self] code, listArray, _ in
             self?.chatTableView.mj_footer?.endRefreshing()
             if code == 1 {
-                if let lastObject = listArray.last {
-                    self?.lastId = lastObject.messageId
-                }
                 self?.dataArray.append(contentsOf: listArray)
-                if listArray.isEmpty {
-                    self?.chatTableView.mj_footer?.endRefreshingWithNoMoreData()
-                }
                 self?.chatTableView.reloadData()
+                dispatchAfter(delay: 0.5) {
+                    self?.scrollToBottomRow()
+                }
             }
         }
     }
@@ -203,10 +214,8 @@ class WHHAIChatViewController: WHHBaseViewController {
     /// - Parameter msg: 消息
     private func createSendMessageBody(msg: String) {
         let sendModel = WHHChatMesageModel()
-        sendModel.messageDirection = .send
-        sendModel.isChat = true
-        sendModel.icon = WHHUserInfoManager.shared.userModel.logo
-        sendModel.chatContent = msg
+        sendModel.messageType = "user"
+        sendModel.content = msg
         dataArray.append(sendModel)
         onMainThread { [weak self] in
             self?.reloadTableViewData()
@@ -232,16 +241,15 @@ class WHHAIChatViewController: WHHBaseViewController {
             // 真正的内容
             let characters = Array(all)
             for (i, c) in characters.enumerated() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02 * Double(i)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0 * Double(i)) {
                     self.currentStreamedText.append(c)
-                    if self.dataArray.isEmpty || self.dataArray.last?.messageDirection == .send {
+                    if self.dataArray.isEmpty || self.dataArray.last?.messageType == "user" {
                         let sendModel = WHHChatMesageModel()
-                        sendModel.messageDirection = .receive
-                        sendModel.isChat = true
-                        sendModel.chatContent = self.currentStreamedText
+                        sendModel.messageType = "assistant"
+                        sendModel.content = self.currentStreamedText
                         self.dataArray.append(sendModel)
                     } else {
-                        self.dataArray[self.dataArray.count - 1].chatContent = self.currentStreamedText
+                        self.dataArray[self.dataArray.count - 1].content = self.currentStreamedText
                     }
 
                     onMainThread { [weak self] in

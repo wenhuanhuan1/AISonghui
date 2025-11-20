@@ -43,3 +43,21 @@ extension String {
         return self.contains("<user-input")
     }
 }
+
+extension String {
+    var sseClean: String {
+        let lines = self.components(separatedBy: .newlines)
+        var result: [String] = []
+
+        for line in lines {
+            let cleaned = line.replacingOccurrences(
+                of: #"(?i)^\s*data:\s*"#,
+                with: "",
+                options: .regularExpression
+            )
+            result.append(cleaned)
+        }
+        
+        return result.joined(separator: "\n")
+    }
+}

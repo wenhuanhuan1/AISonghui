@@ -244,9 +244,9 @@ class WHHABBChatViewController: WHHBaseViewController {
     /// - Parameter msg: 消息
     private func createSendMessageBody(msg: String) {
         let sendModel = WHHChatMesageModel()
-        sendModel.messageDirection = .send
+        sendModel.messageType = ""
         sendModel.icon = WHHUserInfoManager.shared.userModel.logo
-        sendModel.chatContent = msg
+        sendModel.content = msg
         dataArray.append(sendModel)
         onMainThread { [weak self] in
             self?.reloadTableViewData()
@@ -256,9 +256,9 @@ class WHHABBChatViewController: WHHBaseViewController {
     private func createReceiveMessageBody(msg: String) {
         if let newModel = model {
             let sendModel = WHHChatMesageModel()
-            sendModel.messageDirection = .receive
+            sendModel.messageType = ""
             sendModel.icon = newModel.icon
-            sendModel.chatContent = msg
+            sendModel.content = msg
             dataArray.append(sendModel)
             onMainThread { [weak self] in
                 self?.reloadTableViewData()
