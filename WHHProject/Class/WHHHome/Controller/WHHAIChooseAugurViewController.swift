@@ -66,6 +66,46 @@ class WHHAIChooseAugurViewController: WHHBaseViewController {
         GetWitchList()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAppUserWitchSubscribeInfo()
+    }
+
+    private func getAppUserWitchSubscribeInfo() {
+        WHHHomeRequestViewModel.whhHomeGetWHHHomeappUserWitchGetFortuneRequest { [weak self] success, dataModel, _ in
+            if success == 1, dataModel.items.isEmpty == false {
+                switch dataModel.witchId {
+                case 1:
+                    // 璇玑-全身
+                    self?.augurView1.showHaveDaily(isShow: true)
+                    self?.augurView1.scoreContentTitle.text = dataModel.avgScore
+                    self?.augurView1.desTitleLabel.text = dataModel.suggestion
+                    self?.augurView.showHaveDaily(isShow: false)
+                    self?.augurView2.showHaveDaily(isShow: false)
+                case 2:
+                    // 织命-全身
+                    self?.augurView.showHaveDaily(isShow: true)
+                    self?.augurView.scoreContentTitle.text = dataModel.avgScore
+                    self?.augurView.desTitleLabel.text = dataModel.suggestion
+                    self?.augurView1.showHaveDaily(isShow: false)
+                    self?.augurView2.showHaveDaily(isShow: false)
+                default:
+                    // 司夜-全身
+                    self?.augurView2.showHaveDaily(isShow: true)
+                    self?.augurView2.scoreContentTitle.text = dataModel.avgScore
+                    self?.augurView2.desTitleLabel.text = dataModel.suggestion
+                    self?.augurView1.showHaveDaily(isShow: false)
+                    self?.augurView.showHaveDaily(isShow: false)
+                }
+
+            } else {
+                self?.augurView.showHaveDaily(isShow: false)
+                self?.augurView1.showHaveDaily(isShow: false)
+                self?.augurView2.showHaveDaily(isShow: false)
+            }
+        }
+    }
+
     func GetWitchList() {
         WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
             if witchDataArray.isEmpty == false {
@@ -78,7 +118,6 @@ class WHHAIChooseAugurViewController: WHHBaseViewController {
         let anView = WHHAIChooseAnimationView()
 
         if type == .siye {
-    
             anView.bigImageView.image = UIImage(named: "司夜-全身")
             anView.witchId = 3
         } else if type == .xuanji {

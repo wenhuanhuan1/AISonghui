@@ -83,6 +83,9 @@ class WHHAIChatViewController: WHHBaseViewController {
         WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: lastId, swipeUp: false) { [weak self] code, listArray, _ in
             self?.chatTableView.mj_header?.endRefreshing()
             if code == 1 {
+                if let firstModel = listArray.first {
+                    self?.lastId = firstModel.messageId
+                }
                 self?.getMessageHistory(netmMsgArray: listArray)
             }
         }
@@ -112,6 +115,9 @@ class WHHAIChatViewController: WHHBaseViewController {
         WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: "", swipeUp: true) { [weak self] code, listArray, _ in
             self?.chatTableView.mj_footer?.endRefreshing()
             if code == 1 {
+                if let firstModel = listArray.first {
+                    self?.lastId = firstModel.messageId
+                }
                 self?.dataArray.append(contentsOf: listArray)
                 self?.chatTableView.reloadData()
                 dispatchAfter(delay: 0.5) {
@@ -124,8 +130,10 @@ class WHHAIChatViewController: WHHBaseViewController {
     @objc func rightButtonClick() {
         let recordList = WHHAIChatListViewController()
         recordList.callBackBlock = { [weak self] conversationId in
+            self?.dataArray.removeAll()
+            self?.chatTableView.reloadData()
             self?.conversationId = conversationId
-            self?.getChatListHeaderRequest()
+            self?.getChatListFooterRequest()
         }
         navigationController?.pushViewController(recordList, animated: true)
     }
@@ -181,7 +189,7 @@ class WHHAIChatViewController: WHHBaseViewController {
         if conversationId.isEmpty {
             // 新创建的
 
-            WHHHomeRequestViewModel.postCreateChatConversationCreate(input: message) { [weak self] code, model, msg in
+            WHHHomeRequestViewModel.postCreateChatConversationCreate(input: message) { [weak self] code, model, msg, errorCode in
 
                 if code == 1 {
                     self?.createSendMessageBody(msg: message)
@@ -193,6 +201,9 @@ class WHHAIChatViewController: WHHBaseViewController {
                     }
                 } else {
                     WHHHUD.whhShowInfoText(text: msg)
+                    if errorCode == "B0003" {
+                        self?.jumpVIP()
+                    }
                 }
             }
 
@@ -200,11 +211,11 @@ class WHHAIChatViewController: WHHBaseViewController {
             // 历史会话
 
             createSendMessageBody(msg: message)
-            WHHHUD.whhShowLoadView()
-            WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message, conversationId: conversationId) { [weak self] success, msg in
-                WHHHUD.whhHidenLoadView()
-                if success == 1 {
-                    self?.createReceiveMessageBody(msg: msg)
+            dispatchAfter(delay: 0.25) { [weak self] in
+                WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message, conversationId: self?.conversationId ?? "") { [weak self] success, msg in
+                    if success == 1 {
+                        self?.createReceiveMessageBody(msg: msg)
+                    }
                 }
             }
         }
@@ -224,15 +235,7 @@ class WHHAIChatViewController: WHHBaseViewController {
 
     private func createReceiveMessageBody(msg: String) {
         if msg.containsNeedVIP() {
-            WHHHUD.whhShowLoadView()
-            FCVIPRequestApiViewModel.whhRequestProductList { [weak self] dataArray in
-                WHHHUD.whhHidenLoadView()
-                let vipView = WHHAIDestinyLineIVIPView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenH))
-                let model = dataArray.first(where: { $0.code == "com.abb.AIProjectWeek" })
-                model?.isSelect = true
-                vipView.dataArray = dataArray
-                self?.view.addSubview(vipView)
-            }
+            jumpVIP()
 
             return
         } else if msg.containsUserInput() {
@@ -257,6 +260,17 @@ class WHHAIChatViewController: WHHBaseViewController {
                     }
                 }
             }
+        }
+    }
+
+    private func jumpVIP() {
+        FCVIPRequestApiViewModel.whhRequestProductList { [weak self] dataArray in
+            let vipView = WHHAIDestinyLineIVIPView(frame: CGRectMake(0, 0, WHHScreenW, WHHScreenH))
+            let model = dataArray.first(where: { $0.code == "com.abb.AIProjectWeek" })
+            model?.isSelect = true
+            vipView.dataArray = dataArray
+            self?.view.addSubview(vipView)
+            self?.view.endEditing(true)
         }
     }
 

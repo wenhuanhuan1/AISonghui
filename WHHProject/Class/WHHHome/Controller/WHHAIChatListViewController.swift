@@ -116,7 +116,6 @@ extension WHHAIChatListViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             callBackBlock?("")
-
         } else {
             let model = array[indexPath.section - 1]
             callBackBlock?(model.conversationId)

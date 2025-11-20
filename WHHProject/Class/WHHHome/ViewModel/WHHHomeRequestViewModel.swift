@@ -227,14 +227,14 @@ class WHHHomeRequestViewModel: NSObject {
     }
 
     /// 创建会话
-    static func postCreateChatConversationCreate(input: String, callBlack: ((Int, WHHAIChatListModel, String) -> Void)?) {
+    static func postCreateChatConversationCreate(input: String, callBlack: ((Int, WHHAIChatListModel, String,String) -> Void)?) {
         let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "input": input], type: .chatConversationCreate)
         requestApi.whhStartConsequenceHandle { baseModel in
 
             if baseModel.success == 1, let model = WHHAIChatListModel.mj_object(withKeyValues: baseModel.data) {
-                callBlack?(baseModel.success, model, baseModel.msg)
+                callBlack?(baseModel.success, model, baseModel.msg,"")
             } else {
-                callBlack?(baseModel.success, WHHAIChatListModel(), baseModel.msg)
+                callBlack?(baseModel.success, WHHAIChatListModel(), baseModel.msg,baseModel.code)
             }
         }
     }

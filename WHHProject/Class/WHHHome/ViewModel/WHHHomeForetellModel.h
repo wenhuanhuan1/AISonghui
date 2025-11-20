@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *luckyNumber;
 @property(nonatomic,copy) NSString *suggestion;
 @property(nonatomic,strong) NSArray<WHHHomeForetellItemModel*> *items;
+@property(nonatomic,assign) NSInteger witchId;
 
 @end
 

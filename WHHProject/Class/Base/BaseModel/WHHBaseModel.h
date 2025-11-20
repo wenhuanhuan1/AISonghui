@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *msg;
 @property(nonatomic,strong) id data;
 @property(nonatomic,assign) NSInteger success;
+@property(nonatomic,copy) NSString *code;
 
 @end
 

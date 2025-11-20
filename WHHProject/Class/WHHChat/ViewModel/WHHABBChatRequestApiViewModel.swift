@@ -12,7 +12,7 @@ class WHHABBChatRequestApiViewModel: NSObject {
         
         let api = WHHABBChatRequestApi(parameter: ["input": inputText, "userId": WHHUserInfoManager.shared.userId,"conversationId":conversationId])
             .onChunk { chunk in
-                debugPrint("回调的数据\(chunk)")
+                debugPrint("\(chunk)")
                 callBlack?(1,chunk)
             }
             .onComplete({
