@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class WHHABBChatTableViewCell: WHHBaseTableViewCell {
     lazy var avatarIcon: WHHBaseImageView = {
         let view = WHHBaseImageView()
