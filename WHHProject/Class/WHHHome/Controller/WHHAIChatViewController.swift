@@ -56,7 +56,8 @@ class WHHAIChatViewController: WHHBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        stayle = .lightContent
+        stayle = .darkContent
+        gk_backStyle = .black
         gk_navTitle = ""
         gk_navRightBarButtonItem = UIBarButtonItem(customView: rightButton)
         // 添加键盘显示通知监听

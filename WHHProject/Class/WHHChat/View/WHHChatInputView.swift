@@ -11,7 +11,7 @@ class WHHChatInputView: WHHBaseView {
     lazy var inputTextView: WHHTextView = {
         let view = WHHTextView()
         view.backgroundColor = .clear
-        view.textColor = .white
+        view.textColor = .black
         view.font = pingfangRegular(size: 14)
         view.delegate = self
         view.placeHolder = "请输入文字"
@@ -26,7 +26,7 @@ class WHHChatInputView: WHHBaseView {
 
     lazy var deleteButton: UIButton = {
         let view = UIButton(type: .custom)
-        view.setImage(UIImage(named: "whhAbbChatDeleteMessageIcon"), for: .normal)
+        view.setImage(UIImage(named: "whhAISendButton"), for: .normal)
         view.addTarget(self, action: #selector(deleteButtonClick), for: .touchUpInside)
         return view
     }()
@@ -35,8 +35,7 @@ class WHHChatInputView: WHHBaseView {
         let view = WHHBaseView()
         view.layer.cornerRadius = 22
         view.layer.masksToBounds = true
-        view.layer.borderWidth = 1
-        view.layer.borderColor = Color6C73FF.cgColor
+        view.backgroundColor = .white
         return view
     }()
 
@@ -67,6 +66,15 @@ class WHHChatInputView: WHHBaseView {
     }
 
     @objc func deleteButtonClick() {
+        clearTextContent()
+    }
+
+    private func clearTextContent() {
+        if inputTextView.text.isEmpty {
+            WHHHUD.whhShowInfoText(text: "请输入内容")
+            return
+        }
+        didSendMessageBlock?(self, inputTextView.text)
         inputTextView.text = ""
         inputUpdateHeight()
     }

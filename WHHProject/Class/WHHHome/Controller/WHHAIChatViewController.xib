@@ -19,31 +19,23 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="织命-全身" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-NG-6Rv">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mps-12-gPj">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.29620240066225167" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.93725490570068359" green="0.93725490570068359" blue="0.93725490570068359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="w5G-NG-6Rv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2nr-Ai-21W"/>
                 <constraint firstItem="mps-12-gPj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6nU-Pf-OV4"/>
                 <constraint firstItem="mps-12-gPj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7a2-e8-MoC"/>
-                <constraint firstAttribute="trailing" secondItem="w5G-NG-6Rv" secondAttribute="trailing" id="GUl-80-F0g"/>
                 <constraint firstAttribute="bottom" secondItem="mps-12-gPj" secondAttribute="bottom" id="Hkd-kK-zCQ"/>
-                <constraint firstItem="w5G-NG-6Rv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dVB-Nb-jmm"/>
                 <constraint firstAttribute="trailing" secondItem="mps-12-gPj" secondAttribute="trailing" id="rqq-7h-ugq"/>
-                <constraint firstAttribute="bottom" secondItem="w5G-NG-6Rv" secondAttribute="bottom" id="uuc-uz-NVJ"/>
             </constraints>
             <point key="canvasLocation" x="85" y="20"/>
         </view>
     </objects>
     <resources>
-        <image name="织命-全身" width="528" height="938"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
