@@ -193,13 +193,15 @@ class WHHAIChatViewController: WHHBaseViewController {
             WHHHomeRequestViewModel.postCreateChatConversationCreate(input: message) { [weak self] code, model, msg, errorCode in
 
                 if code == 1 {
-                    
                     self?.createSendMessageBody(msg: message)
-                    
+
                     WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message, conversationId: model.conversationId) { [weak self] success, msg in
                         if success == 1 {
                             self?.conversationId = model.conversationId
                             self?.createReceiveMessageBody(msg: msg)
+                        } else {
+                            // 清理数据
+                            self?.currentStreamedText = ""
                         }
                     }
                 } else {
@@ -243,25 +245,20 @@ class WHHAIChatViewController: WHHBaseViewController {
             return
         } else if msg.containsUserInput() {
         } else {
-            let all = SSEParser.clean(msg)
-            // 真正的内容
-            let characters = Array(all)
-            for (i, c) in characters.enumerated() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0 * Double(i)) {
-                    self.currentStreamedText.append(c)
-                    if self.dataArray.isEmpty || self.dataArray.last?.messageType == "user" {
-                        let sendModel = WHHChatMesageModel()
-                        sendModel.messageType = "assistant"
-                        sendModel.content = self.currentStreamedText
-                        self.dataArray.append(sendModel)
-                    } else {
-                        self.dataArray[self.dataArray.count - 1].content = self.currentStreamedText
-                    }
+            if dataArray.isEmpty || dataArray.last?.messageType == "user" {
+                // 用户发的
+                let sendModel = WHHChatMesageModel()
+                sendModel.messageType = "assistant"
+                sendModel.content += msg
+                dataArray.append(sendModel)
 
-                    onMainThread { [weak self] in
-                        self?.reloadTableViewData()
-                    }
-                }
+            } else {
+                // AI生成的
+                dataArray[dataArray.count - 1].content += msg
+            }
+
+            onMainThread { [weak self] in
+                self?.reloadTableViewData()
             }
         }
     }
