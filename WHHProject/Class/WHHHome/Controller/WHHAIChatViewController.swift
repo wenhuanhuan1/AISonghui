@@ -84,10 +84,10 @@ class WHHAIChatViewController: WHHBaseViewController {
         WHHHomeRequestViewModel.getChatMessageRequest(conversationId: conversationId, lastId: lastId, swipeUp: false) { [weak self] code, listArray, _ in
             self?.chatTableView.mj_header?.endRefreshing()
             if code == 1 {
-                if let firstModel = listArray.first {
+                self?.getMessageHistory(netmMsgArray: listArray)
+                if let firstModel = self?.dataArray.first {
                     self?.lastId = firstModel.messageId
                 }
-                self?.getMessageHistory(netmMsgArray: listArray)
             }
         }
     }
@@ -193,7 +193,9 @@ class WHHAIChatViewController: WHHBaseViewController {
             WHHHomeRequestViewModel.postCreateChatConversationCreate(input: message) { [weak self] code, model, msg, errorCode in
 
                 if code == 1 {
+                    
                     self?.createSendMessageBody(msg: message)
+                    
                     WHHABBChatRequestApiViewModel.whhAbbChatSendMessageRequestApi(inputText: message, conversationId: model.conversationId) { [weak self] success, msg in
                         if success == 1 {
                             self?.conversationId = model.conversationId

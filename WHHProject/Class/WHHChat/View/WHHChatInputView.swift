@@ -27,7 +27,7 @@ class WHHChatInputView: WHHBaseView {
     lazy var deleteButton: UIButton = {
         let view = UIButton(type: .custom)
         view.setImage(UIImage(named: "whhAISendButton"), for: .normal)
-        view.addTarget(self, action: #selector(deleteButtonClick), for: .touchUpInside)
+        view.addTarget(self, action: #selector(didSendButtonClick), for: .touchUpInside)
         return view
     }()
 
@@ -65,16 +65,17 @@ class WHHChatInputView: WHHBaseView {
         }
     }
 
-    @objc func deleteButtonClick() {
-        clearTextContent()
-    }
-
-    private func clearTextContent() {
+    @objc func didSendButtonClick() {
         if inputTextView.text.isEmpty {
             WHHHUD.whhShowInfoText(text: "请输入内容")
             return
         }
+
         didSendMessageBlock?(self, inputTextView.text)
+        clearTextContent()
+    }
+
+    private func clearTextContent() {
         inputTextView.text = ""
         inputUpdateHeight()
     }
@@ -89,7 +90,7 @@ extension WHHChatInputView: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             didSendMessageBlock?(self, textView.text)
-            deleteButtonClick()
+            clearTextContent()
             return false
         }
 
