@@ -25,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) NSInteger luckValueNum;
 
+// 支付相关
+@property(nonatomic,assign) NSInteger hasPlay;
+
+@property(nonatomic,copy) NSString *prompt;
+
+
 @end
+
+
 
 NS_ASSUME_NONNULL_END
