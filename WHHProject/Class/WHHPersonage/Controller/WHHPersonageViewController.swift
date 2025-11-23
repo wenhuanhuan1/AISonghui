@@ -163,9 +163,9 @@ extension WHHPersonageViewController: UITableViewDelegate, UITableViewDataSource
            
             let cell = tableView.dequeueReusableCell(withIdentifier: "WHHAIPersonVIPCell", for: indexPath) as! WHHAIPersonVIPCell
             if netModel.vip == 1 {
-                cell.status.isHidden = true
+                cell.status.text = "已开通"
             }else{
-                cell.status.isHidden = false
+                cell.status.text = "未开通"
             }
             cell.lineLabel.text = "命运丝线:" + "\(netModel.luckValueNum)"
            
