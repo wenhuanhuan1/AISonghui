@@ -90,25 +90,56 @@ public final class WHHAIStorekitManager: ObservableObject {
     }
 
     /// 将交易发送到自己服务器验证
-    private func verifyWithServer(_ transaction: Transaction,orderId:String) async throws {
-        guard let receiptURL = Bundle.main.appStoreReceiptURL,
-              let receiptData = try? Data(contentsOf: receiptURL),
-              !receiptData.isEmpty else {
-            WHHHUD.whhHidenLoadView()
-            throw WHHStoreKitError.receiptEmpty
-        }
+    /// 将交易发送到自己服务器验证（已修复：永远不会拿旧的收据）
+    private func verifyWithServer(_ transaction: Transaction, orderId: String) async throws {
 
-        let base64 = receiptData.base64EncodedString()
+        // ⭐ 始终使用最新 receipt（自动刷新、自动重试）
+        let base64Receipt = try await fetchLatestReceipt()
 
-        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: isSandboxReceipt(), receiptData: base64,orderId: orderId) { success, _ in
+        let isSandbox = isSandboxReceipt()
+
+        // 调用服务器校验
+        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(
+            sandbox: isSandbox,
+            receiptData: base64Receipt,
+            orderId: orderId
+        ) { success, _ in
             WHHHUD.whhHidenLoadView()
             if success == 1 {
                 debugPrint("验证成功")
-
             } else {
                 debugPrint("验证失败")
             }
         }
+    }
+    
+    /// 刷新并获取最新 receipt（自动重试一次）
+    /// 返回 base64 字符串；失败抛出错误
+    private func fetchLatestReceipt() async throws -> String {
+        // 第 1 次尝试：直接读取
+        if let b64 = readLocalReceipt(), !b64.isEmpty {
+            return b64
+        }
+
+        // 第 2 次尝试：刷新收据
+        try await AppStore.sync()
+
+        // 再读取一次
+        if let b64 = readLocalReceipt(), !b64.isEmpty {
+            return b64
+        }
+
+        throw WHHStoreKitError.receiptEmpty
+    }
+
+    /// 单纯读取 receipt，不负责刷新
+    private func readLocalReceipt() -> String? {
+        guard let url = Bundle.main.appStoreReceiptURL,
+              let data = try? Data(contentsOf: url),
+              !data.isEmpty else {
+            return nil
+        }
+        return data.base64EncodedString()
     }
 
     /// 外部无需再写 Task，内部自动封装
@@ -125,6 +156,10 @@ public final class WHHAIStorekitManager: ObservableObject {
             switch result {
                
             case let .success(verification):
+                
+                // ⭐ 关键：刷新收据，否则永远读到旧收据
+                   try await AppStore.sync()
+                
                 let transaction = try checkVerified(verification)
                 try await verifyWithServer(transaction,orderId: orderId)
                 await updatePurchasedIdentifiers()
