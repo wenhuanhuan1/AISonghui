@@ -7,52 +7,7 @@
 
 import Foundation
 import StoreKit
-
-/// 简单的 StoreKit2 管理器（单例）
-/// 功能：
-/// - 列举产品
-/// - 发起购买
-/// - 监听交易更新
-/// - 恢复/查询已购权益
-/// - 本地校验 Transaction
-
-//
-//  WHHAIStorekitManager.swift
-//  WHHProject
-//
-//  Created by wenhuan on 2025/11/18.
-//
-
-import Foundation
-import StoreKit
-
-/// 简单的 StoreKit2 管理器（单例）
-/// 功能：
-/// - 列举产品
-/// - 发起购买
-/// - 监听交易更新
-/// - 恢复/查询已购权益
-/// - 本地校验 Transaction
-
-//
-//  WHHAIStorekitManager.swift
-//  WHHProject
-//
-//  Created by wenhuan on 2025/11/18.
-//
-
-import Foundation
-import StoreKit
-
-//
-//  WHHAIStorekitManager.swift
-//  WHHProject
-//
-//  Created by wenhuan on 2025/11/18.
-//
-
-import Foundation
-import StoreKit
+import UIKit
 
 @available(iOS 15.0, macOS 12.0, *)
 public final class WHHAIStorekitManager: ObservableObject {
@@ -128,7 +83,7 @@ public final class WHHAIStorekitManager: ObservableObject {
         }
 
         do {
-            // ⚠️ 注意：支付前不调用 AppStore.sync()，避免重复输入密码
+            // ⚠️ 支付前不刷新 receipt，避免重复密码弹窗
             let result = try await product.purchase(options: [.appAccountToken(uuid)])
 
             switch result {
@@ -186,7 +141,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                                   orderId: String,
                                   callback: ((Bool, String) -> Void)?) async throws {
 
-        // ⚠️ 只有支付完成后才刷新 receipt
+        // ⚠️ 只在支付完成后刷新 receipt，确保最新凭证
         let base64Receipt = try await fetchLatestReceipt()
         let isSandbox = isSandboxReceipt()
 
@@ -195,7 +150,6 @@ public final class WHHAIStorekitManager: ObservableObject {
             receiptData: base64Receipt,
             orderId: orderId
         ) { success, msg, model in
-
             WHHHUD.whhHidenLoadView()
 
             if success == 1 {
@@ -250,12 +204,12 @@ public final class WHHAIStorekitManager: ObservableObject {
 
     // MARK: - 获取最新 receiptData（base64）
     private func fetchLatestReceipt() async throws -> String {
-        // ⚠️ 支付前不刷新，避免重复输入密码
+        // ⚠️ 支付前不刷新，避免重复密码
         if let b64 = readLocalReceipt(), !b64.isEmpty {
             return b64
         }
 
-        // 轮询等待写入（支付完成或恢复购买时调用）
+        // ⚠️ 后台安全刷新 receipt，避免 30 秒警告
         try await AppStore.sync()
         for _ in 0..<10 {
             try await Task.sleep(nanoseconds: 200_000_000)
@@ -275,11 +229,24 @@ public final class WHHAIStorekitManager: ObservableObject {
         return data.base64EncodedString()
     }
 
-    // MARK: - StoreKit1 兜底刷新 receipt
+    // MARK: - StoreKit1 兜底刷新 receipt（后台安全）
     private func refreshReceiptUsingStoreKit1() async throws -> String {
         return try await withCheckedThrowingContinuation { continuation in
+            var bgTask: UIBackgroundTaskIdentifier = .invalid
+            bgTask = UIApplication.shared.beginBackgroundTask(withName: "SKReceiptRefresh") {
+                UIApplication.shared.endBackgroundTask(bgTask)
+                bgTask = .invalid
+            }
+
             let request = SKReceiptRefreshRequest()
             let delegate = ReceiptDelegate { success, error in
+                defer {
+                    if bgTask != .invalid {
+                        UIApplication.shared.endBackgroundTask(bgTask)
+                        bgTask = .invalid
+                    }
+                }
+
                 if success, let b64 = self.readLocalReceipt(), !b64.isEmpty {
                     continuation.resume(returning: b64)
                 } else {
