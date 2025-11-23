@@ -182,11 +182,13 @@ public final class WHHAIStorekitManager: ObservableObject {
             WHHHUD.whhHidenLoadView()
 
             if success == 1 {
+               
                 if model.hasPlay == 1 {
                     callback?(true, model.prompt)
                 } else {
                     callback?(false, model.prompt)
                 }
+                WHHHUD.whhShowInfoText(text: model.prompt)
                 debugPrint("服务器验证成功")
                 // ★★★ 最终回调成功
             } else {
