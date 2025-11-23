@@ -129,6 +129,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                                                         orderId: orderId,
                                                         callback: callback)
                     } catch {
+                        WHHHUD.whhHidenLoadView()
                         debugPrint("服务器验证失败：\(error.localizedDescription)")
                         callback?(false, "服务器验证失败")
                     }
