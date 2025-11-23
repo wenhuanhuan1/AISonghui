@@ -44,6 +44,16 @@ import StoreKit
 import Foundation
 import StoreKit
 
+//
+//  WHHAIStorekitManager.swift
+//  WHHProject
+//
+//  Created by wenhuan on 2025/11/18.
+//
+
+import Foundation
+import StoreKit
+
 @available(iOS 15.0, macOS 12.0, *)
 public final class WHHAIStorekitManager: ObservableObject {
     public static let shared = WHHAIStorekitManager()
@@ -118,6 +128,7 @@ public final class WHHAIStorekitManager: ObservableObject {
         }
 
         do {
+            // ⚠️ 注意：支付前不调用 AppStore.sync()，避免重复输入密码
             let result = try await product.purchase(options: [.appAccountToken(uuid)])
 
             switch result {
@@ -130,7 +141,7 @@ public final class WHHAIStorekitManager: ObservableObject {
 
                 await transaction.finish()
 
-                // 服务器验证
+                // 支付完成后再刷新 receipt 用于服务器验证
                 Task {
                     do {
                         try await self.verifyWithServer(transaction,
@@ -175,6 +186,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                                   orderId: String,
                                   callback: ((Bool, String) -> Void)?) async throws {
 
+        // ⚠️ 只有支付完成后才刷新 receipt
         let base64Receipt = try await fetchLatestReceipt()
         let isSandbox = isSandboxReceipt()
 
@@ -214,7 +226,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                 return
             }
 
-            // 服务器验证恢复购买
+            // 服务器验证恢复购买时刷新最新 receipt
             do {
                 let latest = try await fetchLatestReceipt()
                 let isSandbox = isSandboxReceipt()
@@ -238,17 +250,20 @@ public final class WHHAIStorekitManager: ObservableObject {
 
     // MARK: - 获取最新 receiptData（base64）
     private func fetchLatestReceipt() async throws -> String {
-        try await AppStore.sync()
+        // ⚠️ 支付前不刷新，避免重复输入密码
+        if let b64 = readLocalReceipt(), !b64.isEmpty {
+            return b64
+        }
 
-        for i in 0..<10 {
+        // 轮询等待写入（支付完成或恢复购买时调用）
+        try await AppStore.sync()
+        for _ in 0..<10 {
             try await Task.sleep(nanoseconds: 200_000_000)
             if let b64 = readLocalReceipt(), !b64.isEmpty {
-                debugPrint("获取最新 receipt 成功（第 \(i+1) 次）")
                 return b64
             }
         }
 
-        // StoreKit2 刷新失败 → 使用 SKReceiptRefreshRequest 兜底
         return try await refreshReceiptUsingStoreKit1()
     }
 
