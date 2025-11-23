@@ -15,10 +15,13 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
         view.layer.masksToBounds = true
         return view
     }()
-    
+    var lastGetMaxId: String = ""
+    var index: Int = 0
     lazy var bottomLineView: UIView = {
         let view = UIView()
         view.backgroundColor = ColorD6D4FF
+        view.layer.cornerRadius = 12
+        view.layer.masksToBounds = true
         return view
     }()
 
@@ -70,6 +73,29 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
         return bgView
     }()
     
+    lazy var listTableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .plain)
+        view.dataSource = self
+        view.backgroundColor = .clear
+        view.delegate = self
+        view.separatorStyle = .none
+        view.register(UINib(nibName: "WHHAIDestinyLineItemTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHAIDestinyLineItemTableViewCell")
+        view.whhAddRefreshNormalHeader { [weak self] in
+            self?.whhRefreshHeader()
+        }
+        view.whhAddRefreshNormalFooter { [weak self] in
+            self?.whhRefreshFooter()
+        }
+        view.mj_footer?.isHidden = true
+        return view
+    }()
+
+    lazy var listArray: [WHHAIDestinyLineItemModel] = {
+        let view = [WHHAIDestinyLineItemModel]()
+        return view
+    }()
+
+    
     lazy var segmentedDataSource: JXSegmentedTitleDataSource = {
         let segmentedDataSource = JXSegmentedTitleDataSource()
         segmentedDataSource.titles = ["全部", "消耗", "获取"]
@@ -85,25 +111,25 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
         return segmentedDataSource
     }()
 
-    lazy var listContainerView: JXSegmentedListContainerView! = JXSegmentedListContainerView(dataSource: self)
+//    lazy var listContainerView: JXSegmentedListContainerView! = JXSegmentedListContainerView(dataSource: self)
 
-    lazy var segmentedView: JXSegmentedView = {
-        let segmentedView = JXSegmentedView()
-        segmentedView.dataSource = segmentedDataSource
-        segmentedView.backgroundColor = .black
-        segmentedView.listContainer = listContainerView
-        segmentedView.layer.masksToBounds = true
-        segmentedView.layer.cornerRadius = 20
-        let indicator = JXSegmentedIndicatorBackgroundView()
-               indicator.indicatorHeight = 36
-        indicator.layer.cornerRadius = 18
-        indicator.layer.masksToBounds = true
-        indicator.indicatorWidth = 120
-        indicator.indicatorWidthIncrement = 0
-        indicator.indicatorColor = UIColor.white
-        segmentedView.indicators = [indicator]
-        return segmentedView
-    }()
+//    lazy var segmentedView: JXSegmentedView = {
+//        let segmentedView = JXSegmentedView()
+//        segmentedView.dataSource = segmentedDataSource
+//        segmentedView.backgroundColor = .black
+//        segmentedView.listContainer = listContainerView
+//        segmentedView.layer.masksToBounds = true
+//        segmentedView.layer.cornerRadius = 20
+//        let indicator = JXSegmentedIndicatorBackgroundView()
+//               indicator.indicatorHeight = 36
+//        indicator.layer.cornerRadius = 18
+//        indicator.layer.masksToBounds = true
+//        indicator.indicatorWidth = 120
+//        indicator.indicatorWidthIncrement = 0
+//        indicator.indicatorColor = UIColor.white
+//        segmentedView.indicators = [indicator]
+//        return segmentedView
+//    }()
 
 
     deinit {
@@ -111,7 +137,7 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("vipBuyFinish"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadRequest), name: NSNotification.Name("vipBuyFinish"), object: nil)
         
         gk_navTitle = "命运丝线"
         gk_backStyle = .black
@@ -150,7 +176,7 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
         bottomLineView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-10)
             make.top.equalTo(topView.snp.bottom).offset(10)
         }
         bottomLineView.addSubview(listTitle)
@@ -159,25 +185,30 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
             make.top.equalToSuperview().offset(10)
         }
         
-        bottomLineView.addSubview(segmentedView)
-        segmentedView.snp.makeConstraints { make in
-            make.left.equalTo(20)
-            make.top.equalTo(listTitle.snp.bottom).offset(10)
-            make.right.equalToSuperview().offset(-20)
-            make.height.equalTo(40)
-        }
-
-        bottomLineView.addSubview(listContainerView)
-        listContainerView.scrollView.backgroundColor = .clear
-        listContainerView.snp.makeConstraints { make in
+        bottomLineView.addSubview(listTableView)
+        listTableView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(segmentedView.snp.bottom).offset(10)
+            make.top.equalToSuperview().offset(40)
         }
+//        segmentedView.snp.makeConstraints { make in
+//            make.left.equalTo(20)
+//            make.top.equalTo(listTitle.snp.bottom).offset(10)
+//            make.right.equalToSuperview().offset(-20)
+//            make.height.equalTo(40)
+//        }
+//
+//        bottomLineView.addSubview(listContainerView)
+//        listContainerView.scrollView.backgroundColor = .clear
+//        listContainerView.snp.makeConstraints { make in
+//            make.left.right.bottom.equalToSuperview()
+//            make.top.equalTo(segmentedView.snp.bottom).offset(10)
+//        }
         topView.addSubview(jumpButton)
         jumpButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         getUserInfo()
+        whhRefreshHeader()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -185,15 +216,50 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
         
     }
     
+   @objc func reloadRequest() {
+        
+       getUserInfo()
+       whhRefreshHeader()
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        bottomLineView.whhAddSetRectConrner(corner: [.topLeft,.topRight], radile: 12)
+//        bottomLineView.whhAddSetRectConrner(corner: [.topLeft,.topRight], radile: 12)
+        
     }
 
    @objc private func getUserInfo() {
         WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, model in
             if code == 1 {
                 self?.lineLabel.text = "命运丝线:" + "\(model.luckValueNum)"
+            }
+        }
+    }
+    
+    @objc override func whhRefreshHeader() {
+        super.whhRefreshHeader()
+
+        WHHMineRequestApiViewModel.whhGetMyLuckValueRecordList(lastGetMaxId: lastGetMaxId, income: index) { [weak self] dataArray, code, _ in
+            self?.listTableView.mj_header?.endRefreshing()
+            if code == 1 {
+                if dataArray.count < 5 {
+                    self?.listTableView.mj_footer?.isHidden = true
+                } else {
+                    self?.listTableView.mj_footer?.isHidden = false
+                }
+                self?.listArray = dataArray
+                self?.listTableView.reloadData()
+            }
+        }
+    }
+
+    override func whhRefreshFooter() {
+        super.whhRefreshFooter()
+        WHHMineRequestApiViewModel.whhGetMyLuckValueRecordList(lastGetMaxId: lastGetMaxId, income: index) { [weak self] dataArray, code, _ in
+            self?.listTableView.mj_footer?.endRefreshing()
+            if code == 1 {
+                self?.listArray.append(contentsOf: dataArray)
+                self?.listTableView.reloadData()
             }
         }
     }
@@ -211,17 +277,41 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
       
     }
 }
-extension WHHAIDestinyLinesViewController: JXSegmentedListContainerViewDataSource {
-    func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
-        if let titleDataSource = segmentedView.dataSource as? JXSegmentedBaseDataSource {
-            return titleDataSource.dataSource.count
-        }
-        return 0
+//extension WHHAIDestinyLinesViewController: JXSegmentedListContainerViewDataSource {
+//    func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
+//        if let titleDataSource = segmentedView.dataSource as? JXSegmentedBaseDataSource {
+//            return titleDataSource.dataSource.count
+//        }
+//        return 0
+//    }
+//
+//    func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
+//        let sqVC = WHHAIDestinyLineItemViewController()
+//        sqVC.index = index
+//        return sqVC
+//    }
+//}
+extension WHHAIDestinyLinesViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 
-    func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
-        let sqVC = WHHAIDestinyLineItemViewController()
-        sqVC.index = index
-        return sqVC
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WHHAIDestinyLineItemTableViewCell") as! WHHAIDestinyLineItemTableViewCell
+        let model = listArray[indexPath.row]
+
+        cell.nameLabel.text = model.remark
+        if model.income {
+            cell.priceLabel.text = "+" + model.num
+        } else {
+            cell.priceLabel.text = "-" + model.num
+        }
+        cell.timeLabel.text = WHHDateFormatterManager.shared.convertTimestamp(model.createTime / 1000)
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listArray.count
     }
 }
