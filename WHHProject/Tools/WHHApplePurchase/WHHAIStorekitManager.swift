@@ -190,8 +190,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                 } else {
                     callback?(false, model.prompt)
                 }
-               
-               
+
                 debugPrint("服务器验证成功")
                 // ★★★ 最终回调成功
             } else {
@@ -200,7 +199,6 @@ public final class WHHAIStorekitManager: ObservableObject {
                     WHHHUD.whhShowInfoText(text: msg)
                 }
                 callback?(false, msg) // ★★★ 回调失败
-               
             }
         }
     }
@@ -228,6 +226,60 @@ public final class WHHAIStorekitManager: ObservableObject {
     private func isSandboxReceipt() -> Bool {
         guard let url = Bundle.main.appStoreReceiptURL else { return false }
         return url.lastPathComponent == "sandboxReceipt"
+    }
+
+    // MARK: - 恢复购买（Restore Purchase）
+
+    public func restorePurchase(callback: ((Bool, String) -> Void)?) {
+        Task {
+            var restored: [Transaction] = []
+
+            for await result in Transaction.currentEntitlements {
+                if case let .verified(transaction) = result {
+                    restored.append(transaction)
+                }
+            }
+
+            if restored.isEmpty {
+                callback?(false, "没有可恢复的购买")
+            } else {
+                callback?(true, "恢复成功")
+            }
+        }
+    }
+
+    // MARK: - 恢复购买服务器验证
+
+    private func restoreVerifyWithServer(_ transaction: Transaction,
+                                         callback: ((Bool, String) -> Void)?) async throws {
+        let base64Receipt = try await fetchLatestReceipt()
+        let isSandbox = isSandboxReceipt()
+
+        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(
+            sandbox: isSandbox,
+            receiptData: base64Receipt,
+            orderId: "" // 恢复没有 orderId
+        ) { success, msg, model in
+
+            if success == 1 {
+                if model.hasPlay == 1 {
+                    dispatchAfter(delay: 0.5) {
+                        WHHHUD.whhShowInfoText(text: "恢复购买成功")
+                    }
+                    callback?(true, "恢复购买成功")
+                } else {
+                    dispatchAfter(delay: 0.5) {
+                        WHHHUD.whhShowInfoText(text: model.prompt)
+                    }
+                    callback?(false, model.prompt)
+                }
+            } else {
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
+                callback?(false, msg)
+            }
+        }
     }
 }
 

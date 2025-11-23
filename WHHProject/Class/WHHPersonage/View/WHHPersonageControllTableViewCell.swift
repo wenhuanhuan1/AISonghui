@@ -54,7 +54,12 @@ extension WHHPersonageControllTableViewCell: UITableViewDataSource, UITableViewD
                 }
 
             case 1:
-                WHHHUD.whhShowInfoText(text: "恢复购买成功")
+                
+                WHHAIStorekitManager.shared.restorePurchase { success, msg in
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
+                
+                
             case 2:
                 debugPrint("sasa")
                 if let currentVC = UIViewController.currentViewController() {
