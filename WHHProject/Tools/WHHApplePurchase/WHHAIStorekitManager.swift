@@ -182,19 +182,25 @@ public final class WHHAIStorekitManager: ObservableObject {
             WHHHUD.whhHidenLoadView()
 
             if success == 1 {
-               
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: model.prompt)
+                }
                 if model.hasPlay == 1 {
                     callback?(true, model.prompt)
                 } else {
                     callback?(false, model.prompt)
                 }
-                WHHHUD.whhShowInfoText(text: model.prompt)
+               
+               
                 debugPrint("服务器验证成功")
                 // ★★★ 最终回调成功
             } else {
                 debugPrint("服务器验证失败：\(msg)")
-                WHHHUD.whhShowInfoText(text: msg)
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
                 callback?(false, msg) // ★★★ 回调失败
+               
             }
         }
     }
