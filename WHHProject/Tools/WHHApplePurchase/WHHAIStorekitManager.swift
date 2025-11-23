@@ -24,210 +24,101 @@ public final class WHHAIStorekitManager: ObservableObject {
     @Published public private(set) var purchasedIdentifiers: Set<String> = []
     @Published public private(set) var lastError: Error?
 
-    private var updateTask: Task<Void, Never>?
-    private init() {
-        startTransactionListener()
-    }
+    private init() {}
 
-    deinit {
-        updateTask?.cancel()
-    }
-
-    func createOrder(goodsId: String,
-                     payPage: String = "VIP",
-                     callBack: ((Bool, String) -> Void)?) {
+    // MARK: - 创建订单并购买
+    public func createOrder(goodsId: String,
+                            payPage: String = "VIP",
+                            callBack: ((Bool, String) -> Void)?) {
         WHHHUD.whhShowLoadView()
 
         FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId, payPage: payPage) { [weak self] model, code, msg in
             guard let self else { return }
 
-            if code == 1 {
-                Task {
-                    do {
-                        guard let product = try await Product.products(for: [model.goodsCode]).first else {
-                            WHHHUD.whhHidenLoadView()
-                            callBack?(false, "请求商品失败")
-                            return
-                        }
-
-                        
-                        self.purchase(product: product, uuidString: model.uuid,orderId: model.orderId) { success, msg in
-                            callBack?(success, msg)
-                        }
-
-                    } catch {
-                        WHHHUD.whhHidenLoadView()
-                        callBack?(false, "请求商品失败")
-                    }
-                }
-
-            } else {
+            if code != 1 {
                 WHHHUD.whhHidenLoadView()
                 dispatchAfter(delay: 0.5) { WHHHUD.whhShowInfoText(text: msg) }
                 callBack?(false, "请求失败")
+                return
+            }
+
+            Task {
+                await self.purchaseProduct(goodsCode: model.goodsCode, uuidString: model.uuid, orderId: model.orderId, callback: callBack)
             }
         }
     }
 
-    // MARK: - Fetch products
-
-    /// 传入 product IDs，返回已找到的 Product 列表
-    public func fetchProducts(ids: [String]) async {
+    // MARK: - 购买封装
+    private func purchaseProduct(goodsCode: String, uuidString: String, orderId: String, callback: ((Bool, String) -> Void)?) async {
         do {
-            let products = try await Product.products(for: ids)
-            // 保持顺序：按 ids 的顺序排序
-            let map = Dictionary(uniqueKeysWithValues: products.map { ($0.id, $0) })
-            self.products = ids.compactMap { map[$0] }
+            guard let product = try await Product.products(for: [goodsCode]).first else {
+                WHHHUD.whhHidenLoadView()
+                callback?(false, "请求商品失败")
+                return
+            }
+
+            await _purchaseAsync(product: product, uuidString: uuidString, orderId: orderId, callback: callback)
         } catch {
-            lastError = error
-            products = []
-        }
-    }
-
-    private func isSandboxReceipt() -> Bool {
-        guard let url = Bundle.main.appStoreReceiptURL else { return false }
-        return url.lastPathComponent == "sandboxReceipt"
-    }
-
-    /// 将交易发送到自己服务器验证
-    /// 将交易发送到自己服务器验证（已修复：永远不会拿旧的收据）
-    private func verifyWithServer(_ transaction: Transaction, orderId: String) async throws {
-
-        // ⭐ 始终使用最新 receipt（自动刷新、自动重试）
-        let base64Receipt = try await fetchLatestReceipt()
-
-        let isSandbox = isSandboxReceipt()
-
-        // 调用服务器校验
-        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(
-            sandbox: isSandbox,
-            receiptData: base64Receipt,
-            orderId: orderId
-        ) { success, _ in
             WHHHUD.whhHidenLoadView()
-            if success == 1 {
-                debugPrint("验证成功")
-            } else {
-                debugPrint("验证失败")
-            }
-        }
-    }
-    
-    /// 刷新并获取最新 receipt（自动重试一次）
-    /// 返回 base64 字符串；失败抛出错误
-    private func fetchLatestReceipt() async throws -> String {
-        // 第 1 次尝试：直接读取
-        if let b64 = readLocalReceipt(), !b64.isEmpty {
-            return b64
-        }
-
-        // 第 2 次尝试：刷新收据
-        try await AppStore.sync()
-
-        // 再读取一次
-        if let b64 = readLocalReceipt(), !b64.isEmpty {
-            return b64
-        }
-
-        throw WHHStoreKitError.receiptEmpty
-    }
-
-    /// 单纯读取 receipt，不负责刷新
-    private func readLocalReceipt() -> String? {
-        guard let url = Bundle.main.appStoreReceiptURL,
-              let data = try? Data(contentsOf: url),
-              !data.isEmpty else {
-            return nil
-        }
-        return data.base64EncodedString()
-    }
-
-    /// 外部无需再写 Task，内部自动封装
-    public func purchase(product: Product, uuidString: String,orderId:String, callback: @escaping (Bool, String) -> Void) {
-        Task { [weak self] in
-            await self?._purchaseAsync(product: product, uuidString: uuidString,orderId: orderId, callback: callback)
+            callback?(false, "请求商品失败")
         }
     }
 
-    /// 实际处理购买的异步方法
-    private func _purchaseAsync(product: Product, uuidString: String,orderId:String, callback: @escaping (Bool, String) -> Void) async {
+    // MARK: - 实际购买处理
+    private func _purchaseAsync(product: Product, uuidString: String, orderId: String, callback: ((Bool, String) -> Void)?) async {
+        guard let uuid = UUID(uuidString: uuidString) else {
+            WHHHUD.whhHidenLoadView()
+            callback?(false, "UUID 格式错误")
+            return
+        }
+
         do {
-            let result = try await product.purchase(options: [.appAccountToken(UUID(uuidString: uuidString)!)])
+            let result = try await product.purchase(options: [.appAccountToken(uuid)])
+
             switch result {
-               
             case let .success(verification):
-                
-                // ⭐ 关键：刷新收据，否则永远读到旧收据
-                   try await AppStore.sync()
-                
                 let transaction = try checkVerified(verification)
-                try await verifyWithServer(transaction,orderId: orderId)
-                await updatePurchasedIdentifiers()
+
+                debugPrint("Transaction ID: \(transaction.id)")
+                debugPrint("Product ID: \(transaction.productID)")
+                debugPrint("AppAccountToken: \(transaction.appAccountToken?.uuidString ?? "nil")")
+
+                // 异步服务器验证收据，不阻塞 UI
+                Task.detached {
+                    do {
+                        try await self.verifyWithServer(transaction, orderId: orderId)
+                    } catch {
+                        debugPrint("服务器验证失败：\(error.localizedDescription)")
+                    }
+                }
+
+                // 完成交易，让系统弹支付成功弹窗
                 await transaction.finish()
-                callback(true, transaction.productID)
+
+                WHHHUD.whhHidenLoadView()
+                callback?(true, transaction.productID)
+
             case .userCancelled:
                 WHHHUD.whhHidenLoadView()
-                callback(false, "用户取消支付")
+                callback?(false, "用户取消支付")
+
             case .pending:
                 WHHHUD.whhHidenLoadView()
-                callback(false, "等待支付")
+                callback?(false, "等待支付")
+
             @unknown default:
                 WHHHUD.whhHidenLoadView()
-                callback(false, "未知错误")
+                callback?(false, "未知错误")
             }
+
         } catch {
             await MainActor.run { self.lastError = error }
             WHHHUD.whhHidenLoadView()
-            callback(false, error.localizedDescription)
+            callback?(false, error.localizedDescription)
         }
     }
 
-    // MARK: - Restore / Current entitlements
-
-    /// 查询当前所有可用权益（包含订阅/非消耗）
-    public func refreshEntitlements() async {
-        await updatePurchasedIdentifiers()
-    }
-
-    /// 恢复购买（在 StoreKit2 中，可以通过读取 Transaction.currentEntitlements 来替代旧的 restorePurchases）
-    public func restorePurchases() async {
-        await updatePurchasedIdentifiers()
-    }
-
-    // MARK: - Transaction Listener
-
-    // MARK: - Internal purchase async logic above
-
-    private func startTransactionListener() {
-        updateTask = Task.detached(priority: .background) { [weak self] in
-            for await verificationResult in Transaction.updates {
-                guard let self = self else { break }
-                do {
-                    let transaction = try self.checkVerified(verificationResult)
-                    // 在这里根据 transaction.productID 做本地处理（解锁内容等）
-                    await self.handle(transaction: transaction)
-                    // 结束交易
-                    await transaction.finish()
-                } catch {
-                    // 验证失败或其它错误
-                    await MainActor.run {
-                        self.lastError = error
-                    }
-                }
-            }
-        }
-    }
-
-    // MARK: - Helpers
-
-    private func handle(transaction: Transaction) async {
-        // 将 product id/标识加入已购集合
-        await MainActor.run {
-            self.purchasedIdentifiers.insert(transaction.productID)
-        }
-        // 你可以在这里触发通知、更新服务器、解锁本地内容等
-    }
-
+    // MARK: - 验证交易
     private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T where T: TransactionLike {
         switch result {
         case let .unverified(_, verificationError):
@@ -237,27 +128,51 @@ public final class WHHAIStorekitManager: ObservableObject {
         }
     }
 
-    /// 更新本地 purchasedIdentifiers（读取当前 entitlements）
-    private func updatePurchasedIdentifiers() async {
-        var ids: Set<String> = []
-        for await verificationResult in Transaction.currentEntitlements {
-            do {
-                let transaction = try checkVerified(verificationResult)
-                ids.insert(transaction.productID)
-            } catch {
-                await MainActor.run {
-                    self.lastError = error
-                }
+    // MARK: - 服务器验证
+    private func verifyWithServer(_ transaction: Transaction, orderId: String) async throws {
+        let base64Receipt = try await fetchLatestReceipt()
+        let isSandbox = isSandboxReceipt()
+
+        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(
+            sandbox: isSandbox,
+            receiptData: base64Receipt,
+            orderId: orderId
+        ) { success, msg in
+            if success == 1 {
+                debugPrint("服务器验证成功")
+            } else {
+                debugPrint("服务器验证失败")
+                WHHHUD.whhShowInfoText(text: msg)
             }
         }
-        await MainActor.run {
-            self.purchasedIdentifiers = ids
+    }
+
+    // MARK: - 收据相关
+    private func fetchLatestReceipt() async throws -> String {
+        if let b64 = readLocalReceipt(), !b64.isEmpty {
+            return b64
         }
+        try await AppStore.sync()
+        if let b64 = readLocalReceipt(), !b64.isEmpty {
+            return b64
+        }
+        throw WHHStoreKitError.receiptEmpty
+    }
+
+    private func readLocalReceipt() -> String? {
+        guard let url = Bundle.main.appStoreReceiptURL,
+              let data = try? Data(contentsOf: url),
+              !data.isEmpty else { return nil }
+        return data.base64EncodedString()
+    }
+
+    private func isSandboxReceipt() -> Bool {
+        guard let url = Bundle.main.appStoreReceiptURL else { return false }
+        return url.lastPathComponent == "sandboxReceipt"
     }
 }
 
-// MARK: - TransactionLike 协议：帮助泛型处理 VerificationResult
-
+// MARK: - TransactionLike 协议
 @available(iOS 15.0, macOS 12.0, *)
 private protocol TransactionLike {
     var productID: String { get }
