@@ -112,6 +112,7 @@ class WHHAIDestinyLinesViewController: WHHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("vipBuyFinish"), object: nil)
+        
         gk_navTitle = "命运丝线"
         gk_backStyle = .black
         gk_navTitleColor = .black

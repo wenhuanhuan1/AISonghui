@@ -11,7 +11,6 @@ import UIKit
 class WHHAIDestinyLineItemViewController: WHHBaseViewController {
     var lastGetMaxId: String = ""
 
-    
     lazy var listTableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.dataSource = self
@@ -35,9 +34,15 @@ class WHHAIDestinyLineItemViewController: WHHBaseViewController {
     }()
 
     var index: Int = 0
-    
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(whhRefreshHeader), name: NSNotification.Name("vipBuyFinish"), object: nil)
+
         view.backgroundColor = ColorD6D4FF
         view.addSubview(listTableView)
         listTableView.snp.makeConstraints { make in
@@ -46,7 +51,7 @@ class WHHAIDestinyLineItemViewController: WHHBaseViewController {
         whhRefreshHeader()
     }
 
-    override func whhRefreshHeader() {
+    @objc override func whhRefreshHeader() {
         super.whhRefreshHeader()
 
         WHHMineRequestApiViewModel.whhGetMyLuckValueRecordList(lastGetMaxId: lastGetMaxId, income: index) { [weak self] dataArray, code, _ in
@@ -54,7 +59,7 @@ class WHHAIDestinyLineItemViewController: WHHBaseViewController {
             if code == 1 {
                 if dataArray.count < 5 {
                     self?.listTableView.mj_footer?.isHidden = true
-                }else{
+                } else {
                     self?.listTableView.mj_footer?.isHidden = false
                 }
                 self?.listArray = dataArray
@@ -89,15 +94,15 @@ extension WHHAIDestinyLineItemViewController: UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WHHAIDestinyLineItemTableViewCell") as! WHHAIDestinyLineItemTableViewCell
         let model = listArray[indexPath.row]
-        
+
         cell.nameLabel.text = model.remark
         if model.income {
             cell.priceLabel.text = "+" + model.num
-        }else {
+        } else {
             cell.priceLabel.text = "-" + model.num
         }
-        cell.timeLabel.text = WHHDateFormatterManager.shared.convertTimestamp(model.createTime/1000)
-        
+        cell.timeLabel.text = WHHDateFormatterManager.shared.convertTimestamp(model.createTime / 1000)
+
         return cell
     }
 
