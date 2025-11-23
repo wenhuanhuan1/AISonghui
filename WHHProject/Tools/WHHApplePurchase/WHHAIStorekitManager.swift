@@ -183,9 +183,9 @@ public final class WHHAIStorekitManager: ObservableObject {
 
             if success == 1 {
                 if model.hasPlay == 1 {
-                    callback?(true, msg)
+                    callback?(true, model.prompt)
                 } else {
-                    callback?(false, msg)
+                    callback?(false, model.prompt)
                 }
                 debugPrint("服务器验证成功")
                 // ★★★ 最终回调成功
