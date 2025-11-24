@@ -29,6 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) WHHHomeWitchModel *stat;
 @property(nonatomic,copy) NSString *fortuneTimes;
 @property(nonatomic,copy) NSString *subscribeTimes;
+@property(nonatomic,copy) NSString *bgImage;
+@property(nonatomic,copy) NSString *banner;
+@property(nonatomic,assign) NSInteger avgScore;
+@property(nonatomic,copy) NSString *suggestion;
+@property(nonatomic,strong) WHHHomeWitchModel *userFortune;
 
 /// 是否已经注销
 @property(nonatomic,assign) BOOL destroyed;

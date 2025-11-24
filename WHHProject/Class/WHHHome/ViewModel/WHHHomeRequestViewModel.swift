@@ -37,7 +37,7 @@ class WHHHomeRequestViewModel: NSObject {
     /// 获取女巫列表
     /// - Parameter callHandle: 回调
     static func whhHomeGetWitchList(callHandle: ((_ dataArray: [WHHHomeWitchModel]) -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId], type: .witchList)
+        let api = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId,"loadUserFortune":true], type: .witchList)
 
         api.whhStartConsequenceHandle { baseModel in
 

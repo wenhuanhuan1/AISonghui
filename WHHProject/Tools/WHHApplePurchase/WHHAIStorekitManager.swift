@@ -70,7 +70,7 @@ public final class WHHAIStorekitManager: ObservableObject {
         }
     }
 
-    // MARK: - 实际购买处理
+    // MARK: - 实际购买处理（首次购买只弹一次密码）
     private func _purchaseAsync(product: Product,
                                 uuidString: String,
                                 orderId: String,
@@ -96,17 +96,15 @@ public final class WHHAIStorekitManager: ObservableObject {
 
                 await transaction.finish()
 
-                // 支付完成后再刷新 receipt 用于服务器验证
-                Task {
-                    do {
-                        try await self.verifyWithServer(transaction,
-                                                        orderId: orderId,
-                                                        callback: callback)
-                    } catch {
-                        WHHHUD.whhHidenLoadView()
-                        callback?(false, "服务器验证失败")
-                    }
+                do {
+                    try await self.verifyWithServer(transaction,
+                                                    orderId: orderId,
+                                                    callback: callback)
+                } catch {
+                    WHHHUD.whhHidenLoadView()
+                    callback?(false, "服务器验证失败")
                 }
+                
 
             case .userCancelled:
                 WHHHUD.whhHidenLoadView()
@@ -136,20 +134,20 @@ public final class WHHAIStorekitManager: ObservableObject {
         }
     }
 
-    // MARK: - 服务器验证
+    // MARK: - 服务器验证（支付完成后刷新 receipt）
     private func verifyWithServer(_ transaction: Transaction,
                                   orderId: String,
                                   callback: ((Bool, String) -> Void)?) async throws {
 
-        // ⚠️ 只在支付完成后刷新 receipt，确保最新凭证
-        let base64Receipt = try await fetchLatestReceipt()
+        let receiptData = try await fetchLatestReceipt()
         let isSandbox = isSandboxReceipt()
 
         FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(
             sandbox: isSandbox,
-            receiptData: base64Receipt,
+            receiptData: receiptData,
             orderId: orderId
         ) { success, msg, model in
+
             WHHHUD.whhHidenLoadView()
 
             if success == 1 {
@@ -180,7 +178,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                 return
             }
 
-            // 服务器验证恢复购买时刷新最新 receipt
+            // 支付完成后刷新 receipt 上传服务器
             do {
                 let latest = try await fetchLatestReceipt()
                 let isSandbox = isSandboxReceipt()
@@ -202,15 +200,13 @@ public final class WHHAIStorekitManager: ObservableObject {
         }
     }
 
-    // MARK: - 获取最新 receiptData（base64）
+    // MARK: - 获取最新 receiptData（Base64）
     private func fetchLatestReceipt() async throws -> String {
-        // ⚠️ 支付前不刷新，避免重复密码
         if let b64 = readLocalReceipt(), !b64.isEmpty {
             return b64
         }
 
-        // ⚠️ 后台安全刷新 receipt，避免 30 秒警告
-        try await AppStore.sync()
+        try await AppStore.sync() // 支付完成或恢复购买时调用
         for _ in 0..<10 {
             try await Task.sleep(nanoseconds: 200_000_000)
             if let b64 = readLocalReceipt(), !b64.isEmpty {
@@ -229,24 +225,11 @@ public final class WHHAIStorekitManager: ObservableObject {
         return data.base64EncodedString()
     }
 
-    // MARK: - StoreKit1 兜底刷新 receipt（后台安全）
+    // MARK: - StoreKit1 兜底刷新 receipt
     private func refreshReceiptUsingStoreKit1() async throws -> String {
         return try await withCheckedThrowingContinuation { continuation in
-            var bgTask: UIBackgroundTaskIdentifier = .invalid
-            bgTask = UIApplication.shared.beginBackgroundTask(withName: "SKReceiptRefresh") {
-                UIApplication.shared.endBackgroundTask(bgTask)
-                bgTask = .invalid
-            }
-
             let request = SKReceiptRefreshRequest()
             let delegate = ReceiptDelegate { success, error in
-                defer {
-                    if bgTask != .invalid {
-                        UIApplication.shared.endBackgroundTask(bgTask)
-                        bgTask = .invalid
-                    }
-                }
-
                 if success, let b64 = self.readLocalReceipt(), !b64.isEmpty {
                     continuation.resume(returning: b64)
                 } else {

@@ -8,6 +8,19 @@
 import UIKit
 
 class WHHAIChooseAugurViewController: WHHBaseViewController {
+    
+    
+    lazy var wiTableView: UITableView = {
+        let a = UITableView(frame: .zero, style: .grouped)
+        a.backgroundColor = .clear
+        a.separatorStyle = .none
+        a.delegate = self
+        a.dataSource = self
+        a.register(WHHAIWitchTableViewCell.self, forCellReuseIdentifier: "WHHAIWitchTableViewCell")
+        return a
+    }()
+    
+    
     lazy var augurView: WHHAIAugurView = {
         let view = WHHAIAugurView(type: .zhiming)
         view.didWHHAIAugurViewButtonBlock = { [weak self] in
@@ -46,29 +59,36 @@ class WHHAIChooseAugurViewController: WHHBaseViewController {
         gk_navTitle = "选择占卜师"
         gk_navTitleColor = .black
         gk_backStyle = .black
-        view.addSubview(augurView)
-        augurView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(10)
-            make.right.equalToSuperview().offset(-10)
-            make.top.equalToSuperview().offset(WHHAllNavBarHeight + 10)
+//        view.addSubview(augurView)
+//        augurView.snp.makeConstraints { make in
+//            make.left.equalToSuperview().offset(10)
+//            make.right.equalToSuperview().offset(-10)
+//            make.top.equalToSuperview().offset(WHHAllNavBarHeight + 10)
+//        }
+//        view.addSubview(augurView1)
+//        augurView1.snp.makeConstraints { make in
+//            make.left.right.height.equalTo(augurView)
+//            make.top.equalTo(augurView.snp.bottom).offset(10)
+//        }
+//        view.addSubview(augurView2)
+//        augurView2.snp.makeConstraints { make in
+//            make.left.right.height.equalTo(augurView1)
+//            make.top.equalTo(augurView1.snp.bottom).offset(10)
+//            make.bottom.equalToSuperview().offset(-WHHBottomSafe)
+//        }
+//       
+        view.addSubview(wiTableView)
+        wiTableView.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(WHHAllNavBarHeight)
         }
-        view.addSubview(augurView1)
-        augurView1.snp.makeConstraints { make in
-            make.left.right.height.equalTo(augurView)
-            make.top.equalTo(augurView.snp.bottom).offset(10)
-        }
-        view.addSubview(augurView2)
-        augurView2.snp.makeConstraints { make in
-            make.left.right.height.equalTo(augurView1)
-            make.top.equalTo(augurView1.snp.bottom).offset(10)
-            make.bottom.equalToSuperview().offset(-WHHBottomSafe)
-        }
-        GetWitchList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getAppUserWitchSubscribeInfo()
+//        getAppUserWitchSubscribeInfo()
+        GetWitchList()
+        
     }
 
     private func getAppUserWitchSubscribeInfo() {
@@ -106,10 +126,11 @@ class WHHAIChooseAugurViewController: WHHBaseViewController {
         }
     }
 
-    func GetWitchList() {
+    private  func GetWitchList() {
         WHHHomeRequestViewModel.whhHomeGetWitchList { [weak self] witchDataArray in
             if witchDataArray.isEmpty == false {
                 self?.witchArray = witchDataArray
+                self?.wiTableView.reloadData()
             }
         }
     }
@@ -127,6 +148,55 @@ class WHHAIChooseAugurViewController: WHHBaseViewController {
             anView.bigImageView.image = UIImage(named: "织命-全身")
             anView.witchId = 2
         }
+        anView.startAnimation()
+        view.addSubview(anView)
+    }
+}
+
+extension WHHAIChooseAugurViewController:UITableViewDataSource,UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return witchArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WHHAIWitchTableViewCell") as! WHHAIWitchTableViewCell
+        cell.cellModel = witchArray[indexPath.section]
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return (WHHScreenH - WHHAllNavBarHeight - 20 - WHHBottomSafe) / 3
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .zero
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellModel = witchArray[indexPath.section]
+        let anView = WHHAIChooseAnimationView()
+
+        anView.bigImageView.whhSetKFWithImage(imageString: cellModel.bgImage)
+        anView.witchId = cellModel.wichId
         anView.startAnimation()
         view.addSubview(anView)
     }
