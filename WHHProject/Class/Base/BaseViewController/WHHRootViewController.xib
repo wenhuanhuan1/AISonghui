@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunch3x" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-lG-cCE">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-lG-cCE">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchBottomIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WHX-Ul-fUd">
@@ -39,7 +39,7 @@
         </view>
     </objects>
     <resources>
-        <image name="lunch3x" width="1104" height="1962"/>
         <image name="lunchBottomIcon" width="228" height="52"/>
+        <image name="lunchIcon" width="736" height="1308"/>
     </resources>
 </document>

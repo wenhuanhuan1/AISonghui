@@ -83,7 +83,6 @@
 		2F5376AB2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5376AA2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift */; };
 		2F5376AD2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5376AC2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib */; };
 		2F53776F2ECDBA61003C3FC7 /* FortuneRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F53776E2ECDBA61003C3FC7 /* FortuneRequestManager.swift */; };
-		2F5377712ECDC040003C3FC7 /* lunchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5377702ECDC040003C3FC7 /* lunchIcon.png */; };
 		2F5377732ECDC19D003C3FC7 /* asset.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2F5377722ECDC19D003C3FC7 /* asset.webp */; };
 		2F5377B22ECDED30003C3FC7 /* WHHDateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5377B12ECDED30003C3FC7 /* WHHDateFormatterManager.swift */; };
 		2F5379252ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5379232ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift */; };
@@ -316,7 +315,6 @@
 		2F5376AA2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAISubscriptionView.swift; sourceTree = "<group>"; };
 		2F5376AC2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISubscriptionView.xib; sourceTree = "<group>"; };
 		2F53776E2ECDBA61003C3FC7 /* FortuneRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneRequestManager.swift; sourceTree = "<group>"; };
-		2F5377702ECDC040003C3FC7 /* lunchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lunchIcon.png; sourceTree = "<group>"; };
 		2F5377722ECDC19D003C3FC7 /* asset.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = asset.webp; sourceTree = "<group>"; };
 		2F5377B12ECDED30003C3FC7 /* WHHDateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHDateFormatterManager.swift; sourceTree = "<group>"; };
 		2F5379232ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIWitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -595,7 +593,6 @@
 			isa = PBXGroup;
 			children = (
 				2F5377722ECDC19D003C3FC7 /* asset.webp */,
-				2F5377702ECDC040003C3FC7 /* lunchIcon.png */,
 				2F76BFD52EAE0EF000710B52 /* homeView2.gif */,
 				2FC1C8192E93F5700078F1A8 /* aboutUs.webp */,
 				2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */,
@@ -1229,7 +1226,6 @@
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
 				2FDC697C2E3B7AF800A523B0 /* WHHContactUsViewController.xib in Resources */,
 				2FDC69542E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.xib in Resources */,
-				2F5377712ECDC040003C3FC7 /* lunchIcon.png in Resources */,
 				2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */,
 				2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */,
 				2FDC69BD2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib in Resources */,

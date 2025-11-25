@@ -94,16 +94,17 @@ public final class WHHAIStorekitManager: ObservableObject {
                 debugPrint("Product ID: \(transaction.productID)")
                 debugPrint("AppAccountToken: \(transaction.appAccountToken?.uuidString ?? "nil")")
 
-                await transaction.finish()
+                   // 1. 服务器验证（先验证）
+                   do {
+                       try await self.verifyWithServer(transaction, orderId: orderId, callback: callback)
+                   } catch {
+                       WHHHUD.whhHidenLoadView()
+                       callback?(false, "服务器验证失败")
+                       return // ❗ 千万不能 finish
+                   }
 
-                do {
-                    try await self.verifyWithServer(transaction,
-                                                    orderId: orderId,
-                                                    callback: callback)
-                } catch {
-                    WHHHUD.whhHidenLoadView()
-                    callback?(false, "服务器验证失败")
-                }
+                   // 2. 只有当 verify 成功才 finish
+                   await transaction.finish()
                 
 
             case .userCancelled:
@@ -120,6 +121,7 @@ public final class WHHAIStorekitManager: ObservableObject {
             }
         } catch {
             WHHHUD.whhHidenLoadView()
+            debugPrint("当前开始报错了\(error.localizedDescription)")
             callback?(false, error.localizedDescription)
         }
     }
@@ -205,15 +207,7 @@ public final class WHHAIStorekitManager: ObservableObject {
         if let b64 = readLocalReceipt(), !b64.isEmpty {
             return b64
         }
-
-        try await AppStore.sync() // 支付完成或恢复购买时调用
-        for _ in 0..<10 {
-            try await Task.sleep(nanoseconds: 200_000_000)
-            if let b64 = readLocalReceipt(), !b64.isEmpty {
-                return b64
-            }
-        }
-
+        
         return try await refreshReceiptUsingStoreKit1()
     }
 
