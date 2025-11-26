@@ -25,29 +25,24 @@ public final class WHHAIStorekitManager: ObservableObject {
                             payPage: String = "VIP",
                             productId: String,
                             callBack: ((Bool, String) -> Void)?) {
-        isAvableCreateOrder(productId: productId) { success in
+        WHHHUD.whhShowLoadView()
 
-            if success {
-                WHHHUD.whhShowLoadView()
+        FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId,
+                                                                  payPage: payPage) { [weak self] model, code, msg in
+            guard let self else { return }
 
-                FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId,
-                                                                          payPage: payPage) { [weak self] model, code, msg in
-                    guard let self else { return }
+            if code != 1 {
+                WHHHUD.whhHidenLoadView()
+                dispatchAfter(delay: 0.5) { WHHHUD.whhShowInfoText(text: msg) }
+                callBack?(false, msg)
+                return
+            }
 
-                    if code != 1 {
-                        WHHHUD.whhHidenLoadView()
-                        dispatchAfter(delay: 0.5) { WHHHUD.whhShowInfoText(text: msg) }
-                        callBack?(false, msg)
-                        return
-                    }
-
-                    Task {
-                        await self.purchaseProduct(goodsCode: model.goodsCode,
-                                                   uuidString: model.uuid,
-                                                   orderId: model.orderId,
-                                                   callback: callBack)
-                    }
-                }
+            Task {
+                await self.purchaseProduct(goodsCode: model.goodsCode,
+                                           uuidString: model.uuid,
+                                           orderId: model.orderId,
+                                           callback: callBack)
             }
         }
     }

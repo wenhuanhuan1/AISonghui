@@ -57,6 +57,8 @@ static inline NSString *MD5Lower32(NSString *input) {
         NSDictionary *dict = request.responseString.mj_JSONObject;
         WHHBaseModel *model = [WHHBaseModel mj_objectWithKeyValues:dict];
 
+        WHHLog(@"当前的请求地址%@",request.baseUrl);
+        
         WHHLog(@"Result%@", dict);
         WHHLog(@"Request parameter%@", request.requestArgument);
         WHHLog(@"Result of request%@\nrequest的url = %@\n", dict, request.requestUrl);
