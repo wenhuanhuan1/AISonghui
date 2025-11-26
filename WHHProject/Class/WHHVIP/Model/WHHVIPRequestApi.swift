@@ -14,6 +14,9 @@ enum WHHVIPRequestApiType: Int {
     case payCreate
     ///  校验支付订单是否成功
     case payCheckResult
+    /// 获取苹果已订阅的商品-1.0
+
+    case payAppleSubscriptionGoods
 }
 
 class WHHVIPRequestApi: WHHRequest {
@@ -35,6 +38,8 @@ class WHHVIPRequestApi: WHHRequest {
             return "pay/create"
         case .payCheckResult:
             return "pay/check-result"
+        case .payAppleSubscriptionGoods:
+            return "pay/apple/subscription/goods"
         }
     }
 
@@ -44,7 +49,7 @@ class WHHVIPRequestApi: WHHRequest {
 
     override func requestMethod() -> YTKRequestMethod {
         switch aType {
-        case .payGoodsList:
+        case .payGoodsList,.payAppleSubscriptionGoods:
             return .GET
         default:
             return .POST

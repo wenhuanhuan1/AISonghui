@@ -65,14 +65,43 @@ class WHHAIDestinyLineIVIPView: UIView {
 
     @IBAction func openButtonClicl(_ sender: UIButton) {
         if let model = dataArray.first(where: { $0.isSelect }) {
-            WHHAIStorekitManager.shared.createOrder(goodsId: model.shopId,productId: model.code) { [weak self] success, msg in
+            FCVIPRequestApiViewModel.getPayAppleSubscriptionGoods { [weak self] code, msg, goodModel in
 
-                if success {
-                    self?.getUserInfo()
-                    NotificationCenter.default.post(name: NSNotification.Name("vipBuyFinish"), object: nil)
+                if code == 1 {
+                    if goodModel.code == "com.abb.AIProjectYears" {
+                        WHHHUD.whhShowInfoText(text: "已经是最高会员")
+
+                    } else if goodModel.code == "com.abb.AIProjectMonth" {
+                        if model.code == "com.abb.AIProjectMonth" || model.code == "com.abb.AIProjectWeek" {
+                            WHHHUD.whhShowInfoText(text: "重复订阅")
+                        } else {
+                            self?.createOrderRequest(goodsId: model.shopId, productId: model.code)
+                        }
+                    } else if goodModel.code == "com.abb.AIProjectWeek" {
+                        if model.code == "com.abb.AIProjectWeek" {
+                            WHHHUD.whhShowInfoText(text: "重复订阅")
+                        } else {
+                            self?.createOrderRequest(goodsId: model.shopId, productId: model.code)
+                        }
+                    } else {
+                        self?.createOrderRequest(goodsId: model.shopId, productId: model.code)
+                    }
+
                 } else {
                     WHHHUD.whhShowInfoText(text: msg)
                 }
+            }
+        }
+    }
+
+    private func createOrderRequest(goodsId: String, productId: String) {
+        WHHAIStorekitManager.shared.createOrder(goodsId: goodsId, productId: productId) { [weak self] success, msg in
+
+            if success {
+                self?.getUserInfo()
+                NotificationCenter.default.post(name: NSNotification.Name("vipBuyFinish"), object: nil)
+            } else {
+                WHHHUD.whhShowInfoText(text: msg)
             }
         }
     }
