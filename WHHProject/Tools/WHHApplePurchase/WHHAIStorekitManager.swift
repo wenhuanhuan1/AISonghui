@@ -23,25 +23,31 @@ public final class WHHAIStorekitManager: ObservableObject {
 
     public func createOrder(goodsId: String,
                             payPage: String = "VIP",
+                            productId: String,
                             callBack: ((Bool, String) -> Void)?) {
-        WHHHUD.whhShowLoadView()
+        isAvableCreateOrder(productId: productId) { success in
 
-        FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId,
-                                                                  payPage: payPage) { [weak self] model, code, msg in
-            guard let self else { return }
+            if success {
+                WHHHUD.whhShowLoadView()
 
-            if code != 1 {
-                WHHHUD.whhHidenLoadView()
-                dispatchAfter(delay: 0.5) { WHHHUD.whhShowInfoText(text: msg) }
-                callBack?(false, msg)
-                return
-            }
+                FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId,
+                                                                          payPage: payPage) { [weak self] model, code, msg in
+                    guard let self else { return }
 
-            Task {
-                await self.purchaseProduct(goodsCode: model.goodsCode,
-                                           uuidString: model.uuid,
-                                           orderId: model.orderId,
-                                           callback: callBack)
+                    if code != 1 {
+                        WHHHUD.whhHidenLoadView()
+                        dispatchAfter(delay: 0.5) { WHHHUD.whhShowInfoText(text: msg) }
+                        callBack?(false, msg)
+                        return
+                    }
+
+                    Task {
+                        await self.purchaseProduct(goodsCode: model.goodsCode,
+                                                   uuidString: model.uuid,
+                                                   orderId: model.orderId,
+                                                   callback: callBack)
+                    }
+                }
             }
         }
     }
@@ -183,10 +189,7 @@ public final class WHHAIStorekitManager: ObservableObject {
                 return
             }
 
-            // 逐个验证交易
-            for transaction in restored {
-                await verifyTransactionWithServer(transaction, orderId: "", callback: callback)
-            }
+            WHHHUD.whhShowInfoText(text: "恢复成功")
         }
     }
 
@@ -210,6 +213,44 @@ public final class WHHAIStorekitManager: ObservableObject {
     private func isSandboxReceipt() -> Bool {
         guard let url = Bundle.main.appStoreReceiptURL else { return false }
         return url.lastPathComponent == "sandboxReceipt"
+    }
+
+    private func fetchCurrentSubscriptionProductID(_ completion: @escaping (String) -> Void) {
+        Task {
+            for await result in Transaction.currentEntitlements {
+                if case let .verified(transaction) = result,
+                   transaction.productType == .autoRenewable {
+                    completion(transaction.productID)
+                    return
+                }
+            }
+            completion("")
+        }
+    }
+
+    private func isAvableCreateOrder(productId: String, callBlack: ((Bool) -> Void)?) {
+        fetchCurrentSubscriptionProductID { currentSubscriptionId in
+
+            if currentSubscriptionId.isEmpty {
+                // 没有订阅
+                callBlack?(true)
+
+            } else {
+                // 有订阅
+                if currentSubscriptionId == "com.abb.AIProjectYears" {
+                    WHHHUD.whhShowInfoText(text: "已经是最高会员")
+                    callBlack?(false)
+                } else if currentSubscriptionId == "com.abb.AIProjectMonth" && (productId == "com.abb.AIProjectMonth" || productId == "com.abb.AIProjectWeek") {
+                    WHHHUD.whhShowInfoText(text: "重复订阅")
+                    callBlack?(false)
+                } else if currentSubscriptionId == "com.abb.AIProjectWeek" && productId == "com.abb.AIProjectWeek" {
+                    WHHHUD.whhShowInfoText(text: "重复订阅")
+                    callBlack?(false)
+                } else {
+                    callBlack?(true)
+                }
+            }
+        }
     }
 }
 
