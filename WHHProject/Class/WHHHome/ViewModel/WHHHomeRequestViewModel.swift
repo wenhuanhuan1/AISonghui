@@ -10,7 +10,7 @@ import UIKit
 class WHHHomeRequestViewModel: NSObject {
     /// 设备安装或者第一次启动
     static func whhDeviceInstallRequest() {
-        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .deviceInstall)
+        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.getSystemVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .deviceInstall)
 
         api.whhStartConsequenceHandle { _ in
         }
@@ -19,7 +19,7 @@ class WHHHomeRequestViewModel: NSObject {
     /// 登录
     /// - Parameter callHandle: 回调
     static func whhLoginRequest(callHandle: ((Bool, String) -> Void)?) {
-        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.whhGetCurrentVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .loginMode1)
+        let api = WHHHomeRequestApi(parameter: ["api-v": WHHNetConf.apiv, "model": WHHDeviceManager.whhGetDeviceModel(), "os": WHHDeviceManager.getSystemVersion(), "deviceId": WHHDeviceManager.whhGetIDFV()], type: .loginMode1)
 
         api.whhStartConsequenceHandle { baseModel in
 
