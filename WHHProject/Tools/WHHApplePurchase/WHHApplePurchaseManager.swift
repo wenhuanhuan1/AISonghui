@@ -71,20 +71,20 @@ class WHHApplePurchaseManager: NSObject {
     }
 
     private func whhInspectAndServer(transation: PaymentTransaction, order: String, receiptData: String) {
-        WHHHUD.whhShowLoadView()
-        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: true, receiptData: receiptData,orderId: order) { [weak self] success, msg, _ in
-            WHHHUD.whhHidenLoadView()
-            SwiftyStoreKit.finishTransaction(transation)
-            if success == 1 {
-                self?.purchaseHandle?(.success)
-
-            } else {
-                self?.purchaseHandle?(.fail)
-                dispatchAfter(delay: 0.5) {
-                    WHHHUD.whhShowInfoText(text: msg)
-                }
-            }
-        }
+//        WHHHUD.whhShowLoadView()
+//        FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: true, receiptData: receiptData,orderId: order) { [weak self] success, msg, _ in
+//            WHHHUD.whhHidenLoadView()
+//            SwiftyStoreKit.finishTransaction(transation)
+//            if success == 1 {
+//                self?.purchaseHandle?(.success)
+//
+//            } else {
+//                self?.purchaseHandle?(.fail)
+//                dispatchAfter(delay: 0.5) {
+//                    WHHHUD.whhShowInfoText(text: msg)
+//                }
+//            }
+//        }
     }
 
     func whhRecoverAppleBuy() {

@@ -241,14 +241,14 @@ final class WHHStoreKitManagerV2 {
                 try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
                     // TODO: 替换为你真实的上传接口
                 
-                    FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: self.isSandboxReceipt(), receiptData: base64,orderId: "") { success, msg,_ in
-                        WHHHUD.whhHidenLoadView()
-                        if success == 1 {
-                            continuation.resume()
-                        } else {
-                            continuation.resume(throwing: WHHStoreKitError.uploadFailed(msg))
-                        }
-                    }
+//                    FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: self.isSandboxReceipt(), receiptData: base64,orderId: "") { success, msg,_ in
+//                        WHHHUD.whhHidenLoadView()
+//                        if success == 1 {
+//                            continuation.resume()
+//                        } else {
+//                            continuation.resume(throwing: WHHStoreKitError.uploadFailed(msg))
+//                        }
+//                    }
                 }
             }
 

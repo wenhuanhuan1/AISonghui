@@ -20,10 +20,10 @@ public final class WHHAIStorekitManager: ObservableObject {
     private init() {}
 
     // MARK: - 创建订单并购买
+
     public func createOrder(goodsId: String,
                             payPage: String = "VIP",
                             callBack: ((Bool, String) -> Void)?) {
-
         WHHHUD.whhShowLoadView()
 
         FCVIPRequestApiViewModel.whhAppleBuyCreateOrderRequestApi(goodsId: goodsId,
@@ -47,11 +47,11 @@ public final class WHHAIStorekitManager: ObservableObject {
     }
 
     // MARK: - 发起购买
+
     private func purchaseProduct(goodsCode: String,
                                  uuidString: String,
                                  orderId: String,
                                  callback: ((Bool, String) -> Void)?) async {
-
         do {
             guard let product = try await Product.products(for: [goodsCode]).first else {
                 WHHHUD.whhHidenLoadView()
@@ -63,19 +63,18 @@ public final class WHHAIStorekitManager: ObservableObject {
                                  uuidString: uuidString,
                                  orderId: orderId,
                                  callback: callback)
-        }
-        catch {
+        } catch {
             WHHHUD.whhHidenLoadView()
             callback?(false, "请求商品失败")
         }
     }
 
     // MARK: - 实际购买处理（首次购买只弹一次密码）
+
     private func _purchaseAsync(product: Product,
                                 uuidString: String,
                                 orderId: String,
                                 callback: ((Bool, String) -> Void)?) async {
-
         guard let uuid = UUID(uuidString: uuidString) else {
             WHHHUD.whhHidenLoadView()
             callback?(false, "UUID 格式错误")
@@ -116,6 +115,7 @@ public final class WHHAIStorekitManager: ObservableObject {
     }
 
     // MARK: - 本地验证苹果签名
+
     private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T where T: TransactionLike {
         switch result {
         case let .unverified(_, error):
@@ -126,39 +126,48 @@ public final class WHHAIStorekitManager: ObservableObject {
     }
 
     // MARK: - 上传 Transaction 给服务器验证
+
     private func verifyTransactionWithServer(_ transaction: Transaction,
                                              orderId: String,
                                              callback: ((Bool, String) -> Void)?) async {
-        
+        let isSandbox: Bool
+        if #available(iOS 16.0, *) {
+            isSandbox = (transaction.environment == .sandbox)
+        } else {
+            isSandbox = isSandboxReceipt()
+        }
 
-        // 封装上传的数据
-        let info: [String: Any] = [
-            "transactionId": String(transaction.id),
-            "originalTransactionId": String(transaction.originalID),
-            "productId": transaction.productID,
-            "appAccountToken": transaction.appAccountToken?.uuidString ?? "",
-            "orderId": orderId
-        ]
-        
-        guard let jsonStr = jsonString(from: info) else { return  }
-        
         await withCheckedContinuation { continuation in
-            FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: true, receiptData: jsonStr, orderId: orderId) { success, msg,_ in
+
+            FCVIPRequestApiViewModel.whhAppleBuyFinishAndServerCheck(sandbox: isSandbox, appAccountToken: transaction.appAccountToken?.uuidString ?? "", orderId: orderId, transactionId: String(transaction.id)) { success, msg, model in
                 WHHHUD.whhHidenLoadView()
 
                 if success == 1 {
-                    // 验证成功再 finish
+                    if model.hasPlay == 1 {
+                        callback?(true, model.prompt)
+                    } else {
+                        callback?(false, model.prompt)
+                    }
+
+                    dispatchAfter(delay: 0.5) {
+                        WHHHUD.whhShowInfoText(text: model.prompt)
+                    }
                     Task { await transaction.finish() }
-                    callback?(true, "支付成功")
                 } else {
+                    dispatchAfter(delay: 0.5) {
+                        WHHHUD.whhShowInfoText(text: msg)
+                    }
+
                     callback?(false, msg)
                 }
+
                 continuation.resume()
             }
         }
     }
 
     // MARK: - 恢复购买
+
     public func restorePurchase(callback: ((Bool, String) -> Void)?) {
         Task {
             var restored: [Transaction] = []
@@ -180,13 +189,13 @@ public final class WHHAIStorekitManager: ObservableObject {
             }
         }
     }
-    
+
     func jsonString(from dictionary: [String: Any]) -> String? {
         guard JSONSerialization.isValidJSONObject(dictionary) else {
             print("字典无法转换为 JSON")
             return nil
         }
-        
+
         do {
             let data = try JSONSerialization.data(withJSONObject: dictionary, options: [.prettyPrinted])
             return String(data: data, encoding: .utf8)
@@ -195,9 +204,17 @@ public final class WHHAIStorekitManager: ObservableObject {
             return nil
         }
     }
+
+    // MARK: - 判断本地 receipt 是否沙盒（老方法）
+
+    private func isSandboxReceipt() -> Bool {
+        guard let url = Bundle.main.appStoreReceiptURL else { return false }
+        return url.lastPathComponent == "sandboxReceipt"
+    }
 }
 
 // MARK: - TransactionLike 协议
+
 @available(iOS 15.0, macOS 12.0, *)
 private protocol TransactionLike {
     var id: UInt64 { get }
