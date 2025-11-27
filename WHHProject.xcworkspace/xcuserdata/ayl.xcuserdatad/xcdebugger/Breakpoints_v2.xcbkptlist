@@ -248,51 +248,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A7748662-E2E1-40F1-B2A0-B27EC4E3C5B6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WHHProject/Class/WHHHome/ViewModel/WHHHomeRequestViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "whhLoginRequest(callHandle:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A7748662-E2E1-40F1-B2A0-B27EC4E3C5B6 - 37609baa16c9b88b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static WHHProject.WHHHomeRequestViewModel.whhLoginRequest(callHandle: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "WHHProject.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Class/WHHHome/ViewModel/WHHHomeRequestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24">
-               </Location>
-               <Location
-                  uuid = "A7748662-E2E1-40F1-B2A0-B27EC4E3C5B6 - d986aafdaa62b94e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.WHHBaseModel) -&gt; () in static WHHProject.WHHHomeRequestViewModel.whhLoginRequest(callHandle: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "WHHProject.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayl/Desktop/AISonghui/WHHProject/Class/WHHHome/ViewModel/WHHHomeRequestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
