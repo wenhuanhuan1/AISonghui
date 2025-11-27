@@ -146,7 +146,7 @@ DEPENDENCIES:
   - JXSegmentedView
   - Kingfisher
   - LookinServer
-  - MBProgressHUD
+  - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `18c442d57398cee5ef57f852df10fc5ff65f0763`)
   - MJExtension
   - MJRefresh
   - MMKV
@@ -175,7 +175,6 @@ SPEC REPOS:
     - JXSegmentedView
     - Kingfisher
     - LookinServer
-    - MBProgressHUD
     - MJExtension
     - MJRefresh
     - MMKV
@@ -185,6 +184,16 @@ SPEC REPOS:
     - YYCache
     - YYImage
     - YYWebImage
+
+EXTERNAL SOURCES:
+  MBProgressHUD:
+    :commit: 18c442d57398cee5ef57f852df10fc5ff65f0763
+    :git: https://github.com/jdg/MBProgressHUD.git
+
+CHECKOUT OPTIONS:
+  MBProgressHUD:
+    :commit: 18c442d57398cee5ef57f852df10fc5ff65f0763
+    :git: https://github.com/jdg/MBProgressHUD.git
 
 SPEC CHECKSUMS:
   BRPickerView: 6548c8fbe21c0f29e72ab2fae177d196edc83f09
@@ -205,7 +214,7 @@ SPEC CHECKSUMS:
   JXSegmentedView: cd73555ce2134d1656db2cb383ba9c2f36fb5078
   Kingfisher: 0621d0ac0c78fecb19f6dc5303bde2b52abaf2f5
   LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MBProgressHUD: 1b0fb447e80a0fda94808180750e8b78a07b3cd2
   MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MMKV: b4802ebd5a7c68fc0c4a5ccb4926fbdfb62d68e0
@@ -216,6 +225,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 582543b3d703e071358c92aa37bf80f519fd48e3
+PODFILE CHECKSUM: 96c40dfa41dace86983fba27d0f6d4f8bf731e26
 
 COCOAPODS: 1.16.2
