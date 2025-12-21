@@ -47,32 +47,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1TT-LI-5VB">
-                    <rect key="frame" x="0.0" y="481" width="393" height="275"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-5b-zjq">
-                            <rect key="frame" x="16" y="203" width="361" height="56"/>
-                            <string key="text">点击立即开通购买即视为已同意《用户协议》，付款将从您的AppleID 账户中扣除，自动续费将在当前期限结束前24小时内收取续订费用，您也可以在购买后到 Apple store 的账户设置中来管理和取消订阅。 进行说梦成画时，需消耗积分；会员服务到期后，积分将自动失效；虚拟商品，售出后不支持退款</string>
-                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="10"/>
-                            <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDX-ha-hdG">
-                            <rect key="frame" x="0.0" y="63" width="393" height="130"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="130" id="6Sa-FX-U93"/>
-                            </constraints>
-                        </view>
-                    </subviews>
+                    <rect key="frame" x="0.0" y="577" width="393" height="275"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="uyC-5b-zjq" secondAttribute="bottom" constant="16" id="3RB-5n-Qz4"/>
-                        <constraint firstItem="rDX-ha-hdG" firstAttribute="leading" secondItem="1TT-LI-5VB" secondAttribute="leading" id="Atj-FV-YVr"/>
-                        <constraint firstItem="uyC-5b-zjq" firstAttribute="leading" secondItem="1TT-LI-5VB" secondAttribute="leading" constant="16" id="N1d-kc-h3i"/>
-                        <constraint firstAttribute="trailing" secondItem="uyC-5b-zjq" secondAttribute="trailing" constant="16" id="dE3-1y-903"/>
                         <constraint firstAttribute="height" constant="275" id="eYf-yG-GAb"/>
-                        <constraint firstItem="uyC-5b-zjq" firstAttribute="top" secondItem="rDX-ha-hdG" secondAttribute="bottom" constant="10" id="nK2-1f-jb8"/>
-                        <constraint firstAttribute="trailing" secondItem="rDX-ha-hdG" secondAttribute="trailing" id="q2F-vS-zbP"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-cF-L94">
@@ -87,28 +65,48 @@
                         <action selector="closeButtonClick:" destination="-1" eventType="touchUpInside" id="by0-y0-CrG"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDX-ha-hdG">
+                    <rect key="frame" x="0.0" y="542" width="393" height="130"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="6Sa-FX-U93"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-5b-zjq">
+                    <rect key="frame" x="16" y="682" width="361" height="56"/>
+                    <string key="text">点击立即开通购买即视为已同意《用户协议》，付款将从您的AppleID 账户中扣除，自动续费将在当前期限结束前24小时内收取续订费用，您也可以在购买后到 Apple store 的账户设置中来管理和取消订阅。 进行说梦成画时，需消耗积分；会员服务到期后，积分将自动失效；虚拟商品，售出后不支持退款</string>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="BPu-kx-61N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="20z-Yz-l2N"/>
                 <constraint firstItem="pI4-IM-830" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Zf-vH-Fkv"/>
+                <constraint firstItem="rDX-ha-hdG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6PU-gh-sB6"/>
                 <constraint firstItem="eGF-cF-L94" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FMX-UV-yca"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pI4-IM-830" secondAttribute="bottom" constant="8" id="HPe-G8-Tur"/>
                 <constraint firstAttribute="bottom" secondItem="BPu-kx-61N" secondAttribute="bottom" id="J4n-e3-ZRy"/>
+                <constraint firstItem="uyC-5b-zjq" firstAttribute="top" secondItem="rDX-ha-hdG" secondAttribute="bottom" constant="10" id="MHW-rV-Imk"/>
                 <constraint firstItem="eGF-cF-L94" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="Pou-hD-dJJ"/>
                 <constraint firstItem="1TT-LI-5VB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RPu-cz-tuf"/>
+                <constraint firstItem="pI4-IM-830" firstAttribute="top" secondItem="uyC-5b-zjq" secondAttribute="bottom" constant="30" id="SfI-cz-1WK"/>
                 <constraint firstAttribute="trailing" secondItem="BPu-kx-61N" secondAttribute="trailing" id="Wwe-WO-D7Q"/>
-                <constraint firstItem="pI4-IM-830" firstAttribute="top" secondItem="1TT-LI-5VB" secondAttribute="bottom" constant="12" id="Xl5-zh-hDV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uyC-5b-zjq" secondAttribute="trailing" constant="16" id="cLd-BI-IhA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1TT-LI-5VB" secondAttribute="trailing" id="xhG-PX-C3r"/>
+                <constraint firstAttribute="bottom" secondItem="1TT-LI-5VB" secondAttribute="bottom" id="yEF-se-mHz"/>
+                <constraint firstItem="uyC-5b-zjq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yEP-sZ-VKc"/>
                 <constraint firstItem="BPu-kx-61N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zCb-jo-hFB"/>
+                <constraint firstAttribute="trailing" secondItem="rDX-ha-hdG" secondAttribute="trailing" id="zEo-Ne-aZx"/>
             </constraints>
             <point key="canvasLocation" x="90.839694656488547" y="9.8591549295774659"/>
         </view>
     </objects>
     <resources>
         <image name="whhAIClose" width="24.5" height="24"/>
-        <image name="whhHomwBgIcon" width="414" height="896"/>
+        <image name="whhHomwBgIcon" width="414" height="810"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

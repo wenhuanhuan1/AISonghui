@@ -104,7 +104,6 @@
 		2F5376AB2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5376AA2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift */; };
 		2F5376AD2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5376AC2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib */; };
 		2F53776F2ECDBA61003C3FC7 /* FortuneRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F53776E2ECDBA61003C3FC7 /* FortuneRequestManager.swift */; };
-		2F5377732ECDC19D003C3FC7 /* asset.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2F5377722ECDC19D003C3FC7 /* asset.webp */; };
 		2F5377B22ECDED30003C3FC7 /* WHHDateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5377B12ECDED30003C3FC7 /* WHHDateFormatterManager.swift */; };
 		2F5379252ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5379232ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift */; };
 		2F56EC1F2EF7E725005EFFE8 /* WHHEditUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56EC1E2EF7E725005EFFE8 /* WHHEditUserInfoView.swift */; };
@@ -119,16 +118,19 @@
 		2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */; };
 		2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */; };
 		2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D949D2E83A52E00CE27A3 /* WebPManager.m */; };
-		2F76BFD62EAE0EF000710B52 /* homeView2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2F76BFD52EAE0EF000710B52 /* homeView2.gif */; };
 		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
 		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
 		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
 		2F9D047B2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04792EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib */; };
 		2F9D047E2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */; };
+		2FA65A452EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA65A442EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.xib */; };
+		2FA65A462EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA65A432EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.swift */; };
+		2FA65A492EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA65A482EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.xib */; };
+		2FA65A4A2EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA65A472EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift */; };
+		2FA65A4D2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA65A4C2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib */; };
+		2FA65A4E2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA65A4B2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift */; };
 		2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */; };
 		2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */; };
-		2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C8192E93F5700078F1A8 /* aboutUs.webp */; };
-		2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */; };
 		2FD15FA62EF7D76900ECDCC7 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD15FA52EF7D76900ECDCC7 /* UIImage+Ext.swift */; };
 		2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */; };
 		2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */; };
@@ -325,7 +327,6 @@
 		2F5376AA2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAISubscriptionView.swift; sourceTree = "<group>"; };
 		2F5376AC2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISubscriptionView.xib; sourceTree = "<group>"; };
 		2F53776E2ECDBA61003C3FC7 /* FortuneRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneRequestManager.swift; sourceTree = "<group>"; };
-		2F5377722ECDC19D003C3FC7 /* asset.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = asset.webp; sourceTree = "<group>"; };
 		2F5377B12ECDED30003C3FC7 /* WHHDateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHDateFormatterManager.swift; sourceTree = "<group>"; };
 		2F5379232ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIWitchTableViewCell.swift; sourceTree = "<group>"; };
 		2F56EC1E2EF7E725005EFFE8 /* WHHEditUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHEditUserInfoView.swift; sourceTree = "<group>"; };
@@ -342,16 +343,19 @@
 		2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoOrPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		2F6D949C2E83A52E00CE27A3 /* WebPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPManager.h; sourceTree = "<group>"; };
 		2F6D949D2E83A52E00CE27A3 /* WebPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPManager.m; sourceTree = "<group>"; };
-		2F76BFD52EAE0EF000710B52 /* homeView2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = homeView2.gif; sourceTree = "<group>"; };
 		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
 		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
 		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
 		2F9D04792EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPCell.xib; sourceTree = "<group>"; };
 		2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAnimationView.swift; sourceTree = "<group>"; };
+		2FA65A432EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAISleepOneTableViewCell.swift; sourceTree = "<group>"; };
+		2FA65A442EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISleepOneTableViewCell.xib; sourceTree = "<group>"; };
+		2FA65A472EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAISleepTwoTableViewCell.swift; sourceTree = "<group>"; };
+		2FA65A482EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISleepTwoTableViewCell.xib; sourceTree = "<group>"; };
+		2FA65A4B2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAISleepThreeTableViewCell.swift; sourceTree = "<group>"; };
+		2FA65A4C2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISleepThreeTableViewCell.xib; sourceTree = "<group>"; };
 		2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAugurViewController.swift; sourceTree = "<group>"; };
 		2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIAugurView.swift; sourceTree = "<group>"; };
-		2FC1C8192E93F5700078F1A8 /* aboutUs.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutUs.webp; sourceTree = "<group>"; };
-		2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aboutUsAbb.gif; sourceTree = "<group>"; };
 		2FD15FA52EF7D76900ECDCC7 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHGradualView.swift; sourceTree = "<group>"; };
@@ -570,6 +574,12 @@
 				2F2ABD562EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift */,
 				2F2ABD572EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib */,
 				2F56EC1E2EF7E725005EFFE8 /* WHHEditUserInfoView.swift */,
+				2FA65A432EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.swift */,
+				2FA65A442EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.xib */,
+				2FA65A472EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift */,
+				2FA65A482EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.xib */,
+				2FA65A4B2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift */,
+				2FA65A4C2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib */,
 			);
 			path = AIIdentifyClass;
 			sourceTree = "<group>";
@@ -596,10 +606,6 @@
 		2F17BF7F2DF7C96200CA36E8 /* WHHProject */ = {
 			isa = PBXGroup;
 			children = (
-				2F5377722ECDC19D003C3FC7 /* asset.webp */,
-				2F76BFD52EAE0EF000710B52 /* homeView2.gif */,
-				2FC1C8192E93F5700078F1A8 /* aboutUs.webp */,
-				2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */,
 				2F17BF982DF7D32000CA36E8 /* Category */,
 				2F17BF902DF7D02600CA36E8 /* Conf */,
 				2F17BF862DF7CA9400CA36E8 /* AppDelegate */,
@@ -1087,17 +1093,18 @@
 				2F5376AD2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib in Resources */,
 				2FE448A22E29E6D00054083E /* Localizable.strings in Resources */,
 				2FDC695E2E3B0B5600A523B0 /* WHHABBHomeViewController.xib in Resources */,
-				2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */,
 				2FDC694E2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.xib in Resources */,
 				2F2ABD3E2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.xib in Resources */,
 				2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */,
+				2FA65A492EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.xib in Resources */,
 				2F2ABD422EF6ECAC004FA465 /* WHHAIIntegrationViewController.xib in Resources */,
 				2FDC69412E38D55000A523B0 /* WHHSubscriptionDivinationView.xib in Resources */,
 				2FDC695B2E3A064D00A523B0 /* WHHLoadAlertView.xib in Resources */,
+				2FA65A4D2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib in Resources */,
 				2F9D047B2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib in Resources */,
-				2F5377732ECDC19D003C3FC7 /* asset.webp in Resources */,
 				2F2ABD462EF79348004FA465 /* WHHJIfenListTableViewCell.xib in Resources */,
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
+				2FA65A452EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.xib in Resources */,
 				2FDC69542E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.xib in Resources */,
 				2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */,
 				2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */,
@@ -1105,11 +1112,9 @@
 				2F2ABD4B2EF795E6004FA465 /* WHHVIPViewController.xib in Resources */,
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
-				2F76BFD62EAE0EF000710B52 /* homeView2.gif in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
 				2F22A9332EBDA6D30093ECA8 /* WHHAIChatViewController.xib in Resources */,
-				2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */,
 				2F0E49482EF6D0FF00D9B0A6 /* WHHIdAlertView.xib in Resources */,
 				2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */,
 				2F2ABD582EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib in Resources */,
@@ -1230,6 +1235,7 @@
 				2F043C422E6B070000E8C04E /* WHHVIPRequestApi.swift in Sources */,
 				2F0E492A2EF68D3F00D9B0A6 /* WHHAITabBarController.swift in Sources */,
 				2F60795A2E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift in Sources */,
+				2FA65A4A2EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift in Sources */,
 				2F2ABD392EF6E115004FA465 /* WHHAIGallerySleepItemViewController.swift in Sources */,
 				2F043BB62E653F6600E8C04E /* YTKRequestEventAccessory.m in Sources */,
 				2F043BB72E653F6600E8C04E /* YTKBatchRequestAgent.m in Sources */,
@@ -1239,6 +1245,7 @@
 				2F043BCD2E65945700E8C04E /* WHHHomeWitchModel.m in Sources */,
 				2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */,
 				2F043BB92E653F6600E8C04E /* YTKChainRequestAgent.m in Sources */,
+				2FA65A4E2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift in Sources */,
 				2F043BBA2E653F6600E8C04E /* YTKNetworkConfig.m in Sources */,
 				2F043BBB2E653F6600E8C04E /* YTKBaseRequest.m in Sources */,
 				2F0E49302EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift in Sources */,
@@ -1252,6 +1259,7 @@
 				2F004E202E0E35100016DA6B /* AFSecurityPolicy.m in Sources */,
 				2F004E222E0E35100016DA6B /* AFAutoPurgingImageCache.m in Sources */,
 				2FDC695F2E3B0B5600A523B0 /* WHHABBHomeViewController.swift in Sources */,
+				2FA65A462EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.swift in Sources */,
 				2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */,
 				2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */,
 				2F22A9352EBDAA090093ECA8 /* WHHAIChatListViewController.swift in Sources */,
@@ -1376,7 +1384,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.abb.AIProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianyan.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = jianyan_dev;

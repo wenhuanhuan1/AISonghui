@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WHHNewMineHeaderView: WHHBaseView {
+class WHHNewMineHeaderView: UIView {
     var didEditButtonBlock: ((FCMineModel) -> Void)?
 
     var didSpackButtonBlock: ((FCMineModel) -> Void)?
@@ -45,14 +45,22 @@ class WHHNewMineHeaderView: WHHBaseView {
         return a
     }()
 
-    override func setupViews() {
-        super.setupViews()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupViews() {
         backgroundColor = .clear
         addSubview(editButton)
         addSubview(speackButton)
         editButton.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
-            make.bottom.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-40)
             make.height.equalTo(40)
             make.width.equalTo((WHHScreenW - 32 - 16) / 2)
         }
@@ -79,14 +87,11 @@ class WHHNewMineHeaderView: WHHBaseView {
         guard let model = userInfoModel else { return }
         didSpackButtonBlock?(model)
     }
-    
-    var userInfoModel:FCMineModel? {
-        
+
+    var userInfoModel: FCMineModel? {
         didSet {
-            
             guard let model = userInfoModel else { return }
             avatarIcon.whhSetImageView(url: model.logo)
         }
-        
     }
 }

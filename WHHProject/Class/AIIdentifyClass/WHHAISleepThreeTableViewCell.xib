@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="236" id="KGk-i7-Jjw" customClass="WHHAISleepThreeTableViewCell" customModule="WHHProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="391" height="236"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="391" height="236"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whhAIThreeCellBgIcon" translatesAutoresizingMaskIntoConstraints="NO" id="M4d-Gd-0hv">
+                        <rect key="frame" x="16" y="0.0" width="359" height="236"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是心理学中非常有效的方法。在清醒、安全的时候，回忆噩梦，但大胆地为它想象一个积极、有趣甚至滑稽的结局。比如说梦作画时，在讲诉梦境的结尾加上一句话：把这个梦绘制成一张治愈的画。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAu-K3-r9F">
+                        <rect key="frame" x="32" y="67" width="327" height="67.333333333333314"/>
+                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="12"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="0.90443915559999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="改写结局，拿回控制权" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ID8-yQ-jhQ">
+                        <rect key="frame" x="32" y="24" width="160" height="23"/>
+                        <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="16"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="0.90443915562913912" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="说梦成画" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-5d-Jic">
+                        <rect key="frame" x="287" y="180" width="72" height="32"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.89647144040000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="H5V-vm-9o1"/>
+                            <constraint firstAttribute="width" constant="72" id="nev-Qx-Z89"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="12"/>
+                        <color key="textColor" red="0.058823529411764705" green="0.058823529411764705" blue="0.070588235294117646" alpha="0.90443915562913912" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="ID8-yQ-jhQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="2Ob-1T-t4H"/>
+                    <constraint firstItem="a8X-5d-Jic" firstAttribute="trailing" secondItem="M4d-Gd-0hv" secondAttribute="trailing" constant="-16" id="4Xg-Xm-JCl"/>
+                    <constraint firstItem="yAu-K3-r9F" firstAttribute="leading" secondItem="M4d-Gd-0hv" secondAttribute="leading" constant="16" id="8lo-U1-BK1"/>
+                    <constraint firstItem="M4d-Gd-0hv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CfD-lO-nL7"/>
+                    <constraint firstItem="yAu-K3-r9F" firstAttribute="trailing" secondItem="M4d-Gd-0hv" secondAttribute="trailing" constant="-16" id="Liv-aQ-Sbu"/>
+                    <constraint firstItem="ID8-yQ-jhQ" firstAttribute="leading" secondItem="M4d-Gd-0hv" secondAttribute="leading" constant="16" id="QAU-eo-PMZ"/>
+                    <constraint firstItem="M4d-Gd-0hv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QlN-pJ-ZNE"/>
+                    <constraint firstAttribute="trailing" secondItem="M4d-Gd-0hv" secondAttribute="trailing" constant="16" id="koP-si-2sC"/>
+                    <constraint firstItem="a8X-5d-Jic" firstAttribute="bottom" secondItem="M4d-Gd-0hv" secondAttribute="bottom" constant="-24" id="nSK-rb-8wy"/>
+                    <constraint firstAttribute="bottom" secondItem="M4d-Gd-0hv" secondAttribute="bottom" id="qTb-OI-UAC"/>
+                    <constraint firstItem="yAu-K3-r9F" firstAttribute="top" secondItem="ID8-yQ-jhQ" secondAttribute="bottom" constant="20" id="t91-ow-QUD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="14.503816793893129" y="123.23943661971832"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="whhAIThreeCellBgIcon" width="382" height="200"/>
+    </resources>
+</document>

@@ -28,8 +28,7 @@ class WHHAIIntegrationViewController: WHHBaseViewController {
         super.viewDidLoad()
         gk_navigationBar.isHidden = false
         gk_navTitle = "积分中心"
-        gk_navRightBarButtonItem = UIBarButtonItem(customView: rightBtn)
-
+        gk_statusBarStyle = .lightContent
         let att = NSMutableAttributedString(string: "我的积分", attributes: [.foregroundColor: UIColor.white, .font: pingfangMedium(size: 12)!])
         let jifen = NSAttributedString(string: "1244", attributes: [.foregroundColor: UIColor.white, .font: pingfangSemibold(size: 18)!])
         att.append(jifen)

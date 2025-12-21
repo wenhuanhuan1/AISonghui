@@ -55,9 +55,8 @@ class WHHAIFlowerbedViewController: WHHBaseViewController {
         }
         view.addSubview(listContainerView)
         listContainerView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.bottom.right.equalToSuperview()
             make.top.equalTo(segmentedView.snp.bottom)
-            make.bottom.equalToSuperview().offset(-WHHTabBarHeight)
         }
     }
 }

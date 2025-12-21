@@ -1,32 +1,32 @@
 PODS:
-  - BRPickerView (2.9.7):
-    - BRPickerView/All (= 2.9.7)
-  - BRPickerView/All (2.9.7):
+  - BRPickerView (2.9.9):
+    - BRPickerView/All (= 2.9.9)
+  - BRPickerView/All (2.9.9):
     - BRPickerView/Default
     - BRPickerView/Deprecated
-  - BRPickerView/Core (2.9.7)
-  - BRPickerView/DatePicker (2.9.7):
+  - BRPickerView/Core (2.9.9)
+  - BRPickerView/DatePicker (2.9.9):
     - BRPickerView/Core
-  - BRPickerView/Default (2.9.7):
+  - BRPickerView/Default (2.9.9):
     - BRPickerView/DatePicker
     - BRPickerView/TextPicker
-  - BRPickerView/Deprecated (2.9.7):
+  - BRPickerView/Deprecated (2.9.9):
     - BRPickerView/Core
-    - BRPickerView/Deprecated/AddressPickerView (= 2.9.7)
-    - BRPickerView/Deprecated/Base (= 2.9.7)
-    - BRPickerView/Deprecated/StringPickerView (= 2.9.7)
-  - BRPickerView/Deprecated/AddressPickerView (2.9.7):
-    - BRPickerView/Core
-    - BRPickerView/Deprecated/Base
-  - BRPickerView/Deprecated/Base (2.9.7):
-    - BRPickerView/Core
-  - BRPickerView/Deprecated/StringPickerView (2.9.7):
+    - BRPickerView/Deprecated/AddressPickerView (= 2.9.9)
+    - BRPickerView/Deprecated/Base (= 2.9.9)
+    - BRPickerView/Deprecated/StringPickerView (= 2.9.9)
+  - BRPickerView/Deprecated/AddressPickerView (2.9.9):
     - BRPickerView/Core
     - BRPickerView/Deprecated/Base
-  - BRPickerView/TextPicker (2.9.7):
+  - BRPickerView/Deprecated/Base (2.9.9):
+    - BRPickerView/Core
+  - BRPickerView/Deprecated/StringPickerView (2.9.9):
+    - BRPickerView/Core
+    - BRPickerView/Deprecated/Base
+  - BRPickerView/TextPicker (2.9.9):
     - BRPickerView/Core
   - EmptyDataSet-Swift (5.0.0)
-  - GKNavigationBarSwift (1.6.8)
+  - GKNavigationBarSwift (1.7.3)
   - GPUImage (0.1.7)
   - HXPhotoPicker-Lite (4.2.5):
     - HXPhotoPicker-Lite/Full (= 4.2.5)
@@ -66,7 +66,7 @@ PODS:
   - HXPhotoPicker-Lite/Picker/Lite (4.2.5):
     - HXPhotoPicker-Lite/Core
   - HXPhotoPicker-Lite/Resources (4.2.5)
-  - IQKeyboardCore (1.0.5)
+  - IQKeyboardCore (1.0.8)
   - IQKeyboardManagerSwift (8.0.1):
     - IQKeyboardManagerSwift/Appearance (= 8.0.1)
     - IQKeyboardManagerSwift/Core (= 8.0.1)
@@ -88,37 +88,35 @@ PODS:
     - IQTextView
   - IQKeyboardManagerSwift/Resign (8.0.1):
     - IQKeyboardManagerSwift/Core
-  - IQKeyboardNotification (1.0.3)
-  - IQKeyboardReturnManager (1.0.4):
-    - IQKeyboardCore (= 1.0.5)
-  - IQKeyboardToolbar (1.1.1):
+  - IQKeyboardNotification (1.0.6)
+  - IQKeyboardReturnManager (1.0.6):
     - IQKeyboardCore
-    - IQKeyboardToolbar/Core (= 1.1.1)
-  - IQKeyboardToolbar/Core (1.1.1):
+  - IQKeyboardToolbar (1.1.3):
+    - IQKeyboardToolbar/Core (= 1.1.3)
+  - IQKeyboardToolbar/Core (1.1.3):
     - IQKeyboardCore
     - IQKeyboardToolbar/Placeholderable
-  - IQKeyboardToolbar/Placeholderable (1.1.1):
-    - IQKeyboardCore
-  - IQKeyboardToolbarManager (1.1.3):
+  - IQKeyboardToolbar/Placeholderable (1.1.3)
+  - IQKeyboardToolbarManager (1.1.4):
     - IQKeyboardToolbar
     - IQTextInputViewNotification
-  - IQTextInputViewNotification (1.0.8):
+  - IQTextInputViewNotification (1.0.9):
     - IQKeyboardCore
   - IQTextView (1.0.5):
     - IQKeyboardToolbar/Placeholderable
-  - JXPagingView/Paging (2.0.0)
-  - JXPhotoBrowser (3.1.5)
-  - JXSegmentedView (1.3.1)
-  - Kingfisher (8.3.2)
+  - JXPagingView/Paging (2.1.3)
+  - JXPhotoBrowser (3.1.6)
+  - JXSegmentedView (1.4.1)
+  - Kingfisher (8.6.2)
   - LookinServer (1.2.8):
     - LookinServer/Core (= 1.2.8)
   - LookinServer/Core (1.2.8)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.4.2)
   - MJRefresh (3.7.9)
-  - MMKV (2.2.2):
-    - MMKVCore (~> 2.2.2)
-  - MMKVCore (2.2.2)
+  - MMKV (2.3.0):
+    - MMKVCore (~> 2.3.0)
+  - MMKVCore (2.3.0)
   - SnapKit (5.7.1)
   - SwiftyStoreKit (0.16.1)
 
@@ -182,29 +180,29 @@ CHECKOUT OPTIONS:
     :git: https://github.com/jdg/MBProgressHUD.git
 
 SPEC CHECKSUMS:
-  BRPickerView: 6548c8fbe21c0f29e72ab2fae177d196edc83f09
+  BRPickerView: 84b2effb81f3b9ebd27f1d31de867ae0b37024f7
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
-  GKNavigationBarSwift: dd492c09547dcaeca53be23f94af992dbca97c48
+  GKNavigationBarSwift: a7815e2f2b25a3f19b6f6baa49e47a39aa1b2ebd
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   HXPhotoPicker-Lite: 6d4f5d8e8f606dad317c3f46f1feec246e7c8cc3
-  IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
+  IQKeyboardCore: 8652977ec919cf5351aa2977fedd1a6546476fbc
   IQKeyboardManagerSwift: 835fc9c6e4732398113406d84900ad2e8f141218
-  IQKeyboardNotification: d7382c4466c5a5adef92c7452ebf861b36050088
-  IQKeyboardReturnManager: 972be48528ce9e7508ab3ab15ac7efac803f17f5
-  IQKeyboardToolbar: d4bdccfb78324aec2f3920659c77bb89acd33312
-  IQKeyboardToolbarManager: 6c693c8478d6327a7ef2107528d29698b3514dbb
-  IQTextInputViewNotification: f5e954d8881fd9808b744e49e024cc0d4bcfe572
+  IQKeyboardNotification: eb4910401f5a0e68f97e71c62f8a0c5b7e9d535c
+  IQKeyboardReturnManager: fcbf51fc68d7536fc1fbcca5231c4e82576b12ac
+  IQKeyboardToolbar: 9fe900f8e7def414be4025af0ca098df764d4fe3
+  IQKeyboardToolbarManager: c8a575e8b5fffe5873d0e75312244498a0759473
+  IQTextInputViewNotification: 3b9fb27a16e7ee8958cc9092cfb07a1a9e1fd559
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
-  JXPagingView: da30adb74743852f7ef95fa894041953894ebd09
-  JXPhotoBrowser: a6d745f5711bde79b02ba29165e2456ab5bde476
-  JXSegmentedView: 4b0e5506a9883da26472c9c0857d782c13cef05a
-  Kingfisher: 0621d0ac0c78fecb19f6dc5303bde2b52abaf2f5
+  JXPagingView: afdd2e9af09c90160dd232b970d603cc6e7ddd0e
+  JXPhotoBrowser: e979c93b54a2c434b9846e8c286c695e3c70b3a1
+  JXSegmentedView: cd73555ce2134d1656db2cb383ba9c2f36fb5078
+  Kingfisher: 23d18f54677d973b713e54ce6a8f5eef6e7056ba
   LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
   MBProgressHUD: 1b0fb447e80a0fda94808180750e8b78a07b3cd2
   MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
-  MMKV: b4802ebd5a7c68fc0c4a5ccb4926fbdfb62d68e0
-  MMKVCore: a255341a3746955f50da2ad9121b18cb2b346e61
+  MMKV: c953dbaac0da392c24b005e763c03ce2638b4ed7
+  MMKVCore: d078dce7d6586a888b2c2ef5343b6242678e3ee8
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 

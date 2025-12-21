@@ -8,14 +8,10 @@
 import UIKit
 
 class WHHAITabBarController: UITabBarController {
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Color0F0F12
 
-       
-        
         let shibieVC = WHHAIIdentifyHomeViewController()
 
         addChildViewController(vc: shibieVC, navTitle: "说梦", normalImage: "tabbarHomeNormal", seletImage: "tabbarHomeSelect")
@@ -33,8 +29,6 @@ class WHHAITabBarController: UITabBarController {
         tabBar.backgroundImage = UIImage.image(with: Color0F0F12)
         tabBar.shadowImage = UIImage.image(with: Color0F0F12)
         tabBar.tintColor = .white
-        
-        
     }
 
     private func addChildViewController(vc: UIViewController, navTitle: String, normalImage: String, seletImage: String) {
@@ -45,9 +39,8 @@ class WHHAITabBarController: UITabBarController {
         vc.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.white.withAlphaComponent(0.3), .font: pingfangMedium(size: 10)!], for: .normal)
 
         vc.tabBarItem.setTitleTextAttributes([.foregroundColor:
-                                                UIColor.white, .font: pingfangMedium(size: 10)!], for: .selected)
-        let navViewController = WHHNavigationController(rootViewController: vc)
+                UIColor.white, .font: pingfangMedium(size: 10)!], for: .selected)
+        let navViewController = WHHNavigationController(rootVC: vc)
         addChild(navViewController)
     }
-
 }

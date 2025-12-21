@@ -8,10 +8,16 @@
 import UIKit
 
 class WHHNewMineItemViewCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var zanNumber: UILabel!
+    
+    @IBOutlet weak var playIcon: UIImageView!
+    @IBOutlet weak var bigIcon: UIImageView!
+    @IBOutlet weak var zanIcon: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBAction func zanButtonClick(_ sender: UIButton) {
+    }
 }

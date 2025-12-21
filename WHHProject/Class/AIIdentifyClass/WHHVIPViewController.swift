@@ -38,13 +38,17 @@ class WHHVIPViewController: WHHBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bgMaskView.addGradientBackground(colors: [Color0F0F12.withAlphaComponent(0), Color0F0F12], startPoint: CGPointMake(0, 0), endPoint: CGPointMake(1, 1))
         closeTopCon.constant = WHHTopSafe
         collectionViewBg.addSubview(itemCollectionViw)
         itemCollectionViw.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         locationSelectOneData()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        bgMaskView.addGradientBackground(colors: [Color0F0F12.withAlphaComponent(0), Color0F0F12], startPoint: CGPointMake(0, 0), endPoint: CGPointMake(1, 1))
     }
 
     private func locationSelectOneData() {

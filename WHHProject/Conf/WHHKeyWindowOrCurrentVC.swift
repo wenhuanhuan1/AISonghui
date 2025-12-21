@@ -40,6 +40,7 @@ extension UIScrollView {
     func whhSetDefault() {
         contentInsetAdjustmentBehavior = .never
         automaticallyAdjustsScrollIndicatorInsets = false
+        
     }
 }
 

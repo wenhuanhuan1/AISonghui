@@ -7,10 +7,9 @@
 
 import UIKit
 
+import IQKeyboardManagerSwift
 import JXPagingView
 import JXSegmentedView
-import IQKeyboardManagerSwift
-extension JXPagingListContainerView: @retroactive JXSegmentedViewListContainer {}
 
 class JFCustomView: WHHBaseView {
     var didJFCustomViewButtonBlock: (() -> Void)?
@@ -50,22 +49,21 @@ class JFCustomView: WHHBaseView {
 
 class WHHAIIdentifyMineViewController: WHHBaseViewController {
     lazy var headView: WHHNewMineHeaderView = {
-        let a = WHHNewMineHeaderView()
-        a.didEditButtonBlock = {[weak self] model in
-            
+        let a = WHHNewMineHeaderView(frame: CGRectMake(0, 0, WHHScreenW, 230))
+        a.didEditButtonBlock = { [weak self] model in
+
             self?.jumpEditView(model: model)
         }
-        a.didSpackButtonBlock = {[weak self] _ in
+        a.didSpackButtonBlock = { [weak self] _ in
         }
         return a
     }()
 
-    
     lazy var pagingView: JXPagingView = {
-        let pagingView = JXPagingView(delegate: self)
+        let pagingView = JXPagingView(delegate: self, listContainerType: .collectionView)
         pagingView.backgroundColor = .clear
         pagingView.mainTableView.backgroundColor = .clear
-        
+        pagingView.pinSectionHeaderVerticalOffset = Int(WHHTopSafe)
         return pagingView
     }()
 
@@ -77,32 +75,37 @@ class WHHAIIdentifyMineViewController: WHHBaseViewController {
         dataSource.titleSelectedColor = .white
         dataSource.isItemTransitionEnabled = false
         dataSource.itemSpacing = 20
-        dataSource.titles = ["说梦", "分享", "赞过"]
+        dataSource.titles = titles
         dataSource.isItemSpacingAverageEnabled = false
         return dataSource
     }()
 
+    let headerInSectionHeight: Int = 50
+
     lazy var segmentedView: JXSegmentedView = {
-        let view = JXSegmentedView()
+        let view = JXSegmentedView(frame: CGRectMake(0, 0, WHHScreenW, CGFloat(headerInSectionHeight)))
+        view.delegate = self
         view.dataSource = segmentedDataSource
         view.indicators = [indicator]
         view.backgroundColor = .clear
-        view.contentEdgeInsetLeft = 0
+        view.contentEdgeInsetLeft = 16
         return view
     }()
+    
+    private(set) var titles = ["说梦", "分享", "赞过"]
 
     lazy var indicator: JXSegmentedIndicatorLineView = {
         let view = JXSegmentedIndicatorLineView()
         view.indicatorWidth = 20
         view.indicatorColor = .white
         view.indicatorHeight = 1
+        view.verticalOffset = 2
         return view
     }()
 
     lazy var jifenButton: JFCustomView = {
         let a = JFCustomView()
         a.didJFCustomViewButtonBlock = { [weak self] in
-
             self?.jumpjifenCenter()
         }
         return a
@@ -114,6 +117,7 @@ class WHHAIIdentifyMineViewController: WHHBaseViewController {
         a.addTarget(self, action: #selector(setButtonClick), for: .touchUpInside)
         return a
     }()
+
     @objc func setButtonClick() {
         let setCenterVC = WHHAIGallerySetCenterViewController()
         navigationController?.pushViewController(setCenterVC, animated: true)
@@ -123,8 +127,16 @@ class WHHAIIdentifyMineViewController: WHHBaseViewController {
         let vc = WHHAIIntegrationViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("uploadUserInfo"), object: nil)
+
+        view.addSubview(pagingView)
+
+        segmentedView.listContainer = pagingView.listContainerView
+
         view.addSubview(setButton)
         setButton.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-10)
@@ -137,58 +149,46 @@ class WHHAIIdentifyMineViewController: WHHBaseViewController {
             make.centerY.equalTo(setButton)
             make.right.equalTo(setButton.snp.left).offset(-10)
         }
-        
-        segmentedView.listContainer = pagingView.listContainerView
-        // Swift 示例
-        segmentedView.listContainer = pagingView.listContainerView
-
-        view.addSubview(pagingView)
-        
-        pagingView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(WHHAllNavBarHeight)
-            make.left.bottom.right.equalToSuperview()
-        }
-                
     }
-    
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        pagingView.frame = view.bounds
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        IQKeyboardManager.shared.isEnabled = true
         getUserInfo()
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        IQKeyboardManager.shared.isEnabled = false
-    }
-    
-    private func getUserInfo() {
-        
-        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest {[weak self] code, model in
-            
+
+    @objc private func getUserInfo() {
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest { [weak self] code, model in
+
             if code == 1 {
                 self?.headView.userInfoModel = model
             }
         }
     }
 
-    private func jumpEditView(model:FCMineModel) {
-        
+    private func jumpEditView(model: FCMineModel) {
         let infoView = WHHEditUserInfoView()
         infoView.userInfo = model
         UIWindow.getKeyWindow?.addSubview(infoView)
     }
 }
 
-extension WHHAIIdentifyMineViewController: JXPagingViewDelegate,JXPagingMainTableViewGestureDelegate,JXSegmentedViewDelegate {
+extension WHHAIIdentifyMineViewController: JXPagingViewDelegate, JXSegmentedViewDelegate {
+    
+    
     func pagingView(_ pagingView: JXPagingView, initListAtIndex index: Int) -> JXPagingViewListViewDelegate {
         let vc = WHHNewMineItemViewViewController()
-
+        
         return vc
     }
 
     func tableHeaderViewHeight(in pagingView: JXPagingView) -> Int {
-        return 150
+        return 230
     }
 
     func tableHeaderView(in pagingView: JXPagingView) -> UIView {
@@ -196,7 +196,7 @@ extension WHHAIIdentifyMineViewController: JXPagingViewDelegate,JXPagingMainTabl
     }
 
     func heightForPinSectionHeader(in pagingView: JXPagingView) -> Int {
-        return 52
+        return headerInSectionHeight
     }
 
     func viewForPinSectionHeader(in pagingView: JXPagingView) -> UIView {
@@ -204,13 +204,10 @@ extension WHHAIIdentifyMineViewController: JXPagingViewDelegate,JXPagingMainTabl
     }
 
     func numberOfLists(in pagingView: JXPagingView) -> Int {
-        return segmentedDataSource.titles.count
+        return titles.count
     }
 
-    func mainTableViewDidScroll(_ scrollView: UIScrollView) {
-    }
-    
-    func mainTableViewGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return gestureRecognizer.isKind(of: UIPanGestureRecognizer.self) && otherGestureRecognizer.isKind(of: UIPanGestureRecognizer.self)
-    }
+}
+
+extension JXPagingListContainerView: JXSegmentedViewListContainer {
 }
