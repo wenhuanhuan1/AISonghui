@@ -6,16 +6,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YYWebImage.h"
+//#import "YYWebImage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WebPManager : NSObject
-+ (void)loadNetWebUrl:(NSString *)url displayImageView:(YYAnimatedImageView *)imageView;
 
-+ (void)displayImageView:(YYAnimatedImageView *)imageView;
-
-+ (void)displayHomeWebImageView:(YYAnimatedImageView *)imageView;
+//+ (void)loadNetWebUrl:(NSString *)url displayImageView:(YYAnimatedImageView *)imageView;
+//
+//+ (void)displayImageView:(YYAnimatedImageView *)imageView;
+//
+//+ (void)displayHomeWebImageView:(YYAnimatedImageView *)imageView;
 @end
 
 NS_ASSUME_NONNULL_END

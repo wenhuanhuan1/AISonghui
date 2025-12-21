@@ -43,6 +43,18 @@ let Color67A9FF = #colorLiteral(red: 0.4039215686, green: 0.662745098, blue: 1, 
 let Color746CF7 = #colorLiteral(red: 0.4549019608, green: 0.4235294118, blue: 0.968627451, alpha: 1)
 let Color121212 = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
 
+let Color25C5FF = #colorLiteral(red: 0.1450980392, green: 0.7725490196, blue: 1, alpha: 1)
+
+
+let Color030303 = #colorLiteral(red: 0.01176470588, green: 0.01176470588, blue: 0.01176470588, alpha: 1)
+let Color0F0F12 = #colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.07058823529, alpha: 1)
+let Color2B2D33 = #colorLiteral(red: 0.168627451, green: 0.1764705882, blue: 0.2, alpha: 1)
+
+let Color1E2024 = #colorLiteral(red: 0.1176470588, green: 0.1254901961, blue: 0.1411764706, alpha: 1)
+
+
+
+
 let Color929192 = #colorLiteral(red: 0.5725490196, green: 0.568627451, blue: 0.5725490196, alpha: 1)
 
 let Color6C73FF = #colorLiteral(red: 0.4235294118, green: 0.4509803922, blue: 1, alpha: 1)

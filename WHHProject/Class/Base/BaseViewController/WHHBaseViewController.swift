@@ -29,7 +29,9 @@ class WHHBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = ColorF2F4FE
+        gk_navigationBar.isHidden = true
+        stayle = .lightContent
+        view.backgroundColor = Color0F0F12
     }
 
     func whhRefreshHeader() {

@@ -8,11 +8,15 @@
 import UIKit
 
 class WHHVIPCenterCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var selctIcon: UIImageView!
     @IBOutlet var bgView: UIView!
 
     @IBOutlet var vipPrice: UILabel!
     @IBOutlet var vipTitle: UILabel!
+    
+    
+    @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var bottomView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         bgView.layer.cornerRadius = 12
@@ -30,13 +34,17 @@ class WHHVIPCenterCollectionViewCell: UICollectionViewCell {
             attr.append(att1)
             vipPrice.attributedText = attr
             if newCellModel.isSelect {
-                selctIcon.isHidden = false
+                bgView.backgroundColor = Color25C5FF.withAlphaComponent(0.1)
                 bgView.layer.borderWidth = 2
-                bgView.layer.borderColor = ColorFEF5E6.cgColor
+                bgView.layer.borderColor = Color25C5FF.cgColor
+                bottomView.backgroundColor = Color25C5FF
+                bottomLabel.textColor = Color0F0F12
             } else {
-                selctIcon.isHidden = true
+                bgView.backgroundColor = Color0F0F12.withAlphaComponent(0.3)
                 bgView.layer.borderWidth = 0
                 bgView.layer.borderColor = UIColor.clear.cgColor
+                bottomView.backgroundColor = .white.withAlphaComponent(0.3)
+                bottomLabel.textColor = .white.withAlphaComponent(0.5)
             }
         }
     }

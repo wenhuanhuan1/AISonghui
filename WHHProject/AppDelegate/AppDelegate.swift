@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         noNetAlertView.againSubmitBlock = { [weak self] _ in
             self?.checkNetJurisdiction { _ in
-                
             }
         }
         return noNetAlertView
@@ -48,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if WHHUserInfoManager.shared.isShowpPrivacyAlert {
             // 同意协议
             if WHHUserInfoManager.shared.isLogin {
-                window?.rootViewController = WHHNavigationController(rootVC: WHHAINewHomeViewController())
+                window?.rootViewController = WHHAITabBarController()
             } else {
                 WHHHUD.whhShowLoadView()
 
@@ -57,7 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     WHHHomeRequestViewModel.whhLoginRequest { [weak self] finish, msg in
                         WHHHUD.whhHidenLoadView()
                         if finish {
-                            self?.window?.rootViewController = WHHNavigationController(rootVC: WHHAINewHomeViewController())
+                            self?.window?.rootViewController = WHHAITabBarController()
+
                         } else {
                             WHHHUD.whhShowInfoText(text: msg)
                         }

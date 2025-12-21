@@ -8,11 +8,7 @@
 import Foundation
 
 func routerSwitchRootViewController() {
-    if WHHUserInfoManager.shared.isLogin {
-        UIWindow.getKeyWindow?.rootViewController = WHHNavigationController(rootVC: WHHHomeViewController())
-    } else {
-        UIWindow.getKeyWindow?.rootViewController = WHHNavigationController(rootVC: WHHRootViewController())
-    }
+   
 }
 
 func jumpVIPController(callBlack: (() -> Void)?) {
@@ -21,7 +17,7 @@ func jumpVIPController(callBlack: (() -> Void)?) {
     FCVIPRequestApiViewModel.whhRequestProductList { dataArray in
         WHHHUD.whhHidenLoadView()
         if let currentVC = UIViewController.currentViewController() {
-            let vipViewController = WHHVIPCenterViewController()
+            let vipViewController = WHHVIPViewController()
             vipViewController.dataArray = dataArray
             vipViewController.didPuyFinish = {
                 callBlack?()

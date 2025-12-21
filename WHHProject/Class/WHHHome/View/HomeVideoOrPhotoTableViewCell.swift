@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import YYImage
 
 class HomeVideoOrPhotoTableViewCell: UITableViewCell {
     @IBOutlet var buttonTitle: UILabel!
@@ -15,13 +14,6 @@ class HomeVideoOrPhotoTableViewCell: UITableViewCell {
     private(set) var blurView:UIVisualEffectView?
     @IBOutlet weak var sourceBgView: UIView!
     @IBOutlet weak var buttomView: UIView!
-    lazy var bigIconImageView: YYAnimatedImageView = {
-        let view = YYAnimatedImageView()
-        view.isHidden = true
-        view.contentMode = .scaleAspectFill
-        view.backgroundColor = .white
-        return view
-    }()
 
     lazy var iconImageView: WHHBaseImageView = {
         let view = WHHBaseImageView()
@@ -49,10 +41,7 @@ class HomeVideoOrPhotoTableViewCell: UITableViewCell {
         iconImageView.snp.makeConstraints { make in
             make.edges.equalTo(sourceBgView)
         }
-        sourceBgView.addSubview(bigIconImageView)
-        bigIconImageView.snp.makeConstraints { make in
-            make.edges.equalTo(sourceBgView)
-        }
+       
        
     }
     
@@ -72,15 +61,6 @@ class HomeVideoOrPhotoTableViewCell: UITableViewCell {
             titleLabel.text = model.title
             smallLabel.text = model.content
             buttonTitle.text = model.buttonText
-            if model.type == 1 {
-                iconImageView.isHidden = true
-                bigIconImageView.isHidden = false
-                WebPManager.loadNetWebUrl(model.assetUrl, display: bigIconImageView)
-            } else if model.type == 3 {
-                iconImageView.isHidden = false
-                bigIconImageView.isHidden = true
-                iconImageView.whhSetKFWithImage(imageString: model.assetUrl)
-            }
         }
     }
 }

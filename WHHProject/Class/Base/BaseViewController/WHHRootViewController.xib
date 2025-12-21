@@ -21,15 +21,10 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-lG-cCE">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchBottomIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WHX-Ul-fUd">
-                    <rect key="frame" x="82.666666666666686" y="736" width="228" height="52"/>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.9137254901960784" green="0.90980392156862744" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="WHX-Ul-fUd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0UD-Bc-yjW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WHX-Ul-fUd" secondAttribute="bottom" constant="30" id="0z4-Xj-g48"/>
                 <constraint firstItem="RpM-lG-cCE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NEr-dx-Nhh"/>
                 <constraint firstAttribute="trailing" secondItem="RpM-lG-cCE" secondAttribute="trailing" id="gmO-Y3-omi"/>
                 <constraint firstAttribute="bottom" secondItem="RpM-lG-cCE" secondAttribute="bottom" id="lBs-7z-sDb"/>
@@ -39,7 +34,6 @@
         </view>
     </objects>
     <resources>
-        <image name="lunchBottomIcon" width="228" height="52"/>
-        <image name="lunchIcon" width="736" height="1308"/>
+        <image name="lunchIcon" width="414" height="896"/>
     </resources>
 </document>

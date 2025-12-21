@@ -40,17 +40,25 @@
 		2F043BCD2E65945700E8C04E /* WHHHomeWitchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043BCC2E65945700E8C04E /* WHHHomeWitchModel.m */; };
 		2F043BCF2E65970D00E8C04E /* UIImageView+KF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043BCE2E65970D00E8C04E /* UIImageView+KF.swift */; };
 		2F043BD12E6598EA00E8C04E /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043BD02E6598EA00E8C04E /* UIColor+Hex.swift */; };
-		2F043C2B2E684AD400E8C04E /* FCMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C2A2E684AD400E8C04E /* FCMineModel.m */; };
 		2F043C2E2E68657700E8C04E /* FCUploadSourceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C2D2E68657700E8C04E /* FCUploadSourceApi.m */; };
 		2F043C422E6B070000E8C04E /* WHHVIPRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C412E6B070000E8C04E /* WHHVIPRequestApi.swift */; };
 		2F043C442E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C432E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift */; };
 		2F043C492E6B0D2700E8C04E /* WHHSystemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C482E6B0D2700E8C04E /* WHHSystemModel.m */; };
 		2F043C4B2E6BD8A800E8C04E /* WHHNetConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C4A2E6BD8A800E8C04E /* WHHNetConf.swift */; };
 		2F043C4E2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C4D2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift */; };
-		2F043C502E6BE94300E8C04E /* WHHMineRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C4F2E6BE94300E8C04E /* WHHMineRequestApi.swift */; };
-		2F043C522E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C512E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift */; };
-		2F043C552E6C138A00E8C04E /* WHHMineUploadApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C542E6C138A00E8C04E /* WHHMineUploadApi.m */; };
 		2F043C582E6C1CE500E8C04E /* WHHHomeForetellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F043C572E6C1CE500E8C04E /* WHHHomeForetellModel.m */; };
+		2F0E492A2EF68D3F00D9B0A6 /* WHHAITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49292EF68D3F00D9B0A6 /* WHHAITabBarController.swift */; };
+		2F0E492C2EF68DB700D9B0A6 /* WHHAIIdentifyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E492B2EF68DB700D9B0A6 /* WHHAIIdentifyHomeViewController.swift */; };
+		2F0E492E2EF68DE800D9B0A6 /* WHHAIFlowerbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E492D2EF68DE800D9B0A6 /* WHHAIFlowerbedViewController.swift */; };
+		2F0E49302EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E492F2EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift */; };
+		2F0E49322EF6A2E300D9B0A6 /* WHHWKWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49312EF6A2E300D9B0A6 /* WHHWKWebViewViewController.swift */; };
+		2F0E49372EF6A30500D9B0A6 /* WHHMineRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49342EF6A30500D9B0A6 /* WHHMineRequestApiViewModel.swift */; };
+		2F0E49382EF6A30500D9B0A6 /* WHHMineUploadApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49362EF6A30500D9B0A6 /* WHHMineUploadApi.m */; };
+		2F0E49392EF6A30500D9B0A6 /* WHHMineRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49332EF6A30500D9B0A6 /* WHHMineRequestApi.swift */; };
+		2F0E493C2EF6A6EA00D9B0A6 /* FCMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E493B2EF6A6EA00D9B0A6 /* FCMineModel.m */; };
+		2F0E49422EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49412EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m */; };
+		2F0E49442EF6B4AF00D9B0A6 /* WHHIdAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49432EF6B4AF00D9B0A6 /* WHHIdAlertView.swift */; };
+		2F0E49482EF6D0FF00D9B0A6 /* WHHIdAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F0E49472EF6D0FF00D9B0A6 /* WHHIdAlertView.xib */; };
 		2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */; };
 		2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BF792DF7C96200CA36E8 /* Assets.xcassets */; };
 		2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F17BF7C2DF7C96200CA36E8 /* LaunchScreen.storyboard */; };
@@ -64,7 +72,6 @@
 		2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF9D2DF7D4F800CA36E8 /* WHHFontSize.swift */; };
 		2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */; };
 		2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */; };
-		2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFA32DF8092500CA36E8 /* WHHTabBarController.swift */; };
 		2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFA52DF8093D00CA36E8 /* WHHNavigationController.swift */; };
 		2F17BFB22DF80BF100CA36E8 /* WHHHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB12DF80BF100CA36E8 /* WHHHUD.swift */; };
 		2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */; };
@@ -79,6 +86,20 @@
 		2F22A9412EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9402EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift */; };
 		2F22A9432EC07D320093ECA8 /* SSEParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22A9422EC07D320093ECA8 /* SSEParser.swift */; };
 		2F22AA202EC466380093ECA8 /* WHHStoreKitManagerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22AA1F2EC466380093ECA8 /* WHHStoreKitManagerV2.swift */; };
+		2F2ABD392EF6E115004FA465 /* WHHAIGallerySleepItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD382EF6E115004FA465 /* WHHAIGallerySleepItemViewController.swift */; };
+		2F2ABD3B2EF6E19A004FA465 /* WHHAIGalleryGalleryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD3A2EF6E19A004FA465 /* WHHAIGalleryGalleryItemViewController.swift */; };
+		2F2ABD3E2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ABD3D2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.xib */; };
+		2F2ABD3F2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD3C2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.swift */; };
+		2F2ABD422EF6ECAC004FA465 /* WHHAIIntegrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ABD412EF6ECAC004FA465 /* WHHAIIntegrationViewController.xib */; };
+		2F2ABD432EF6ECAC004FA465 /* WHHAIIntegrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD402EF6ECAC004FA465 /* WHHAIIntegrationViewController.swift */; };
+		2F2ABD462EF79348004FA465 /* WHHJIfenListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ABD452EF79348004FA465 /* WHHJIfenListTableViewCell.xib */; };
+		2F2ABD472EF79348004FA465 /* WHHJIfenListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD442EF79348004FA465 /* WHHJIfenListTableViewCell.swift */; };
+		2F2ABD4A2EF795E6004FA465 /* WHHVIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD482EF795E6004FA465 /* WHHVIPViewController.swift */; };
+		2F2ABD4B2EF795E6004FA465 /* WHHVIPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ABD492EF795E6004FA465 /* WHHVIPViewController.xib */; };
+		2F2ABD532EF7AAA0004FA465 /* WHHNewMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD522EF7AAA0004FA465 /* WHHNewMineHeaderView.swift */; };
+		2F2ABD552EF7AD53004FA465 /* WHHNewMineItemViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD542EF7AD53004FA465 /* WHHNewMineItemViewViewController.swift */; };
+		2F2ABD582EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2ABD572EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib */; };
+		2F2ABD592EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2ABD562EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift */; };
 		2F5376A72ECC7C85003C3FC7 /* WHHAIStorekitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5376A62ECC7C85003C3FC7 /* WHHAIStorekitManager.swift */; };
 		2F5376AB2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5376AA2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift */; };
 		2F5376AD2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5376AC2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib */; };
@@ -96,28 +117,18 @@
 		2F60795C2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */; };
 		2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */; };
 		2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */; };
-		2F6D948F2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */; };
-		2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */; };
 		2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D949D2E83A52E00CE27A3 /* WebPManager.m */; };
-		2F76BFD42EADFC3E00710B52 /* WHHAIPersonVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */; };
 		2F76BFD62EAE0EF000710B52 /* homeView2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2F76BFD52EAE0EF000710B52 /* homeView2.gif */; };
-		2F9D04652EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */; };
-		2F9D04672EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04662EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift */; };
-		2F9D046A2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04682EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift */; };
-		2F9D046B2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04692EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib */; };
-		2F9D04702EAF65B000F34017 /* WHHAIDestinyLineItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D046F2EAF65B000F34017 /* WHHAIDestinyLineItemModel.m */; };
 		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
 		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
 		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
 		2F9D047B2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04792EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib */; };
 		2F9D047E2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */; };
-		2FA9973E2EADED0700B61D04 /* WHHAINewHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */; };
 		2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */; };
 		2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */; };
 		2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C8192E93F5700078F1A8 /* aboutUs.webp */; };
 		2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */; };
 		2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */; };
-		2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */; };
 		2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */; };
 		2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */; };
 		2FDC69272E37959600A523B0 /* WHHSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69262E37959600A523B0 /* WHHSetView.swift */; };
@@ -147,31 +158,9 @@
 		2FDC69612E3B124A00A523B0 /* WHHABBInputBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69602E3B124A00A523B0 /* WHHABBInputBarView.swift */; };
 		2FDC69652E3B1EE800A523B0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69642E3B1EE800A523B0 /* String+Ext.swift */; };
 		2FDC69672E3B402C00A523B0 /* WHHABBSubscriptionAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69662E3B402C00A523B0 /* WHHABBSubscriptionAlertView.swift */; };
-		2FDC696C2E3B5FFC00A523B0 /* WHHPersonageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC696B2E3B5FFC00A523B0 /* WHHPersonageViewController.swift */; };
-		2FDC69702E3B6D0E00A523B0 /* WHHPersonageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC696F2E3B6D0E00A523B0 /* WHHPersonageTableViewCell.xib */; };
-		2FDC69712E3B6D0E00A523B0 /* WHHPersonageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC696E2E3B6D0E00A523B0 /* WHHPersonageTableViewCell.swift */; };
-		2FDC69742E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69732E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.xib */; };
-		2FDC69752E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69722E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.swift */; };
-		2FDC69782E3B72B100A523B0 /* WHHControllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69772E3B72B100A523B0 /* WHHControllTableViewCell.xib */; };
-		2FDC69792E3B72B100A523B0 /* WHHControllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69762E3B72B100A523B0 /* WHHControllTableViewCell.swift */; };
-		2FDC697C2E3B7AF800A523B0 /* WHHContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC697B2E3B7AF800A523B0 /* WHHContactUsViewController.xib */; };
-		2FDC697D2E3B7AF800A523B0 /* WHHContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC697A2E3B7AF800A523B0 /* WHHContactUsViewController.swift */; };
-		2FDC697F2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC697E2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift */; };
-		2FDC69812E3C60B400A523B0 /* WHHAgainAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69802E3C60B400A523B0 /* WHHAgainAlertView.swift */; };
-		2FDC69902E3CDFF300A523B0 /* WHHAboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC698F2E3CDFF300A523B0 /* WHHAboutUsViewController.xib */; };
-		2FDC69912E3CDFF300A523B0 /* WHHAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC698E2E3CDFF300A523B0 /* WHHAboutUsViewController.swift */; };
-		2FDC69952E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69942E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib */; };
-		2FDC69962E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69932E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift */; };
 		2FDC69992E3CE51600A523B0 /* WHHDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69982E3CE51600A523B0 /* WHHDeviceManager.swift */; };
-		2FDC699B2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC699A2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift */; };
-		2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC699D2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib */; };
-		2FDC699F2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC699C2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift */; };
-		2FDC69A12E3E048200A523B0 /* WHHlogoutAccoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A02E3E048100A523B0 /* WHHlogoutAccoutAlertView.swift */; };
 		2FDC69A32E3E0EEF00A523B0 /* WHHAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A22E3E0EEF00A523B0 /* WHHAgreementView.swift */; };
 		2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A42E3E182F00A523B0 /* WHHRouter.swift */; };
-		2FDC69AA2E3EF24700A523B0 /* WHHAppleAccountExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69A92E3EF24700A523B0 /* WHHAppleAccountExplainView.swift */; };
-		2FDC69AC2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69AB2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift */; };
-		2FDC69AE2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69AD2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift */; };
 		2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69B12E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift */; };
 		2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69B42E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib */; };
 		2FDC69B62E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69B32E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift */; };
@@ -179,11 +168,8 @@
 		2FDC69BD2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69BC2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib */; };
 		2FDC69BE2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69BB2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift */; };
 		2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69BF2E3F4DFC00A523B0 /* WHHApplePayManager.swift */; };
-		2FDC69C32E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */; };
-		2FDC69C42E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */; };
 		2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */; };
 		2FE448A22E29E6D00054083E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE448A02E29E6D00054083E /* Localizable.strings */; };
-		2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */; };
 		2FE448B12E29F54D0054083E /* WHHLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448B02E29F54D0054083E /* WHHLabel.swift */; };
 		2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448B22E29F6400054083E /* WHHBaseView.swift */; };
 		2FE448B52E29F6790054083E /* WHHAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE448B42E29F6790054083E /* WHHAlertView.swift */; };
@@ -261,8 +247,6 @@
 		2F043BCC2E65945700E8C04E /* WHHHomeWitchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHHomeWitchModel.m; sourceTree = "<group>"; };
 		2F043BCE2E65970D00E8C04E /* UIImageView+KF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+KF.swift"; sourceTree = "<group>"; };
 		2F043BD02E6598EA00E8C04E /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		2F043C292E684AD400E8C04E /* FCMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMineModel.h; sourceTree = "<group>"; };
-		2F043C2A2E684AD400E8C04E /* FCMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMineModel.m; sourceTree = "<group>"; };
 		2F043C2C2E68657700E8C04E /* FCUploadSourceApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCUploadSourceApi.h; sourceTree = "<group>"; };
 		2F043C2D2E68657700E8C04E /* FCUploadSourceApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCUploadSourceApi.m; sourceTree = "<group>"; };
 		2F043C412E6B070000E8C04E /* WHHVIPRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPRequestApi.swift; sourceTree = "<group>"; };
@@ -271,12 +255,23 @@
 		2F043C482E6B0D2700E8C04E /* WHHSystemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHSystemModel.m; sourceTree = "<group>"; };
 		2F043C4A2E6BD8A800E8C04E /* WHHNetConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHNetConf.swift; sourceTree = "<group>"; };
 		2F043C4D2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHApplePurchaseManager.swift; sourceTree = "<group>"; };
-		2F043C4F2E6BE94300E8C04E /* WHHMineRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineRequestApi.swift; sourceTree = "<group>"; };
-		2F043C512E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineRequestApiViewModel.swift; sourceTree = "<group>"; };
-		2F043C532E6C138A00E8C04E /* WHHMineUploadApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHMineUploadApi.h; sourceTree = "<group>"; };
-		2F043C542E6C138A00E8C04E /* WHHMineUploadApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHMineUploadApi.m; sourceTree = "<group>"; };
 		2F043C562E6C1CE500E8C04E /* WHHHomeForetellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHHomeForetellModel.h; sourceTree = "<group>"; };
 		2F043C572E6C1CE500E8C04E /* WHHHomeForetellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHHomeForetellModel.m; sourceTree = "<group>"; };
+		2F0E49292EF68D3F00D9B0A6 /* WHHAITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAITabBarController.swift; sourceTree = "<group>"; };
+		2F0E492B2EF68DB700D9B0A6 /* WHHAIIdentifyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIIdentifyHomeViewController.swift; sourceTree = "<group>"; };
+		2F0E492D2EF68DE800D9B0A6 /* WHHAIFlowerbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIFlowerbedViewController.swift; sourceTree = "<group>"; };
+		2F0E492F2EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIIdentifyMineViewController.swift; sourceTree = "<group>"; };
+		2F0E49312EF6A2E300D9B0A6 /* WHHWKWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHWKWebViewViewController.swift; sourceTree = "<group>"; };
+		2F0E49332EF6A30500D9B0A6 /* WHHMineRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineRequestApi.swift; sourceTree = "<group>"; };
+		2F0E49342EF6A30500D9B0A6 /* WHHMineRequestApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineRequestApiViewModel.swift; sourceTree = "<group>"; };
+		2F0E49352EF6A30500D9B0A6 /* WHHMineUploadApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHMineUploadApi.h; sourceTree = "<group>"; };
+		2F0E49362EF6A30500D9B0A6 /* WHHMineUploadApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHMineUploadApi.m; sourceTree = "<group>"; };
+		2F0E493A2EF6A6EA00D9B0A6 /* FCMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMineModel.h; sourceTree = "<group>"; };
+		2F0E493B2EF6A6EA00D9B0A6 /* FCMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMineModel.m; sourceTree = "<group>"; };
+		2F0E49402EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHAIDestinyLineItemModel.h; sourceTree = "<group>"; };
+		2F0E49412EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHAIDestinyLineItemModel.m; sourceTree = "<group>"; };
+		2F0E49432EF6B4AF00D9B0A6 /* WHHIdAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIdAlertView.swift; sourceTree = "<group>"; };
+		2F0E49472EF6D0FF00D9B0A6 /* WHHIdAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIdAlertView.xib; sourceTree = "<group>"; };
 		2F17BF602DF7C81900CA36E8 /* WHHProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHHProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F17BF782DF7C96200CA36E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F17BF792DF7C96200CA36E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -294,7 +289,6 @@
 		2F17BF9D2DF7D4F800CA36E8 /* WHHFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHFontSize.swift; sourceTree = "<group>"; };
 		2F17BF9F2DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHKeyWindowOrCurrentVC.swift; sourceTree = "<group>"; };
 		2F17BFA12DF7D5B100CA36E8 /* WHHEnvironmentConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHEnvironmentConf.swift; sourceTree = "<group>"; };
-		2F17BFA32DF8092500CA36E8 /* WHHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHTabBarController.swift; sourceTree = "<group>"; };
 		2F17BFA52DF8093D00CA36E8 /* WHHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHNavigationController.swift; sourceTree = "<group>"; };
 		2F17BFB12DF80BF100CA36E8 /* WHHHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHUD.swift; sourceTree = "<group>"; };
 		2F17BFB42DF80C9800CA36E8 /* AppDelegate+initLibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+initLibs.swift"; sourceTree = "<group>"; };
@@ -311,6 +305,20 @@
 		2F22A9402EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChatListDeleteView.swift; sourceTree = "<group>"; };
 		2F22A9422EC07D320093ECA8 /* SSEParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSEParser.swift; sourceTree = "<group>"; };
 		2F22AA1F2EC466380093ECA8 /* WHHStoreKitManagerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHStoreKitManagerV2.swift; sourceTree = "<group>"; };
+		2F2ABD382EF6E115004FA465 /* WHHAIGallerySleepItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIGallerySleepItemViewController.swift; sourceTree = "<group>"; };
+		2F2ABD3A2EF6E19A004FA465 /* WHHAIGalleryGalleryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIGalleryGalleryItemViewController.swift; sourceTree = "<group>"; };
+		2F2ABD3C2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIGallerySetCenterViewController.swift; sourceTree = "<group>"; };
+		2F2ABD3D2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIGallerySetCenterViewController.xib; sourceTree = "<group>"; };
+		2F2ABD402EF6ECAC004FA465 /* WHHAIIntegrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIIntegrationViewController.swift; sourceTree = "<group>"; };
+		2F2ABD412EF6ECAC004FA465 /* WHHAIIntegrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIIntegrationViewController.xib; sourceTree = "<group>"; };
+		2F2ABD442EF79348004FA465 /* WHHJIfenListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHJIfenListTableViewCell.swift; sourceTree = "<group>"; };
+		2F2ABD452EF79348004FA465 /* WHHJIfenListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHJIfenListTableViewCell.xib; sourceTree = "<group>"; };
+		2F2ABD482EF795E6004FA465 /* WHHVIPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPViewController.swift; sourceTree = "<group>"; };
+		2F2ABD492EF795E6004FA465 /* WHHVIPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHVIPViewController.xib; sourceTree = "<group>"; };
+		2F2ABD522EF7AAA0004FA465 /* WHHNewMineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHNewMineHeaderView.swift; sourceTree = "<group>"; };
+		2F2ABD542EF7AD53004FA465 /* WHHNewMineItemViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHNewMineItemViewViewController.swift; sourceTree = "<group>"; };
+		2F2ABD562EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHNewMineItemViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F2ABD572EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHNewMineItemViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F5376A62ECC7C85003C3FC7 /* WHHAIStorekitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIStorekitManager.swift; sourceTree = "<group>"; };
 		2F5376AA2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAISubscriptionView.swift; sourceTree = "<group>"; };
 		2F5376AC2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISubscriptionView.xib; sourceTree = "<group>"; };
@@ -329,30 +337,19 @@
 		2F60795B2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatRequestApiViewModel.swift; sourceTree = "<group>"; };
 		2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoOrPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoOrPhotoTableViewCell.xib; sourceTree = "<group>"; };
-		2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeABBTableViewCell.swift; sourceTree = "<group>"; };
-		2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeABBTableViewCell.xib; sourceTree = "<group>"; };
 		2F6D949C2E83A52E00CE27A3 /* WebPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPManager.h; sourceTree = "<group>"; };
 		2F6D949D2E83A52E00CE27A3 /* WebPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPManager.m; sourceTree = "<group>"; };
-		2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIPersonVIPCell.swift; sourceTree = "<group>"; };
 		2F76BFD52EAE0EF000710B52 /* homeView2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = homeView2.gif; sourceTree = "<group>"; };
-		2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLinesViewController.swift; sourceTree = "<group>"; };
-		2F9D04662EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineItemViewController.swift; sourceTree = "<group>"; };
-		2F9D04682EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineItemTableViewCell.swift; sourceTree = "<group>"; };
-		2F9D04692EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineItemTableViewCell.xib; sourceTree = "<group>"; };
-		2F9D046E2EAF65B000F34017 /* WHHAIDestinyLineItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHAIDestinyLineItemModel.h; sourceTree = "<group>"; };
-		2F9D046F2EAF65B000F34017 /* WHHAIDestinyLineItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHAIDestinyLineItemModel.m; sourceTree = "<group>"; };
 		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
 		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
 		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
 		2F9D04792EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPCell.xib; sourceTree = "<group>"; };
 		2F9D047D2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAnimationView.swift; sourceTree = "<group>"; };
-		2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAINewHomeViewController.swift; sourceTree = "<group>"; };
 		2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAugurViewController.swift; sourceTree = "<group>"; };
 		2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIAugurView.swift; sourceTree = "<group>"; };
 		2FC1C8192E93F5700078F1A8 /* aboutUs.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutUs.webp; sourceTree = "<group>"; };
 		2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aboutUsAbb.gif; sourceTree = "<group>"; };
 		2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
-		2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHMineViewController.swift; sourceTree = "<group>"; };
 		2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHGradualView.swift; sourceTree = "<group>"; };
 		2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHomeItemView.swift; sourceTree = "<group>"; };
 		2FDC69262E37959600A523B0 /* WHHSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHSetView.swift; sourceTree = "<group>"; };
@@ -383,31 +380,9 @@
 		2FDC69602E3B124A00A523B0 /* WHHABBInputBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBInputBarView.swift; sourceTree = "<group>"; };
 		2FDC69642E3B1EE800A523B0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		2FDC69662E3B402C00A523B0 /* WHHABBSubscriptionAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBSubscriptionAlertView.swift; sourceTree = "<group>"; };
-		2FDC696B2E3B5FFC00A523B0 /* WHHPersonageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHPersonageViewController.swift; sourceTree = "<group>"; };
-		2FDC696E2E3B6D0E00A523B0 /* WHHPersonageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHPersonageTableViewCell.swift; sourceTree = "<group>"; };
-		2FDC696F2E3B6D0E00A523B0 /* WHHPersonageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHPersonageTableViewCell.xib; sourceTree = "<group>"; };
-		2FDC69722E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHPersonageControllTableViewCell.swift; sourceTree = "<group>"; };
-		2FDC69732E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHPersonageControllTableViewCell.xib; sourceTree = "<group>"; };
-		2FDC69762E3B72B100A523B0 /* WHHControllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHControllTableViewCell.swift; sourceTree = "<group>"; };
-		2FDC69772E3B72B100A523B0 /* WHHControllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHControllTableViewCell.xib; sourceTree = "<group>"; };
-		2FDC697A2E3B7AF800A523B0 /* WHHContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHContactUsViewController.swift; sourceTree = "<group>"; };
-		2FDC697B2E3B7AF800A523B0 /* WHHContactUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHContactUsViewController.xib; sourceTree = "<group>"; };
-		2FDC697E2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLookPhotoViewController.swift; sourceTree = "<group>"; };
-		2FDC69802E3C60B400A523B0 /* WHHAgainAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAgainAlertView.swift; sourceTree = "<group>"; };
-		2FDC698E2E3CDFF300A523B0 /* WHHAboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAboutUsViewController.swift; sourceTree = "<group>"; };
-		2FDC698F2E3CDFF300A523B0 /* WHHAboutUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAboutUsViewController.xib; sourceTree = "<group>"; };
-		2FDC69932E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAboutUsTableViewCell.swift; sourceTree = "<group>"; };
-		2FDC69942E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAboutUsTableViewCell.xib; sourceTree = "<group>"; };
 		2FDC69982E3CE51600A523B0 /* WHHDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHDeviceManager.swift; sourceTree = "<group>"; };
-		2FDC699A2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHWKWebViewViewController.swift; sourceTree = "<group>"; };
-		2FDC699C2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHlogoutAccoutViewController.swift; sourceTree = "<group>"; };
-		2FDC699D2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHlogoutAccoutViewController.xib; sourceTree = "<group>"; };
-		2FDC69A02E3E048100A523B0 /* WHHlogoutAccoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHlogoutAccoutAlertView.swift; sourceTree = "<group>"; };
 		2FDC69A22E3E0EEF00A523B0 /* WHHAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAgreementView.swift; sourceTree = "<group>"; };
 		2FDC69A42E3E182F00A523B0 /* WHHRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHRouter.swift; sourceTree = "<group>"; };
-		2FDC69A92E3EF24700A523B0 /* WHHAppleAccountExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAppleAccountExplainView.swift; sourceTree = "<group>"; };
-		2FDC69AB2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBindingAppleAccountExplainView.swift; sourceTree = "<group>"; };
-		2FDC69AD2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAppleAccountRegisterView.swift; sourceTree = "<group>"; };
 		2FDC69B12E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPCenterBgView.swift; sourceTree = "<group>"; };
 		2FDC69B32E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPCenterViewController.swift; sourceTree = "<group>"; };
 		2FDC69B42E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHVIPCenterViewController.xib; sourceTree = "<group>"; };
@@ -416,8 +391,6 @@
 		2FDC69BB2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHVIPCenterCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FDC69BC2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHVIPCenterCollectionViewCell.xib; sourceTree = "<group>"; };
 		2FDC69BF2E3F4DFC00A523B0 /* WHHApplePayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHApplePayManager.swift; sourceTree = "<group>"; };
-		2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBuyFinishTableViewCell.swift; sourceTree = "<group>"; };
-		2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHBuyFinishTableViewCell.xib; sourceTree = "<group>"; };
 		2FE4489E2E29E5E30054083E /* WHHLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLanguageManager.swift; sourceTree = "<group>"; };
 		2FE448A12E29E6D00054083E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2FE448A32E29E6F20054083E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -426,7 +399,6 @@
 		2FE448A62E29E71B0054083E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		2FE448A72E29E71B0054083E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		2FE448A82E29E71B0054083E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHomeViewController.swift; sourceTree = "<group>"; };
 		2FE448B02E29F54D0054083E /* WHHLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHLabel.swift; sourceTree = "<group>"; };
 		2FE448B22E29F6400054083E /* WHHBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHBaseView.swift; sourceTree = "<group>"; };
 		2FE448B42E29F6790054083E /* WHHAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAlertView.swift; sourceTree = "<group>"; };
@@ -551,15 +523,6 @@
 			path = WHHLog;
 			sourceTree = "<group>";
 		};
-		2F043C282E684AC100E8C04E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2F043C292E684AD400E8C04E /* FCMineModel.h */,
-				2F043C2A2E684AD400E8C04E /* FCMineModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		2F043C4C2E6BDA8700E8C04E /* WHHApplePurchase */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +531,42 @@
 				2F5376A62ECC7C85003C3FC7 /* WHHAIStorekitManager.swift */,
 			);
 			path = WHHApplePurchase;
+			sourceTree = "<group>";
+		};
+		2F0E49252EF68CF200D9B0A6 /* AIIdentifyClass */ = {
+			isa = PBXGroup;
+			children = (
+				2F0E49402EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.h */,
+				2F0E49412EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m */,
+				2F0E493A2EF6A6EA00D9B0A6 /* FCMineModel.h */,
+				2F0E493B2EF6A6EA00D9B0A6 /* FCMineModel.m */,
+				2F0E49332EF6A30500D9B0A6 /* WHHMineRequestApi.swift */,
+				2F0E49342EF6A30500D9B0A6 /* WHHMineRequestApiViewModel.swift */,
+				2F0E49352EF6A30500D9B0A6 /* WHHMineUploadApi.h */,
+				2F0E49362EF6A30500D9B0A6 /* WHHMineUploadApi.m */,
+				2F0E49312EF6A2E300D9B0A6 /* WHHWKWebViewViewController.swift */,
+				2F0E49292EF68D3F00D9B0A6 /* WHHAITabBarController.swift */,
+				2F0E492B2EF68DB700D9B0A6 /* WHHAIIdentifyHomeViewController.swift */,
+				2F0E492D2EF68DE800D9B0A6 /* WHHAIFlowerbedViewController.swift */,
+				2F0E492F2EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift */,
+				2F0E49432EF6B4AF00D9B0A6 /* WHHIdAlertView.swift */,
+				2F0E49472EF6D0FF00D9B0A6 /* WHHIdAlertView.xib */,
+				2F2ABD382EF6E115004FA465 /* WHHAIGallerySleepItemViewController.swift */,
+				2F2ABD3A2EF6E19A004FA465 /* WHHAIGalleryGalleryItemViewController.swift */,
+				2F2ABD3C2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.swift */,
+				2F2ABD3D2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.xib */,
+				2F2ABD402EF6ECAC004FA465 /* WHHAIIntegrationViewController.swift */,
+				2F2ABD412EF6ECAC004FA465 /* WHHAIIntegrationViewController.xib */,
+				2F2ABD442EF79348004FA465 /* WHHJIfenListTableViewCell.swift */,
+				2F2ABD452EF79348004FA465 /* WHHJIfenListTableViewCell.xib */,
+				2F2ABD482EF795E6004FA465 /* WHHVIPViewController.swift */,
+				2F2ABD492EF795E6004FA465 /* WHHVIPViewController.xib */,
+				2F2ABD522EF7AAA0004FA465 /* WHHNewMineHeaderView.swift */,
+				2F2ABD542EF7AD53004FA465 /* WHHNewMineItemViewViewController.swift */,
+				2F2ABD562EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift */,
+				2F2ABD572EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib */,
+			);
+			path = AIIdentifyClass;
 			sourceTree = "<group>";
 		};
 		2F17BF572DF7C81900CA36E8 = {
@@ -612,13 +611,11 @@
 		2F17BF852DF7CA9000CA36E8 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2F0E49252EF68CF200D9B0A6 /* AIIdentifyClass */,
 				2F6079492E6E73FA001CD6BB /* WHHChat */,
 				2F043BBD2E653F7200E8C04E /* WHHNetworking */,
 				2FDC69A62E3E191E00A523B0 /* WHHVIP */,
-				2FDC698C2E3CDFCA00A523B0 /* WHHAboutUs */,
-				2FDC69692E3B5FAA00A523B0 /* WHHPersonage */,
 				2FDC68D22E2E274A00A523B0 /* WHHABB */,
-				2FDC68D12E2E272A00A523B0 /* WHHMine */,
 				2FE448A92E29E7890054083E /* WHHHome */,
 				2F17BF882DF7CAA700CA36E8 /* Base */,
 			);
@@ -667,7 +664,6 @@
 			isa = PBXGroup;
 			children = (
 				2F17BF8C2DF7CB4200CA36E8 /* WHHBaseViewController.swift */,
-				2F17BFA32DF8092500CA36E8 /* WHHTabBarController.swift */,
 				2F17BFA52DF8093D00CA36E8 /* WHHNavigationController.swift */,
 				2FE448B62E2A21940054083E /* WHHRootViewController.swift */,
 				2FE448B72E2A21940054083E /* WHHRootViewController.xib */,
@@ -817,17 +813,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2FDC68D12E2E272A00A523B0 /* WHHMine */ = {
-			isa = PBXGroup;
-			children = (
-				2FDC68D62E2E276300A523B0 /* Controller */,
-				2FDC68D52E2E275F00A523B0 /* View */,
-				2FDC68D42E2E275A00A523B0 /* Model */,
-				2FDC68D32E2E275300A523B0 /* ViewModel */,
-			);
-			path = WHHMine;
-			sourceTree = "<group>";
-		};
 		2FDC68D22E2E274A00A523B0 /* WHHABB */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,41 +821,6 @@
 				2FDC68D72E2E276800A523B0 /* Controller */,
 			);
 			path = WHHABB;
-			sourceTree = "<group>";
-		};
-		2FDC68D32E2E275300A523B0 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		2FDC68D42E2E275A00A523B0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2F043C4F2E6BE94300E8C04E /* WHHMineRequestApi.swift */,
-				2F043C512E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift */,
-				2F043C532E6C138A00E8C04E /* WHHMineUploadApi.h */,
-				2F043C542E6C138A00E8C04E /* WHHMineUploadApi.m */,
-				2F9D046E2EAF65B000F34017 /* WHHAIDestinyLineItemModel.h */,
-				2F9D046F2EAF65B000F34017 /* WHHAIDestinyLineItemModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2FDC68D52E2E275F00A523B0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2FDC68D62E2E276300A523B0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2FDC68DA2E2E278D00A523B0 /* WHHMineViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		2FDC68D72E2E276800A523B0 /* Controller */ = {
@@ -904,82 +854,6 @@
 				2FDC69342E38821D00A523B0 /* WHHMediaManager.swift */,
 			);
 			path = WHHMediaManager;
-			sourceTree = "<group>";
-		};
-		2FDC69692E3B5FAA00A523B0 /* WHHPersonage */ = {
-			isa = PBXGroup;
-			children = (
-				2F043C282E684AC100E8C04E /* Model */,
-				2FDC696D2E3B662400A523B0 /* View */,
-				2FDC696A2E3B5FBD00A523B0 /* Controller */,
-			);
-			path = WHHPersonage;
-			sourceTree = "<group>";
-		};
-		2FDC696A2E3B5FBD00A523B0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2FDC696B2E3B5FFC00A523B0 /* WHHPersonageViewController.swift */,
-				2FDC697A2E3B7AF800A523B0 /* WHHContactUsViewController.swift */,
-				2FDC697B2E3B7AF800A523B0 /* WHHContactUsViewController.xib */,
-				2FDC697E2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift */,
-				2F9D04642EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift */,
-				2F9D04662EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		2FDC696D2E3B662400A523B0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2FDC696E2E3B6D0E00A523B0 /* WHHPersonageTableViewCell.swift */,
-				2FDC696F2E3B6D0E00A523B0 /* WHHPersonageTableViewCell.xib */,
-				2FDC69722E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.swift */,
-				2FDC69732E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.xib */,
-				2FDC69762E3B72B100A523B0 /* WHHControllTableViewCell.swift */,
-				2FDC69772E3B72B100A523B0 /* WHHControllTableViewCell.xib */,
-				2FDC69802E3C60B400A523B0 /* WHHAgainAlertView.swift */,
-				2FDC69C12E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift */,
-				2FDC69C22E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib */,
-				2F76BFD32EADFC3E00710B52 /* WHHAIPersonVIPCell.swift */,
-				2F9D04682EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift */,
-				2F9D04692EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2FDC698C2E3CDFCA00A523B0 /* WHHAboutUs */ = {
-			isa = PBXGroup;
-			children = (
-				2FDC69922E3CE1F600A523B0 /* View */,
-				2FDC698D2E3CDFD200A523B0 /* Controller */,
-			);
-			path = WHHAboutUs;
-			sourceTree = "<group>";
-		};
-		2FDC698D2E3CDFD200A523B0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2FDC698E2E3CDFF300A523B0 /* WHHAboutUsViewController.swift */,
-				2FDC698F2E3CDFF300A523B0 /* WHHAboutUsViewController.xib */,
-				2FDC699A2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift */,
-				2FDC699C2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift */,
-				2FDC699D2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		2FDC69922E3CE1F600A523B0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2FDC69932E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift */,
-				2FDC69942E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib */,
-				2FDC69A02E3E048100A523B0 /* WHHlogoutAccoutAlertView.swift */,
-				2FDC69A92E3EF24700A523B0 /* WHHAppleAccountExplainView.swift */,
-				2FDC69AB2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift */,
-				2FDC69AD2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2FDC69972E3CE50400A523B0 /* WHHDeviceManager */ = {
@@ -1076,8 +950,6 @@
 				2FDC695A2E3A064D00A523B0 /* WHHLoadAlertView.xib */,
 				2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */,
 				2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */,
-				2F6D948D2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift */,
-				2F6D948E2E82C6DE00CE27A3 /* HomeABBTableViewCell.xib */,
 				2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */,
 				2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */,
 				2F5376AA2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift */,
@@ -1116,11 +988,9 @@
 				2F22A9302EBDA6D30093ECA8 /* WHHAIChatViewController.swift */,
 				2F22A9312EBDA6D30093ECA8 /* WHHAIChatViewController.xib */,
 				2F9D047C2EAF9BCA00F34017 /* View */,
-				2FE448AE2E29E7C60054083E /* WHHHomeViewController.swift */,
 				2FDC69382E38A53200A523B0 /* WHHDivinationViewController.swift */,
 				2FDC69392E38A53200A523B0 /* WHHDivinationViewController.xib */,
 				2FDC69502E39BE0600A523B0 /* WHHHomeSubscribedDetailViewController.swift */,
-				2FA9973D2EADED0700B61D04 /* WHHAINewHomeViewController.swift */,
 				2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */,
 				2F22A9342EBDAA090093ECA8 /* WHHAIChatListViewController.swift */,
 			);
@@ -1208,39 +1078,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FDC69702E3B6D0E00A523B0 /* WHHPersonageTableViewCell.xib in Resources */,
 				2F5376AD2ECC9EC0003C3FC7 /* WHHAISubscriptionView.xib in Resources */,
-				2FDC69902E3CDFF300A523B0 /* WHHAboutUsViewController.xib in Resources */,
 				2FE448A22E29E6D00054083E /* Localizable.strings in Resources */,
-				2FDC69952E3CE20200A523B0 /* WHHAboutUsTableViewCell.xib in Resources */,
-				2FDC69782E3B72B100A523B0 /* WHHControllTableViewCell.xib in Resources */,
-				2F9D046B2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.xib in Resources */,
 				2FDC695E2E3B0B5600A523B0 /* WHHABBHomeViewController.xib in Resources */,
 				2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */,
 				2FDC694E2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.xib in Resources */,
+				2F2ABD3E2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.xib in Resources */,
 				2F17BF812DF7C96200CA36E8 /* Assets.xcassets in Resources */,
+				2F2ABD422EF6ECAC004FA465 /* WHHAIIntegrationViewController.xib in Resources */,
 				2FDC69412E38D55000A523B0 /* WHHSubscriptionDivinationView.xib in Resources */,
 				2FDC695B2E3A064D00A523B0 /* WHHLoadAlertView.xib in Resources */,
 				2F9D047B2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.xib in Resources */,
 				2F5377732ECDC19D003C3FC7 /* asset.webp in Resources */,
+				2F2ABD462EF79348004FA465 /* WHHJIfenListTableViewCell.xib in Resources */,
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
-				2FDC697C2E3B7AF800A523B0 /* WHHContactUsViewController.xib in Resources */,
 				2FDC69542E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.xib in Resources */,
 				2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */,
 				2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */,
 				2FDC69BD2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.xib in Resources */,
-				2FDC69742E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.xib in Resources */,
+				2F2ABD4B2EF795E6004FA465 /* WHHVIPViewController.xib in Resources */,
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
-				2F6D94902E82C6DE00CE27A3 /* HomeABBTableViewCell.xib in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
 				2F76BFD62EAE0EF000710B52 /* homeView2.gif in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
-				2FDC699E2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
 				2F22A9332EBDA6D30093ECA8 /* WHHAIChatViewController.xib in Resources */,
 				2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */,
+				2F0E49482EF6D0FF00D9B0A6 /* WHHIdAlertView.xib in Resources */,
 				2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */,
-				2FDC69C32E3F52A800A523B0 /* WHHBuyFinishTableViewCell.xib in Resources */,
+				2F2ABD582EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib in Resources */,
 				2F22A9392EBDAB220093ECA8 /* WHHAIChatListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1294,9 +1160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FDC697F2E3B9C0800A523B0 /* WHHLookPhotoViewController.swift in Sources */,
 				2F17BFB22DF80BF100CA36E8 /* WHHHUD.swift in Sources */,
-				2FDC69AC2E3EF78F00A523B0 /* WHHBindingAppleAccountExplainView.swift in Sources */,
 				2F17BF802DF7C96200CA36E8 /* AppDelegate.swift in Sources */,
 				2F043BD12E6598EA00E8C04E /* UIColor+Hex.swift in Sources */,
 				2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */,
@@ -1306,21 +1170,17 @@
 				2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */,
 				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
 				2F5D87102EB9B58400570612 /* WHHAIWitchImageView.swift in Sources */,
-				2FDC699B2E3CE5FF00A523B0 /* WHHWKWebViewViewController.swift in Sources */,
 				2F043BC62E65499800E8C04E /* WHHHomeRequestViewModel.swift in Sources */,
+				2F2ABD3F2EF6E6A3004FA465 /* WHHAIGallerySetCenterViewController.swift in Sources */,
 				2FDC69322E38781D00A523B0 /* WHHDatePicker.m in Sources */,
-				2FDC69AE2E3EF86300A523B0 /* WHHAppleAccountRegisterView.swift in Sources */,
 				2F17BF9C2DF7D44900CA36E8 /* WHHColors.swift in Sources */,
 				2F004E0E2E0E35100016DA6B /* UIButton+AFNetworking.m in Sources */,
 				2FDC69992E3CE51600A523B0 /* WHHDeviceManager.swift in Sources */,
 				2FDC69512E39BE0600A523B0 /* WHHHomeSubscribedDetailViewController.swift in Sources */,
 				2F043BCF2E65970D00E8C04E /* UIImageView+KF.swift in Sources */,
 				2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */,
-				2FE448AF2E29E7C60054083E /* WHHHomeViewController.swift in Sources */,
 				2FDC692B2E38652900A523B0 /* WHHGradientButton.swift in Sources */,
-				2F9D04652EAE14E500F34017 /* WHHAIDestinyLinesViewController.swift in Sources */,
 				2F004E112E0E35100016DA6B /* UIImageView+AFNetworking.m in Sources */,
-				2F9D04702EAF65B000F34017 /* WHHAIDestinyLineItemModel.m in Sources */,
 				2F004E122E0E35100016DA6B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2F5379252ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift in Sources */,
 				2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */,
@@ -1328,22 +1188,27 @@
 				2F004E132E0E35100016DA6B /* AFImageDownloader.m in Sources */,
 				2FDC69592E3A063000A523B0 /* WHHLoadAlertView.swift in Sources */,
 				2F004E142E0E35100016DA6B /* AFURLResponseSerialization.m in Sources */,
-				2FDC697D2E3B7AF800A523B0 /* WHHContactUsViewController.swift in Sources */,
 				2FDC693B2E38A53200A523B0 /* WHHDivinationViewController.swift in Sources */,
+				2F2ABD432EF6ECAC004FA465 /* WHHAIIntegrationViewController.swift in Sources */,
 				2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */,
 				2FDC69652E3B1EE800A523B0 /* String+Ext.swift in Sources */,
 				2F22A93C2EBDCE240093ECA8 /* WHHAIChatListModel.m in Sources */,
 				2F004E182E0E35100016DA6B /* UIRefreshControl+AFNetworking.m in Sources */,
-				2FA9973E2EADED0700B61D04 /* WHHAINewHomeViewController.swift in Sources */,
 				2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */,
 				2FDC69292E37A91500A523B0 /* WHHChooseSexView.swift in Sources */,
 				2FDC694F2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.swift in Sources */,
-				2FDC69712E3B6D0E00A523B0 /* WHHPersonageTableViewCell.swift in Sources */,
 				2F004E192E0E35100016DA6B /* UIProgressView+AFNetworking.m in Sources */,
+				2F0E49372EF6A30500D9B0A6 /* WHHMineRequestApiViewModel.swift in Sources */,
+				2F2ABD3B2EF6E19A004FA465 /* WHHAIGalleryGalleryItemViewController.swift in Sources */,
+				2F2ABD552EF7AD53004FA465 /* WHHNewMineItemViewViewController.swift in Sources */,
+				2F0E49382EF6A30500D9B0A6 /* WHHMineUploadApi.m in Sources */,
+				2F0E49392EF6A30500D9B0A6 /* WHHMineRequestApi.swift in Sources */,
 				2FDC69A32E3E0EEF00A523B0 /* WHHAgreementView.swift in Sources */,
+				2F0E492E2EF68DE800D9B0A6 /* WHHAIFlowerbedViewController.swift in Sources */,
 				2FDC694B2E38F1EF00A523B0 /* WHHBaseTableViewCell.swift in Sources */,
+				2F0E493C2EF6A6EA00D9B0A6 /* FCMineModel.m in Sources */,
+				2F0E49322EF6A2E300D9B0A6 /* WHHWKWebViewViewController.swift in Sources */,
 				2F043BCA2E65586F00E8C04E /* WHHLog.m in Sources */,
-				2FDC699F2E3CEB0200A523B0 /* WHHlogoutAccoutViewController.swift in Sources */,
 				2F004E1C2E0E35100016DA6B /* AFURLSessionManager.m in Sources */,
 				2FDC69552E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.swift in Sources */,
 				2F5376AB2ECC9EB0003C3FC7 /* WHHAISubscriptionView.swift in Sources */,
@@ -1351,15 +1216,15 @@
 				2FE448B92E2A21940054083E /* WHHRootViewController.swift in Sources */,
 				2FDC693F2E38D54900A523B0 /* WHHSubscriptionDivinationView.swift in Sources */,
 				2FDC69B62E3EFD6E00A523B0 /* WHHVIPCenterViewController.swift in Sources */,
-				2F043C2B2E684AD400E8C04E /* FCMineModel.m in Sources */,
+				2F2ABD532EF7AAA0004FA465 /* WHHNewMineHeaderView.swift in Sources */,
 				2F22A9432EC07D320093ECA8 /* SSEParser.swift in Sources */,
-				2FDC696C2E3B5FFC00A523B0 /* WHHPersonageViewController.swift in Sources */,
-				2F6D948F2E82C6DE00CE27A3 /* HomeABBTableViewCell.swift in Sources */,
 				2F043BB32E653F6600E8C04E /* YTKRequest.m in Sources */,
 				2F043BB42E653F6600E8C04E /* YTKNetworkPrivate.m in Sources */,
 				2F043BB52E653F6600E8C04E /* YTKNetworkAgent.m in Sources */,
 				2F043C422E6B070000E8C04E /* WHHVIPRequestApi.swift in Sources */,
+				2F0E492A2EF68D3F00D9B0A6 /* WHHAITabBarController.swift in Sources */,
 				2F60795A2E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift in Sources */,
+				2F2ABD392EF6E115004FA465 /* WHHAIGallerySleepItemViewController.swift in Sources */,
 				2F043BB62E653F6600E8C04E /* YTKRequestEventAccessory.m in Sources */,
 				2F043BB72E653F6600E8C04E /* YTKBatchRequestAgent.m in Sources */,
 				2F043BB82E653F6600E8C04E /* YTKBatchRequest.m in Sources */,
@@ -1370,10 +1235,9 @@
 				2F043BB92E653F6600E8C04E /* YTKChainRequestAgent.m in Sources */,
 				2F043BBA2E653F6600E8C04E /* YTKNetworkConfig.m in Sources */,
 				2F043BBB2E653F6600E8C04E /* YTKBaseRequest.m in Sources */,
+				2F0E49302EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift in Sources */,
 				2F043BBC2E653F6600E8C04E /* YTKChainRequest.m in Sources */,
 				2F5377B22ECDED30003C3FC7 /* WHHDateFormatterManager.swift in Sources */,
-				2FDC69C42E3F52A800A523B0 /* WHHBuyFinishTableViewCell.swift in Sources */,
-				2F043C502E6BE94300E8C04E /* WHHMineRequestApi.swift in Sources */,
 				2F004E1E2E0E35100016DA6B /* AFURLRequestSerialization.m in Sources */,
 				2F60795C2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift in Sources */,
 				2F004E1F2E0E35100016DA6B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1385,6 +1249,8 @@
 				2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */,
 				2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */,
 				2F22A9352EBDAA090093ECA8 /* WHHAIChatListViewController.swift in Sources */,
+				2F2ABD472EF79348004FA465 /* WHHJIfenListTableViewCell.swift in Sources */,
+				2F2ABD592EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift in Sources */,
 				2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */,
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
 				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
@@ -1400,48 +1266,38 @@
 				2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */,
 				2F043BC22E653FDD00E8C04E /* WHHRequest.m in Sources */,
 				2FDC69572E39F7A500A523B0 /* WHHInputView.swift in Sources */,
-				2FDC69752E3B71EF00A523B0 /* WHHPersonageControllTableViewCell.swift in Sources */,
-				2F9D046A2EAF634B00F34017 /* WHHAIDestinyLineItemTableViewCell.swift in Sources */,
 				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
 				2FDC693D2E38C76800A523B0 /* WHHDivinationAlertView.swift in Sources */,
-				2FDC69A12E3E048200A523B0 /* WHHlogoutAccoutAlertView.swift in Sources */,
 				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
-				2FDC69962E3CE20200A523B0 /* WHHAboutUsTableViewCell.swift in Sources */,
 				2FDC69BE2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift in Sources */,
+				2F0E49422EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m in Sources */,
 				2F5376A72ECC7C85003C3FC7 /* WHHAIStorekitManager.swift in Sources */,
 				2FDC69BA2E3F082A00A523B0 /* WHHVIPCenterModel.m in Sources */,
 				2F17BFB52DF80C9800CA36E8 /* AppDelegate+initLibs.swift in Sources */,
-				2F17BFA42DF8092500CA36E8 /* WHHTabBarController.swift in Sources */,
 				2F53776F2ECDBA61003C3FC7 /* FortuneRequestManager.swift in Sources */,
 				2F043C4E2E6BDAB200E8C04E /* WHHApplePurchaseManager.swift in Sources */,
-				2FDC69792E3B72B100A523B0 /* WHHControllTableViewCell.swift in Sources */,
 				2F043C442E6B07B000E8C04E /* FCVIPRequestApiViewModel.swift in Sources */,
 				2F22A9322EBDA6D30093ECA8 /* WHHAIChatViewController.swift in Sources */,
 				2F17BF972DF7D09F00CA36E8 /* WHHBaseModel.m in Sources */,
-				2FDC68DB2E2E278D00A523B0 /* WHHMineViewController.swift in Sources */,
-				2F76BFD42EADFC3E00710B52 /* WHHAIPersonVIPCell.swift in Sources */,
 				2F22AA202EC466380093ECA8 /* WHHStoreKitManagerV2.swift in Sources */,
 				2FE448BB2E2A25760054083E /* WHHNoNetAlertView.swift in Sources */,
 				2F22A9412EBDFC350093ECA8 /* WHHAIChatListDeleteView.swift in Sources */,
+				2F0E49442EF6B4AF00D9B0A6 /* WHHIdAlertView.swift in Sources */,
 				2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */,
 				2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */,
+				2F2ABD4A2EF795E6004FA465 /* WHHVIPViewController.swift in Sources */,
 				2F22A9382EBDAB220093ECA8 /* WHHAIChatListTableViewCell.swift in Sources */,
-				2F043C522E6BE9A600E8C04E /* WHHMineRequestApiViewModel.swift in Sources */,
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
 				2FDC69492E38D8CF00A523B0 /* WHHHomeWitchTableViewCell.swift in Sources */,
-				2F043C552E6C138A00E8C04E /* WHHMineUploadApi.m in Sources */,
 				2F043C492E6B0D2700E8C04E /* WHHSystemModel.m in Sources */,
-				2FDC69912E3CDFF300A523B0 /* WHHAboutUsViewController.swift in Sources */,
 				2F9D047E2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift in Sources */,
 				2F043C582E6C1CE500E8C04E /* WHHHomeForetellModel.m in Sources */,
+				2F0E492C2EF68DB700D9B0A6 /* WHHAIIdentifyHomeViewController.swift in Sources */,
 				2FDC692D2E3867A700A523B0 /* WHHSexItemView.swift in Sources */,
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,
-				2FDC69AA2E3EF24700A523B0 /* WHHAppleAccountExplainView.swift in Sources */,
 				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,
 				2FDC69612E3B124A00A523B0 /* WHHABBInputBarView.swift in Sources */,
-				2F9D04672EAF616900F34017 /* WHHAIDestinyLineItemViewController.swift in Sources */,
-				2FDC69812E3C60B400A523B0 /* WHHAgainAlertView.swift in Sources */,
 				2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1492,7 +1348,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 300;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1538,7 +1394,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 300;
+				CURRENT_PROJECT_VERSION = 350;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FDQF58PX62;
 				GENERATE_INFOPLIST_FILE = YES;

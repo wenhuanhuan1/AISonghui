@@ -13,6 +13,6 @@ private let isDevelop = false
 class WHHEnvironmentConf: NSObject {
     
     class var baseUrl: String {
-        return isDevelop ? "https://testapi.abeibei.vip" : "https://api.abeibei.vip"
+        return isDevelop ? "http://testapi.abeibei.vip" : "http://api.abeibei.vip"
     }
 }
