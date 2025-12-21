@@ -46,6 +46,16 @@ class WHHVIPCenterCollectionViewCell: UICollectionViewCell {
                 bottomView.backgroundColor = .white.withAlphaComponent(0.3)
                 bottomLabel.textColor = .white.withAlphaComponent(0.5)
             }
+            
+            var jifen = ""
+            if newCellModel.code == "com.abb.AIProjectWeek" {
+                jifen = newCellModel.rewardPoints + "积分/周"
+            } else if newCellModel.code == "com.abb.AIProjectMonth" {
+                jifen = newCellModel.rewardPoints + "积分/月"
+            }else if newCellModel.code == "com.abb.AIProjectYears" {
+                jifen = newCellModel.rewardPoints + "积分/年"
+            }
+            bottomLabel.text = jifen
         }
     }
 }

@@ -9,6 +9,9 @@ import UIKit
 
 import JXPagingView
 import JXSegmentedView
+import IQKeyboardManagerSwift
+extension JXPagingListContainerView: @retroactive JXSegmentedViewListContainer {}
+
 class JFCustomView: WHHBaseView {
     var didJFCustomViewButtonBlock: (() -> Void)?
 
@@ -48,18 +51,21 @@ class JFCustomView: WHHBaseView {
 class WHHAIIdentifyMineViewController: WHHBaseViewController {
     lazy var headView: WHHNewMineHeaderView = {
         let a = WHHNewMineHeaderView()
-        a.didEditButtonBlock = {
+        a.didEditButtonBlock = {[weak self] model in
+            
+            self?.jumpEditView(model: model)
         }
-        a.didSpackButtonBlock = {
+        a.didSpackButtonBlock = {[weak self] _ in
         }
         return a
     }()
 
+    
     lazy var pagingView: JXPagingView = {
         let pagingView = JXPagingView(delegate: self)
         pagingView.backgroundColor = .clear
         pagingView.mainTableView.backgroundColor = .clear
-//        pagingView.pinSectionHeaderVerticalOffset = Int(WHHTopSafe)
+        
         return pagingView
     }()
 
@@ -108,7 +114,15 @@ class WHHAIIdentifyMineViewController: WHHBaseViewController {
         a.addTarget(self, action: #selector(setButtonClick), for: .touchUpInside)
         return a
     }()
+    @objc func setButtonClick() {
+        let setCenterVC = WHHAIGallerySetCenterViewController()
+        navigationController?.pushViewController(setCenterVC, animated: true)
+    }
 
+    private func jumpjifenCenter() {
+        let vc = WHHAIIntegrationViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(setButton)
@@ -123,27 +137,50 @@ class WHHAIIdentifyMineViewController: WHHBaseViewController {
             make.centerY.equalTo(setButton)
             make.right.equalTo(setButton.snp.left).offset(-10)
         }
+        
+        segmentedView.listContainer = pagingView.listContainerView
+        // Swift 示例
+        segmentedView.listContainer = pagingView.listContainerView
+
         view.addSubview(pagingView)
         
         pagingView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(WHHAllNavBarHeight)
             make.left.bottom.right.equalToSuperview()
         }
-        segmentedView.listContainer = pagingView.listContainerView as? any JXSegmentedViewListContainer
+                
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        IQKeyboardManager.shared.isEnabled = true
+        getUserInfo()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        IQKeyboardManager.shared.isEnabled = false
+    }
+    
+    private func getUserInfo() {
+        
+        WHHHomeRequestViewModel.whhPersonGetMineUserInfoRequest {[weak self] code, model in
+            
+            if code == 1 {
+                self?.headView.userInfoModel = model
+            }
+        }
     }
 
-    @objc func setButtonClick() {
-        let setCenterVC = WHHAIGallerySetCenterViewController()
-        navigationController?.pushViewController(setCenterVC, animated: true)
-    }
-
-    private func jumpjifenCenter() {
-        let vc = WHHAIIntegrationViewController()
-        navigationController?.pushViewController(vc, animated: true)
+    private func jumpEditView(model:FCMineModel) {
+        
+        let infoView = WHHEditUserInfoView()
+        infoView.userInfo = model
+        UIWindow.getKeyWindow?.addSubview(infoView)
     }
 }
 
-extension WHHAIIdentifyMineViewController: JXPagingViewDelegate {
+extension WHHAIIdentifyMineViewController: JXPagingViewDelegate,JXPagingMainTableViewGestureDelegate,JXSegmentedViewDelegate {
     func pagingView(_ pagingView: JXPagingView, initListAtIndex index: Int) -> JXPagingViewListViewDelegate {
         let vc = WHHNewMineItemViewViewController()
 
@@ -171,5 +208,9 @@ extension WHHAIIdentifyMineViewController: JXPagingViewDelegate {
     }
 
     func mainTableViewDidScroll(_ scrollView: UIScrollView) {
+    }
+    
+    func mainTableViewGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return gestureRecognizer.isKind(of: UIPanGestureRecognizer.self) && otherGestureRecognizer.isKind(of: UIPanGestureRecognizer.self)
     }
 }

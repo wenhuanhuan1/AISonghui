@@ -7,7 +7,7 @@
 
 import Foundation
 import GKNavigationBarSwift
-
+import IQKeyboardManagerSwift
 extension AppDelegate {
     /// 初始化三方库
     func initLibs() {
@@ -18,7 +18,7 @@ extension AppDelegate {
         WHHHomeRequestViewModel.whhDeviceInstallRequest()
         // 启动监听 StoreKit 交易更新，避免漏单
         WHHStoreKitManagerV2.shared.startTransactionUpdatesListener()
-
+        IQKeyboardManager.shared.isEnabled = false
     }
 
     private func initMMKV() {

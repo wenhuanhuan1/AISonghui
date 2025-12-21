@@ -107,6 +107,7 @@
 		2F5377732ECDC19D003C3FC7 /* asset.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2F5377722ECDC19D003C3FC7 /* asset.webp */; };
 		2F5377B22ECDED30003C3FC7 /* WHHDateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5377B12ECDED30003C3FC7 /* WHHDateFormatterManager.swift */; };
 		2F5379252ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5379232ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift */; };
+		2F56EC1F2EF7E725005EFFE8 /* WHHEditUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56EC1E2EF7E725005EFFE8 /* WHHEditUserInfoView.swift */; };
 		2F5D87102EB9B58400570612 /* WHHAIWitchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */; };
 		2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */; };
 		2F6079512E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */; };
@@ -128,6 +129,7 @@
 		2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */; };
 		2FC1C81A2E93F5700078F1A8 /* aboutUs.webp in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C8192E93F5700078F1A8 /* aboutUs.webp */; };
 		2FC1C81C2E948CB00078F1A8 /* aboutUsAbb.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */; };
+		2FD15FA62EF7D76900ECDCC7 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD15FA52EF7D76900ECDCC7 /* UIImage+Ext.swift */; };
 		2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */; };
 		2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */; };
 		2FDC690A2E33263900A523B0 /* WHHHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */; };
@@ -326,6 +328,7 @@
 		2F5377722ECDC19D003C3FC7 /* asset.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = asset.webp; sourceTree = "<group>"; };
 		2F5377B12ECDED30003C3FC7 /* WHHDateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHDateFormatterManager.swift; sourceTree = "<group>"; };
 		2F5379232ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIWitchTableViewCell.swift; sourceTree = "<group>"; };
+		2F56EC1E2EF7E725005EFFE8 /* WHHEditUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHEditUserInfoView.swift; sourceTree = "<group>"; };
 		2F5D870F2EB9B58400570612 /* WHHAIWitchImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIWitchImageView.swift; sourceTree = "<group>"; };
 		2F60794E2E6E742D001CD6BB /* WHHABBChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatViewController.swift; sourceTree = "<group>"; };
 		2F6079502E6E7CF9001CD6BB /* WHHABBChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHABBChatTableViewCell.swift; sourceTree = "<group>"; };
@@ -349,6 +352,7 @@
 		2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIAugurView.swift; sourceTree = "<group>"; };
 		2FC1C8192E93F5700078F1A8 /* aboutUs.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = aboutUs.webp; sourceTree = "<group>"; };
 		2FC1C81B2E948CB00078F1A8 /* aboutUsAbb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aboutUsAbb.gif; sourceTree = "<group>"; };
+		2FD15FA52EF7D76900ECDCC7 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		2FDC69072E325AAA00A523B0 /* WHHGradualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHGradualView.swift; sourceTree = "<group>"; };
 		2FDC69092E33263900A523B0 /* WHHHomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHHomeItemView.swift; sourceTree = "<group>"; };
@@ -565,6 +569,7 @@
 				2F2ABD542EF7AD53004FA465 /* WHHNewMineItemViewViewController.swift */,
 				2F2ABD562EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift */,
 				2F2ABD572EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.xib */,
+				2F56EC1E2EF7E725005EFFE8 /* WHHEditUserInfoView.swift */,
 			);
 			path = AIIdentifyClass;
 			sourceTree = "<group>";
@@ -725,6 +730,7 @@
 				2F043BCE2E65970D00E8C04E /* UIImageView+KF.swift */,
 				2F043BD02E6598EA00E8C04E /* UIColor+Hex.swift */,
 				2FD81A892E8A3011000CFDD6 /* UIView+ext.swift */,
+				2FD15FA52EF7D76900ECDCC7 /* UIImage+Ext.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1263,8 +1269,10 @@
 				2F004E262E0E35100016DA6B /* WKWebView+AFNetworking.m in Sources */,
 				2F17BFB82DF80D0100CA36E8 /* WHHUserInfoManager.swift in Sources */,
 				2FDC69672E3B402C00A523B0 /* WHHABBSubscriptionAlertView.swift in Sources */,
+				2F56EC1F2EF7E725005EFFE8 /* WHHEditUserInfoView.swift in Sources */,
 				2F17BFBB2DF80E2C00CA36E8 /* WHHUserModel.m in Sources */,
 				2F043BC22E653FDD00E8C04E /* WHHRequest.m in Sources */,
+				2FD15FA62EF7D76900ECDCC7 /* UIImage+Ext.swift in Sources */,
 				2FDC69572E39F7A500A523B0 /* WHHInputView.swift in Sources */,
 				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
 				2FDC693D2E38C76800A523B0 /* WHHDivinationAlertView.swift in Sources */,
@@ -1348,7 +1356,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 350;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HMGRHKGHAR;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1394,7 +1402,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 350;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FDQF58PX62;
 				GENERATE_INFOPLIST_FILE = YES;

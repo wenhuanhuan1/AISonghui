@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *productId;
 @property(nonatomic,copy) NSString *name;
 @property(nonatomic,copy) NSString *shopId;
+@property(nonatomic,copy) NSString *rewardPoints;
 
 @property(nonatomic,copy) NSString *orderId;
 @property(nonatomic,copy) NSString *uuid;

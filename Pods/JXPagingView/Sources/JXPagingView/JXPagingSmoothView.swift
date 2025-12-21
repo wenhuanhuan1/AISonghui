@@ -17,8 +17,7 @@ import UIKit
     @objc optional func listDidDisappear()
 }
 
-@objc
-public protocol JXPagingSmoothViewDataSource {
+@objc public protocol JXPagingSmoothViewDataSource {
     /// 返回页面header的高度
     func heightForPagingHeader(in pagingView: JXPagingSmoothView) -> CGFloat
     /// 返回页面header视图
@@ -35,19 +34,12 @@ public protocol JXPagingSmoothViewDataSource {
     func pagingView(_ pagingView: JXPagingSmoothView, initListAtIndex index: Int) -> JXPagingSmoothViewListViewDelegate
 }
 
-@objc
-public protocol JXPagingSmoothViewDelegate {
-    @objc optional func pagingSmoothViewDidScroll(_ scrollView: UIScrollView)
-}
-
-
 open class JXPagingSmoothView: UIView {
     public private(set) var listDict = [Int : JXPagingSmoothViewListViewDelegate]()
     public let listCollectionView: JXPagingSmoothCollectionView
     public var defaultSelectedIndex: Int = 0
-    public weak var delegate: JXPagingSmoothViewDelegate?
 
-    weak var dataSource: JXPagingSmoothViewDataSource?
+    unowned var dataSource: JXPagingSmoothViewDataSource
     var listHeaderDict = [Int : UIView]()
     var isSyncListContentOffsetEnabled: Bool = false
     let pagingHeaderContainerView: UIView
@@ -58,8 +50,6 @@ open class JXPagingSmoothView: UIView {
     var heightForPinHeader: CGFloat = 0
     var heightForPagingHeaderContainerView: CGFloat = 0
     let cellIdentifier = "cell"
-    var currentListInitializeContentOffsetY: CGFloat = 0
-    var singleScrollView: UIScrollView?
 
     deinit {
         listDict.values.forEach {
@@ -100,7 +90,6 @@ open class JXPagingSmoothView: UIView {
     }
 
     public func reloadData() {
-        guard let dataSource = dataSource else { return }
         currentListScrollView = nil
         currentIndex = defaultSelectedIndex
         currentPagingHeaderContainerViewY = 0
@@ -128,16 +117,6 @@ open class JXPagingSmoothView: UIView {
         pinHeader.frame = CGRect(x: 0, y: heightForPagingHeader, width: bounds.size.width, height: heightForPinHeader)
         listCollectionView.setContentOffset(CGPoint(x: listCollectionView.bounds.size.width*CGFloat(defaultSelectedIndex), y: 0), animated: false)
         listCollectionView.reloadData()
-
-        if dataSource.numberOfLists(in: self) == 0 {
-            singleScrollView = UIScrollView()
-            addSubview(singleScrollView!)
-            singleScrollView?.addSubview(pagingHeader)
-            singleScrollView?.contentSize = CGSize(width: bounds.size.width, height: heightForPagingHeader)
-        }else if singleScrollView != nil {
-            singleScrollView?.removeFromSuperview()
-            singleScrollView = nil
-        }
     }
 
     open override func layoutSubviews() {
@@ -146,9 +125,6 @@ open class JXPagingSmoothView: UIView {
         listCollectionView.frame = bounds
         if pagingHeaderContainerView.frame == CGRect.zero {
             reloadData()
-        }
-        if singleScrollView != nil {
-            singleScrollView?.frame = bounds
         }
     }
 
@@ -204,10 +180,6 @@ open class JXPagingSmoothView: UIView {
                 let minContentSizeHeight = bounds.size.height - heightForPinHeader
                 if minContentSizeHeight > scrollView.contentSize.height {
                     scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: minContentSizeHeight)
-                    //新的scrollView第一次加载的时候重置contentOffset
-                    if currentListScrollView != nil, scrollView != currentListScrollView! {
-                        scrollView.contentOffset = CGPoint(x: 0, y: currentListInitializeContentOffsetY)
-                    }
                 }
             }
         }else {
@@ -235,7 +207,6 @@ open class JXPagingSmoothView: UIView {
     }
 
     func listDidAppear(at index: Int) {
-        guard let dataSource = dataSource else { return }
         let count = dataSource.numberOfLists(in: self)
         if count <= 0 || index >= count {
             return
@@ -244,7 +215,6 @@ open class JXPagingSmoothView: UIView {
     }
 
     func listDidDisappear(at index: Int) {
-        guard let dataSource = dataSource else { return }
         let count = dataSource.numberOfLists(in: self)
         if count <= 0 || index >= count {
             return
@@ -272,12 +242,10 @@ extension JXPagingSmoothView: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let dataSource = dataSource else { return 0 }
         return dataSource.numberOfLists(in: self)
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let dataSource = dataSource else { return UICollectionViewCell(frame: CGRect.zero) }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
         var list = listDict[indexPath.item]
         if list == nil {
@@ -285,17 +253,14 @@ extension JXPagingSmoothView: UICollectionViewDataSource, UICollectionViewDelega
             listDict[indexPath.item] = list!
             list?.listView().setNeedsLayout()
             list?.listView().layoutIfNeeded()
-            if list?.listScrollView().isKind(of: UITableView.self) == true {
+            if list?.listScrollView().isMember(of: UITableView.self) == true {
                 (list?.listScrollView() as? UITableView)?.estimatedRowHeight = 0
-                (list?.listScrollView() as? UITableView)?.estimatedSectionHeaderHeight = 0
-                (list?.listScrollView() as? UITableView)?.estimatedSectionFooterHeight = 0
             }
             if #available(iOS 11.0, *) {
                 list?.listScrollView().contentInsetAdjustmentBehavior = .never
             }
             list?.listScrollView().contentInset = UIEdgeInsets(top: heightForPagingHeaderContainerView, left: 0, bottom: 0, right: 0)
-            currentListInitializeContentOffsetY = -heightForPagingHeaderContainerView + min(-currentPagingHeaderContainerViewY, heightForPagingHeader)
-            list?.listScrollView().contentOffset = CGPoint(x: 0, y: currentListInitializeContentOffsetY)
+            list?.listScrollView().contentOffset = CGPoint(x: 0, y: -heightForPagingHeaderContainerView + min(-currentPagingHeaderContainerViewY, heightForPagingHeader))
             let listHeader = UIView(frame: CGRect(x: 0, y: -heightForPagingHeaderContainerView, width: bounds.size.width, height: heightForPagingHeaderContainerView))
             list?.listScrollView().addSubview(listHeader)
             if pagingHeaderContainerView.superview == nil {
@@ -323,11 +288,9 @@ extension JXPagingSmoothView: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delegate?.pagingSmoothViewDidScroll?(scrollView)
-        let indexPercent = scrollView.contentOffset.x/scrollView.bounds.size.width
         let index = Int(scrollView.contentOffset.x/scrollView.bounds.size.width)
         let listScrollView = listDict[index]?.listScrollView()
-        if (indexPercent - CGFloat(index) == 0) && index != currentIndex && !(scrollView.isDragging || scrollView.isDecelerating) && listScrollView?.contentOffset.y ?? 0 <= -heightForPinHeader {
+        if index != currentIndex && !(scrollView.isDragging || scrollView.isDecelerating) && listScrollView?.contentOffset.y ?? 0 <= -heightForPinHeader {
             horizontalScrollDidEnd(at: index)
         }else {
             //左右滚动的时候，就把listHeaderContainerView添加到self，达到悬浮在顶部的效果

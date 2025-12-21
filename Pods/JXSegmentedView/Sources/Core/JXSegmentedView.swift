@@ -150,7 +150,6 @@ public extension JXSegmentedViewDelegate {
 open class JXSegmentedView: UIView, JXSegmentedViewRTLCompatible {
     open weak var dataSource: JXSegmentedViewDataSource? {
         didSet {
-            dataSource?.registerCellClass(in: self)
             dataSource?.reloadData(selectedIndex: selectedIndex)
         }
     }
@@ -172,7 +171,7 @@ open class JXSegmentedView: UIView, JXSegmentedViewRTLCompatible {
         }
     }
     /// indicators的元素必须是遵从JXSegmentedIndicatorProtocol协议的UIView及其子类
-    open var indicators = [JXSegmentedIndicatorProtocol]() {
+    open var indicators = [JXSegmentedIndicatorProtocol & UIView]() {
         didSet {
             collectionView.indicators = indicators
         }
@@ -225,7 +224,6 @@ open class JXSegmentedView: UIView, JXSegmentedViewRTLCompatible {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.scrollsToTop = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "JXSegmentedViewInnerEmptyCell")
         collectionView.dataSource = self
         collectionView.delegate = self
         if #available(iOS 10.0, *) {
@@ -290,6 +288,7 @@ open class JXSegmentedView: UIView, JXSegmentedViewRTLCompatible {
 
     open func reloadDataWithoutListContainer() {
         dataSource?.reloadData(selectedIndex: selectedIndex)
+        dataSource?.registerCellClass(in: self)
         if let itemSource = dataSource?.itemDataSource(in: self) {
             itemDataSource = itemSource
         }
@@ -687,7 +686,7 @@ extension JXSegmentedView: UICollectionViewDataSource {
             cell.reloadData(itemModel: itemDataSource[indexPath.item], selectedType: .unknown)
             return cell
         }else {
-            return collectionView.dequeueReusableCell(withReuseIdentifier: "JXSegmentedViewInnerEmptyCell", for: indexPath)
+            return UICollectionViewCell(frame: CGRect.zero)
         }
     }
 }
@@ -714,11 +713,7 @@ extension JXSegmentedView: UICollectionViewDelegateFlowLayout {
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.item >= 0, indexPath.item < itemDataSource.count {
-            return CGSize(width: itemDataSource[indexPath.item].itemWidth, height: collectionView.bounds.size.height)
-        } else {
-            return .zero
-        }
+        return CGSize(width: itemDataSource[indexPath.item].itemWidth, height: collectionView.bounds.size.height)
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return innerItemSpacing

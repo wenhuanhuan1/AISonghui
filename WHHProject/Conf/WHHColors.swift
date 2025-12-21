@@ -14,6 +14,7 @@ let Color5A92FF = #colorLiteral(red: 0.3529411765, green: 0.5725490196, blue: 1,
 let ColorE7E7E7 = #colorLiteral(red: 0.9058823529, green: 0.9058823529, blue: 0.9058823529, alpha: 1)
 let ColorF0F1F5 = #colorLiteral(red: 0.9411764706, green: 0.9450980392, blue: 0.9607843137, alpha: 1)
 
+let Color414348 = #colorLiteral(red: 0.2549019608, green: 0.262745098, blue: 0.2823529412, alpha: 1)
 
 
 let ColorDAAE4D = #colorLiteral(red: 0.8549019608, green: 0.6823529412, blue: 0.3019607843, alpha: 1)

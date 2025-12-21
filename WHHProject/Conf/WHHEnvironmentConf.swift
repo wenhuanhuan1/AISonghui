@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let isDevelop = false
+private let isDevelop = true
 
 @objcMembers
 class WHHEnvironmentConf: NSObject {

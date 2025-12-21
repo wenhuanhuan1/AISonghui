@@ -28,8 +28,6 @@ open class JXSegmentedBaseDataSource: JXSegmentedViewDataSource {
     open var selectedAnimationDuration: TimeInterval = 0.25
     /// 是否允许item宽度缩放
     open var isItemWidthZoomEnabled: Bool = false
-    /// 是否允许item宽度缩放动画
-    open var isItemWidthZoomAnimable: Bool = true
     /// item宽度选中时的scale
     open var itemWidthSelectedZoomScale: CGFloat = 1.5
 
@@ -44,7 +42,6 @@ open class JXSegmentedBaseDataSource: JXSegmentedViewDataSource {
 
     deinit {
         animator?.stop()
-        animator = nil
     }
 
     public init() {
@@ -54,8 +51,6 @@ open class JXSegmentedBaseDataSource: JXSegmentedViewDataSource {
     ///
     /// - Parameter selectedIndex: 当前选中的index
     open func reloadData(selectedIndex: Int) {
-        animator?.stop()
-        animator = nil
         dataSource.removeAll()
         for index in 0..<preferredItemCount() {
             let itemModel = preferredItemModelInstance()
@@ -136,11 +131,7 @@ open class JXSegmentedBaseDataSource: JXSegmentedViewDataSource {
                     willSelectedItemModel.itemWidth = self.itemWidthWithZoom(at: willSelectedItemModel.index, model: willSelectedItemModel)
                     segmentedView.collectionView.collectionViewLayout.invalidateLayout()
                 }
-                if isItemWidthZoomAnimable {
-                    animator?.start()
-                }else {
-                    animator?.stop()
-                }
+                animator?.start()
             }
         }else {
             currentSelectedItemModel.itemWidthCurrentZoomScale = currentSelectedItemModel.itemWidthNormalZoomScale

@@ -30,7 +30,8 @@ class WHHAITabBarController: UITabBarController {
         tabBar.isTranslucent = false
         tabBar.backgroundColor = Color0F0F12
         tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.3)
-        tabBar.backgroundImage = nil
+        tabBar.backgroundImage = UIImage.image(with: Color0F0F12)
+        tabBar.shadowImage = UIImage.image(with: Color0F0F12)
         tabBar.tintColor = .white
         
         
