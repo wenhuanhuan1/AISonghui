@@ -129,6 +129,8 @@
 		2FA65A4A2EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA65A472EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift */; };
 		2FA65A4D2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA65A4C2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib */; };
 		2FA65A4E2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA65A4B2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift */; };
+		2FA65BAE2EF96734003E83E2 /* WHAIInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA65BAD2EF96734003E83E2 /* WHAIInputView.swift */; };
+		2FA65BB02EF969A6003E83E2 /* WHHAIMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA65BAF2EF969A6003E83E2 /* WHHAIMaskView.swift */; };
 		2FA997402EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */; };
 		2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */; };
 		2FD15FA62EF7D76900ECDCC7 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD15FA52EF7D76900ECDCC7 /* UIImage+Ext.swift */; };
@@ -354,6 +356,8 @@
 		2FA65A482EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISleepTwoTableViewCell.xib; sourceTree = "<group>"; };
 		2FA65A4B2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAISleepThreeTableViewCell.swift; sourceTree = "<group>"; };
 		2FA65A4C2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAISleepThreeTableViewCell.xib; sourceTree = "<group>"; };
+		2FA65BAD2EF96734003E83E2 /* WHAIInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHAIInputView.swift; sourceTree = "<group>"; };
+		2FA65BAF2EF969A6003E83E2 /* WHHAIMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIMaskView.swift; sourceTree = "<group>"; };
 		2FA9973F2EADF3D400B61D04 /* WHHAIChooseAugurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIChooseAugurViewController.swift; sourceTree = "<group>"; };
 		2FA997412EADF47300B61D04 /* WHHAIAugurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIAugurView.swift; sourceTree = "<group>"; };
 		2FD15FA52EF7D76900ECDCC7 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
@@ -580,6 +584,8 @@
 				2FA65A482EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.xib */,
 				2FA65A4B2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.swift */,
 				2FA65A4C2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib */,
+				2FA65BAD2EF96734003E83E2 /* WHAIInputView.swift */,
+				2FA65BAF2EF969A6003E83E2 /* WHHAIMaskView.swift */,
 			);
 			path = AIIdentifyClass;
 			sourceTree = "<group>";
@@ -1249,6 +1255,7 @@
 				2F043BBA2E653F6600E8C04E /* YTKNetworkConfig.m in Sources */,
 				2F043BBB2E653F6600E8C04E /* YTKBaseRequest.m in Sources */,
 				2F0E49302EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift in Sources */,
+				2FA65BB02EF969A6003E83E2 /* WHHAIMaskView.swift in Sources */,
 				2F043BBC2E653F6600E8C04E /* YTKChainRequest.m in Sources */,
 				2F5377B22ECDED30003C3FC7 /* WHHDateFormatterManager.swift in Sources */,
 				2F004E1E2E0E35100016DA6B /* AFURLRequestSerialization.m in Sources */,
@@ -1269,6 +1276,7 @@
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
 				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
 				2F004E242E0E35100016DA6B /* AFHTTPSessionManager.m in Sources */,
+				2FA65BAE2EF96734003E83E2 /* WHAIInputView.swift in Sources */,
 				2FE448B12E29F54D0054083E /* WHHLabel.swift in Sources */,
 				2F004E252E0E35100016DA6B /* AFNetworkReachabilityManager.m in Sources */,
 				2F043C4B2E6BD8A800E8C04E /* WHHNetConf.swift in Sources */,
