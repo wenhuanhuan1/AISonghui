@@ -63,7 +63,7 @@ class WHHVIPViewController: WHHBaseViewController {
 
     @IBAction func submitButtonClick(_ sender: UIButton) {
         if let model = dataArray.first(where: { $0.isSelect }) {
-            WHHApplePurchaseManager.shared.whhCreateOrderRequest(goodsId: model.productId, payPage: "不知道是啥")
+            WHHApplePurchaseManager.shared.whhCreateOrderRequest(goodsId: model.shopId, payPage: "")
             WHHApplePurchaseManager.shared.purchaseHandle = { [weak self] status in
 
                 if status == .success {
