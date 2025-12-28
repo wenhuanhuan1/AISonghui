@@ -14,6 +14,8 @@ class WHHIdetifyDetailReportView: UIView {
     @IBOutlet weak var bgView: UIView!
     
  
+   
+    
     func whhLoadXib() -> WHHIdetifyDetailReportView {
         let className = type(of: self)
         let bundle = Bundle(for: className)

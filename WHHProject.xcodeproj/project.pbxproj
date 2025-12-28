@@ -132,6 +132,12 @@
 		2F98DBF92F00351900814263 /* WHHIdetifyDetailReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */; };
 		2F98DBFB2F00F35C00814263 /* WHHIMineZanItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBFA2F00F35C00814263 /* WHHIMineZanItemViewController.swift */; };
 		2F98DBFD2F00F37D00814263 /* WHHIMineShareItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBFC2F00F37D00814263 /* WHHIMineShareItemViewController.swift */; };
+		2F98DC002F015B5800814263 /* WHHIDetailOneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DBFF2F015B5800814263 /* WHHIDetailOneTableViewCell.xib */; };
+		2F98DC012F015B5800814263 /* WHHIDetailOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBFE2F015B5800814263 /* WHHIDetailOneTableViewCell.swift */; };
+		2F98DC042F015C0100814263 /* WHHIDetailTwoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DC032F015C0100814263 /* WHHIDetailTwoTableViewCell.xib */; };
+		2F98DC052F015C0100814263 /* WHHIDetailTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DC022F015C0100814263 /* WHHIDetailTwoTableViewCell.swift */; };
+		2F98DC072F01603000814263 /* WHHIShareAndDeletAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DC062F01603000814263 /* WHHIShareAndDeletAlertView.swift */; };
+		2F98DC092F01603C00814263 /* WHHIShareAndDeletAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DC082F01603C00814263 /* WHHIShareAndDeletAlertView.xib */; };
 		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
 		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
 		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
@@ -374,6 +380,12 @@
 		2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIdetifyDetailReportView.xib; sourceTree = "<group>"; };
 		2F98DBFA2F00F35C00814263 /* WHHIMineZanItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIMineZanItemViewController.swift; sourceTree = "<group>"; };
 		2F98DBFC2F00F37D00814263 /* WHHIMineShareItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIMineShareItemViewController.swift; sourceTree = "<group>"; };
+		2F98DBFE2F015B5800814263 /* WHHIDetailOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIDetailOneTableViewCell.swift; sourceTree = "<group>"; };
+		2F98DBFF2F015B5800814263 /* WHHIDetailOneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIDetailOneTableViewCell.xib; sourceTree = "<group>"; };
+		2F98DC022F015C0100814263 /* WHHIDetailTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIDetailTwoTableViewCell.swift; sourceTree = "<group>"; };
+		2F98DC032F015C0100814263 /* WHHIDetailTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIDetailTwoTableViewCell.xib; sourceTree = "<group>"; };
+		2F98DC062F01603000814263 /* WHHIShareAndDeletAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIShareAndDeletAlertView.swift; sourceTree = "<group>"; };
+		2F98DC082F01603C00814263 /* WHHIShareAndDeletAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIShareAndDeletAlertView.xib; sourceTree = "<group>"; };
 		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
 		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
 		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
@@ -627,6 +639,12 @@
 				2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */,
 				2F98DBFA2F00F35C00814263 /* WHHIMineZanItemViewController.swift */,
 				2F98DBFC2F00F37D00814263 /* WHHIMineShareItemViewController.swift */,
+				2F98DBFE2F015B5800814263 /* WHHIDetailOneTableViewCell.swift */,
+				2F98DBFF2F015B5800814263 /* WHHIDetailOneTableViewCell.xib */,
+				2F98DC022F015C0100814263 /* WHHIDetailTwoTableViewCell.swift */,
+				2F98DC032F015C0100814263 /* WHHIDetailTwoTableViewCell.xib */,
+				2F98DC062F01603000814263 /* WHHIShareAndDeletAlertView.swift */,
+				2F98DC082F01603C00814263 /* WHHIShareAndDeletAlertView.xib */,
 			);
 			path = AIIdentifyClass;
 			sourceTree = "<group>";
@@ -1163,6 +1181,7 @@
 				2F2ABD462EF79348004FA465 /* WHHJIfenListTableViewCell.xib in Resources */,
 				2F17BF832DF7C96200CA36E8 /* LaunchScreen.storyboard in Resources */,
 				2FA65A452EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.xib in Resources */,
+				2F98DC042F015C0100814263 /* WHHIDetailTwoTableViewCell.xib in Resources */,
 				2FDC69542E39C1AD00A523B0 /* WHHHomeSubscribedDetailTableViewCell.xib in Resources */,
 				2FDC69B52E3EFD6E00A523B0 /* WHHVIPCenterViewController.xib in Resources */,
 				2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */,
@@ -1171,8 +1190,10 @@
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
 				2F98DBF92F00351900814263 /* WHHIdetifyDetailReportView.xib in Resources */,
+				2F98DC002F015B5800814263 /* WHHIDetailOneTableViewCell.xib in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
+				2F98DC092F01603C00814263 /* WHHIShareAndDeletAlertView.xib in Resources */,
 				2F22A9332EBDA6D30093ECA8 /* WHHAIChatViewController.xib in Resources */,
 				2F0E49482EF6D0FF00D9B0A6 /* WHHIdAlertView.xib in Resources */,
 				2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */,
@@ -1236,6 +1257,7 @@
 				2F17BF9A2DF7D33F00CA36E8 /* UIScrollView+WHHRefResh.swift in Sources */,
 				2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */,
 				2F17BF932DF7D03700CA36E8 /* WHHConf.swift in Sources */,
+				2F98DC012F015B5800814263 /* WHHIDetailOneTableViewCell.swift in Sources */,
 				2F043C2E2E68657700E8C04E /* FCUploadSourceApi.m in Sources */,
 				2F60794F2E6E742D001CD6BB /* WHHABBChatViewController.swift in Sources */,
 				2F17BF8D2DF7CB4200CA36E8 /* WHHBaseViewController.swift in Sources */,
@@ -1254,6 +1276,7 @@
 				2F004E122E0E35100016DA6B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2F5379252ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift in Sources */,
 				2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */,
+				2F98DC052F015C0100814263 /* WHHIDetailTwoTableViewCell.swift in Sources */,
 				2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */,
 				2F98DBE82EFF85FF00814263 /* TimeFormatter15.swift in Sources */,
 				2F004E132E0E35100016DA6B /* AFImageDownloader.m in Sources */,
@@ -1388,6 +1411,7 @@
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,
 				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,
 				2FDC69612E3B124A00A523B0 /* WHHABBInputBarView.swift in Sources */,
+				2F98DC072F01603000814263 /* WHHIShareAndDeletAlertView.swift in Sources */,
 				2FA997422EADF47300B61D04 /* WHHAIAugurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

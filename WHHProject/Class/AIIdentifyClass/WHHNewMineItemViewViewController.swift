@@ -7,9 +7,15 @@
 
 import UIKit
 import JXPagingView
+import EmptyDataSet_Swift
 
 class WHHNewMineItemViewViewController: WHHBaseViewController {
     
+    
+    lazy var dataArray: [WHHIntegralModel] = {
+        let a = [WHHIntegralModel]()
+        return a
+    }()
     
     lazy var itemCollectionViw: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,9 +32,20 @@ class WHHNewMineItemViewViewController: WHHBaseViewController {
         itemCollectionViw.showsHorizontalScrollIndicator = false
         itemCollectionViw.showsVerticalScrollIndicator = false
         itemCollectionViw.register(UINib(nibName: "WHHNewMineItemViewCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WHHNewMineItemViewCollectionViewCell")
-
+        itemCollectionViw.emptyDataSetSource = self
+        itemCollectionViw.emptyDataSetDelegate = self
+        itemCollectionViw.register(UINib(nibName: "WHHNewMineItemViewCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WHHNewMineItemViewCollectionViewCell")
+        itemCollectionViw.whhAddRefreshNormalHeader {[weak self] in
+            self?.whhRefreshHeader()
+        }
+        itemCollectionViw.whhAddRefreshNormalFooter {[weak self] in
+            self?.whhRefreshFooter()
+        }
+        itemCollectionViw.mj_footer?.isHidden = true
         return itemCollectionViw
     }()
+    
+    private(set) var lastGetMaxId:String = ""
     
     var listViewDidScrollCallback: ((UIScrollView) -> ())?
     override func viewDidLoad() {
@@ -37,8 +54,53 @@ class WHHNewMineItemViewViewController: WHHBaseViewController {
         itemCollectionViw.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        whhRefreshHeader()
     }
     
+    override func whhRefreshHeader() {
+        super.whhRefreshHeader()
+        lastGetMaxId = ""
+        
+        WHHIdetifyRequestModel.whhGetMyShuoMengLikingLikeListRequest(lastGetMaxId: lastGetMaxId) {[weak self] code, array, msg in
+            self?.itemCollectionViw.mj_header?.endRefreshing()
+            if code == 1 {
+                self?.dataArray = array
+                if let lastModel = array.last {
+                    self?.lastGetMaxId = lastModel.lastGetMaxId
+                }
+                self?.itemCollectionViw.reloadData()
+                self?.itemCollectionViw.mj_footer?.resetNoMoreData()
+                if array.count > 3 {
+                    self?.itemCollectionViw.mj_footer?.isHidden = false
+                }else{
+                    self?.itemCollectionViw.mj_footer?.isHidden = true
+                }
+            }
+            
+        }
+    }
+    
+    override func whhRefreshFooter() {
+        super.whhRefreshFooter()
+        page += 1
+        
+        WHHIdetifyRequestModel.whhGetMyShuoMengLikingLikeListRequest(lastGetMaxId: lastGetMaxId) {[weak self] code, array, msg in
+            self?.itemCollectionViw.mj_footer?.endRefreshing()
+            if code == 1 {
+                self?.dataArray.append(contentsOf: array)
+                self?.itemCollectionViw.reloadData()
+                if array.isEmpty {
+                    self?.itemCollectionViw.mj_footer?.endRefreshingWithNoMoreData()
+                }else{
+                    if let lastModel = array.last {
+                        self?.lastGetMaxId = lastModel.lastGetMaxId
+                    }
+                }
+            }
+            
+        }
+        
+    }
 
 
 }
@@ -62,16 +124,51 @@ extension WHHNewMineItemViewViewController: JXPagingViewListViewDelegate {
 }
 extension WHHNewMineItemViewViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return dataArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: WHHNewMineItemViewCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WHHNewMineItemViewCollectionViewCell", for: indexPath) as! WHHNewMineItemViewCollectionViewCell
 
+        let model = dataArray[indexPath.row]
+        
+        cell.cellModel = model
+        
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
+    }
+}
+extension WHHNewMineItemViewViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let text = "无内容，去说梦，去成画"
+        let attributes = [NSAttributedString.Key.font: pingfangRegular(size: 12), NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.5)]
+        return NSAttributedString(string: text, attributes: attributes as [NSAttributedString.Key: Any])
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "whhAIEmptPlacehdoleIcon")
+    }
+
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
+        
+        let text = "去说梦"
+        let attributes = [NSAttributedString.Key.font: pingfangRegular(size: 12), NSAttributedString.Key.foregroundColor: Color25C5FF]
+        return NSAttributedString(string: text, attributes: attributes as [NSAttributedString.Key: Any])
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+        return -80
+    }
+
+    func emptyDataSet(_ scrollView: UIScrollView, didTapView view: UIView) {
+        
+        tabBarController?.selectedIndex = 0
+    }
+
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
+        return true
     }
 }

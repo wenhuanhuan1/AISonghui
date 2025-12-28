@@ -7,14 +7,50 @@
 
 import UIKit
 
+enum WHHIdetifyDetailViewControllerType {
+    case mySelf
+    case target
+}
+
 class WHHIdetifyDetailViewController: WHHBaseViewController {
+    lazy var listTableView: UITableView = {
+        let a = UITableView(frame: .zero, style: .plain)
+        a.delegate = self
+        a.dataSource = self
+        a.separatorStyle = .none
+        a.register(UINib(nibName: "WHHIDetailOneTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHIDetailOneTableViewCell")
+        return a
+    }()
+
+    lazy var shareButton: UIButton = {
+        let a = UIButton(type: .custom)
+        a.setTitle("分享画廊", for: .normal)
+        a.backgroundColor = .white
+        a.layer.cornerRadius = 20
+        a.titleLabel?.font = pingfangMedium(size: 14)
+        a.setTitleColor(Color0F0F12, for: .normal)
+        a.addTarget(self, action: #selector(sharButtonClick), for: .touchUpInside)
+        return a
+    }()
+
+    lazy var saveButton: UIButton = {
+        let a = UIButton(type: .custom)
+        a.setTitle("保存", for: .normal)
+        a.backgroundColor = .white
+        a.layer.cornerRadius = 20
+        a.titleLabel?.font = pingfangMedium(size: 14)
+        a.setTitleColor(Color0F0F12, for: .normal)
+        a.addTarget(self, action: #selector(saveButtonClick), for: .touchUpInside)
+        return a
+    }()
+
     lazy var moreButton: UIButton = {
         let a = UIButton(type: .custom)
         a.setImage(UIImage(named: "AIDetaiMoreIcon"), for: .normal)
         a.addTarget(self, action: #selector(moreButtonClick), for: .touchUpInside)
         return a
     }()
-    
+
     lazy var leftBackButton: UIButton = {
         let a = UIButton(type: .custom)
         a.setImage(UIImage.gk_image(with: "btn_back_black"), for: .normal)
@@ -27,6 +63,7 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
         avatarIcon.layer.borderWidth = 1
         avatarIcon.layer.borderColor = UIColor.white.cgColor
         avatarIcon.layer.cornerRadius = 16
+        avatarIcon.isHidden = true
         avatarIcon.backgroundColor = .red
         return avatarIcon
     }()
@@ -35,14 +72,43 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
         let a = UILabel()
         a.textColor = .white
         a.font = pingfangSemibold(size: 16)
+        a.isHidden = true
         a.text = "Gloria"
         return a
     }()
 
+    private(set) var tempWorksId: String?
+
+    init(worksId: String, type: WHHIdetifyDetailViewControllerType? = .mySelf) {
+        super.init(nibName: nil, bundle: nil)
+        tempWorksId = worksId
+        tempType = type
+    }
+
+    private(set) var tempType: WHHIdetifyDetailViewControllerType? {
+        didSet {
+            guard let newType = tempType else { return }
+
+            if newType == .mySelf {
+                // 自己
+                avatarIcon.isHidden = true
+                nickName.isHidden = true
+            } else if newType == .target {
+                // 对方
+                avatarIcon.isHidden = false
+                nickName.isHidden = false
+            }
+        }
+    }
+
+    @MainActor required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = ""
-        
+
         view.addSubview(leftBackButton)
         leftBackButton.snp.makeConstraints { make in
             make.size.equalTo(44)
@@ -60,27 +126,162 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
             make.centerY.equalTo(avatarIcon)
             make.left.equalTo(avatarIcon.snp.right).offset(12)
         }
-        
+
         view.addSubview(moreButton)
         moreButton.snp.makeConstraints { make in
             make.size.equalTo(44)
             make.right.equalToSuperview()
             make.centerY.equalTo(leftBackButton)
         }
+        view.addSubview(shareButton)
+        view.addSubview(saveButton)
+        shareButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16)
+            make.height.equalTo(40)
+            make.bottom.equalToSuperview().offset(-WHHBottomSafe - 8)
+            make.width.equalTo(125)
+        }
+        saveButton.snp.makeConstraints { make in
+            make.left.equalTo(shareButton.snp.right).offset(17)
+            make.height.equalTo(40)
+            make.right.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-WHHBottomSafe - 8)
+        }
+    }
+    
+    private(set) var detailModel:WHHIntegralModel?
+    
+    private func requestDetai() {
+        
+        guard let worksId = tempWorksId else { return }
+        WHHHUD.whhShowLoadView()
+        WHHIdetifyRequestModel.whhGetWorksDetailRequest(worksId: worksId) {[weak self] code, model, msg in
+            WHHHUD.whhHidenLoadView()
+            if code == 1 {
+                self?.detailModel = model
+                self?.listTableView.reloadData()
+            }else{
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
+            }
+        }
+        
     }
 
     @objc func moreButtonClick() {
-        let reportView = WHHIdetifyDetailReportView().whhLoadXib()
+        if tempType == .mySelf {
+            // 删除
+            let deleteView = WHHIShareAndDeletAlertView().whhLoadXib()
 
-        reportView.didReportButtonClick = { _ in
-            
-            
+            deleteView.didShareButtonBlock = { [weak self] in
+
+                self?.didShareDream()
+            }
+
+            deleteView.didDeleteButtonBlock = { [weak self] in
+                self?.didDeleteDream()
+            }
+            view.addSubview(deleteView)
+
+        } else {
+            // 举报
+            let reportView = WHHIdetifyDetailReportView().whhLoadXib()
+
+            reportView.didReportButtonClick = { _ in
+            }
+            view.addSubview(reportView)
         }
-        view.addSubview(reportView)
     }
-    
+
+    private func didDeleteDream() {
+        if let vc = UIWindow.getKeyWindow {
+            let view = WHHIdAlertView().whhLoadXib()
+            view.bigTtitleLabel.text = "温馨提示"
+            view.desTitle.text = "删除梦境后，不支持恢复\n 请谨慎选择"
+            view.didSubmitBtnBlock = { [weak self] display in
+                display.closeMethod()
+                guard let worksId = self?.tempWorksId else { return }
+                WHHHUD.whhShowLoadView()
+                WHHIdetifyRequestModel.whhPostWorksDeleteRequest(worksId: worksId) { [weak self] code, msg in
+                    WHHHUD.whhHidenLoadView()
+
+                    dispatchAfter(delay: 0.5) {
+                        WHHHUD.whhShowInfoText(text: msg)
+                    }
+                    if code == 1 {
+                        dispatchAfter(delay: 0.5) {
+                            self?.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }
+            }
+            vc.addSubview(view)
+        }
+    }
+
+    private func didShareDream() {
+        guard let worksId = tempWorksId else { return }
+        WHHHUD.whhShowLoadView()
+        WHHIdetifyRequestModel.whhPostWorksShareRequest(worksId: worksId) { [weak self] _, msg in
+            WHHHUD.whhHidenLoadView()
+
+            dispatchAfter(delay: 0.5) {
+                WHHHUD.whhShowInfoText(text: msg)
+            }
+        }
+    }
+
     @objc func backButtonClick() {
-        
         navigationController?.popViewController(animated: true)
+    }
+
+    @objc func sharButtonClick() {
+        guard let worksId = tempWorksId else { return }
+        WHHHUD.whhShowLoadView()
+        WHHIdetifyRequestModel.whhPostWorksShareRequest(worksId: worksId) { [weak self] _, msg in
+            WHHHUD.whhHidenLoadView()
+
+            dispatchAfter(delay: 0.5) {
+                WHHHUD.whhShowInfoText(text: msg)
+            }
+        }
+    }
+
+    @objc func saveButtonClick() {
+        debugPrint("点击了保存")
+    }
+}
+
+extension WHHIdetifyDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return WHHScreenW
+        } else {
+            return UITableView.automaticDimension
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WHHIDetailOneTableViewCell", for: indexPath) as! WHHIDetailOneTableViewCell
+            
+            if let model = detailModel {
+                cell.iconImageView.whhSetImageView(url: model.coverUrl)
+            }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WHHIDetailTwoTableViewCell", for: indexPath) as! WHHIDetailTwoTableViewCell
+            if let model = detailModel {
+                cell.contentLabel.text = model.prompt
+                cell.ipAddressLabel.text = "暂时不知道"
+                cell.timerLabel.text = TimeFormatter15.string(from: model.createTime,isMillisecond: true) + "AI生成"
+            }
+            return cell
+        }
     }
 }

@@ -67,11 +67,20 @@ class WHHCustomMakeButton: WHHBaseView {
 }
 
 class WHAIInputView: WHHBaseView {
+    lazy var closeButton: UIButton = {
+        let a = UIButton(type: .custom)
+        a.setImage(UIImage(named: "whhAIClose"), for: .normal)
+        a.addTarget(self, action: #selector(closeButtonClick), for: .touchUpInside)
+        return a
+    }()
+
     lazy var inputBgContenView: UIView = {
         let a = UIView()
         a.backgroundColor = .black
         return a
     }()
+
+    var submitMakeFinish: (() -> Void)?
 
     private(set) var selectType = 2
 
@@ -211,6 +220,13 @@ class WHAIInputView: WHHBaseView {
         frame = CGRectMake(0, 0, WHHScreenW, WHHScreenH)
         backgroundColor = Color0F0F12.withAlphaComponent(0.6)
 
+        addSubview(closeButton)
+        closeButton.snp.makeConstraints { make in
+            make.size.equalTo(44)
+            make.left.equalToSuperview()
+            make.top.equalToSuperview().offset(WHHTopSafe)
+        }
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillChangeFrame(_:)),
@@ -318,6 +334,10 @@ class WHAIInputView: WHHBaseView {
         debugPrint("开始播放")
     }
 
+    func closeInputView() {
+        removeFromSuperview()
+    }
+
     @objc func keyboardWillShow(_ notification: Notification) {
         keyboardBtn.isSelected = true
         keyboardButtonClick(btn: keyboardBtn)
@@ -360,14 +380,27 @@ class WHAIInputView: WHHBaseView {
         if let url = recordUrl {
             // 说明有录音
 
+            
         } else {
             guard let text = textView.text else { return }
 
             WHHHUD.whhShowLoadView()
-            WHHIdetifyRequestModel.whhPostRequestWorksMake(type: selectType, prompt: text) { _, _ in
+            WHHIdetifyRequestModel.whhPostRequestWorksMake(type: selectType, prompt: text) { [weak self] code, msg in
                 WHHHUD.whhHidenLoadView()
+
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
+                if code == 1 {
+                    self?.submitMakeFinish?()
+                    self?.closeInputView()
+                }
             }
         }
+    }
+
+    @objc func closeButtonClick() {
+        removeFromSuperview()
     }
 }
 
@@ -382,12 +415,18 @@ extension WHAIInputView: WHHAITextViewDelegate {
         let estimatedSize = textView.sizeThatFits(size)
 
         var currentTextViewHeight = estimatedSize.height
+
         if currentTextViewHeight <= whhAIInputBarMinHeight {
             currentTextViewHeight = whhAIInputBarMinHeight
         }
 
         if currentTextViewHeight >= whhAIInputBarMaxHeight {
             currentTextViewHeight = whhAIInputBarMaxHeight
+        }
+        
+        if textView.text.isEmpty {
+            
+            currentTextViewHeight = 44
         }
 
         inputTextViewBgView.snp.updateConstraints { make in

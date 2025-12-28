@@ -16,11 +16,11 @@ class WHHIdetifyRequestModel: NSObject {
     ///   - prompt:string提示词
     ///   - speechFileId: 语音文件ID
     ///   - callBlackHandle: 回调
-   class func whhPostRequestWorksMake(type:Int,prompt:String,speechFileId:String? = nil,callBlackHandle:((String,String)->Void)?) {
+    class func whhPostRequestWorksMake(type:Int,prompt:String,speechFileId:String? = nil,callBlackHandle:((Int,String)->Void)?) {
         
-       let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"prompt":prompt,"speechFileId":speechFileId ?? "","cnt":"1","ratio":"16:9","resolution":"1664*936","demoImageFileId":""], type: .worksMake)
+       let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"prompt":prompt,"speechFileId":speechFileId ?? ""], type: .worksMake)
        api.whhStartConsequenceHandle { baseModel in
-           callBlackHandle?(baseModel.code,baseModel.msg)
+           callBlackHandle?(baseModel.success,baseModel.msg)
        }
     }
     
@@ -47,6 +47,89 @@ class WHHIdetifyRequestModel: NSObject {
                 callBlackHandle?(1,array,baseModel.msg)
             }else{
                 callBlackHandle?(0,[WHHIntegralModel](),baseModel.msg)
+            }
+            
+        }
+    }
+    
+    static func whhPostWorksDeleteRequest(worksId:String,callBlackHandle:((Int,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"worksId":worksId], type: .worksDelete)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1 {
+                callBlackHandle?(1,baseModel.msg)
+            }else{
+                callBlackHandle?(0,baseModel.msg)
+            }
+            
+        }
+    }
+    static func whhPostWorksShareRequest(worksId:String,callBlackHandle:((Int,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"worksId":worksId], type: .worksShare)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1 {
+                callBlackHandle?(1,baseModel.msg)
+            }else{
+                callBlackHandle?(0,baseModel.msg)
+            }
+            
+        }
+    }
+    
+    static func whhGetWorksDetailRequest(worksId:String,callBlackHandle:((Int,WHHIntegralModel,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"worksId":worksId], type: .worksDetail)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1,let model = WHHIntegralModel.mj_object(withKeyValues: baseModel.data) {
+                callBlackHandle?(1,model,baseModel.msg)
+            }else{
+                callBlackHandle?(0,WHHIntegralModel(),baseModel.msg)
+            }
+            
+        }
+    }
+    
+    static func whhGetMyShuoMengLikingLikeListRequest(lastGetMaxId:String,callBlackHandle:((Int,[WHHIntegralModel],String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"lastGetMaxId":lastGetMaxId,"size":"10"], type: .myWorksList)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1,let array = WHHIntegralModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHIntegralModel] {
+                callBlackHandle?(1,array,baseModel.msg)
+            }else{
+                callBlackHandle?(0,[WHHIntegralModel](),baseModel.msg)
+            }
+            
+        }
+    }
+    
+    static func whhPostLikingLikeRequest(type:Int,contentId:String,callBlackHandle:((Int,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"contentId":contentId], type: .likingLike)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1 {
+                callBlackHandle?(1,baseModel.msg)
+            }else{
+                callBlackHandle?(0,baseModel.msg)
+            }
+            
+        }
+    }
+    
+    static func whhPostLikingCancelLikeRequest(type:Int,contentId:String,callBlackHandle:((Int,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"contentId":contentId], type: .likingLike)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1 {
+                callBlackHandle?(1,baseModel.msg)
+            }else{
+                callBlackHandle?(0,baseModel.msg)
             }
             
         }

@@ -100,6 +100,8 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
         a.textColor = .white.withAlphaComponent(0.3)
         return a
     }()
+    
+    private(set) var currentModel:WHHIntegralModel?
 
     lazy var makeView: HomeMakeView = {
         let a = HomeMakeView()
@@ -109,7 +111,8 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
         a.layer.masksToBounds = true
         a.didHomeMakeViewButtonBlock = {[weak self] in
             debugPrint("惦记了哈哈")
-            let vc = WHHIdetifyDetailViewController()
+            guard let model = self?.currentModel else { return }
+            let vc = WHHIdetifyDetailViewController(worksId: model.worksId, type: .mySelf)
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         return a
@@ -186,7 +189,8 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
 
 
     
-    func getwhhTimerGetRequestWorksWaitList() {
+    /// 刷新制作功能
+    private func getwhhTimerGetRequestWorksWaitList() {
         WHHIdetifyRequestModel.whhGetRequestWorksWaitList { [weak self] code, model, _ in
             guard let self = self else { return }
 
@@ -214,11 +218,13 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
                 case 2:
                     // 完成
                     self.waitListPolling.stop()
-
+                    self.currentModel = firstModel
                 case 0:
                     // 失败
                     self.waitListPolling.stop()
                     WHHHUD.whhShowInfoText(text: "制作失败")
+                    self.inputBar.isHidden = false
+                    self.makeView.isHidden = true
 
                 default:
                     break
@@ -235,6 +241,10 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
     @objc func inputBarButtonClick() {
         debugPrint("哈哈哈惦记了")
         let inputView = WHAIInputView()
+        inputView.submitMakeFinish = {[weak self] in
+            
+            self?.getwhhTimerGetRequestWorksWaitList()
+        }
         UIWindow.getKeyWindow?.addSubview(inputView)
     }
 }
