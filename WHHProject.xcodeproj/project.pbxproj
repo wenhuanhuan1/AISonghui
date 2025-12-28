@@ -130,6 +130,8 @@
 		2F98DBF52F0032CE00814263 /* WHHIdetifyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBF42F0032CE00814263 /* WHHIdetifyDetailViewController.swift */; };
 		2F98DBF72F00350D00814263 /* WHHIdetifyDetailReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBF62F00350D00814263 /* WHHIdetifyDetailReportView.swift */; };
 		2F98DBF92F00351900814263 /* WHHIdetifyDetailReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */; };
+		2F98DBFB2F00F35C00814263 /* WHHIMineZanItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBFA2F00F35C00814263 /* WHHIMineZanItemViewController.swift */; };
+		2F98DBFD2F00F37D00814263 /* WHHIMineShareItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBFC2F00F37D00814263 /* WHHIMineShareItemViewController.swift */; };
 		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
 		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
 		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
@@ -370,6 +372,8 @@
 		2F98DBF42F0032CE00814263 /* WHHIdetifyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIdetifyDetailViewController.swift; sourceTree = "<group>"; };
 		2F98DBF62F00350D00814263 /* WHHIdetifyDetailReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIdetifyDetailReportView.swift; sourceTree = "<group>"; };
 		2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIdetifyDetailReportView.xib; sourceTree = "<group>"; };
+		2F98DBFA2F00F35C00814263 /* WHHIMineZanItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIMineZanItemViewController.swift; sourceTree = "<group>"; };
+		2F98DBFC2F00F37D00814263 /* WHHIMineShareItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIMineShareItemViewController.swift; sourceTree = "<group>"; };
 		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
 		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
 		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 				2F98DBF42F0032CE00814263 /* WHHIdetifyDetailViewController.swift */,
 				2F98DBF62F00350D00814263 /* WHHIdetifyDetailReportView.swift */,
 				2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */,
+				2F98DBFA2F00F35C00814263 /* WHHIMineZanItemViewController.swift */,
+				2F98DBFC2F00F37D00814263 /* WHHIMineShareItemViewController.swift */,
 			);
 			path = AIIdentifyClass;
 			sourceTree = "<group>";
@@ -1327,6 +1333,7 @@
 				2F22A9352EBDAA090093ECA8 /* WHHAIChatListViewController.swift in Sources */,
 				2F2ABD472EF79348004FA465 /* WHHJIfenListTableViewCell.swift in Sources */,
 				2F2ABD592EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift in Sources */,
+				2F98DBFD2F00F37D00814263 /* WHHIMineShareItemViewController.swift in Sources */,
 				2F98DBF52F0032CE00814263 /* WHHIdetifyDetailViewController.swift in Sources */,
 				2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */,
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
@@ -1376,6 +1383,7 @@
 				2F9D047E2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift in Sources */,
 				2F043C582E6C1CE500E8C04E /* WHHHomeForetellModel.m in Sources */,
 				2F0E492C2EF68DB700D9B0A6 /* WHHAIIdentifyHomeViewController.swift in Sources */,
+				2F98DBFB2F00F35C00814263 /* WHHIMineZanItemViewController.swift in Sources */,
 				2FDC692D2E3867A700A523B0 /* WHHSexItemView.swift in Sources */,
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,
 				2F17BFA62DF8093D00CA36E8 /* WHHNavigationController.swift in Sources */,

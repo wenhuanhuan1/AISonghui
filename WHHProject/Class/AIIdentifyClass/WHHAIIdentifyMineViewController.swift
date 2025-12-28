@@ -183,9 +183,23 @@ extension WHHAIIdentifyMineViewController: JXPagingViewDelegate, JXSegmentedView
     
     
     func pagingView(_ pagingView: JXPagingView, initListAtIndex index: Int) -> JXPagingViewListViewDelegate {
-        let vc = WHHNewMineItemViewViewController()
         
-        return vc
+        if index == 0 {
+            let vc = WHHNewMineItemViewViewController()
+            
+            return vc
+        }else if index == 1 {
+            let vc = WHHIMineShareItemViewController()
+            
+            return vc
+            
+        }else{
+            
+            let vc = WHHIMineZanItemViewController()
+            return vc
+            
+        }
+       
     }
 
     func tableHeaderViewHeight(in pagingView: JXPagingView) -> Int {

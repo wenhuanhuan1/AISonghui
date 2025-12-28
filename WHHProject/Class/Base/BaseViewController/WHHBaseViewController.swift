@@ -43,10 +43,10 @@ class WHHBaseViewController: UIViewController {
         debugPrint("上拉加载要求子类实现")
     }
 
-    func addEmptyDataSet(tableView: UITableView) {
-        tableView.emptyDataSetSource = self
-        tableView.emptyDataSetDelegate = self
-    }
+//    func addEmptyDataSet(tableView: UITableView) {
+//        tableView.emptyDataSetSource = self
+//        tableView.emptyDataSetDelegate = self
+//    }
 
     func iQKeyboardManagerIsEnabled() {
     }
@@ -64,26 +64,4 @@ class WHHBaseViewController: UIViewController {
     }
 }
 
-extension WHHBaseViewController: EmptyDataSetSource, EmptyDataSetDelegate {
-    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let text = emptTitle
-        let attributes = [NSAttributedString.Key.font: pingfangRegular(size: 12), NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.5)]
-        return NSAttributedString(string: text, attributes: attributes as [NSAttributedString.Key: Any])
-    }
-    
-    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
-        return UIImage(named: "whhAIEmptPlacehdoleIcon")
-    }
 
-    func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
-        return -50
-    }
-
-    func emptyDataSet(_ scrollView: UIScrollView, didTapView view: UIView) {
-        whhRefreshHeader()
-    }
-
-    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
-        return true
-    }
-}

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EmptyDataSet_Swift
 
 class WHHAIIntegrationViewController: WHHBaseViewController {
     @IBOutlet var jifenTableView: UITableView!
@@ -39,7 +40,8 @@ class WHHAIIntegrationViewController: WHHBaseViewController {
 
         jifenTableView.dataSource = self
         jifenTableView.delegate = self
-
+        jifenTableView.emptyDataSetSource = self
+        jifenTableView.emptyDataSetDelegate = self
         jifenTableView.register(UINib(nibName: "WHHJIfenListTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHJIfenListTableViewCell")
         jifenTableView.whhAddRefreshNormalHeader { [weak self] in
             self?.whhRefreshHeader()
@@ -48,7 +50,6 @@ class WHHAIIntegrationViewController: WHHBaseViewController {
             self?.whhRefreshFooter()
         }
         jifenTableView.mj_footer?.isHidden = true
-        addEmptyDataSet(tableView: jifenTableView)
         whhRefreshHeader()
     }
 
@@ -132,5 +133,28 @@ extension WHHAIIntegrationViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72
+    }
+}
+extension WHHAIIntegrationViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let text = "暂无内容"
+        let attributes = [NSAttributedString.Key.font: pingfangRegular(size: 12), NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.5)]
+        return NSAttributedString(string: text, attributes: attributes as [NSAttributedString.Key: Any])
+    }
+
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "whhAIEmptPlacehdoleIcon")
+    }
+
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+        return -50
+    }
+
+    func emptyDataSet(_ scrollView: UIScrollView, didTapView view: UIView) {
+        whhRefreshHeader()
+    }
+
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
+        return true
     }
 }
