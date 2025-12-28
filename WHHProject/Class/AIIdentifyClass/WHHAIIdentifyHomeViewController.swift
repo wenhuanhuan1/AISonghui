@@ -7,12 +7,9 @@
 
 import UIKit
 
-
-
 class HomeMakeView: WHHBaseView {
-    
-    
-    var didHomeMakeViewButtonBlock:(()->Void)?
+    var didHomeMakeViewButtonBlock: (() -> Void)?
+
     
     lazy var tipLabel: UILabel = {
         let a = UILabel()
@@ -22,13 +19,13 @@ class HomeMakeView: WHHBaseView {
         a.textColor = .white
         return a
     }()
-    
+
     lazy var activityView: UIActivityIndicatorView = {
         let a = UIActivityIndicatorView()
         a.startAnimating()
         return a
     }()
-    
+
     lazy var avatar: WHHBaseImageView = {
         let a = WHHBaseImageView()
         a.layer.cornerRadius = 8
@@ -36,9 +33,8 @@ class HomeMakeView: WHHBaseView {
         a.backgroundColor = Color0F0F12.withAlphaComponent(5)
         return a
     }()
-    
+
     override func setupViews() {
-        
         addSubview(avatar)
         avatar.snp.makeConstraints { make in
             make.size.equalTo(56)
@@ -55,7 +51,7 @@ class HomeMakeView: WHHBaseView {
             make.right.equalToSuperview().offset(-16)
             make.top.bottom.equalToSuperview()
         }
-        
+
         let button = UIButton(type: .custom)
         button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
         addSubview(button)
@@ -63,35 +59,39 @@ class HomeMakeView: WHHBaseView {
             make.edges.equalToSuperview()
         }
     }
-    
+
     @objc func buttonClick() {
         didHomeMakeViewButtonBlock?()
     }
 }
 
 class WHHAIIdentifyHomeViewController: WHHBaseViewController {
-
-    
     lazy var inputBar: UIView = {
         let a = UIView()
         a.backgroundColor = Color2B2D33
         a.layer.cornerRadius = 24
         a.layer.masksToBounds = true
+        a.isHidden = true
         return a
     }()
-    
+
     lazy var inputBarButton: UIButton = {
         let a = UIButton(type: .custom)
         a.addTarget(self, action: #selector(inputBarButtonClick), for: .touchUpInside)
         return a
     }()
     
+    private lazy var waitListPolling = WHHPollingManager(
+        interval: 3,
+        maxCount: nil   // 不限制次数（可改 20）
+    )
+
     lazy var sendIcon: WHHBaseImageView = {
         let a = WHHBaseImageView()
         a.image = UIImage(named: "whhAIInputBarSend")
         return a
     }()
-    
+
     lazy var tipLabel: UILabel = {
         let a = UILabel()
         a.text = "描述你经历的梦境..."
@@ -100,42 +100,41 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
         a.textColor = .white.withAlphaComponent(0.3)
         return a
     }()
-    
-    
+
     lazy var makeView: HomeMakeView = {
         let a = HomeMakeView()
         a.backgroundColor = Color2B2D33
         a.layer.cornerRadius = 12
         a.isHidden = true
         a.layer.masksToBounds = true
-        a.didHomeMakeViewButtonBlock = {
-            
+        a.didHomeMakeViewButtonBlock = {[weak self] in
             debugPrint("惦记了哈哈")
+            let vc = WHHIdetifyDetailViewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
         return a
     }()
-    
+
     lazy var bgMaskView: WHHAIMaskView = {
         let a = WHHAIMaskView()
         return a
     }()
-    
-    
+
     lazy var bgIconImageView: WHHBaseImageView = {
         let a = WHHBaseImageView()
         a.image = UIImage(named: "whhHomwBgIcon")
         return a
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navigationBar.isHidden = true
-        
+
         view.addSubview(bgIconImageView)
         bgIconImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         view.addSubview(bgMaskView)
         bgMaskView.snp.makeConstraints { make in
             make.bottom.left.right.equalToSuperview()
@@ -148,7 +147,7 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
             make.height.equalTo(88)
             make.right.equalToSuperview().offset(-16)
         }
-        
+
         view.addSubview(inputBar)
         inputBar.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
@@ -156,7 +155,7 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
             make.bottom.equalToSuperview().offset(-10)
             make.height.equalTo(48)
         }
-        
+
         inputBar.addSubview(tipLabel)
         tipLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
@@ -172,13 +171,70 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
         inputBarButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        getwhhTimerGetRequestWorksWaitList()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
     }
     
-   @objc func inputBarButtonClick() {
-        
-       debugPrint("哈哈哈惦记了")
-       let inputView = WHAIInputView()
-       UIWindow.getKeyWindow?.addSubview(inputView)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        waitListPolling.stop()
+    }
+
+
+    
+    func getwhhTimerGetRequestWorksWaitList() {
+        WHHIdetifyRequestModel.whhGetRequestWorksWaitList { [weak self] code, model, _ in
+            guard let self = self else { return }
+
+            if code == 1 {
+
+                if model.canMaking {
+                    self.inputBar.isHidden = false
+                    self.makeView.isHidden = true
+                    self.waitListPolling.stop()
+                    return
+                }
+
+                self.inputBar.isHidden = true
+                self.makeView.isHidden = false
+
+                guard let firstModel = model.list.first else { return }
+
+                switch firstModel.status {
+                case 1:
+                    // 制作中 → 启动轮询
+                    self.waitListPolling.start { [weak self] in
+                        self?.getwhhTimerGetRequestWorksWaitList()
+                    }
+
+                case 2:
+                    // 完成
+                    self.waitListPolling.stop()
+
+                case 0:
+                    // 失败
+                    self.waitListPolling.stop()
+                    WHHHUD.whhShowInfoText(text: "制作失败")
+
+                default:
+                    break
+                }
+
+            } else {
+                self.waitListPolling.stop()
+                WHHHUD.whhShowInfoText(text: "请求失败")
+            }
+        }
     }
     
+
+    @objc func inputBarButtonClick() {
+        debugPrint("哈哈哈惦记了")
+        let inputView = WHAIInputView()
+        UIWindow.getKeyWindow?.addSubview(inputView)
+    }
 }

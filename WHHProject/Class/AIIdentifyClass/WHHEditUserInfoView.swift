@@ -191,7 +191,7 @@ class WHHEditUserInfoView: WHHBaseView {
 
             if let imageData = image.pngData() {
                 WHHHUD.whhShowLoadView()
-                WHHHomeRequestViewModel.whhUploadSourceWithType(type: 1, data: imageData) { file in
+                WHHHomeRequestViewModel.whhUploadSourceWithType(type: 4, data: imageData) { file in
                     WHHHUD.whhHidenLoadView()
                     if file.isEmpty == false {
                         self?.logoFileId = file
@@ -246,8 +246,6 @@ class WHHEditUserInfoView: WHHBaseView {
             WHHHUD.whhShowInfoText(text: "请选择图片")
             return
         }
-        WHHHUD.whhShowLoadView()
-
         let dict = ["api-v": "1.0", "userId": WHHUserInfoManager.shared.userId, "logoFileId": infoAvatar, "nickname": inputText] as [String: Any]
 
         WHHHUD.whhShowLoadView()

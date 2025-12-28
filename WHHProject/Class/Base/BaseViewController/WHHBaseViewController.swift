@@ -14,6 +14,7 @@ import UIKit
 class WHHBaseViewController: UIViewController {
     
     
+    var emptTitle = "暂无内容"
     var isPopOnGesture = true
     
     var stayle:UIStatusBarStyle = .darkContent
@@ -65,13 +66,13 @@ class WHHBaseViewController: UIViewController {
 
 extension WHHBaseViewController: EmptyDataSetSource, EmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let text = "暂无内容"
-        let attributes = [NSAttributedString.Key.font: pingfangRegular(size: 16), NSAttributedString.Key.foregroundColor: ColorFF4746]
+        let text = emptTitle
+        let attributes = [NSAttributedString.Key.font: pingfangRegular(size: 12), NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.5)]
         return NSAttributedString(string: text, attributes: attributes as [NSAttributedString.Key: Any])
     }
-
+    
     func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
-        return UIImage(named: "dataFileIcon")
+        return UIImage(named: "whhAIEmptPlacehdoleIcon")
     }
 
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {

@@ -20,6 +20,13 @@ class WHHNewMineHeaderView: UIView {
         a.layer.borderColor = UIColor.white.cgColor
         return a
     }()
+    
+    lazy var userNickName: UILabel = {
+        let a = UILabel()
+        a.textColor = .white
+        a.font = pingfangSemibold(size: 18)
+        return a
+    }()
 
     lazy var editButton: UIButton = {
         let a = UIButton(type: .custom)
@@ -76,6 +83,11 @@ class WHHNewMineHeaderView: UIView {
             make.left.equalToSuperview().offset(16)
             make.bottom.equalTo(editButton.snp.top).offset(-16)
         }
+        addSubview(userNickName)
+        userNickName.snp.makeConstraints { make in
+            make.left.equalTo(avatarIcon.snp.right).offset(16)
+            make.centerY.equalTo(avatarIcon)
+        }
     }
 
     @objc func editButtonClick() {
@@ -92,6 +104,7 @@ class WHHNewMineHeaderView: UIView {
         didSet {
             guard let model = userInfoModel else { return }
             avatarIcon.whhSetImageView(url: model.logo)
+            userNickName.text = model.nickname
         }
     }
 }

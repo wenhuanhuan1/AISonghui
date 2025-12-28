@@ -12,11 +12,11 @@ typealias WHHRefreshComponent = (() -> Void)?
 class WHHRefreshNormalHeader: MJRefreshNormalHeader {
     override func prepare() {
         super.prepare()
-        stateLabel?.font = pingfangRegular(size: 13)
-        stateLabel?.textColor = .black
-        lastUpdatedTimeLabel?.textColor = .black
-        lastUpdatedTimeLabel?.font = pingfangRegular(size: 12)
-        loadingView?.color = .black
+        stateLabel?.font = pingfangSemibold(size: 13)
+        stateLabel?.textColor = .white.withAlphaComponent(0.5)
+        lastUpdatedTimeLabel?.textColor = .white.withAlphaComponent(0.5)
+        lastUpdatedTimeLabel?.font = pingfangSemibold(size: 12)
+        loadingView?.color = .white.withAlphaComponent(0.7)
     }
 }
 
@@ -25,7 +25,7 @@ class WHHRefreshAutoFooter: MJRefreshAutoNormalFooter {
         super.prepare()
 
         stateLabel?.font = pingfangSemibold(size: 13)
-        stateLabel?.textColor = ColorFF4746
+        stateLabel?.textColor = .white.withAlphaComponent(0.5)
         setTitle("已经到底了", for: .noMoreData)
         triggerAutomaticallyRefreshPercent = 0
         setAnimationDisabled()
@@ -47,5 +47,3 @@ extension UIScrollView {
         mj_footer = footer
     }
 }
-
-

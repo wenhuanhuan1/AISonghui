@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,copy) NSString *nickname;
 
+@property(nonatomic,assign) NSInteger points;
 
 // 支付相关
 @property(nonatomic,assign) NSInteger hasPlay;

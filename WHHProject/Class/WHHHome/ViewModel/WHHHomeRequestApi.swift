@@ -66,6 +66,8 @@ enum WHHHomeRequestApiType: Int {
     /// 删除会话
 
     case chatConversationDelete
+    /// 我的积分记录-1.0
+    case myPointsRecordList
 }
 
 class WHHHomeRequestApi: WHHRequest {
@@ -124,6 +126,8 @@ class WHHHomeRequestApi: WHHRequest {
             return "/chat/message"
         case .chatConversationDelete:
             return "/chat/conversation/delete"
+        case .myPointsRecordList:
+            return "/my/points/record/list"
         }
     }
 
@@ -133,7 +137,7 @@ class WHHHomeRequestApi: WHHRequest {
 
     override func requestMethod() -> YTKRequestMethod {
         switch aType {
-        case .witchList, .appUserWitchGetFortune, .myDetail, .appUserWitchGetOldFortune, .sysInfo, .sysIndexBannerConfig, .appUserWitchSubscribeInfo, .appUserWitchCreateFortune, .chatConversationList, .chatMessage:
+        case .witchList, .appUserWitchGetFortune, .myDetail, .appUserWitchGetOldFortune, .sysInfo, .sysIndexBannerConfig, .appUserWitchSubscribeInfo, .appUserWitchCreateFortune, .chatConversationList, .chatMessage,.myPointsRecordList:
             return .GET
         case .chatConversationDelete:
             return .DELETE

@@ -12,6 +12,7 @@ class WHHIdAlertView: UIView {
     @IBOutlet weak var cancleBtn: UIButton!
     @IBOutlet weak var submitButton: UIButton!
     
+    @IBOutlet weak var bigTtitleLabel: UILabel!
     var didSubmitBtnBlock:((WHHIdAlertView)->Void)?
     
     @IBOutlet weak var desTitle: UILabel!

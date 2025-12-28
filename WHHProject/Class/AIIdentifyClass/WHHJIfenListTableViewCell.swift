@@ -24,4 +24,23 @@ class WHHJIfenListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    var cellModel:WHHIntegralModel?{
+        
+        didSet {
+            
+            guard let model = cellModel else { return }
+            
+            listTitle.text = model.remark
+            if model.income {
+                numberLabel.text = "+" + model.num
+            }else{
+                numberLabel.text = "-" + model.num
+            }
+            
+            timerLabel.text = TimeFormatter15.string(from: model.createTime,isMillisecond: true)
+        }
+        
+    }
+    
 }

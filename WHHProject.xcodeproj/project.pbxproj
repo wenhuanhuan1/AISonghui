@@ -118,6 +118,18 @@
 		2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D94892E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift */; };
 		2F6D948C2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */; };
 		2F6D949E2E83A52E00CE27A3 /* WebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D949D2E83A52E00CE27A3 /* WebPManager.m */; };
+		2F98DABB2EFD528000814263 /* WHHAIInputVoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DABA2EFD528000814263 /* WHHAIInputVoiceView.swift */; };
+		2F98DABD2EFD541E00814263 /* WHHAITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DABC2EFD541E00814263 /* WHHAITextView.swift */; };
+		2F98DBE62EFF7CE000814263 /* WHHIntegralModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBE52EFF7CE000814263 /* WHHIntegralModel.m */; };
+		2F98DBE82EFF85FF00814263 /* TimeFormatter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBE72EFF85FF00814263 /* TimeFormatter15.swift */; };
+		2F98DBEB2EFFC0DA00814263 /* WHHAIAudioRecorderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBEA2EFFC0DA00814263 /* WHHAIAudioRecorderManager.swift */; };
+		2F98DBED2EFFC2B000814263 /* MicrophonePermissionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBEC2EFFC2B000814263 /* MicrophonePermissionHelper.swift */; };
+		2F98DBEF2EFFDB6C00814263 /* WHHIdetifyRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBEE2EFFDB6C00814263 /* WHHIdetifyRequestApi.swift */; };
+		2F98DBF12EFFDC4D00814263 /* WHHIdetifyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBF02EFFDC4D00814263 /* WHHIdetifyRequestModel.swift */; };
+		2F98DBF32F002FBB00814263 /* WHHPollingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBF22F002FBB00814263 /* WHHPollingManager.swift */; };
+		2F98DBF52F0032CE00814263 /* WHHIdetifyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBF42F0032CE00814263 /* WHHIdetifyDetailViewController.swift */; };
+		2F98DBF72F00350D00814263 /* WHHIdetifyDetailReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DBF62F00350D00814263 /* WHHIdetifyDetailReportView.swift */; };
+		2F98DBF92F00351900814263 /* WHHIdetifyDetailReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */; };
 		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
 		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
 		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
@@ -345,6 +357,19 @@
 		2F6D948A2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoOrPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		2F6D949C2E83A52E00CE27A3 /* WebPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebPManager.h; sourceTree = "<group>"; };
 		2F6D949D2E83A52E00CE27A3 /* WebPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPManager.m; sourceTree = "<group>"; };
+		2F98DABA2EFD528000814263 /* WHHAIInputVoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIInputVoiceView.swift; sourceTree = "<group>"; };
+		2F98DABC2EFD541E00814263 /* WHHAITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAITextView.swift; sourceTree = "<group>"; };
+		2F98DBE42EFF7CE000814263 /* WHHIntegralModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHHIntegralModel.h; sourceTree = "<group>"; };
+		2F98DBE52EFF7CE000814263 /* WHHIntegralModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHHIntegralModel.m; sourceTree = "<group>"; };
+		2F98DBE72EFF85FF00814263 /* TimeFormatter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter15.swift; sourceTree = "<group>"; };
+		2F98DBEA2EFFC0DA00814263 /* WHHAIAudioRecorderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIAudioRecorderManager.swift; sourceTree = "<group>"; };
+		2F98DBEC2EFFC2B000814263 /* MicrophonePermissionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophonePermissionHelper.swift; sourceTree = "<group>"; };
+		2F98DBEE2EFFDB6C00814263 /* WHHIdetifyRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIdetifyRequestApi.swift; sourceTree = "<group>"; };
+		2F98DBF02EFFDC4D00814263 /* WHHIdetifyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIdetifyRequestModel.swift; sourceTree = "<group>"; };
+		2F98DBF22F002FBB00814263 /* WHHPollingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHPollingManager.swift; sourceTree = "<group>"; };
+		2F98DBF42F0032CE00814263 /* WHHIdetifyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIdetifyDetailViewController.swift; sourceTree = "<group>"; };
+		2F98DBF62F00350D00814263 /* WHHIdetifyDetailReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIdetifyDetailReportView.swift; sourceTree = "<group>"; };
+		2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIdetifyDetailReportView.xib; sourceTree = "<group>"; };
 		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
 		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
 		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
@@ -586,6 +611,16 @@
 				2FA65A4C2EF84005003E83E2 /* WHHAISleepThreeTableViewCell.xib */,
 				2FA65BAD2EF96734003E83E2 /* WHAIInputView.swift */,
 				2FA65BAF2EF969A6003E83E2 /* WHHAIMaskView.swift */,
+				2F98DABA2EFD528000814263 /* WHHAIInputVoiceView.swift */,
+				2F98DABC2EFD541E00814263 /* WHHAITextView.swift */,
+				2F98DBE42EFF7CE000814263 /* WHHIntegralModel.h */,
+				2F98DBE52EFF7CE000814263 /* WHHIntegralModel.m */,
+				2F98DBE72EFF85FF00814263 /* TimeFormatter15.swift */,
+				2F98DBEE2EFFDB6C00814263 /* WHHIdetifyRequestApi.swift */,
+				2F98DBF02EFFDC4D00814263 /* WHHIdetifyRequestModel.swift */,
+				2F98DBF42F0032CE00814263 /* WHHIdetifyDetailViewController.swift */,
+				2F98DBF62F00350D00814263 /* WHHIdetifyDetailReportView.swift */,
+				2F98DBF82F00351900814263 /* WHHIdetifyDetailReportView.xib */,
 			);
 			path = AIIdentifyClass;
 			sourceTree = "<group>";
@@ -651,6 +686,7 @@
 		2F17BF872DF7CAA300CA36E8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2F98DBE92EFFC0C100814263 /* WHHAudioRecorderManager */,
 				2F6D949B2E83A51A00CE27A3 /* WebPManager */,
 				2F043C4C2E6BDA8700E8C04E /* WHHApplePurchase */,
 				2F043BC72E65586400E8C04E /* WHHLog */,
@@ -817,6 +853,16 @@
 				2F6D949D2E83A52E00CE27A3 /* WebPManager.m */,
 			);
 			path = WebPManager;
+			sourceTree = "<group>";
+		};
+		2F98DBE92EFFC0C100814263 /* WHHAudioRecorderManager */ = {
+			isa = PBXGroup;
+			children = (
+				2F98DBEA2EFFC0DA00814263 /* WHHAIAudioRecorderManager.swift */,
+				2F98DBEC2EFFC2B000814263 /* MicrophonePermissionHelper.swift */,
+				2F98DBF22F002FBB00814263 /* WHHPollingManager.swift */,
+			);
+			path = WHHAudioRecorderManager;
 			sourceTree = "<group>";
 		};
 		2F9D047C2EAF9BCA00F34017 /* View */ = {
@@ -1118,6 +1164,7 @@
 				2F2ABD4B2EF795E6004FA465 /* WHHVIPViewController.xib in Resources */,
 				2F004E0C2E0E35100016DA6B /* PrivacyInfo.xcprivacy in Resources */,
 				2FE448B82E2A21940054083E /* WHHRootViewController.xib in Resources */,
+				2F98DBF92F00351900814263 /* WHHIdetifyDetailReportView.xib in Resources */,
 				2FDC693A2E38A53200A523B0 /* WHHDivinationViewController.xib in Resources */,
 				2F17BF842DF7C96200CA36E8 /* Main.storyboard in Resources */,
 				2F22A9332EBDA6D30093ECA8 /* WHHAIChatViewController.xib in Resources */,
@@ -1202,6 +1249,7 @@
 				2F5379252ED46D09003C3FC7 /* WHHAIWitchTableViewCell.swift in Sources */,
 				2F6079562E6E85E8001CD6BB /* WHHChatInputView.swift in Sources */,
 				2FD81A8A2E8A3011000CFDD6 /* UIView+ext.swift in Sources */,
+				2F98DBE82EFF85FF00814263 /* TimeFormatter15.swift in Sources */,
 				2F004E132E0E35100016DA6B /* AFImageDownloader.m in Sources */,
 				2FDC69592E3A063000A523B0 /* WHHLoadAlertView.swift in Sources */,
 				2F004E142E0E35100016DA6B /* AFURLResponseSerialization.m in Sources */,
@@ -1212,9 +1260,12 @@
 				2F22A93C2EBDCE240093ECA8 /* WHHAIChatListModel.m in Sources */,
 				2F004E182E0E35100016DA6B /* UIRefreshControl+AFNetworking.m in Sources */,
 				2FDC69082E325AAA00A523B0 /* WHHGradualView.swift in Sources */,
+				2F98DBEF2EFFDB6C00814263 /* WHHIdetifyRequestApi.swift in Sources */,
 				2FDC69292E37A91500A523B0 /* WHHChooseSexView.swift in Sources */,
 				2FDC694F2E38F3DC00A523B0 /* WHHHomeSubscribedTableViewCell.swift in Sources */,
+				2F98DBE62EFF7CE000814263 /* WHHIntegralModel.m in Sources */,
 				2F004E192E0E35100016DA6B /* UIProgressView+AFNetworking.m in Sources */,
+				2F98DBEB2EFFC0DA00814263 /* WHHAIAudioRecorderManager.swift in Sources */,
 				2F0E49372EF6A30500D9B0A6 /* WHHMineRequestApiViewModel.swift in Sources */,
 				2F2ABD3B2EF6E19A004FA465 /* WHHAIGalleryGalleryItemViewController.swift in Sources */,
 				2F2ABD552EF7AD53004FA465 /* WHHNewMineItemViewViewController.swift in Sources */,
@@ -1243,6 +1294,7 @@
 				2F60795A2E6EB0E0001CD6BB /* WHHABBChatRequestApi.swift in Sources */,
 				2FA65A4A2EF83EA5003E83E2 /* WHHAISleepTwoTableViewCell.swift in Sources */,
 				2F2ABD392EF6E115004FA465 /* WHHAIGallerySleepItemViewController.swift in Sources */,
+				2F98DBF32F002FBB00814263 /* WHHPollingManager.swift in Sources */,
 				2F043BB62E653F6600E8C04E /* YTKRequestEventAccessory.m in Sources */,
 				2F043BB72E653F6600E8C04E /* YTKBatchRequestAgent.m in Sources */,
 				2F043BB82E653F6600E8C04E /* YTKBatchRequest.m in Sources */,
@@ -1257,6 +1309,7 @@
 				2F0E49302EF68E0500D9B0A6 /* WHHAIIdentifyMineViewController.swift in Sources */,
 				2FA65BB02EF969A6003E83E2 /* WHHAIMaskView.swift in Sources */,
 				2F043BBC2E653F6600E8C04E /* YTKChainRequest.m in Sources */,
+				2F98DBF12EFFDC4D00814263 /* WHHIdetifyRequestModel.swift in Sources */,
 				2F5377B22ECDED30003C3FC7 /* WHHDateFormatterManager.swift in Sources */,
 				2F004E1E2E0E35100016DA6B /* AFURLRequestSerialization.m in Sources */,
 				2F60795C2E6EB190001CD6BB /* WHHABBChatRequestApiViewModel.swift in Sources */,
@@ -1267,11 +1320,14 @@
 				2F004E222E0E35100016DA6B /* AFAutoPurgingImageCache.m in Sources */,
 				2FDC695F2E3B0B5600A523B0 /* WHHABBHomeViewController.swift in Sources */,
 				2FA65A462EF83D7A003E83E2 /* WHHAISleepOneTableViewCell.swift in Sources */,
+				2F98DBF72F00350D00814263 /* WHHIdetifyDetailReportView.swift in Sources */,
+				2F98DBED2EFFC2B000814263 /* MicrophonePermissionHelper.swift in Sources */,
 				2FDC69A52E3E182F00A523B0 /* WHHRouter.swift in Sources */,
 				2F6D948B2E82C49E00CE27A3 /* HomeVideoOrPhotoTableViewCell.swift in Sources */,
 				2F22A9352EBDAA090093ECA8 /* WHHAIChatListViewController.swift in Sources */,
 				2F2ABD472EF79348004FA465 /* WHHJIfenListTableViewCell.swift in Sources */,
 				2F2ABD592EF7AE36004FA465 /* WHHNewMineItemViewCollectionViewCell.swift in Sources */,
+				2F98DBF52F0032CE00814263 /* WHHIdetifyDetailViewController.swift in Sources */,
 				2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */,
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
 				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
@@ -1292,6 +1348,7 @@
 				2FDC69572E39F7A500A523B0 /* WHHInputView.swift in Sources */,
 				2F17BF9E2DF7D4F800CA36E8 /* WHHFontSize.swift in Sources */,
 				2FDC693D2E38C76800A523B0 /* WHHDivinationAlertView.swift in Sources */,
+				2F98DABD2EFD541E00814263 /* WHHAITextView.swift in Sources */,
 				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
 				2FDC69BE2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift in Sources */,
 				2F0E49422EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m in Sources */,
@@ -1311,6 +1368,7 @@
 				2FDC69C02E3F4DFC00A523B0 /* WHHApplePayManager.swift in Sources */,
 				2F2ABD4A2EF795E6004FA465 /* WHHVIPViewController.swift in Sources */,
 				2F22A9382EBDAB220093ECA8 /* WHHAIChatListTableViewCell.swift in Sources */,
+				2F98DABB2EFD528000814263 /* WHHAIInputVoiceView.swift in Sources */,
 				2F17BF8F2DF7CC1700CA36E8 /* WHHBaseImageView.swift in Sources */,
 				2F17BFA22DF7D5B100CA36E8 /* WHHEnvironmentConf.swift in Sources */,
 				2FDC69492E38D8CF00A523B0 /* WHHHomeWitchTableViewCell.swift in Sources */,

@@ -167,6 +167,7 @@ class WHHAIIdentifyMineViewController: WHHBaseViewController {
 
             if code == 1 {
                 self?.headView.userInfoModel = model
+                self?.jifenButton.titleLabel.text = "积分: \(model.points)"
             }
         }
     }

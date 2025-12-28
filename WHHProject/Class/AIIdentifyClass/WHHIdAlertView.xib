@@ -97,6 +97,7 @@
                 <constraint firstItem="MK6-Dt-Fwm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pCE-Wt-bNj"/>
             </constraints>
             <connections>
+                <outlet property="bigTtitleLabel" destination="ZP2-vd-WLk" id="4SE-Uc-MdA"/>
                 <outlet property="cancleBtn" destination="XGc-kP-Uvt" id="88D-BU-xay"/>
                 <outlet property="desTitle" destination="ZCN-x0-0DL" id="TBF-hs-Wu6"/>
                 <outlet property="submitButton" destination="Q4a-cS-Cjl" id="G5z-Io-ac0"/>

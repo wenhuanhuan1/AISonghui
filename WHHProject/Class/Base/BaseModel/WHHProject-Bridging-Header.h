@@ -19,4 +19,4 @@
 #import "WHHAIDestinyLineItemModel.h"
 #import "FCMineModel.h"
 #import "WHHMineUploadApi.h"
-
+#import "WHHIntegralModel.h"

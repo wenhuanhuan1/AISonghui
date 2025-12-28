@@ -271,4 +271,18 @@ class WHHHomeRequestViewModel: NSObject {
             callBlack?(baseModel.success, baseModel.msg)
         }
     }
+    
+    /// 我的积分记录-1.0
+
+    static func whhMineIntegralListGetWHHHomeappUserWitchGetFortuneRequest(lastGetMaxId:String,callBlack: ((Int, [WHHIntegralModel], String) -> Void)?) {
+        let requestApi = WHHHomeRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId,"lastGetMaxId":lastGetMaxId], type: .myPointsRecordList)
+        requestApi.whhStartConsequenceHandle { baseModel in
+
+            if baseModel.success == 1, let model = WHHIntegralModel.mj_objectArray(withKeyValuesArray: baseModel.data) as? [WHHIntegralModel] {
+                callBlack?(baseModel.success, model, baseModel.msg)
+            } else {
+                callBlack?(baseModel.success, [WHHIntegralModel](), baseModel.msg)
+            }
+        }
+    }
 }
