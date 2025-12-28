@@ -37,7 +37,7 @@ class WHHAIFlowerbedViewController: WHHBaseViewController {
         let segmentedView = JXSegmentedView()
         segmentedView.indicators = [indicator]
         segmentedView.dataSource = segmentedDataSource
-        segmentedView.backgroundColor = .black
+        segmentedView.backgroundColor = .clear
         segmentedView.contentEdgeInsetLeft = 10
         segmentedView.listContainer = listContainerView
         return segmentedView

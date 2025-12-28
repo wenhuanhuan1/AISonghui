@@ -24,6 +24,9 @@ enum WHHIdetifyRequestApiType: Int {
     
     case likingLike
     
+    case worksList
+    
+    
     case likingCancelLike
 }
 
@@ -58,6 +61,9 @@ class WHHIdetifyRequestApi: WHHRequest {
             return "/liking/like"
         case .likingCancelLike:
             return "/liking/cancel-like"
+        case .worksList:
+            
+            return "/works/list"
         }
     }
 
@@ -67,7 +73,7 @@ class WHHIdetifyRequestApi: WHHRequest {
 
     override func requestMethod() -> YTKRequestMethod {
         switch aType {
-        case .worksWaitList, .likingLikeList, .worksDetail,.myWorksList:
+        case .worksWaitList, .likingLikeList, .worksDetail,.myWorksList,.worksList:
             return .GET
         default:
             return .POST

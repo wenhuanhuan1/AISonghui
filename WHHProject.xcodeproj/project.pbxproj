@@ -138,6 +138,7 @@
 		2F98DC052F015C0100814263 /* WHHIDetailTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DC022F015C0100814263 /* WHHIDetailTwoTableViewCell.swift */; };
 		2F98DC072F01603000814263 /* WHHIShareAndDeletAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DC062F01603000814263 /* WHHIShareAndDeletAlertView.swift */; };
 		2F98DC092F01603C00814263 /* WHHIShareAndDeletAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DC082F01603C00814263 /* WHHIShareAndDeletAlertView.xib */; };
+		2F98DC0B2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DC0A2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift */; };
 		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
 		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
 		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
@@ -386,6 +387,7 @@
 		2F98DC032F015C0100814263 /* WHHIDetailTwoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIDetailTwoTableViewCell.xib; sourceTree = "<group>"; };
 		2F98DC062F01603000814263 /* WHHIShareAndDeletAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIShareAndDeletAlertView.swift; sourceTree = "<group>"; };
 		2F98DC082F01603C00814263 /* WHHIShareAndDeletAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIShareAndDeletAlertView.xib; sourceTree = "<group>"; };
+		2F98DC0A2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallMutiSectionFlowLayout.swift; sourceTree = "<group>"; };
 		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
 		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
 		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 		2F0E49252EF68CF200D9B0A6 /* AIIdentifyClass */ = {
 			isa = PBXGroup;
 			children = (
+				2F98DC0A2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift */,
 				2F0E49402EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.h */,
 				2F0E49412EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m */,
 				2F0E493A2EF6A6EA00D9B0A6 /* FCMineModel.h */,
@@ -1359,6 +1362,7 @@
 				2F98DBFD2F00F37D00814263 /* WHHIMineShareItemViewController.swift in Sources */,
 				2F98DBF52F0032CE00814263 /* WHHIdetifyDetailViewController.swift in Sources */,
 				2FDC69B22E3EFC1B00A523B0 /* WHHVIPCenterBgView.swift in Sources */,
+				2F98DC0B2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift in Sources */,
 				2FE448B32E29F6400054083E /* WHHBaseView.swift in Sources */,
 				2FE4489F2E29E5E30054083E /* WHHLanguageManager.swift in Sources */,
 				2F004E242E0E35100016DA6B /* AFHTTPSessionManager.m in Sources */,

@@ -47,8 +47,7 @@ class WHHNewMineItemViewCollectionViewCell: UICollectionViewCell {
             WHHIdetifyRequestModel.whhPostLikingCancelLikeRequest(type: 1, contentId: model.worksId) { [weak self] code, msg in
 
                 if code == 0 {
-                    WHHHUD.whhShowInfoText(text: "取消成功")
-                    var model = model
+                    let model = model
                     model.likeStatus = false
                     model.likeCnt -= 1
                     self?.cellModel = model
@@ -62,11 +61,10 @@ class WHHNewMineItemViewCollectionViewCell: UICollectionViewCell {
             WHHIdetifyRequestModel.whhPostLikingLikeRequest(type: 1, contentId: model.worksId) { [weak self] code, msg in
 
                 if code == 0 {
-                    var model = model
+                    let model = model
                     model.likeStatus = true
                     model.likeCnt += 1
                     self?.cellModel = model
-                    WHHHUD.whhShowInfoText(text: "点赞成功")
                 } else {
                     WHHHUD.whhShowInfoText(text: msg)
                 }
