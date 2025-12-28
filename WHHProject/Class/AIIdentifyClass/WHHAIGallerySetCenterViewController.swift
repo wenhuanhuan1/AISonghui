@@ -13,8 +13,7 @@ class WHHAIGallerySetCenterViewController: WHHBaseViewController {
         super.viewDidLoad()
         gk_navigationBar.isHidden = false
         gk_navTitle = "设置中心"
-        stayle = .lightContent
-
+        gk_statusBarStyle = .lightContent
     }
 
     @IBAction func buttonClick(_ sender: UIButton) {
