@@ -42,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *background;
 @property(nonatomic,copy) NSString *birthday;
 @property(nonatomic,copy) NSString *onlineTime;
+@property(nonatomic,assign) BOOL shared;
 
 @end
 

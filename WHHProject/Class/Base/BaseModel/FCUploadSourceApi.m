@@ -58,8 +58,8 @@
     }else{
         return ^(id<AFMultipartFormData> formData) {
                    NSString *name = @"file";
-                   NSString *fileName = @"uploadVoice.m4a";
-                   NSString *type = @"audio/mp4";
+                   NSString *fileName = @"uploadVoice.mp3";
+                   NSString *type = @"audio/mp3";
                    [formData appendPartWithFileData:data name:name fileName:fileName mimeType:type];
         };
     }

@@ -16,9 +16,9 @@ class WHHIdetifyRequestModel: NSObject {
     ///   - prompt:string提示词
     ///   - speechFileId: 语音文件ID
     ///   - callBlackHandle: 回调
-    class func whhPostRequestWorksMake(type:Int,prompt:String,speechFileId:String? = nil,callBlackHandle:((Int,String)->Void)?) {
+    class func whhPostRequestWorksMake(type:Int,prompt:String? = nil,speechFileId:String? = nil,callBlackHandle:((Int,String)->Void)?) {
         
-        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"prompt":prompt,"speechFileId":speechFileId ?? "" ,"cnt":"1"], type: .worksMake)
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"prompt":prompt ?? "","speechFileId":speechFileId ?? "" ,"cnt":"1"], type: .worksMake)
        api.whhStartConsequenceHandle { baseModel in
            callBlackHandle?(baseModel.success,baseModel.msg)
        }
@@ -68,6 +68,20 @@ class WHHIdetifyRequestModel: NSObject {
     static func whhPostWorksShareRequest(worksId:String,callBlackHandle:((Int,String)->Void)?) {
         
         let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"worksId":worksId], type: .worksShare)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1 {
+                callBlackHandle?(1,baseModel.msg)
+            }else{
+                callBlackHandle?(0,baseModel.msg)
+            }
+            
+        }
+    }
+    
+    static func whhPostWorksShareCancelRequest(worksId:String,callBlackHandle:((Int,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"worksId":worksId], type: .worksShareCancel)
         api.whhStartConsequenceHandle { baseModel in
             
             if baseModel.success == 1 {

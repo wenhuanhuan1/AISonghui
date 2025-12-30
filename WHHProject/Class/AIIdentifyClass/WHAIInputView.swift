@@ -381,9 +381,28 @@ class WHAIInputView: WHHBaseView {
             // 说明有录音
             if let data = WHHFileDataLoader.load(from: url) {
                 debugPrint("当前的录音哈哈\(data)")
-
-                WHHIdetifyRequestModel.whhAIMakeUploadAudio(data: data) { url, msg in
+                WHHHUD.whhShowLoadView()
+                WHHIdetifyRequestModel.whhAIMakeUploadAudio(data: data) { [weak self] url, msg in
                     debugPrint("当前的录音文件哈哈哈\(url)")
+                    if url.isEmpty == false {
+                        WHHIdetifyRequestModel.whhPostRequestWorksMake(type: self?.selectType ?? 2, speechFileId: url) { [weak self] code, msg in
+                            WHHHUD.whhHidenLoadView()
+
+                            dispatchAfter(delay: 0.5) {
+                                WHHHUD.whhShowInfoText(text: msg)
+                            }
+                            if code == 1 {
+                                self?.submitMakeFinish?()
+                                self?.closeInputView()
+                            }
+                        }
+
+                    } else {
+                        WHHHUD.whhHidenLoadView()
+                        dispatchAfter(delay: 0.5) {
+                            WHHHUD.whhShowInfoText(text: msg)
+                        }
+                    }
                 }
             }
 

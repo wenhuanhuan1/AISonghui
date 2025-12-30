@@ -157,6 +157,7 @@
             </constraints>
             <connections>
                 <outlet property="bgView" destination="CTc-4Q-tvo" id="kc5-qm-EQT"/>
+                <outlet property="titleLabel" destination="Vid-d1-h87" id="PAS-rV-jPL"/>
             </connections>
             <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
         </view>

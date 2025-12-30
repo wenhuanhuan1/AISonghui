@@ -180,10 +180,8 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
 
     private func requestDetai() {
         guard let worksId = tempWorksId else { return }
-       
 
-        if tempType == .target {
-            
+        if tempType == .mySelf {
             WHHHUD.whhShowLoadView()
             WHHIdetifyRequestModel.whhGetMyWorksDetailRequest(worksId: worksId) { [weak self] code, model, msg in
                 WHHHUD.whhHidenLoadView()
@@ -213,13 +211,26 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
     }
 
     @objc func moreButtonClick() {
+        guard let model = detailModel else { return }
+
         if tempType == .mySelf {
             // 删除
             let deleteView = WHHIShareAndDeletAlertView().whhLoadXib()
 
+            if model.shared {
+                // 取消分享
+                deleteView.titleLabel.text = "取消分享"
+            } else {
+                deleteView.titleLabel.text = "分享画廊"
+            }
+
             deleteView.didShareButtonBlock = { [weak self] in
 
-                self?.didShareDream()
+                if model.shared {
+                    self?.didCancleShareDream()
+                } else {
+                    self?.didShareDream()
+                }
             }
 
             deleteView.didDeleteButtonBlock = { [weak self] in
@@ -263,12 +274,30 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
         }
     }
 
+    private func didCancleShareDream() {
+        guard let worksId = tempWorksId else { return }
+        WHHHUD.whhShowLoadView()
+        WHHIdetifyRequestModel.whhPostWorksShareCancelRequest(worksId: worksId) {[weak self]  code, msg in
+            WHHHUD.whhHidenLoadView()
+            if code == 1 {
+                self?.detailModel?.shared = false
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "shareHuaLangeNotificationKey"), object: nil)
+            }
+            dispatchAfter(delay: 0.5) {
+                WHHHUD.whhShowInfoText(text: msg)
+            }
+        }
+    }
+
     private func didShareDream() {
         guard let worksId = tempWorksId else { return }
         WHHHUD.whhShowLoadView()
-        WHHIdetifyRequestModel.whhPostWorksShareRequest(worksId: worksId) { [weak self] _, msg in
+        WHHIdetifyRequestModel.whhPostWorksShareRequest(worksId: worksId) {[weak self]  code, msg in
             WHHHUD.whhHidenLoadView()
-
+            if code == 1 {
+                self?.detailModel?.shared = true
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "shareHuaLangeNotificationKey"), object: nil)
+            }
             dispatchAfter(delay: 0.5) {
                 WHHHUD.whhShowInfoText(text: msg)
             }

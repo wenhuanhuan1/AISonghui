@@ -13,6 +13,7 @@ class WHHIShareAndDeletAlertView: UIView {
     @IBOutlet var bgView: UIView!
 
     
+    @IBOutlet weak var titleLabel: UILabel!
     
     func whhLoadXib() -> WHHIShareAndDeletAlertView {
         let className = type(of: self)

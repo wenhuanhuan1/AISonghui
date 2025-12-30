@@ -39,9 +39,13 @@ class WHHAIGalleryGalleryItemViewController: WHHBaseViewController {
         return collectionView
     }()
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(whhRefreshHeader), name: NSNotification.Name(rawValue: "shareHuaLangeNotificationKey"), object: nil)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.left.top.right.bottom.equalToSuperview()
@@ -49,7 +53,7 @@ class WHHAIGalleryGalleryItemViewController: WHHBaseViewController {
         whhRefreshHeader()
     }
 
-    override func whhRefreshHeader() {
+    @objc override func whhRefreshHeader() {
         super.whhRefreshHeader()
         page = 1
 
@@ -98,23 +102,22 @@ extension WHHAIGalleryGalleryItemViewController: UICollectionViewDelegate, UICol
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: WHHNewMineItemViewCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "WHHNewMineItemViewCollectionViewCell", for: indexPath) as! WHHNewMineItemViewCollectionViewCell
-        let model = self.dataArray[indexPath.row]
+        let model = dataArray[indexPath.row]
         cell.cellModel = model
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model = dataArray[indexPath.row]
-        
-        var type:WHHIdetifyDetailViewControllerType = .mySelf
+
+        var type: WHHIdetifyDetailViewControllerType = .mySelf
         if model.creator.userid == WHHUserInfoManager.shared.userId {
             type = .mySelf
-        }else{
+        } else {
             type = .target
         }
-        let vc = WHHIdetifyDetailViewController(worksId: model.lastGetMaxId,type: type)
+        let vc = WHHIdetifyDetailViewController(worksId: model.lastGetMaxId, type: type)
         navigationController?.pushViewController(vc, animated: true)
-       
     }
 }
 

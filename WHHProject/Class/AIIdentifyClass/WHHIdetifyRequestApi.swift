@@ -17,6 +17,8 @@ enum WHHIdetifyRequestApiType: Int {
     case worksDelete
 
     case worksShare
+    
+    case worksShareCancel
 
     case worksDetail
     
@@ -76,6 +78,8 @@ class WHHIdetifyRequestApi: WHHRequest {
             return "/works/wait/list/remove"
         case .myWorksDetail:
             return "/my/works/detail"
+        case .worksShareCancel:
+            return "/works/share/cancel"
         }
     }
 
@@ -87,6 +91,8 @@ class WHHIdetifyRequestApi: WHHRequest {
         switch aType {
         case .worksWaitList, .likingLikeList, .worksDetail,.myWorksList,.worksList,.myWorksDetail:
             return .GET
+        case.worksShareCancel:
+            return .DELETE
         default:
             return .POST
         }

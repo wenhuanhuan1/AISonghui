@@ -232,7 +232,7 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
                     self.inputBar.isHidden = false
                     self.makeView.isHidden = true
                   // 删除
-                    WHHIdetifyRequestModel.whhPostWorksWaitListRemoveRequest(worksId: model.worksId) { code, msg in
+                    WHHIdetifyRequestModel.whhPostWorksWaitListRemoveRequest(worksId: firstModel.worksId) { code, msg in
 
                     }
                     
