@@ -5,6 +5,7 @@
 //  Created by wenhuan on 2025/12/27.
 //
 
+import KNPhotoBrowser
 import UIKit
 
 enum WHHIdetifyDetailViewControllerType {
@@ -15,12 +16,16 @@ enum WHHIdetifyDetailViewControllerType {
 class WHHIdetifyDetailViewController: WHHBaseViewController {
     lazy var listTableView: UITableView = {
         let a = UITableView(frame: .zero, style: .plain)
+        a.backgroundColor = .clear
         a.delegate = self
         a.dataSource = self
         a.separatorStyle = .none
         a.register(UINib(nibName: "WHHIDetailOneTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHIDetailOneTableViewCell")
+        a.register(UINib(nibName: "WHHIDetailTwoTableViewCell", bundle: nil), forCellReuseIdentifier: "WHHIDetailTwoTableViewCell")
         return a
     }()
+
+    var didDeleteButtonClickBlock: ((String) -> Void)?
 
     lazy var shareButton: UIButton = {
         let a = UIButton(type: .custom)
@@ -53,7 +58,7 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
 
     lazy var leftBackButton: UIButton = {
         let a = UIButton(type: .custom)
-        a.setImage(UIImage.gk_image(with: "btn_back_black"), for: .normal)
+        a.setImage(UIImage.gk_image(with: "btn_back_white"), for: .normal)
         a.addTarget(self, action: #selector(backButtonClick), for: .touchUpInside)
         return a
     }()
@@ -82,7 +87,6 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
     init(worksId: String, type: WHHIdetifyDetailViewControllerType? = .mySelf) {
         super.init(nibName: nil, bundle: nil)
         tempWorksId = worksId
-        tempType = type
     }
 
     private(set) var tempType: WHHIdetifyDetailViewControllerType? {
@@ -108,7 +112,7 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gk_navTitle = ""
-
+        gk_statusBarStyle = .lightContent
         view.addSubview(leftBackButton)
         leftBackButton.snp.makeConstraints { make in
             make.size.equalTo(44)
@@ -147,26 +151,65 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
             make.right.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-WHHBottomSafe - 8)
         }
+
+        view.addSubview(listTableView)
+        listTableView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(WHHAllNavBarHeight)
+            make.bottom.equalToSuperview().offset(-WHHNoSafeTabBarHeight - 50)
+        }
+
+        requestDetai()
     }
-    
-    private(set) var detailModel:WHHIntegralModel?
-    
+
+    private(set) var detailModel: WHHIntegralModel? {
+        didSet {
+            guard let model = detailModel else { return }
+
+            if model.creator.userid == WHHUserInfoManager.shared.userId {
+                // 自己
+                tempType = .mySelf
+            } else {
+                // 他人
+                tempType = .target
+                avatarIcon.whhSetImageView(url: model.logo)
+                nickName.text = model.nickname
+            }
+        }
+    }
+
     private func requestDetai() {
-        
         guard let worksId = tempWorksId else { return }
-        WHHHUD.whhShowLoadView()
-        WHHIdetifyRequestModel.whhGetWorksDetailRequest(worksId: worksId) {[weak self] code, model, msg in
-            WHHHUD.whhHidenLoadView()
-            if code == 1 {
-                self?.detailModel = model
-                self?.listTableView.reloadData()
-            }else{
-                dispatchAfter(delay: 0.5) {
-                    WHHHUD.whhShowInfoText(text: msg)
+       
+
+        if tempType == .target {
+            
+            WHHHUD.whhShowLoadView()
+            WHHIdetifyRequestModel.whhGetMyWorksDetailRequest(worksId: worksId) { [weak self] code, model, msg in
+                WHHHUD.whhHidenLoadView()
+                if code == 1 {
+                    self?.detailModel = model
+                    self?.listTableView.reloadData()
+                } else {
+                    dispatchAfter(delay: 0.5) {
+                        WHHHUD.whhShowInfoText(text: msg)
+                    }
+                }
+            }
+        } else {
+            WHHHUD.whhShowLoadView()
+            WHHIdetifyRequestModel.whhGetWorksDetailRequest(worksId: worksId) { [weak self] code, model, msg in
+                WHHHUD.whhHidenLoadView()
+                if code == 1 {
+                    self?.detailModel = model
+                    self?.listTableView.reloadData()
+                } else {
+                    dispatchAfter(delay: 0.5) {
+                        WHHHUD.whhShowInfoText(text: msg)
+                    }
                 }
             }
         }
-        
     }
 
     @objc func moreButtonClick() {
@@ -205,7 +248,7 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
                 WHHHUD.whhShowLoadView()
                 WHHIdetifyRequestModel.whhPostWorksDeleteRequest(worksId: worksId) { [weak self] code, msg in
                     WHHHUD.whhHidenLoadView()
-
+                    self?.didDeleteButtonClickBlock?(worksId)
                     dispatchAfter(delay: 0.5) {
                         WHHHUD.whhShowInfoText(text: msg)
                     }
@@ -250,6 +293,23 @@ class WHHIdetifyDetailViewController: WHHBaseViewController {
 
     @objc func saveButtonClick() {
         debugPrint("点击了保存")
+
+        guard let model = detailModel else { return }
+        WHHHUD.whhShowLoadView()
+        WHHAIImageSaveManager.saveImage(
+            with: model.coverUrl
+        ) { success, _ in
+            WHHHUD.whhHidenLoadView()
+            if success {
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: "保存成功")
+                }
+            } else {
+                dispatchAfter(delay: 0.5) {
+                    WHHHUD.whhShowInfoText(text: "保存失败")
+                }
+            }
+        }
     }
 }
 
@@ -269,7 +329,7 @@ extension WHHIdetifyDetailViewController: UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "WHHIDetailOneTableViewCell", for: indexPath) as! WHHIDetailOneTableViewCell
-            
+
             if let model = detailModel {
                 cell.iconImageView.whhSetImageView(url: model.coverUrl)
             }
@@ -279,9 +339,20 @@ extension WHHIdetifyDetailViewController: UITableViewDataSource, UITableViewDele
             if let model = detailModel {
                 cell.contentLabel.text = model.prompt
                 cell.ipAddressLabel.text = "暂时不知道"
-                cell.timerLabel.text = TimeFormatter15.string(from: model.createTime,isMillisecond: true) + "AI生成"
+                cell.timerLabel.text = TimeFormatter15.string(from: model.createTime, isMillisecond: true) + "AI生成"
             }
             return cell
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let model = detailModel else { return }
+        if indexPath.row == 0 {
+            let item = KNPhotoItems()
+            item.url = model.coverUrl
+            let photoBrowser = KNPhotoBrowser()
+            photoBrowser.itemsArr = [item]
+            photoBrowser.present()
         }
     }
 }

@@ -108,6 +108,8 @@ PODS:
   - JXPhotoBrowser (3.1.6)
   - JXSegmentedView (1.4.1)
   - Kingfisher (8.6.2)
+  - KNPhotoBrowser (2.6.7):
+    - SDWebImage (>= 5.0.0)
   - LookinServer (1.2.8):
     - LookinServer/Core (= 1.2.8)
   - LookinServer/Core (1.2.8)
@@ -117,6 +119,9 @@ PODS:
   - MMKV (2.3.0):
     - MMKVCore (~> 2.3.0)
   - MMKVCore (2.3.0)
+  - SDWebImage (5.21.5):
+    - SDWebImage/Core (= 5.21.5)
+  - SDWebImage/Core (5.21.5)
   - SnapKit (5.7.1)
   - SwiftyStoreKit (0.16.1)
 
@@ -134,6 +139,7 @@ DEPENDENCIES:
   - JXPhotoBrowser
   - JXSegmentedView
   - Kingfisher
+  - KNPhotoBrowser
   - LookinServer
   - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `18c442d57398cee5ef57f852df10fc5ff65f0763`)
   - MJExtension
@@ -161,11 +167,13 @@ SPEC REPOS:
     - JXPhotoBrowser
     - JXSegmentedView
     - Kingfisher
+    - KNPhotoBrowser
     - LookinServer
     - MJExtension
     - MJRefresh
     - MMKV
     - MMKVCore
+    - SDWebImage
     - SnapKit
     - SwiftyStoreKit
 
@@ -197,15 +205,17 @@ SPEC CHECKSUMS:
   JXPhotoBrowser: e979c93b54a2c434b9846e8c286c695e3c70b3a1
   JXSegmentedView: cd73555ce2134d1656db2cb383ba9c2f36fb5078
   Kingfisher: 23d18f54677d973b713e54ce6a8f5eef6e7056ba
+  KNPhotoBrowser: 1ae94cb4e6ea53d2e48b8c681cc98a07b5bb79bc
   LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
   MBProgressHUD: 1b0fb447e80a0fda94808180750e8b78a07b3cd2
   MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   MMKV: c953dbaac0da392c24b005e763c03ce2638b4ed7
   MMKVCore: d078dce7d6586a888b2c2ef5343b6242678e3ee8
+  SDWebImage: e9c98383c7572d713c1a0d7dd2783b10599b9838
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 6e85d9633ee0d1d2139f69c91bcc69afbea2a2f4
+PODFILE CHECKSUM: f57a26d130c9c71d2161684b6ad7b20deb75de2e
 
 COCOAPODS: 1.16.2

@@ -47,4 +47,5 @@ target 'WHHProject' do
 
   pod 'GPUImage'
   
+  pod 'KNPhotoBrowser'
 end

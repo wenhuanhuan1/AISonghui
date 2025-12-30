@@ -18,7 +18,7 @@ class WHHIdetifyRequestModel: NSObject {
     ///   - callBlackHandle: 回调
     class func whhPostRequestWorksMake(type:Int,prompt:String,speechFileId:String? = nil,callBlackHandle:((Int,String)->Void)?) {
         
-       let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"prompt":prompt,"speechFileId":speechFileId ?? ""], type: .worksMake)
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"type":type,"prompt":prompt,"speechFileId":speechFileId ?? "" ,"cnt":"1"], type: .worksMake)
        api.whhStartConsequenceHandle { baseModel in
            callBlackHandle?(baseModel.success,baseModel.msg)
        }
@@ -92,6 +92,19 @@ class WHHIdetifyRequestModel: NSObject {
             
         }
     }
+    static func whhGetMyWorksDetailRequest(worksId:String,callBlackHandle:((Int,WHHIntegralModel,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"worksId":worksId], type: .myWorksDetail)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1,let model = WHHIntegralModel.mj_object(withKeyValues: baseModel.data) {
+                callBlackHandle?(1,model,baseModel.msg)
+            }else{
+                callBlackHandle?(0,WHHIntegralModel(),baseModel.msg)
+            }
+            
+        }
+    }
     
     static func whhGetMyShuoMengLikingLikeListRequest(lastGetMaxId:String,callBlackHandle:((Int,[WHHIntegralModel],String)->Void)?) {
         
@@ -147,5 +160,33 @@ class WHHIdetifyRequestModel: NSObject {
             }
             
         }
+    }
+    
+    static func whhPostWorksWaitListRemoveRequest(worksId:String,callBlackHandle:((Int,String)->Void)?) {
+        
+        let api = WHHIdetifyRequestApi(parameter: ["userId": WHHUserInfoManager.shared.userId, "api-v": WHHNetConf.apiv,"worksId":worksId], type: .worksWaitListRemove)
+        api.whhStartConsequenceHandle { baseModel in
+            
+            if baseModel.success == 1 {
+                callBlackHandle?(1,baseModel.msg)
+            }else{
+                callBlackHandle?(0,baseModel.msg)
+            }
+            
+        }
+    }
+    
+    class func whhAIMakeUploadAudio(data:Data,callBlack: ((String,String) -> Void)?) {
+        
+       let uploadApi = FCUploadSourceApi(whhUploadWithType: 5, sourceData: data)
+       uploadApi.whhStartConsequenceHandle { baseModel in
+
+           if baseModel.success == 1, let imageFile = baseModel.data as? String {
+               callBlack?(imageFile,baseModel.msg)
+           } else {
+               callBlack?("",baseModel.msg)
+           }
+       }
+        
     }
 }

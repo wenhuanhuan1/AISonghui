@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) double createTime;
 @property(nonatomic,copy) NSString *lastGetMaxId;
 
+@property(nonatomic,copy) NSString *userid;
+
 @property(nonatomic,copy) NSString *worksId;
 
 @property(nonatomic,assign) BOOL canMaking;

@@ -11,7 +11,8 @@
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     
-    return @{@"lastGetMaxId":@"id"};
+    return @{@"lastGetMaxId":@"id",@"userid":@"id"};
+    
 }
 
 +(NSDictionary *)mj_objectClassInArray{

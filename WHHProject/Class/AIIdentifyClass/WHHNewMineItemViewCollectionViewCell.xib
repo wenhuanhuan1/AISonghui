@@ -74,6 +74,12 @@
                 <constraint firstItem="opi-kO-66y" firstAttribute="centerY" secondItem="TuZ-Od-9bo" secondAttribute="centerY" id="uAX-Uu-LQD"/>
             </constraints>
             <size key="customSize" width="226" height="165"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bigIcon" destination="zY2-QZ-4Lq" id="NhL-Ia-3Gd"/>
                 <outlet property="playIcon" destination="YmZ-kc-gWg" id="lBb-1c-jqx"/>

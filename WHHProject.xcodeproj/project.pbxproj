@@ -139,6 +139,8 @@
 		2F98DC072F01603000814263 /* WHHIShareAndDeletAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DC062F01603000814263 /* WHHIShareAndDeletAlertView.swift */; };
 		2F98DC092F01603C00814263 /* WHHIShareAndDeletAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F98DC082F01603C00814263 /* WHHIShareAndDeletAlertView.xib */; };
 		2F98DC0B2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DC0A2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift */; };
+		2F98DDBE2F02B00B00814263 /* WHHAIImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DDBD2F02B00B00814263 /* WHHAIImageSaveManager.swift */; };
+		2F98DE2D2F03AA0500814263 /* WHHFileDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98DE2C2F03AA0500814263 /* WHHFileDataLoader.swift */; };
 		2F9D04752EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */; };
 		2F9D04772EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */; };
 		2F9D047A2EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */; };
@@ -388,6 +390,8 @@
 		2F98DC062F01603000814263 /* WHHIShareAndDeletAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHIShareAndDeletAlertView.swift; sourceTree = "<group>"; };
 		2F98DC082F01603C00814263 /* WHHIShareAndDeletAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHIShareAndDeletAlertView.xib; sourceTree = "<group>"; };
 		2F98DC0A2F01755A00814263 /* WaterfallMutiSectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallMutiSectionFlowLayout.swift; sourceTree = "<group>"; };
+		2F98DDBD2F02B00B00814263 /* WHHAIImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIImageSaveManager.swift; sourceTree = "<group>"; };
+		2F98DE2C2F03AA0500814263 /* WHHFileDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHFileDataLoader.swift; sourceTree = "<group>"; };
 		2F9D04742EAF6F7400F34017 /* WHHAIDestinyLineIVIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPView.swift; sourceTree = "<group>"; };
 		2F9D04762EAF6F8300F34017 /* WHHAIDestinyLineIVIPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WHHAIDestinyLineIVIPView.xib; sourceTree = "<group>"; };
 		2F9D04782EAF909A00F34017 /* WHHAIDestinyLineIVIPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHHAIDestinyLineIVIPCell.swift; sourceTree = "<group>"; };
@@ -888,6 +892,8 @@
 				2F98DBEA2EFFC0DA00814263 /* WHHAIAudioRecorderManager.swift */,
 				2F98DBEC2EFFC2B000814263 /* MicrophonePermissionHelper.swift */,
 				2F98DBF22F002FBB00814263 /* WHHPollingManager.swift */,
+				2F98DDBD2F02B00B00814263 /* WHHAIImageSaveManager.swift */,
+				2F98DE2C2F03AA0500814263 /* WHHFileDataLoader.swift */,
 			);
 			path = WHHAudioRecorderManager;
 			sourceTree = "<group>";
@@ -1384,6 +1390,7 @@
 				2FDC693D2E38C76800A523B0 /* WHHDivinationAlertView.swift in Sources */,
 				2F98DABD2EFD541E00814263 /* WHHAITextView.swift in Sources */,
 				2F17BFA02DF7D55A00CA36E8 /* WHHKeyWindowOrCurrentVC.swift in Sources */,
+				2F98DE2D2F03AA0500814263 /* WHHFileDataLoader.swift in Sources */,
 				2FDC69BE2E3F091600A523B0 /* WHHVIPCenterCollectionViewCell.swift in Sources */,
 				2F0E49422EF6A71D00D9B0A6 /* WHHAIDestinyLineItemModel.m in Sources */,
 				2F5376A72ECC7C85003C3FC7 /* WHHAIStorekitManager.swift in Sources */,
@@ -1410,6 +1417,7 @@
 				2F9D047E2EAF9BE700F34017 /* WHHAIChooseAnimationView.swift in Sources */,
 				2F043C582E6C1CE500E8C04E /* WHHHomeForetellModel.m in Sources */,
 				2F0E492C2EF68DB700D9B0A6 /* WHHAIIdentifyHomeViewController.swift in Sources */,
+				2F98DDBE2F02B00B00814263 /* WHHAIImageSaveManager.swift in Sources */,
 				2F98DBFB2F00F35C00814263 /* WHHIMineZanItemViewController.swift in Sources */,
 				2FDC692D2E3867A700A523B0 /* WHHSexItemView.swift in Sources */,
 				2FDC69352E38821D00A523B0 /* WHHMediaManager.swift in Sources */,

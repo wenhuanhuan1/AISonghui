@@ -105,7 +105,16 @@ extension WHHAIGalleryGalleryItemViewController: UICollectionViewDelegate, UICol
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model = dataArray[indexPath.row]
-        debugPrint("详情页面")
+        
+        var type:WHHIdetifyDetailViewControllerType = .mySelf
+        if model.creator.userid == WHHUserInfoManager.shared.userId {
+            type = .mySelf
+        }else{
+            type = .target
+        }
+        let vc = WHHIdetifyDetailViewController(worksId: model.lastGetMaxId,type: type)
+        navigationController?.pushViewController(vc, animated: true)
+       
     }
 }
 

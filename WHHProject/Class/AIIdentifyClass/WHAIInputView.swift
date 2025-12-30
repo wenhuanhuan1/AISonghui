@@ -379,8 +379,14 @@ class WHAIInputView: WHHBaseView {
     @objc func startMakeButtonClick() {
         if let url = recordUrl {
             // 说明有录音
+            if let data = WHHFileDataLoader.load(from: url) {
+                debugPrint("当前的录音哈哈\(data)")
 
-            
+                WHHIdetifyRequestModel.whhAIMakeUploadAudio(data: data) { url, msg in
+                    debugPrint("当前的录音文件哈哈哈\(url)")
+                }
+            }
+
         } else {
             guard let text = textView.text else { return }
 
@@ -423,9 +429,8 @@ extension WHAIInputView: WHHAITextViewDelegate {
         if currentTextViewHeight >= whhAIInputBarMaxHeight {
             currentTextViewHeight = whhAIInputBarMaxHeight
         }
-        
+
         if textView.text.isEmpty {
-            
             currentTextViewHeight = 44
         }
 

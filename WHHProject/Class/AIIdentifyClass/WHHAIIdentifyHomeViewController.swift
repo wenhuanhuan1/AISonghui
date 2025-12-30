@@ -10,7 +10,6 @@ import UIKit
 class HomeMakeView: WHHBaseView {
     var didHomeMakeViewButtonBlock: (() -> Void)?
 
-    
     lazy var tipLabel: UILabel = {
         let a = UILabel()
         a.text = "阿贝贝正在使用AI魔法画笔\n帮你把梦绘制成一幅精美的画..."
@@ -80,10 +79,10 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
         a.addTarget(self, action: #selector(inputBarButtonClick), for: .touchUpInside)
         return a
     }()
-    
+
     private lazy var waitListPolling = WHHPollingManager(
         interval: 3,
-        maxCount: nil   // 不限制次数（可改 20）
+        maxCount: nil // 不限制次数（可改 20）
     )
 
     lazy var sendIcon: WHHBaseImageView = {
@@ -100,8 +99,8 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
         a.textColor = .white.withAlphaComponent(0.3)
         return a
     }()
-    
-    private(set) var currentModel:WHHIntegralModel?
+
+    private(set) var currentModel: WHHIntegralModel?
 
     lazy var makeView: HomeMakeView = {
         let a = HomeMakeView()
@@ -109,11 +108,22 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
         a.layer.cornerRadius = 12
         a.isHidden = true
         a.layer.masksToBounds = true
-        a.didHomeMakeViewButtonBlock = {[weak self] in
+        a.didHomeMakeViewButtonBlock = { [weak self] in
             debugPrint("惦记了哈哈")
+
             guard let model = self?.currentModel else { return }
-            let vc = WHHIdetifyDetailViewController(worksId: model.worksId, type: .mySelf)
-            self?.navigationController?.pushViewController(vc, animated: true)
+
+            WHHIdetifyRequestModel.whhPostWorksWaitListRemoveRequest(worksId: model.worksId) { code, msg in
+
+                if code == 1 {
+                    self?.inputBar.isHidden = false
+                    self?.makeView.isHidden = true
+                    let vc = WHHIdetifyDetailViewController(worksId: model.worksId,type: .mySelf)
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    WHHHUD.whhShowInfoText(text: msg)
+                }
+            }
         }
         return a
     }()
@@ -179,23 +189,19 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         waitListPolling.stop()
     }
 
-
-    
     /// 刷新制作功能
     private func getwhhTimerGetRequestWorksWaitList() {
         WHHIdetifyRequestModel.whhGetRequestWorksWaitList { [weak self] code, model, _ in
             guard let self = self else { return }
 
             if code == 1 {
-
                 if model.canMaking {
                     self.inputBar.isHidden = false
                     self.makeView.isHidden = true
@@ -225,7 +231,11 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
                     WHHHUD.whhShowInfoText(text: "制作失败")
                     self.inputBar.isHidden = false
                     self.makeView.isHidden = true
+                  // 删除
+                    WHHIdetifyRequestModel.whhPostWorksWaitListRemoveRequest(worksId: model.worksId) { code, msg in
 
+                    }
+                    
                 default:
                     break
                 }
@@ -236,13 +246,12 @@ class WHHAIIdentifyHomeViewController: WHHBaseViewController {
             }
         }
     }
-    
 
     @objc func inputBarButtonClick() {
         debugPrint("哈哈哈惦记了")
         let inputView = WHAIInputView()
-        inputView.submitMakeFinish = {[weak self] in
-            
+        inputView.submitMakeFinish = { [weak self] in
+
             self?.getwhhTimerGetRequestWorksWaitList()
         }
         UIWindow.getKeyWindow?.addSubview(inputView)

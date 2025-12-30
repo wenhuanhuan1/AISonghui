@@ -48,12 +48,22 @@
 - (AFConstructingBlock)constructingBodyBlock {
     NSData *data = self.data;
 
-    return ^(id<AFMultipartFormData> formData) {
-               NSString *name = @"file";
-               NSString *fileName = @"upload.jpeg";
-               NSString *type = @"image/jpeg";
-               [formData appendPartWithFileData:data name:name fileName:fileName mimeType:type];
-    };
+    if (self.type != 5) {
+        return ^(id<AFMultipartFormData> formData) {
+                   NSString *name = @"file";
+                   NSString *fileName = @"upload.jpeg";
+                   NSString *type = @"image/jpeg";
+                   [formData appendPartWithFileData:data name:name fileName:fileName mimeType:type];
+        };
+    }else{
+        return ^(id<AFMultipartFormData> formData) {
+                   NSString *name = @"file";
+                   NSString *fileName = @"uploadVoice.m4a";
+                   NSString *type = @"audio/mp4";
+                   [formData appendPartWithFileData:data name:name fileName:fileName mimeType:type];
+        };
+    }
+   
 }
 
 @end
